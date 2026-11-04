@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.ipynb_checkpoints/
+
+# local notes and working folders
+*.md
+!README.md
+graphify-out/
+audit/
+.*/
+!.gitignore
+
+# data and outputs never go in git
+*.las
+*.LAS
+*.jpg
+*.JPG
+*.tif
+*.CR2
+*.pt
+*.pth

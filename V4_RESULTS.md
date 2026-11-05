@@ -30,7 +30,8 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 
 - **Bias is one-directional.** In 34/7-10, A called SAND in 51 bins where B
   called HET (26) or MUD (25); the reverse happened 2 times. So one rater is
-  biased; which one is unknown until the human check (section 6).
+  biased; the v5 panel found it is B, under-calling clean, plug-proven
+  sandstone (V5_RESULTS.md).
 - **Confident calls agree.** Where both raters were confident, kappa is
   0.97 (64 bins). Keeping only those bins leaves 2 of 48 bags with >= 50%
   coverage, which is unusable and selects the easy beds.
@@ -39,10 +40,13 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 - **Protocol deviation.** A's last 6 photographs were done by a fresh
   session that corrected a cyan cast with the grey scale; B's were not
   corrected.
-- **Finding:** in the one red-bed well tested, two AI raters did not agree
-  well enough (kappa 0.50 < 0.6) for the core photographs to serve as a
-  bed-scale reference. On thick sandstone (34/4-6) they agreed closely. Well,
-  lithology and protocol version all differ between the two pilots.
+- **Finding (rewritten after the v5 panel, V5_RESULTS.md):**
+  - The pre-set agreement gate failed (kappa 0.50).
+  - A blind, evidence-based adjudication showed this was mainly one rater
+    (Sonnet) calling clean sandstone HET or MUD, plus a real silt / very fine
+    sand boundary problem.
+  - The core photographs themselves are readable for clean sandstone.
+  - The test is not reopened (the stop rule was pre-registered).
 
 ## 3. Plug-referenced check, 34/8-3, 2839-2897 m (descriptive)
 

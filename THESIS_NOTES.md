@@ -120,10 +120,31 @@ stated otherwise.
 > 4. **Core digitisation.** Two Claude agents (Opus and Sonnet) digitised
 >    lithology from core photographs, blind to other data. Their agreement is
 >    reported, and the approach was stopped when it failed a pre-set
->    reliability gate. A blind human spot-check by the author was used to
->    assess rater bias [complete once done].
+>    reliability gate. The source of the rater disagreement was
+>    adjudicated blind by a panel of three further Claude agents, using plugs,
+>    the operator core description and logs. This was not a human panel.
 > 5. **Drafting text.** Drafting summaries, which the author checked and
 >    edited.
 >
 > The geological interpretation, label design decisions and conclusions are
 > the author's responsibility.
+
+## 6. Methods text for the core-photo test (agreed with the reviewer agent)
+
+Core photographs of 34/7-10 were digitised in 0.25 m bins by two AI raters
+(Claude Opus and Claude Sonnet) following a written protocol. Their agreement
+(SAND vs rest, kappa 0.50) failed a pre-set threshold of 0.6, so the
+core-photo test was stopped. To find the source of the disagreement, a
+stratified sample of 40 bins (25 disputed, 15 agreed) was adjudicated blind
+to the raters by a panel of three AI agents. A label was assigned only where
+two agents agreed and the call was supported at bin resolution by plugs, the
+operator core description, or logs stable across the core-to-log shift
+uncertainty. The consensus rules were committed before the rater labels were
+unsealed; all panel agents were Claude models, the same family as rater A.
+
+**Result sentence:** Where the panel could resolve a disputed bin, the
+evidence almost always supported A's SAND call (14 of 15; p = 0.001), so
+rater B under-called clean, plug-proven sandstone. A further 7 disputed bins
+were siltstone or very fine sandstone with no grain-size data. If those count
+as not-sand, the advantage of A is no longer significant (14 vs 8; p = 0.29),
+so part of the disagreement is a class-boundary problem.

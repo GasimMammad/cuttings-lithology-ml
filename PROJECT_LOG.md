@@ -190,7 +190,8 @@ Single reference file for the whole follow-up work (started 2026-11-05).
 - **DONE, plug parser** `44_v4_plug_data.py` -> `v4_results/plug_data.csv`.
   - 24/9-3: 14 plugs, 1780-1795 m, ~3 D, phi 38%.
   - 34/8-3: 453 plugs plus core gamma.
-  - 34/8-3 A: 454 plugs plus core gamma.
+  - 34/8-3 A: core gamma only. Its plug block was misaligned (blank fixed-width
+    fields) and dropped by the >=90%-inside-cores validity gate.
   - NB `24_9-3_708-12023.SPW` is mislabelled (header = well 16/10-1, AGIP): excluded.
   - Formats: SPWLA line-based; NORCORE token-based, curve blocks 15/17, data headers 25/40,
     and headerless continuation blocks.

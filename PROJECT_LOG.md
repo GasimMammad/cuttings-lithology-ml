@@ -412,3 +412,8 @@ eaa36f4 v2 results
 - **v6 B running:** Agent 1 (a7e33b0c9bb0d6af6), outputs in `~/sinkite_ml_work_v2/v6/B_*.csv`.
 - **v6 E running:** blind pellet rater (Opus agent a56b10b9849c191a3), 20 photos (10 high-G, 10 low-G Oligocene), items `v6/E_items_blind.csv`; sealed key `results/v6/E_pellet_key.csv`; output `v6/E_ratings.csv`.
 - v6 F (GR/AI redo) NOT started; lowest priority.
+- **v6 E DONE** (blind pellet rater; unsealed `results/v6/E_unsealed.csv`):
+  - High-G bags: 8/10 PRESENT (2 uncertain). Low-G Oligocene bags: 8/10 ABSENT, 1 trace (34/4-6 1390 m, base of
+    Oligocene), 1 uncertain. => The XRF G proxy detects real glauconite pellets.
+  - High-G pellet bags are the Utsira (34/4-6, 34/7-4, 34/8-3 A) plus just below THGU (34/4-6 1250 m; 34/7-10
+    1100-1130 m = 7-37 m below THGU; greensand at 1110 m). Caving vs near-THGU glauconitic sand is not separable.

@@ -349,3 +349,16 @@ eaa36f4 v2 results
 083813c v3b results, cement diagnostic
 26499b5 V4_PLAN
 ```
+
+---------------------------------------------------------------------------
+## Glauconite / sinkite part review (started after v5; the user asked: did we prove anything about sinkites?)
+- **Answer given:** the ML part neither proves nor disproves sinkites (interval-scale only).
+- **Now reviewing** the original green-index work (scripts 15-24, ~/sinkite_ml_work reports).
+- **My provisional points:**
+  1. The index is not glauconite-specific: deep control fires 25-100x in Lista/Lunde; the chroma gate is inert.
+  2. Utsira control is strong in 34/4-6, 34/7-1, 34/8-3 A and weak (~3x) in the mound wells.
+  3. Oligocene green is concentrated 0-30 m below THGU (caving/lag pattern).
+  4. 34/7-6: the photo null is uninformative by rule; the GR/AI log test says the target sand is clean with no K
+     excess (strong negative for glauconite).
+  5. Script 12 does not hold the calibration (reproducibility gap).
+- **Sent to the reviewer** (critique, reruns) and to the geochemist (XRF K/Al-Fe/Al glauconite proxy feasibility).

@@ -410,3 +410,5 @@ eaa36f4 v2 results
   - EXPLORATORY (no Al floor): Utsira fires in 4/5 wells with baseline + Utsira bags; Lista 0/147.
 - **v6 A DONE:** `GLAUCONITE_CORRECTIONS.md`.
 - **v6 B running:** Agent 1 (a7e33b0c9bb0d6af6), outputs in `~/sinkite_ml_work_v2/v6/B_*.csv`.
+- **v6 E running:** blind pellet rater (Opus agent a56b10b9849c191a3), 20 photos (10 high-G, 10 low-G Oligocene), items `v6/E_items_blind.csv`; sealed key `results/v6/E_pellet_key.csv`; output `v6/E_ratings.csv`.
+- v6 F (GR/AI redo) NOT started; lowest priority.

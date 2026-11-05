@@ -177,8 +177,10 @@ Single reference file for the whole follow-up work (started 2026-11-05).
   - `43_v4_core_thumbs.py` 2 shards: 1/4-res PNGs to
     `~/sinkite_ml_work_v2/core_thumbs/<well>/` (247 needed, about 50 min,
     USB-bound).
+- **DONE, B cement mask** (`42_v4_cement_mask.py`): 24 of 893 test photos removed.
+  ONE_FEATURE +0.124, 7/10, p 0.024; D1 +0.254, p 0.024; E2 p 0.138.
+  Robust; run 2 stays the reported result.
 - **Next steps, in order:**
-  1. B: cement-mask robustness run (cheap; plan approved).
   2. When thumbnails are done: write the digitiser prompt (protocol in
      V4_PLAN A2); launch raters A (Opus) and B (Sonnet) per well in the
      background; C (Fable) on a random 20%. Output CSV per rater and well.

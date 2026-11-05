@@ -75,3 +75,31 @@ under the usual "sample depth = bottom of interval" convention (~10 m in the
 - **Sensitivity (not tests):** centred interval (D - s/2, D + s/2) and the
   interval below (D, D + s).
 - No model is retrained in this step.
+
+### 4b. Amendment after review round 4 (before any section-4 comparison was computed)
+
+Only the targets (39_v3b_interval_targets.py) had been computed; no signal
+had been compared with them. Changes:
+
+1. **Wells:** the six wells with ~10 m bag spacing in the zones (34/4-6,
+   34/4-7, 34/7-4, 34/7-6, 34/7-9, 34/7-10). In the 2-3 m wells the bag
+   interval equals the +/-3 m point window. Smallest attainable one-sided
+   Wilcoxon p with 6 wells: 0.016.
+2. **Support calibrated without images:** for offsets o = -15..+15 m (1 m
+   steps) and widths w in {3, 5, 10, 15} m, target = mean Vsh over
+   (D + o - w, D + o] (inside the zone, else missing). For each (o, w): mean
+   over the six wells of Spearman rho(hp XRF Si/Al, -hp target). **Decision
+   rule:** the (o, w) with the highest mean rho; ties go to the one closest
+   to (0, 10). The same calculation with point Vsh is the XRF positive
+   control: if no (o, w) beats point Vsh for XRF, the image test is reported
+   as uninformative.
+3. **High-pass:** signal, XRF and targets all minus the centred running
+   median over +/-50 m within continuous stretches (gaps > 30 m split), as in
+   section 3.
+4. **Primary image test:** ONE_FEATURE; per well
+   delta = rho(hp signal, -hp target_chosen) - rho(hp signal, -hp Vsh_point),
+   over in-zone photos; one-sided Wilcoxon over the six wells.
+   "Interval clearly wins" = p < 0.05 AND delta > 0 in >= 5/6 wells.
+   D1, E2, bag weight reported alongside, no test.
+5. "Interval below" is reinterpreted as the top-of-interval convention and is
+   covered by the offset scan.

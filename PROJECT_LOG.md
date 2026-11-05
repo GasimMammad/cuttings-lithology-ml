@@ -231,6 +231,42 @@ Single reference file for the whole follow-up work (started 2026-11-05).
 - **Open items not planned:** fine-tuned CNN results interpretation,
   human spot-check by the user, pre-registered depth mask in the main tests.
 
+
+---------------------------------------------------------------------------
+## >>> RESUME HERE (paused 2026-11-05 ~12:45 at the user's request) <<<
+
+**No background jobs are running.** Everything is committed.
+
+1. **Hard-well pilot (34/7-10, protocol v2) is unfinished.**
+   - Rater B (Sonnet) DONE: `~/sinkite_ml_work_v2/core_digitised_v2/B_sonnet/34_7-10.csv`,
+     524 bins. 44% RUBBLE (219 MUD-chip rubble); 64% low confidence.
+   - Rater A (Opus) STOPPED after 27/33 photos (last: TOP263550). File:
+     `core_digitised_v2/A_opus/34_7-10.csv`, 428 bins.
+   - To finish: first check that the last photo's rows are complete (5 trays x 4 bins,
+     unless the tray count is shorter); if in doubt, delete that photo's rows. Then launch
+     a NEW Opus rater for the remaining photos only: TOP263550 (if removed), TOP264000,
+     TOP264150, TOP264600, TOP265100, TOP265500, TOP266000. Append to the same CSV.
+     Use the same prompt as before; the protocol is `V4_DIGITISER_PROTOCOL.md` v2.
+2. Then run `python 45_v4_rater_agreement.py 34_7-10 --v2`.
+   - Gate (review round 7): SAND-vs-rest kappa >= 0.6 before scaling.
+3. Send the pilot result to the reviewer (agentId ac906ee9f47edc97f, round 8) and WAIT
+   for its verdict (user: "don't rush").
+4. If approved, scale to 34/4-7, 34/7-1, 34/7-9, 34/8-3, 34/8-3 A, and redo 34/4-6
+   under protocol v2.
+   - Raters A (Opus) and B (Sonnet) on all; C (Fable) on a random 20%.
+   - Run `47_v4_core_gamma_check.py --v2` (core gamma / plugs).
+   - Build the human spot-check set for the USER: ~50 bins, stratified to over-sample
+     HET, low-confidence, RED and RUBBLE, from >= 2 hard wells, with crops. I am not
+     human; the user labels them.
+5. Then: target f per bag; XRF offset scan; GATE; image test (V4_PLAN.md A3-A5).
+   Reviewer round on the results. Update V3/V4 results, the results page, memory and
+   this log.
+
+**Usage note:** the reviewer agent hit a 5-hour account usage limit once (reset
+11:50). If agents fail with a rate limit, wait for the reset and resume them with
+SendMessage.
+---------------------------------------------------------------------------
+
 ## 4. Key result numbers (for quick reference)
 
 | test | number |

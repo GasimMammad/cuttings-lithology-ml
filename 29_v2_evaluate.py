@@ -56,6 +56,9 @@ def load_tables():
 
     f = pd.read_csv(C.WORK_DIR / "28_features.csv")
     eng = (f.groupby(["well", "depth_m"], as_index=False)[FEATURE_NAMES].median())
+    ref = (f[f.tile == "r1c1"].groupby(["well", "depth_m"], as_index=False)[FEATURE_NAMES].first()
+           .rename(columns={c: "ref_" + c for c in FEATURE_NAMES}))
+    eng = eng.merge(ref, on=["well", "depth_m"], how="left")
     base = meta.merge(eng, on=["well", "depth_m"], how="left")
 
     p = pd.read_csv(C.PATCHES_CSV, usecols=["well", "depth_m", "ba_ppm", "formation"])
@@ -67,13 +70,18 @@ def load_tables():
     return base, {"rgb": rgb, "gray": gray}
 
 
-def per_well_z(X, wells):
-    """Label-free: z-score each column within its well over all photos."""
+def per_well_z(X, wells, ref=None):
+    """Label-free: z-score each column within its well over all photos.
+    `ref` (same shape as X) supplies the values the well mean/SD are taken
+    from; default X itself. For the engineered features ref = tile r1c1 of
+    every photo, so every photo of a well contributes the same one-tile
+    measurement (not every out-of-zone photo has all 16 tiles computed)."""
+    ref = X if ref is None else ref
     Z = np.empty_like(X, dtype=np.float64)
     for w in np.unique(wells):
         m = wells == w
-        mu = np.nanmean(X[m], axis=0)
-        sd = np.nanstd(X[m], axis=0)
+        mu = np.nanmean(ref[m], axis=0)
+        sd = np.nanstd(ref[m], axis=0)
         sd[sd < 1e-9] = 1.0
         Z[m] = (X[m] - mu) / sd
     return Z
@@ -83,10 +91,12 @@ def build_inputs(base, emb):
     wells = base.well.values
     E15 = base[FEATURE_NAMES].values.astype(float)
     E9 = base[COLOUR_FREE_NAMES].values.astype(float)
+    R15 = base[["ref_" + c for c in FEATURE_NAMES]].values.astype(float)
+    R9 = base[["ref_" + c for c in COLOUR_FREE_NAMES]].values.astype(float)
     return {
         "E1": (E15, False),
-        "E2": (per_well_z(E15, wells), False),
-        "E3": (per_well_z(E9, wells), False),
+        "E2": (per_well_z(E15, wells, R15), False),
+        "E3": (per_well_z(E9, wells, R9), False),
         "D1": (emb["rgb"].astype(float), True),
         "D2": (per_well_z(emb["rgb"].astype(float), wells), True),
         "D3": (per_well_z(emb["gray"].astype(float), wells), True),
@@ -173,7 +183,8 @@ def lowo(base, X, use_pca, train_mask, label_col="label", shuffle=False):
             pass
         clf.fit(X[tr], y)
         te = (wells == w) & ok
-        p_all[te] = clf.predict_proba(X[te])[:, 1]
+        if te.any():
+            p_all[te] = clf.predict_proba(X[te])[:, 1]
     return p_all, test_wells
 
 

@@ -12,6 +12,7 @@ Which tiles: all 16 tiles of every W_1 photo, in priority order
 Run:  python 28_v2_features.py <shard> <nshards>
       python 28_v2_features.py            (combine -> WORK_DIR/28_features.csv)
 """
+import os
 import sys
 import time
 from pathlib import Path
@@ -62,6 +63,7 @@ def run_shard(shard, nshards):
     count), and does in-zone tiles before the normalisation-only tiles."""
     SHARD_DIR.mkdir(parents=True, exist_ok=True)
     allp = patch_list()
+    allp = allp[allp.prio <= int(os.environ.get("MAXPRIO", "3"))]   # optional cap
     allp = allp.sort_values(["prio", "well", "depth_m", "tile"], kind="stable")
     todo = allp[~allp.patch_path.isin(done_paths())]
     sub = todo.iloc[shard::nshards].drop(columns="prio").reset_index(drop=True)

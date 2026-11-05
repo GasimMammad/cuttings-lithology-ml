@@ -110,6 +110,7 @@ def fig1(tab, summ, subset="all", tag=""):
 
 
 def fig2(pred, raw="E1", fix="E2"):
+    tag = "" if raw == "E1" else f"_{raw}_{fix}"
     lab = pred[pred.label.isin(["sand", "clay"])]
     wells = [w for w in WELL_COL if w in set(lab.well)]
     fig, axs = plt.subplots(1, 2, figsize=(170 * MM, 70 * MM), sharey=True)
@@ -133,19 +134,23 @@ def fig2(pred, raw="E1", fix="E2"):
                            plt.Rectangle((0, 0), 1, 1, color="#E67E22")],
                   labels=["clay-labelled depths", "sand-labelled depths"], fontsize=6.5,
                   frameon=False, loc="upper right")
-    save(fig, "v2_fig2_domain_shift")
+    save(fig, f"v2_fig2_domain_shift{tag}")
 
 
-def fig3(pred, m="E2", wells=("24_9-3", "34_7-9", "34_7-6", "34_7-4")):
+def fig3(pred, m="E2", wells=("24_9-3", "24_9-4", "34_7-4", "34_7-6", "34_7-9")):
     wells = [w for w in wells if w in set(pred.well)]
     fig, axs = plt.subplots(1, len(wells), figsize=(170 * MM, 120 * MM))
     for ax, w in zip(np.atleast_1d(axs), wells):
         g = pred[(pred.well == w) & pred.label.isin(["sand", "clay", "mixed", "unstable"])].sort_values("depth_m")
         if g.empty:
             continue
-        ax.plot(1 - g.vsh, g.depth_m, color="#2C3E50", lw=0.9, label="1 - Vsh (GR)")
-        ps = g[f"p_{m}"].rolling(3, center=True, min_periods=1).median()
-        ax.plot(ps, g.depth_m, color="#E67E22", lw=1.1, label="p(sand), blind")
+        ps = g[f"p_{m}"].rolling(3, center=True, min_periods=1).median().values
+        z = g.depth_m.values.astype(float)
+        v = (1 - g.vsh).values.astype(float)
+        gap = np.r_[False, np.diff(z) > 20]          # do not draw across excluded stretches
+        z, v, ps = (np.insert(a, np.flatnonzero(gap), np.nan) for a in (z, v, ps))
+        ax.plot(v, z, color="#2C3E50", lw=0.9, label="1 - Vsh from GR (truth)")
+        ax.plot(ps, z, color="#E67E22", lw=1.2, label="p(sand) from photos, blind")
         for cls, col in (("sand", "#E67E22"), ("clay", "#7F8C8D")):
             z = g[g.label == cls].depth_m
             ax.scatter(np.full(len(z), -0.06), z, marker="s", s=6, color=col, clip_on=False)
@@ -156,7 +161,9 @@ def fig3(pred, m="E2", wells=("24_9-3", "34_7-9", "34_7-6", "34_7-4")):
         ax.set_xlabel("sand-ness", fontsize=7)
         ax.grid(alpha=0.25, lw=0.4)
     np.atleast_1d(axs)[0].set_ylabel("Depth (m MD RKB)")
-    np.atleast_1d(axs)[0].legend(fontsize=6, loc="lower left", frameon=False)
+    h, l = np.atleast_1d(axs)[0].get_legend_handles_labels()
+    fig.legend(h, l, fontsize=7, loc="lower center", ncol=2, frameon=False, bbox_to_anchor=(0.5, -0.03))
+    fig.subplots_adjust(wspace=0.45)
     fig.suptitle(f"Blind predictions (model {m}, well never seen in training) vs GR-derived 1 - Vsh; "
                  "squares = labelled sand / clay depths", fontsize=7, x=0.01, ha="left")
     save(fig, f"v2_fig3_blind_logs_{m}")
@@ -193,7 +200,9 @@ def main():
     fig1(tab, summ)
     fig1(tab, summ, subset="tertiary", tag="_tertiary")
     fig2(pred)
-    fig3(pred, m)
+    fig2(pred, raw="D1", fix="D2")
+    for mm in dict.fromkeys([m, "E2", "D1"]):
+        fig3(pred, mm)
     fig4()
 
 

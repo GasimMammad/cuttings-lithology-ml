@@ -261,7 +261,17 @@ it colour-corrected a cyan cast with the grey scale, which earlier sessions may 
   `results/v4/spotcheck_key.csv` (25 disputed + 15 agreed, seed 42; the user must NOT open the key before labelling).
   Page source: `scratchpad/spot/core_spot_check.html`.
   When the user has labelled: ArtifactData list `labels`, then compare with A/B (which rater is biased).
-- **NEXT:** write-up. V4_RESULTS.md; update the results page (v4 section) and memory.
+- **DONE, write-up:**
+  - `V4_RESULTS.md` with the reviewer's round-9 corrections (baf2951).
+  - `THESIS_NOTES.md`: consolidated table (PR vs EX), label limitations, well independence,
+    reproducibility hashes, AI-use statement draft (2080b5d).
+  - Results page v4 section published (version 4).
+- **Analysis phase is CLOSED** (reviewer round 8: stop new analyses). Remaining:
+  1. The USER labels the 40-bin spot-check (https://claude.ai/artifact/KYeehqu5ZkBi6ViMVHRonr).
+  2. Then: ArtifactData list `labels`; join with `results/v4/spotcheck_key.csv`; agent-human
+     kappa for A and for B (disputed vs agreed strata); say which rater is biased; update
+     V4_RESULTS section 6, THESIS_NOTES AI-use item 4, and the results page.
+  3. Thesis chapter writing (the user leads).
 
 **No background jobs are running.** Everything is committed.
 

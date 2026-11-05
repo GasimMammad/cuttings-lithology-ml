@@ -13,7 +13,7 @@ from pathlib import Path
 
 # Your external SSD. Find the exact name by running in Terminal:  ls /Volumes
 # If the name has spaces it is still fine here, Python handles it.
-SSD_ROOT = Path("/Volumes/PortableSSD")
+SSD_ROOT = Path("/Volumes/T9/GasimMammadov_MasterProject2026")
 
 # Folder on the SSD that contains the cuttings photographs.
 # NPD/Diskos layout: photos live in Wells/<well>/DRILLING/, so we point at
@@ -21,17 +21,15 @@ SSD_ROOT = Path("/Volumes/PortableSSD")
 CUTTINGS_DIR = SSD_ROOT / "Wells"
 
 # -----------------------------------------------------------------------------
-# 2026-08-02: the cuttings data now lives in TWO places. The five original
-# wells were MOVED off the SSD to free space and sit at the home-directory
-# root; the five new wells are on the SSD. Both locations are READ-ONLY.
-# Scripts must resolve a well through well_dir() rather than assuming one root.
+# 2026-11-05: all wells are back in one place, the T9 drive
+# (SSD_ROOT/Wells/<well>/). READ-ONLY. Scripts still resolve a well through
+# well_dir(), so a second root can be added here if data moves again.
 # -----------------------------------------------------------------------------
 WELL_ROOTS = [
-    Path.home(),                 # relocated originals: ~/<well>/DRILLING/
-    SSD_ROOT / "Wells",          # new wells: /Volumes/PortableSSD/Wells/<well>/
+    SSD_ROOT / "Wells",
 ]
 
-ALL_WELLS = ["24_9-3", "24_9-4", "34_4-6", "34_4-7", "34_7-1",
+ALL_WELLS = ["24_9-3", "24_9-4", "34_4-6", "34_4-7", "34_7-1", "34_7-6",
              "34_7-4", "34_7-9", "34_7-10", "34_8-3", "34_8-3_A"]
 
 
@@ -59,11 +57,11 @@ SCAN_EXCLUDE_DIRS = {"cuttings-ml", ".venv", "$RECYCLE.BIN",
 
 # Where all outputs go. This lives on the Mac, NOT the SSD, so that results
 # survive unplugging the drive. It is small (tables, models, figures).
-WORK_DIR = Path.home() / "sinkite_ml_work"
+WORK_DIR = Path.home() / "sinkite_ml_work_v2"
 
 # Where the cropped image patches get written. On the INTERNAL drive: it is
 # faster than the external SSD, and the SSD is treated as read-only.
-PATCH_DIR = Path.home() / "sinkite_ml_data" / "patches"
+PATCH_DIR = Path.home() / "sinkite_ml_data_v2" / "patches"
 
 
 # =============================================================================
@@ -72,7 +70,8 @@ PATCH_DIR = Path.home() / "sinkite_ml_data" / "patches"
 
 # The wells you currently have cuttings for. Use whatever naming appears in
 # your folder structure; script 01 will tell you what that is.
-WELLS = ["24_9-3", "24_9-4", "34_4-6", "34_4-7", "34_7-1"]
+WELLS = ["24_9-3", "24_9-4", "34_4-6", "34_4-7", "34_7-1",
+         "34_7-4", "34_7-9", "34_7-10", "34_7-6", "34_8-3", "34_8-3_A"]
 
 # Map from however the well appears in the cuttings folder tree to a clean
 # name. Fill this in after running script 01. Left empty means "use as is".
@@ -113,65 +112,175 @@ VSH_SAND_MAX = 0.30   # Vsh below this  -> "sand"
 VSH_CLAY_MIN = 0.60   # Vsh above this  -> "clay"
                       # in between      -> "mixed" (excluded from training)
 
-# The GR source per well, selected 2026-07-31 by maximum coverage of
-# cuttings depths. Path is relative to SSD_ROOT/Wells.
-# Optional (min_m, max_m) restricts the usable depth range: 24_9-4 is
-# wireline-only by decision -- its MWD section stays unlabelled.
+# =============================================================================
+# v2 LABEL DESIGN (2026-11-05) -- eleven wells, one rule for all of them
+# =============================================================================
+# RULE 1  ONE ZONE = ONE OPEN-HOLE LOGGING RUN. A zone and BOTH its anchors
+#         must lie inside the same wireline run, below the casing shoe the run
+#         was logged under. Casing depths: Sodir FactPages casing table
+#         (wellbore_casing_and_lot, downloaded 2026-11-05). Run ranges: the
+#         individual run LAS files (<tool>-1, -2, ...) beside each composite.
+#         Why: calibration differs run to run (34/7-4 run 1 reads ~71 API in
+#         Nordland clay, run 2 ~33 API in Hordaland clay), and GR logged
+#         through casing is attenuated and looks like sand (the step at the
+#         20" shoe is visible in 34/7-9 899 m, 34/7-10 901 m, 34/4-7 902 m,
+#         34/7-6 935 m; at the 13 3/8" shoe in 34/8-3 1302 m and 34/8-3 A
+#         944 m; at the 30" shoe in 34/7-1 476 m).
+# RULE 2  EXCLUDE KNOWN GR PITFALLS from every zone:
+#           Balder Fm  -- tuff beds read LOW GR but are tuffaceous shale
+#           Ness Fm    -- coals read LOW GR
+#           Rannoch Fm -- micaceous sandstone reads HIGH GR
+#           Draupne Fm -- hot shale (U-rich), off-scale
+# RULE 3  SAND ANCHOR = interior of the cleanest blocky sand in that run,
+#         taken from a named unit (NPD tops, operator picks, or the unnamed
+#         Hordaland Gp sandstone units that NPD lists as "NO FORMAL NAME").
+#         SHALE ANCHOR = thick homogeneous marine claystone in the same run
+#         (Hordaland Gp or Lista Fm; Drake/Heather Fm in the Jurassic).
+# A well with no clean sand inside an open-hole run gets NO labels (34/7-1),
+# rather than a cross-run or through-casing anchor.
+# Literature basis (summary, full list in V2_LABEL_DECISIONS.md):
+#   Utsira poorly developed / thin and glauconitic in Snorre-Visund-Tampen
+#   (Eidvin & Rundberg 2001; Gregersen & Johannessen 2007); unnamed Eocene and
+#   Oligocene Hordaland sands on the Tampen Spur (Rundberg & Eidvin 2005);
+#   Pleistocene sand intrusion/extrusion around the top-Hordaland
+#   unconformity in blocks 34/4 and 34/7 (Loseth et al. 2013; Rundberg &
+#   Eidvin 2016).
+#
+# GR source per well (path relative to SSD_ROOT/Wells), second item unused.
 GR_SOURCES = {
     "24_9-3": ("24_9-3/LOGS/24_9-3_ISF_LSS_GR__COMPOSITED.LAS", None),
     "24_9-4": ("24_9-4/LOGS/24_9-4_LDT_CNT_SGT_AMS__COMPOSIT.LAS", None),
     "34_4-6": ("34_4-6/LOGS/34_4-6_ISF_LSS_GR__COMPOSITED.LAS", None),
-    "34_4-7": ("34_4-7/LOGS/34_4-7_MWD_RES_GR__COMPOSITED.LAS", None),
-    "34_7-1": ("34_7-1/LOGS/34_7-1_ISF_BHC_MSFL_GR__COMPOSIT.LAS", None),
+    "34_4-7": ("34_4-7/LOGS/34_4-7_DIFL_AC_GR__COMPOSITED.LAS", None),
+    "34_7-4": ("34_7-4/LOGS/34_7-4_DIFL_AC_GR__COMPOSITED.LAS", None),
+    "34_7-9": ("34_7-9/LOGS/34_7-9_DIFL_AC_GR__COMPOSITED.LAS", None),
+    "34_7-10": ("34_7-10/LOGS/34_7-10_DIFL_AC_GR__COMPOSITED.LAS", None),
+    "34_7-6": ("34_7-6/34_7-6_DIFL_AC_GR__COMPOSITED.LAS", None),
+    "34_8-3": ("34_8-3/LOGS/34_8-3_DIS_LSS_GR__COMPOSITED.LAS", None),
+    "34_8-3_A": ("34_8-3_A/LOGS/34_8-3_A_DIL_LSS_GR__COMPOSITED.LAS", None),
+    # 34_7-1: no GR source on purpose -- no clean sand in any open-hole run
+    # (v1 sand anchor 360-460 m sat inside the 30" conductor, shoe 476 m).
 }
 
-# Label zones (2026-07-31, pending review).
-# One GR calibration does NOT hold along a whole well here: composited logs
-# splice runs with different calibrations, Triassic Lunde red beds are a
-# different GR regime from the Tertiary, and the Cretaceous Shetland Gp is
-# carbonate-prone (low GR = marl/limestone, NOT sand). So labels are only
-# generated inside explicit zones, each with its own anchored endmembers:
-#   {"range": (min_m, max_m), "sand": (top, base, name), "shale": (...)}.
-# Photos inside the logged interval but outside every zone -> "excluded_zone".
-# 34_4-7 has NO zones: both its GR sources (MWD and DIFL wireline) are
-# internally inconsistent (run-splice calibration jumps); excluded until its QC figure
-# is reviewed.
+def _z(rng, name, sand, shale):
+    return {"range": rng, "name": name, "sand": sand, "shale": shale}
+
 LABEL_ZONES = {
-    # 24_9-3: zone ends at top Jorsalfare (Shetland Gp, carbonate-prone).
-    # Split at 2016-2036 m: the composite used THROUGH-CASING GR there
-    # (24_9-3_2633.REP), attenuated -> no labels from that stretch.
+    # 24/9-3. 30" 208 m, 20" 503 m, 13 3/8" 1587 m, 9 5/8" 3051 m.
+    # Runs ISF_LSS-1 134-517, -2 465-1589, -3 1558-2044, -4 1917-3051.
     "24_9-3": [
-        {"range": (0, 2016), "name": "paleogene_a",
-         "sand": (1210, 1255, "Grid Fm sand interior"),
-         "shale": (2065, 2210, "Sele Fm claystone")},
-        {"range": (2036, 2836), "name": "paleogene_b",
-         "sand": (1210, 1255, "Grid Fm sand interior"),
-         "shale": (2065, 2210, "Sele Fm claystone")},
+        _z((212, 460), "r1_nordland",                      # 26" open hole
+           (405, 435, "Utsira Fm sand interior"),
+           (240, 265, "Nordland Gp claystone")),
+        _z((520, 1555), "r2_hordaland",
+           (1205, 1250, "Grid Fm sand interior"),
+           (900, 1030, "Hordaland Gp claystone")),
+        _z((1595, 1912), "r3_upper",                       # Balder 1918-1981 out
+           (1988, 2012, "Hermod Fm sand interior"),
+           (1840, 1910, "Hordaland Gp claystone (unnamed unit 1831-1918)")),
+        _z((1985, 2014), "r3_hermod",                      # through-casing 2016-2036 out
+           (1988, 2012, "Hermod Fm sand interior"),
+           (1840, 1910, "Hordaland Gp claystone (unnamed unit 1831-1918)")),
+        _z((2040, 2830), "r4_rogaland",                    # to top Jorsalfare 2836
+           (2220, 2300, "Heimdal Fm sand interior"),
+           (2065, 2200, "Sele Fm claystone")),
     ],
+    # 24/9-4. 20" 750 m, 13 3/8" 1179 m, 9 5/8" 1585 m. Wireline only.
+    # Runs SGT_AMS-1 579-1173, -2 1123-1628, -3 1563-1858 (no clean sand in
+    # run 3 -> unlabelled).
     "24_9-4": [
-        {"range": (0, 1858), "name": "paleogene",  # wireline segment only
-         "sand": (1216, 1240, "Grid Fm sand interior"),
-         "shale": (1660, 1850, "Hordaland claystone")},
+        _z((760, 1168), "r1_hordaland",
+           (1100, 1155, "Grid Fm sand interior (upper Grid)"),
+           (950, 1060, "Hordaland Gp claystone")),
+        _z((1185, 1580), "r2_hordaland",
+           (1210, 1236, "Grid Fm sand interior"),
+           (1250, 1320, "Hordaland Gp claystone")),
     ],
+    # 34/4-6. 20" 904 m (run change visible), 13 3/8" 1841 m.
+    # Lunde zones of v1 dropped: no sand AND shale anchor inside one run.
     "34_4-6": [
-        {"range": (0, 1775), "name": "tertiary",   # down to top Jorsalfare
-         "sand": (1361, 1375, "Hordaland sand body"),
-         "shale": (1695, 1765, "Lista Fm claystone")},
-        # Lunde zone split at 2755-2761 m: through-casing GR near the
-        # 9 5/8" shoe (34_4-6_7560.REP) -> no labels from that stretch.
-        {"range": (2577, 2755), "name": "lunde_a", # Triassic Lunde Fm
-         "sand": (2679, 2693, "Lunde sand body A"),
-         "shale": (2900, 3100, "Lunde lower mudstone")},
-        {"range": (2761, 3153), "name": "lunde_b", # Lunde continued (to top Lomvi)
-         "sand": (2679, 2693, "Lunde sand body A"),
-         "shale": (2900, 3100, "Lunde lower mudstone")},
+        _z((915, 1653), "r2_hordaland",
+           (1361, 1375, "Hordaland Gp unnamed sand (NPD 1359-1387)"),
+           (1695, 1765, "Lista Fm claystone")),
+        _z((1692, 1770), "r2_lista",                        # Balder 1658-1688 out
+           (1361, 1375, "Hordaland Gp unnamed sand (NPD 1359-1387)"),
+           (1695, 1765, "Lista Fm claystone")),
     ],
-    "34_7-1": [
-        {"range": (0, 1823), "name": "tertiary",   # down to top Jorsalfare
-         "sand": (360, 460, "Nordland sand interior"),
-         "shale": (1200, 1600, "Hordaland claystone")},
+    # 34/4-7. 20" 902 m, 13 3/8" 1872 m. DIFL-1 888-1889 (v1 exclusion for
+    # run-splice jumps is resolved by staying inside run 1).
+    "34_4-7": [
+        _z((915, 1695), "r1_hordaland",                     # Balder 1700-1733 out
+           (1078, 1098, "sand above NPD Utsira top (Utsira/Pleistocene sand)"),
+           (1740, 1820, "Lista Fm claystone")),
+        _z((1736, 1820), "r1_lista",
+           (1078, 1098, "sand above NPD Utsira top (Utsira/Pleistocene sand)"),
+           (1740, 1820, "Lista Fm claystone")),
     ],
-    # "34_4-7": no zones -- excluded pending review of the QC figure
+    # 34/7-4. 20" 953 m, 13 3/8" 1915 m. DIFL-1 326-972 | -2 902-1935.
+    "34_7-4": [
+        _z((978, 1680), "r2_hordaland",                     # Balder 1685-1712 out
+           (1622, 1662, "Hordaland Gp unnamed Eocene sand (NPD 1625-1675)"),
+           (1240, 1350, "Hordaland Gp claystone")),
+        _z((1716, 1825), "r2_lista",
+           (1622, 1662, "Hordaland Gp unnamed Eocene sand (NPD 1625-1675)"),
+           (1240, 1350, "Hordaland Gp claystone")),
+    ],
+    # 34/7-9. 20" 899 m, 13 3/8" 1821 m. DIFL-1 345-1840 (through 20" above 899).
+    "34_7-9": [
+        _z((915, 1652), "r1_hordaland",                     # Balder 1657-1681 out
+           (1452, 1505, "Hordaland Gp unnamed Eocene sand (NPD 1445-1511)"),
+           (1690, 1780, "Lista Fm claystone")),
+        _z((1685, 1780), "r1_lista",
+           (1452, 1505, "Hordaland Gp unnamed Eocene sand (NPD 1445-1511)"),
+           (1690, 1780, "Lista Fm claystone")),
+    ],
+    # 34/7-10. 20" 901 m, 13 3/8" 1907 m. DIFL-1 297-1913.
+    "34_7-10": [
+        _z((915, 1677), "r1_hordaland",                     # Balder 1682-1728 out
+           (995, 1035, "Utsira Fm sand (operator pick 993-1045 m)"),
+           (1400, 1470, "Hordaland Gp claystone")),
+        _z((1730, 1845), "r1_sele_lista",
+           (995, 1035, "Utsira Fm sand (operator pick 993-1045 m)"),
+           (1400, 1470, "Hordaland Gp claystone")),
+    ],
+    # 34/7-6. 20" 935 m, 13 3/8" 1876 m. Composite only (single DIFL run
+    # assumed below the 20" shoe; no splice step seen 950-1840 m).
+    "34_7-6": [
+        _z((950, 1670), "hordaland",                        # Balder 1676-1705 out
+           (1222, 1275, "Hordaland Gp Oligocene sand"),
+           (1770, 1840, "Lista Fm claystone")),
+        _z((1710, 1840), "sele_lista",
+           (1222, 1275, "Hordaland Gp Oligocene sand"),
+           (1770, 1840, "Lista Fm claystone")),
+    ],
+    # 34/8-3. 13 3/8" 1302 m, 9 5/8" 2598 m. Tertiary open hole (1305-1820)
+    # has no clean sand (the "sand" at 1092-1300 m is GR through 13 3/8"
+    # casing) -> Jurassic only, run DIS_LSS-2 2547-3334.
+    "34_8-3": [
+        _z((2867, 2897), "etive",
+           (2868, 2879, "Etive Fm sand interior"),
+           (2968, 3002, "Drake Fm claystone")),
+        _z((2965, 3278), "dunlin",
+           (2868, 2879, "Etive Fm sand interior"),
+           (2968, 3002, "Drake Fm claystone")),
+        _z((3278, 3310), "statfjord",
+           (2868, 2879, "Etive Fm sand interior"),
+           (2968, 3002, "Drake Fm claystone")),
+    ],
+    # 34/8-3 A. 13 3/8" 944 m, 9 5/8" 2442 m. No Tertiary sand below 944 m
+    # (Utsira 1120-1180 reads 70-80 API: poorly developed at Visund).
+    # Jurassic only, run DIL_LSS-2 2400-3239.
+    "34_8-3_A": [
+        _z((3012, 3071), "heather_tarbert",
+           (3098, 3112, "Etive Fm sand interior"),
+           (3186, 3225, "Drake Fm claystone")),
+        _z((3101, 3131), "etive",
+           (3098, 3112, "Etive Fm sand interior"),
+           (3186, 3225, "Drake Fm claystone")),
+        _z((3184, 3227), "drake",
+           (3098, 3112, "Etive Fm sand interior"),
+           (3186, 3225, "Drake Fm claystone")),
+    ],
 }
 
 # Cuttings depth is a lag-corrected estimate, not a measurement. A label is

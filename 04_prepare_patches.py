@@ -66,6 +66,12 @@ def load_tops(well: str) -> pd.DataFrame:
     f = (C.SSD_ROOT / "Wells" / "files" /
          f"Well_{well.replace('_', '-', 1)}_FormationTops.txt")
     if not f.exists():
+        # v2: some wells keep tops in their own folder (34_7-6)
+        alt = C.SSD_ROOT / "Wells" / well / "Formation_tops.txt"
+        if alt.exists():
+            t = pd.read_csv(alt, sep="\t")
+            return pd.DataFrame({"MD_TOP_mMD_RKB": t.iloc[:, 0],
+                                 "SURFACE_NAME": t.iloc[:, 1].str.strip()})
         return pd.DataFrame(columns=["SURFACE_NAME", "MD_TOP_mMD_RKB"])
     return pd.read_csv(f, sep="\t")
 

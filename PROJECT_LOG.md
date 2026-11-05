@@ -206,6 +206,14 @@ Single reference file for the whole follow-up work (started 2026-11-05).
   - No better than frozen D1.
   - All models fail locally in 34/7-9 (0.20-0.27).
 - All 256 core thumbnails are ready.
+- **Review round 7 verdict: do not scale yet.**
+  - Protocol v2 (NONE split into EMPTY / RUBBLE (+ lithology) / PRESERVED-GAP; strict quarter-bins; DARK / LIGHT / MOTTLED colours).
+  - Second pilot on a HARD well: 34/7-10 (Statfjord red beds), outputs in `core_digitised_v2/`.
+  - Gate: SAND-vs-rest kappa >= 0.6 before scaling.
+  - Add a core-gamma check (34/8-3, 34/8-3 A).
+  - Human spot-check: I am not human, so I prepare ~50 stratified bins with crops for the USER to label.
+  - 24/9-3 conflict: v2 r3_upper labels (0 sand, 15 clay) are suspect. The core shows a 3 D Frigg sand that the GR rule called clay (weak anchors 19/35 API). Disclose it, plus a descriptive sensitivity without r3_upper; the v2 primary stays as run.
+  - CNN numbers were computed (with p-values) before the reviewer asked to pre-declare "no test"; disclose that order.
 - **Next steps, in order:**
   2. When thumbnails are done: write the digitiser prompt (protocol in
      V4_PLAN A2); launch raters A (Opus) and B (Sonnet) per well in the

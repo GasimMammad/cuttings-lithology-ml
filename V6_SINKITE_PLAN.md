@@ -103,3 +103,48 @@ Descriptive.
 - Every test reports its pre-set outcome category.
 - No "proof".
 - Overall verdict reviewed by Agent 3.
+
+---
+## FINAL AMENDMENTS after reviewer round 12 (binding; committed before any test runs)
+
+- **A.** Add one correction: "firing concentrated 0-30 m below THGU" does NOT
+  separate caving from sinking; both predict it.
+- **C, DROPPED.** Valid POTA/THOR intervals: 34/4-6 2499-2776 m, 34/7-1
+  1831-2913 m, 34/8-3 2572-3331 m. None covers the Utsira or Oligocene.
+  Reported as "considered, not possible".
+- **B, rule replaced.**
+  - Agent 1 first extracts a RAW sample table (well, depth, sample type
+    DC/SWC/core, inside which sand interval, taxa with abundance, age markers,
+    operator remark), then applies the rule.
+  - **SUPPORT:** >= 2 SWC/core samples inside the sand with a coherent
+    younger assemblage (Pliocene/Pleistocene markers, one biozone), with or
+    without reworked Oligocene taxa. Operator "caved/contamination" remarks
+    are recorded but not decisive.
+  - **AGAINST:** >= 2 SWC/core samples inside the sand with in-place
+    Oligocene markers in good abundance AND no younger taxa.
+  - **INCONCLUSIVE:** DC only; BARREN samples; ages from bracketing
+    mudstones (e.g. the 34/7-10 1230-1350 m chart; the 34/4-6 unit age).
+  - Prior evidence: published Sr ages from inside these sands, where they
+    exist (Eidvin & Rundberg; Rundberg & Eidvin 2016). Citations verified,
+    never from memory.
+- **D, fixes.**
+  1. **Al floor:** bags with Al below the 10th percentile of that well's
+     Tertiary bags are excluded (K/Al and Fe/Al too noisy).
+  2. **Negative control = Lista only** (deep Oligocene mudstone is G's
+     baseline).
+  3. **KCl:** K is replaced by its residual after a within-well regression on
+     Cl; the Cl > 5000 ppm cut is a sensitivity only.
+  4. **Uninformative rule:** if the Utsira positive control fires in fewer
+     than half of the Tampen wells with Utsira bags, D is UNINFORMATIVE, not
+     negative.
+  5. **Sand bags from GR alone**, before XRF or photos: v2 zone anchors,
+     mean Vsh < 0.30 over (D - 10, D]. Wells without a Tertiary GR zone cannot
+     enter the caving-vs-sinking test.
+     - Sand effect: an exact/permutation test per well (firing in sand bags
+       vs non-sand bags, Oligocene only), combined across wells (Fisher).
+     - The sand effect is also required in bags > 30 m below THGU.
+     - Report sand-bag counts per distance band.
+  - G keeps min(K/Al, Fe/Al), so a single elevated ratio (K-feldspar,
+    Fe-smectite) cannot fire.
+- **E, F:** descriptive. F cites measured Utsira glauconite contents if
+  found.

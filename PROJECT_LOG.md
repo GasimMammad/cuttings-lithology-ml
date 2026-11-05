@@ -256,7 +256,12 @@ it colour-corrected a cyan cast with the grey scale, which earlier sessions may 
   - rho vs log-perm: ONE_FEATURE +0.33, D1 +0.39, E2 +0.09, colour -0.30, weight +0.21,
     core gamma +0.73, XRF +0.48.
   - n = 18, so rho ~0.35 is not distinguishable from 0 (approx. CI -0.1 to 0.7).
-- **NEXT:** human spot-check page (artifact with a db capability) for the user to label 40 bins blind.
+- **DONE, spot-check page:** https://claude.ai/artifact/KYeehqu5ZkBi6ViMVHRonr (db capability; collection `labels`,
+  doc per item i01..i40 {cls, conf, t}). Items/key: `49_v4_spotcheck_items.py`; key in
+  `results/v4/spotcheck_key.csv` (25 disputed + 15 agreed, seed 42; the user must NOT open the key before labelling).
+  Page source: `scratchpad/spot/core_spot_check.html`.
+  When the user has labelled: ArtifactData list `labels`, then compare with A/B (which rater is biased).
+- **NEXT:** write-up. V4_RESULTS.md; update the results page (v4 section) and memory.
 
 **No background jobs are running.** Everything is committed.
 

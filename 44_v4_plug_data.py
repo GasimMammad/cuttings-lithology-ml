@@ -124,9 +124,22 @@ def main():
             rows = parse_spwla(p) if f.endswith("SPWLA") else parse_spw(p)
             out += [{"well": w, "file": f, "block": b, "depth_m": d, "curve": n, "value": v} for b, d, n, v in rows]
     t = pd.DataFrame(out)
-    bad = ~t.depth_m.between(1000, 6000)
-    print(f"dropped {int(bad.sum())} rows with implausible depth (parser misalignment at block ends)")
-    t = t[~bad]
+    # validity gate per data block: >= 90% of depths inside the cored intervals
+    # (+/-1 m) of that well (Sodir core table); token parsing cannot recover
+    # blank fixed-width fields, which misaligns some blocks (34_8-3_A plugs)
+    core = pd.read_csv("results/v4/sodir_core_table.csv")
+    core["wlbName"] = core.wlbName.str.strip()
+    keep = []
+    for (w, f, b), g in t.groupby(["well", "file", "block"]):
+        cc = core[core.wlbName == w.replace("_", "/").replace("/A", " A")]
+        d = g.depth_m.drop_duplicates().values
+        inside = sum(((cc.wlbCoreIntervalTop - 1 <= z) & (z <= cc.wlbCoreIntervalBottom + 1)).any() for z in d)
+        frac = inside / len(d)
+        ok = frac >= 0.9
+        print(f"{w} {f} block {b}: {len(d)} depths, {frac:.0%} inside cores -> {'kept' if ok else 'DROPPED'}")
+        if ok:
+            keep.append(g)
+    t = pd.concat(keep, ignore_index=True)
     dest = C.WORK_DIR / "v4_results"
     dest.mkdir(parents=True, exist_ok=True)
     t.to_csv(dest / "plug_data.csv", index=False)

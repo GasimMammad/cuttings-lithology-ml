@@ -245,6 +245,18 @@ it colour-corrected a cyan cast with the grey scale, which earlier sessions may 
 - 44% of bins are RUBBLE; colour agreement 0.61.
 - Do NOT scale as is. Asked the reviewer (round 8) for the way forward. Option raised:
   core gamma (34/8-3, 34/8-3 A) as an objective rater-free bed-scale reference.
+- **Review round 8 decision:**
+  - Stop the digitisation; report the failure as a finding (directional bias A->SAND,
+    44% rubble; 34/4-6 kappa 0.98 as contrast).
+  - Narrowed plug check in 34/8-3 (pre-registered in V4_PLAN.md section E).
+  - Small human spot-check (40 bins of 34/7-10) for the methods chapter.
+  - Then STOP new analyses and write up.
+- **DONE, plug check** (`48_v4_plug_check.py`, descriptive), 34/8-3, 2839-2897 m, 18 bags at 2.5 m:
+  - GATE rho(XRF Si/Al, median log-perm) +0.48: PASS.
+  - rho vs log-perm: ONE_FEATURE +0.33, D1 +0.39, E2 +0.09, colour -0.30, weight +0.21,
+    core gamma +0.73, XRF +0.48.
+  - n = 18, so rho ~0.35 is not distinguishable from 0 (approx. CI -0.1 to 0.7).
+- **NEXT:** human spot-check page (artifact with a db capability) for the user to label 40 bins blind.
 
 **No background jobs are running.** Everything is committed.
 

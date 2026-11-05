@@ -1,7 +1,8 @@
 # v4 results (2026-11-05): core photographs, plugs, robustness checks
 
-Plan: V4_PLAN.md, with amendment E after review round 8. Reviewer: senior
-geoscientist / ML persona agent, rounds 6-8. Nothing here changes the v2/v3
+Plan: V4_PLAN.md, with amendment E after review round 8. Reviewer: an AI agent
+(Claude) prompted to act as a senior geoscientist/ML reviewer, rounds 1-9. This
+is not an independent human expert review. Nothing here changes the v2/v3
 headline (V3_RESULTS.md).
 
 ## 1. What was tried
@@ -18,16 +19,18 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 - **Raters:** Claude Opus (A) and Claude Sonnet (B) agents. They were blind
   to everything but the white-light core photographs, and followed one
   written protocol (V4_DIGITISER_PROTOCOL.md, version 2 after review).
+- Both raters are Claude models from one vendor, so their errors are likely
+  correlated. Agreement is an upper bound on reliability, not a measure of
+  accuracy.
 
 | pilot well | bins | SAND-vs-rest kappa | 5-class kappa | per-metre sand fraction r |
 |---|---|---|---|---|
 | 34/4-6 (thick sandstone, protocol v1) | 244 | 0.98 | 0.90 | 0.99 |
-| 34/7-10 (Statfjord red beds, protocol v2) | 524 | **0.50** (gate 0.6) | 0.75 | 0.70 |
+| 34/7-10 (basal Amundsen, Statfjord Gp Nansen/Eiriksson/Raude, 2522-2663 m; protocol v2) | 524 | **0.50** (gate 0.6) | 0.75 | 0.70 |
 
 - **Bias is one-directional.** In 34/7-10, A called SAND in 51 bins where B
-  called HET (26) or MUD (25); the reverse happened 2 times. So one LLM rater
-  is biased, most likely A toward sand. A human check is needed to say which
-  (section 6).
+  called HET (26) or MUD (25); the reverse happened 2 times. So one rater is
+  biased; which one is unknown until the human check (section 6).
 - **Confident calls agree.** Where both raters were confident, kappa is
   0.97 (64 bins). Keeping only those bins leaves 2 of 48 bags with >= 50%
   coverage, which is unusable and selects the easy beds.
@@ -36,14 +39,15 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 - **Protocol deviation.** A's last 6 photographs were done by a fresh
   session that corrected a cyan cast with the grey scale; B's were not
   corrected.
-- **Finding:** in red-bed cores, the photographic core record does not
-  support a reliable bed-scale lithology reference from AI digitisation. On
-  thick sandstone it does.
+- **Finding:** in the one red-bed well tested, two AI raters did not agree
+  well enough (kappa 0.50 < 0.6) for the core photographs to serve as a
+  bed-scale reference. On thick sandstone (34/4-6) they agreed closely. Well,
+  lithology and protocol version all differ between the two pilots.
 
 ## 3. Plug-referenced check, 34/8-3, 2839-2897 m (descriptive)
 
 - 18 bags (2.5 m spacing), all with plugs; bottom-interval support.
-- **Gate** (XRF Si/Al vs median log-permeability): rho +0.48, PASS.
+- **Gate** (XRF Si/Al vs median log-permeability): rho +0.48, PASS (95% CI 0.02 to 0.77: a marginal pass).
 
 | signal | rho vs median log-k | rho vs median porosity |
 |---|---|---|
@@ -55,8 +59,11 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 | core gamma (not independent of GR) | +0.73 | +0.69 |
 | XRF Si/Al | +0.48 | +0.32 |
 
-- With n = 18, rho around 0.35 cannot be told from zero (approx. 95% CI -0.1
-  to 0.7).
+- With n = 18, rho of 0.33 to 0.39 has a 95% CI of about -0.16 to 0.72 even
+  before allowing for autocorrelation, so it cannot be told from zero.
+- The colour baseline's pre-specified direction (less red = sand) was
+  designed for the Lunde. The grey Brent has no red beds, so its negative sign
+  is uninformative.
 - This is one interval in one well, in GR-labelled zones where the held-out
   AUC was already 0.97-0.99.
 - **Reading:** consistent with weak bed-scale information where bags
@@ -72,8 +79,12 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
     38% porosity.
   - The v2 GR rule labelled its cuttings depths clay or mixed: zone
     r3_upper, anchors 19/35 API, so a sand reading 30-35 API becomes "clay".
-  - This is the only direct non-GR check of the GR labels. It shows they can
-    call a high-porosity sand clay.
+  - This is the only check of the GR labels against direct core evidence in
+    the Tertiary. (XRF and the 34/8-3 plugs are other non-GR checks.) It shows
+    the labels can call a high-porosity sand clay.
+  - Only 2 of the 15 r3_upper clay labels lie inside the core (1789, 1792 m).
+    12 are inside the suspect shale-anchor interval (1840-1910 m) and 1 is
+    just above it (1837 m).
   - Dropping all 15 r3_upper clay labels: E2 median AUC 0.694, 6/7, p 0.039;
     D1 0.743, 7/7. Unchanged.
 - **Fine-tuned CNN (exploratory).** Its numbers were computed, p-values
@@ -96,8 +107,8 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 
 Unchanged: a signal at interval scale that transfers between wells, and
 no demonstrated bed-scale skill. v4 adds three things for the methods chapter:
-1. AI digitisation of core photographs is reliable on thick sandstone and
-   unreliable in red beds (directional bias, rubble).
+1. Two AI raters agree on thick sandstone and disagree directionally in a
+   red-bed core (agreement, not accuracy; one well each).
 2. Plugs give weak, non-significant support for some bed-scale information
    where bags represent the rock.
 3. GR-derived labels can be wrong in weak-contrast zones (the 24/9-3 Frigg

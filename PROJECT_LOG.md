@@ -401,3 +401,12 @@ eaa36f4 v2 results
   - Sr ages exist only for mudstones and Utsira.
 - **Next:** reviewer check of V6 plan -> commit -> run B (Agent 1), C, D (Agent 2 / me) -> reviewer.
 - **V6 plan FINAL** (reviewer round 12): C dropped (no NGT coverage); B rule tightened; D fixes. Next: A (me), B (Agent 1), D (me), E (agent), F (me).
+- **v6 D DONE** (`51_v6_xrf_glauconite.py`; `results/v6/D_*`):
+  - PRE-REGISTERED VERDICT = UNINFORMATIVE. The Utsira control fired 1/5: the Al floor removed most low-Al Utsira
+    sand bags, and 34/4-7 and 34/7-1 have no Oligocene baseline.
+  - Lista 0% (pass).
+  - Sand test empty (GR-sand bags only in 34/7-6 (6) and 34/4-6 (1); none fire).
+  - Named targets 34/7-6, 34/7-10, 34/4-6: G <= 0.03, none fire (not glauconitic).
+  - EXPLORATORY (no Al floor): Utsira fires in 4/5 wells with baseline + Utsira bags; Lista 0/147.
+- **v6 A DONE:** `GLAUCONITE_CORRECTIONS.md`.
+- **v6 B running:** Agent 1 (a7e33b0c9bb0d6af6), outputs in `~/sinkite_ml_work_v2/v6/B_*.csv`.

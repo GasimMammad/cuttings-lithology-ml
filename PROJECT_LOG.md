@@ -235,8 +235,16 @@ Single reference file for the whole follow-up work (started 2026-11-05).
 ---------------------------------------------------------------------------
 ## >>> RESUME HERE (paused 2026-11-05 ~12:45 at the user's request) <<<
 
-RESUMED (evening): rater A's TOP263550 rows were complete. A new Opus rater
-(agentId ab2afc9a97085045c) is appending the last 6 photos (TOP264000-TOP266000).
+RESUMED (evening): rater A finished 34/7-10 (a new Opus session did the last 6 photos;
+it colour-corrected a cyan cast with the grey scale, which earlier sessions may not have done).
+**HARD-WELL PILOT RESULT (34/7-10): GATE FAILED.**
+- SAND-vs-rest kappa 0.50 (< 0.6); 5-class kappa 0.75; per-metre sand fraction r 0.70;
+  rubble-as-lithology r 0.74.
+- High-confidence-both bins: kappa 0.97 (n 64).
+- A calls SAND where B says HET (26) or MUD (25).
+- 44% of bins are RUBBLE; colour agreement 0.61.
+- Do NOT scale as is. Asked the reviewer (round 8) for the way forward. Option raised:
+  core gamma (34/8-3, 34/8-3 A) as an objective rater-free bed-scale reference.
 
 **No background jobs are running.** Everything is committed.
 

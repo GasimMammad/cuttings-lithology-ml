@@ -80,11 +80,52 @@ artefact. The image signal does not reverse.
   diamicton.
 - **Low scores:** homogeneous olive-brown soft claystone aggregates, probably
   balled by the bit.
-- **False positives:** white chalky or cement fragments (34/7-10 430 m, Si/Al
-  3.0, D1 0.99; probably 34/7-4 500 and 570 m) and large shells.
+- **False positives:** shoe-track cement at 34/7-10 430 m, 7 m below the 30"
+  shoe (D1 0.99, Ca/Al 8.4 against 0.4-1.0 in its neighbours), and large
+  shells. The cream clasts in 34/7-4 at 500 and 570 m are NOT carbonate
+  (Ca/Al 0.4-0.6). 24/9-3 at 510 m next to the 20" shoe (Ca/Al 13) matches
+  the surrounding shelly Utsira/Pliocene sand (Ca/Al 6-21), so it is a true
+  sand, not cement (41_v3_shoe_cement_check.py).
 - **34/4-7:** the ranking is among diamicts, not sand against clay.
 - **Consequence:** for sinkite work in the glacial section, tills and bright
   carbonate or cement will be the main false-positive classes.
+
+## v3b: what each cuttings bag represents (V3_PLAN.md sections 4 and 4b)
+
+Six wells with 10 m bags (34/4-6, 34/4-7, 34/7-4, 34/7-6, 34/7-9, 34/7-10);
+all series high-passed over +/-50 m; scripts 39 and 40.
+
+### Chemistry, no images
+
+XRF Si/Al of the same bags agrees better with GR averaged over the 10 m
+interval ending at the nominal depth than with GR at that depth (mean rho
+0.18 vs 0.11). Per well, the pre-specified bottom window beats the point in
+4/6: strongly in 34/7-10 (0.03 -> 0.43) and 34/7-4 (0.37 -> 0.51), but it is
+worse in 34/7-6 and 34/7-9. Offsets from about -5 to +4 m cannot be told
+apart; the best of the 124 windows tried, (D-12, D+3], carries a winner's
+curse. This supports bottom-of-interval labelling for future wells, but it
+cannot resolve a few metres of smear or depth-tie error. Chemistry-GR
+agreement at bed scale is itself weak and uneven. In 34/7-6 it is negative
+at every support.
+
+### Images
+
+The pre-registered criterion ("interval clearly wins": p < 0.05 and >= 5/6
+wells) was NOT met.
+
+| signal | median rho shift, point -> interval | wells improving | p |
+|---|---|---|---|
+| clear-grain size (primary) | +0.05 | 4/6 | 0.22 |
+| D1 | +0.05 | 4/6 | 0.11 |
+| E2 | +0.06 | 4/6 | 0.078 |
+| bag weight (exploratory) | +0.14 | 6/6 | 0.016 (smallest possible with 6 wells) |
+
+The more important number is the level, not the shift. After
+high-passing, the interval rho is -0.18 to +0.44 for the primary and -0.17 to
++0.18 for D1, near zero or negative in about half the wells. This is a
+continuous-measure confirmation that the photographs have no reliable
+bed-scale skill. No retraining on interval labels (decided by the
+pre-registered rule).
 
 ## Caveats for any slide
 
@@ -104,7 +145,7 @@ artefact. The image signal does not reverse.
 
 ## Not done
 
-- Soft labels with bag-interval targets.
+- Soft labels with bag-interval targets (pre-registered rule said no; see v3b).
 - 34/7-1 mud-log digitisation, which needs two independent digitisers.
 - Fine-tuned CNN.
 - Masking cement and chalk with Ca/Al.

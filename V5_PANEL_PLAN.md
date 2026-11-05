@@ -48,3 +48,24 @@ All are AI agents (Claude). This is NOT a human expert panel.
 - **Then reveal the key:** rate at which A's and B's disputed calls match the
   consensus, with Wilson CIs, and a statement of which rater is biased, if
   the evidence supports one.
+
+## Amendment after Agent 3 round 1 (before any consensus was formed; key still sealed)
+
+- **Target:** the protocol class (incl. OTHER, NO-CORE) of the rock covering
+  more than half of the PHOTOGRAPHED quarter. This is what raters A and B
+  labelled.
+- **Supporting non-photo line, valid only at bin resolution:**
+  - a plug within ±0.25 m;
+  - the operator description, when no described boundary lies within
+    0.25 m;
+  - logs, only if the call is the same across the whole shift-uncertainty
+    window, GR and porosity curves do not contradict each other, and
+    density–neutron evidence is not used where grain density > 2.75.
+- **Bag-scale chemistry never counts as support;** it is context only.
+- **New outcome UNRESOLVED-SILT** for the siltstone vs very-fine-sandstone
+  dispute (a class-definition finding, not rater bias).
+- **Reporting:** unresolved bins by stratum (disputed vs agreed). Bias
+  estimates come with Wilson CIs and the caveat that they rest on the
+  resolved subset.
+- **Disclosure:** Agents 1 and 2 are Opus, the same model as rater A, so the
+  panel is not independent of A.

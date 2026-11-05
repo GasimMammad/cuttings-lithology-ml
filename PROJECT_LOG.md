@@ -235,6 +235,9 @@ Single reference file for the whole follow-up work (started 2026-11-05).
 ---------------------------------------------------------------------------
 ## >>> RESUME HERE (paused 2026-11-05 ~12:45 at the user's request) <<<
 
+RESUMED (evening): rater A's TOP263550 rows were complete. A new Opus rater
+(agentId ab2afc9a97085045c) is appending the last 6 photos (TOP264000-TOP266000).
+
 **No background jobs are running.** Everything is committed.
 
 1. **Hard-well pilot (34/7-10, protocol v2) is unfinished.**

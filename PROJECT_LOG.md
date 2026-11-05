@@ -281,6 +281,12 @@ it colour-corrected a cyan cast with the grey scale, which earlier sessions may 
     cuttings XRF, literature.
   - Rounds: R1 independent -> R2 reviewer critique -> revisions (max 3) -> consensus -> reveal key.
   - Told the user: '100% correct' is not achievable; this is AI agents, not a human panel.
+- **v5 DONE.**
+  - Consensus locked (f595585), unsealed (d37141b).
+  - A (Opus) 23/24 vs B (Sonnet) 10/24; disputed 14:1 for A (p 0.001); S1 (silt = not-sand) n.s. (p 0.29).
+  - B under-calls clean plug-proven sandstone. The v4 conclusion is rewritten; the core test is NOT reopened.
+  - Files: `V5_RESULTS.md`, `results/v5/`, `50_v5_unseal.py`.
+  - The spot-check page for the user is no longer needed (optional).
 
 **No background jobs are running.** Everything is committed.
 

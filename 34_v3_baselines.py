@@ -16,6 +16,9 @@ Signals:
                            training-well AUC (sign learned there too)
   XRF_SIAL                 cuttings XRF Si/Al of the same bag (no training;
                            reference ceiling: what the cuttings themselves show)
+  DRY_WEIGHT               dry weight of the cuttings bag (NOROG cuttings
+                           analysis CSV), sign learned on the training wells;
+                           exploratory image-free baseline added after review
 
 Writes WORK_DIR/v3_results/baselines_per_well.csv and prints a table.
 
@@ -62,6 +65,21 @@ def xrf_sial(base):
     return v
 
 
+def dry_weight(base):
+    v = np.full(len(base), np.nan)
+    for w in base.well.unique():
+        fs = sorted((C.SSD_ROOT / "Wells" / w / "DRILLING").glob(f"{w}_CUTTINGS_ANALYSIS_*_ENCL_1.CSV"))
+        if not fs:
+            continue
+        d = pd.read_csv(fs[0], skiprows=1)
+        s = pd.to_numeric(d["Dry Weight (g)"], errors="coerce")
+        s.index = np.round(pd.to_numeric(d["MD (m)"], errors="coerce").values, 2)
+        s = s[~s.index.duplicated()]
+        m = base.well.values == w
+        v[m] = s.reindex(np.round(base.depth_m.values[m], 2)).values
+    return v
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     base, emb = EV.load_tables()
@@ -105,7 +123,21 @@ def main():
         one[wells == w] = best[2] * Z[wells == w, best[1]]
         chosen[w] = best[3]
     sig["REL_DEPTH"] = rel
+    wt = dry_weight(base)
+    dw = np.full(len(base), np.nan)
+    for w in lab_wells:
+        trw = [x for x in lab_wells if x != w]
+        a_tr = [EV.auc(lab[labelled & (wells == v) & np.isfinite(wt)] == "sand",
+                       wt[labelled & (wells == v) & np.isfinite(wt)]) for v in trw]
+        sgn = 1.0 if np.nanmean(a_tr) >= 0.5 else -1.0
+        dw[wells == w] = sgn * wt[wells == w]
+    sig["DRY_WEIGHT"] = dw
     sig["ONE_FEATURE"] = one
+
+    keep = base[["well", "depth_m", "label", "vsh", "zone_name"]].copy()
+    for name, p in sig.items():
+        keep[name] = p
+    keep.to_csv(OUT / "signals_per_depth.csv", index=False)
 
     rows = []
     for name, p in sig.items():
@@ -138,7 +170,7 @@ def main():
     for k in ("E2", "D1", "ONE_FEATURE"):
         l = lpiv[k].dropna()
         print(f"{k} local50 vs 0.5: {int((l > .5).sum())}/{len(l)}, Wilcoxon p {wilcoxon(l - 0.5, alternative='greater').pvalue:.3f}")
-    for k in ("E2", "D1", "ONE_FEATURE", "XRF_SIAL"):
+    for k in ("E2", "D1", "ONE_FEATURE", "XRF_SIAL", "DRY_WEIGHT"):
         dlt = (piv[k] - piv["REL_DEPTH"]).dropna()
         print(f"{k} - REL_DEPTH: median diff {dlt.median():+.3f}, "
               f"{int((dlt > 0).sum())}/{len(dlt)} wells better, Wilcoxon p {wilcoxon(dlt, alternative='greater').pvalue:.3f}")

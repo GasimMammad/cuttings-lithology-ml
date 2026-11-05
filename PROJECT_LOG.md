@@ -272,6 +272,15 @@ it colour-corrected a cyan cast with the grey scale, which earlier sessions may 
      kappa for A and for B (disputed vs agreed strata); say which rater is biased; update
      V4_RESULTS section 6, THESIS_NOTES AI-use item 4, and the results page.
   3. Thesis chapter writing (the user leads).
+- **v5 PANEL (user request, evening).** The user could not label the spot-check themselves and asked for an
+  expert-agent panel. Plan: `V5_PANEL_PLAN.md` (2963df1). Blind items in `~/sinkite_ml_work_v2/v5_panel/items_blind.csv`.
+  - Agent 1 = petrophysicist/core analyst (Opus) a7e33b0c9bb0d6af6 -> `agent1_R1.csv`.
+  - Agent 2 = geochemist (Opus) a72aa7c4ecae9154e -> `agent2_R1.csv`.
+  - Agent 3 = reviewer ac906ee9f47edc97f.
+  - Independent evidence: operator core description PDFs, CORE_CONV_RAW SPWLA plugs, CDL/CNL/DIFL logs,
+    cuttings XRF, literature.
+  - Rounds: R1 independent -> R2 reviewer critique -> revisions (max 3) -> consensus -> reveal key.
+  - Told the user: '100% correct' is not achievable; this is AI agents, not a human panel.
 
 **No background jobs are running.** Everything is committed.
 

@@ -362,3 +362,27 @@ eaa36f4 v2 results
      excess (strong negative for glauconite).
   5. Script 12 does not hold the calibration (reproducibility gap).
 - **Sent to the reviewer** (critique, reruns) and to the geochemist (XRF K/Al-Fe/Al glauconite proxy feasibility).
+- **Reviewer verdict (glauconite part):**
+  - No evidence FOR sinkites.
+  - The only meaningful result: in 34/7-6 the logs show the Oligocene target sand has little or no glauconite (against a
+    glauconitic Utsira source there).
+  - My point 3 was wrong: the near-THGU pattern fits BOTH caving and sinkites.
+  - Overclaims: README "Utsira fired in 5 of 7" (circular + single photos; honest ~1-2 of 6); index should be named
+    "green index"; "fire > background" is noise-level.
+  - STAGE3lite's GR/AI "glauconite" labels are confounded by opal-CT.
+- **Geochemist (XRF feasibility, exploratory, not pre-registered):**
+  - Combined K-and-Fe excess G (within-well normalised) is a feasible bag-scale proxy.
+  - Utsira fires in ~5/7 Tampen wells; Lista 0/87.
+  - The Oligocene targets (34/7-6 1218-1283 m; 34/7-10 1314-1328 m) are NOT glauconitic.
+  - The signal below THGU sits in the first ~40 m (caving and sinking still not separated).
+  - KCl mud absent in checked Tertiary sections; 34/8-3 suspect (K tracks Cl).
+  - Output: `results/v5/xrf_glauconite_feasibility_windows.csv`.
+- **Recommended reruns (ranked):**
+  1. spectral GR (Th/K) in 34/4-6, 34/7-1, 34/8-3;
+  2. pre-registered XRF G test (in- vs out-of-sand, caving vs sinking);
+  3. biostratigraphy of the target sands (decisive);
+  4. formal caving regression;
+  5. blind pellet check on full-res photos;
+  6. the GR/AI test in 34/7-10 and 34/4-6 with fixes;
+  7. README/figure corrections.
+- **Awaiting the user's choice** of which to run.

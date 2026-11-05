@@ -1,0 +1,33 @@
+final     MUD  NO-CORE  SAND  UNRESOLVED  UNRESOLVED-SILT
+stratum                                                  
+agreed      4        0     5           2                4
+disputed    1        1    14           2                7 
+
+NO-CORE bins: item class_a class_b
+ i21    SAND     MUD 
+
+PRIMARY: n resolved 24 (disputed 15, agreed 9)
+   rater A: 23/24 correct (0.80-0.99)
+   rater B: 10/24 correct (0.24-0.61)
+   disputed: consensus SAND (A right) 14 vs NOT-SAND (B right) 1; P(A right) 0.93 [0.68-1.00], exact binomial p 0.001
+   agreed: both raters wrong together 0/9
+S1 U-SILT=NOT-SAND: n resolved 35 (disputed 22, agreed 13)
+   rater A: 27/35 correct (0.61-0.88)
+   rater B: 21/35 correct (0.44-0.74)
+   disputed: consensus SAND (A right) 14 vs NOT-SAND (B right) 8; P(A right) 0.64 [0.41-0.83], exact binomial p 0.286
+   agreed: both raters wrong together 0/13
+S2 U-SILT=SAND: n resolved 35 (disputed 22, agreed 13)
+   rater A: 30/35 correct (0.71-0.94)
+   rater B: 10/35 correct (0.16-0.45)
+   disputed: consensus SAND (A right) 21 vs NOT-SAND (B right) 1; P(A right) 0.95 [0.77-1.00], exact binomial p 0.000
+   agreed: both raters wrong together 4/13
+S3 drop i29,i35: n resolved 22 (disputed 14, agreed 8)
+   rater A: 21/22 correct (0.78-0.99)
+   rater B: 9/22 correct (0.23-0.61)
+   disputed: consensus SAND (A right) 13 vs NOT-SAND (B right) 1; P(A right) 0.93 [0.66-1.00], exact binomial p 0.002
+   agreed: both raters wrong together 0/8
+S4 i27=MUD: n resolved 25 (disputed 15, agreed 10)
+   rater A: 24/25 correct (0.80-0.99)
+   rater B: 11/25 correct (0.27-0.63)
+   disputed: consensus SAND (A right) 14 vs NOT-SAND (B right) 1; P(A right) 0.93 [0.68-1.00], exact binomial p 0.001
+   agreed: both raters wrong together 0/10

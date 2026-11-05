@@ -102,3 +102,42 @@ It is not blind and has low power. Two agents reading a 1984 scan add little
 ## D. Fine-tuned CNN (running, exploratory)
 
 C1/C2 leave-one-well-out. Selects nothing. Reported alongside the others.
+
+## E. Amendment after review round 8 (2026-11-05 evening, before computation)
+
+**A (core-photo digitisation) is stopped.**
+- The hard-well pilot (34/7-10) failed the pre-set gate: SAND-vs-rest kappa
+  0.50 < 0.6.
+- The disagreement is directional: A said SAND where B said HET/MUD in 51
+  bins; the reverse happened 2 times.
+- 44% of bins are RUBBLE.
+- Keeping only bins where both raters were confident leaves 2 of 48 bags
+  with >= 50% coverage.
+- Reported as a finding. The 34/4-6 pilot (kappa 0.98 on thick sandstone) is
+  the contrast.
+- Disclosed: A's last 6 photos were colour-corrected by a fresh session; B's
+  were not.
+
+**B2. Plug-referenced bed-scale check, 34/8-3 only. Descriptive; no p-value is
+claimed.**
+- **Interval:** 2839-2897 m (Ness + Etive; Rannoch 2897-2964 m excluded,
+  micaceous). Ness coals are not plugged.
+- **Bags:** cuttings photographs with depth D in that interval. Support is
+  bottom-interval (D - s, D], s = spacing to the previous bag (v3b
+  convention).
+- **Reference per bag** (34/8-3 NORCORE plugs):
+  - median helium porosity;
+  - median log10 horizontal permeability;
+  - plug count per metre (plugs are biased toward sand).
+- **Gate:** Spearman rho(XRF Si/Al, median log-permeability) > 0. If not
+  positive, the check is reported as uninformative.
+- **Signals** (models that never saw 34/8-3): ONE_FEATURE, D1, E2. Baselines:
+  colour (-lab_a_mean), bag dry weight, core gamma (not independent of GR).
+- **Statistic:** Spearman rho per signal against each reference, unfiltered
+  (the interval is short). No Wilcoxon.
+
+**Human spot-check (for the methods chapter only).**
+- About 40 bins of 34/7-10: 25 sampled at random from the 51 disputed bins
+  (A SAND vs B HET/MUD), plus 15 sampled from bins where both agree.
+- Shown to the user blind to both raters.
+- Purpose: which LLM rater is biased.

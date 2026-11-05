@@ -52,3 +52,26 @@ with XRF yet):
   Brygge mudstones raises Si/Al without sand; barite dilution; cavings.
   A positive result means "photos and chemistry of the same cuttings agree on
   sandiness", not "GR-sand detected".
+
+## 4. v3b: bag-interval labels (pre-registered 2026-11-05, before computation)
+
+Motivation (review round 1, O4b): a cuttings bag at nominal depth D holds
+material drilled since the previous sample, i.e. the interval (D_prev, D]
+under the usual "sample depth = bottom of interval" convention (~10 m in the
+34/x wells, ~3-5 m in 24/9-3), while v2 labels use GR Vsh at D +/- 3 m.
+
+- **Targets per photo** (zone GR, zone anchors exactly as v2, interval wholly
+  inside one zone else missing):
+  Vsh_int = mean Vsh over (D_prev, D];  NSF = fraction of that interval with
+  Vsh < 0.30 (net-sand fraction).
+- **Signals (unchanged, existing blind predictions):** ONE_FEATURE
+  (primary), D1, E2, bag dry weight (image-free reference).
+- **Primary test:** per held-out labelled well, over all in-zone photos
+  (sand/clay/mixed/unstable), Spearman rho(signal, -Vsh_int) minus
+  rho(signal, -Vsh_point). One-sided Wilcoxon across the 10 labelled wells
+  that it is > 0, i.e. photos track the bag interval better than the point.
+- **Secondary:** local AUC (pairs < 50 m) with interval classes:
+  sand = NSF >= 0.7, clay = NSF <= 0.1.
+- **Sensitivity (not tests):** centred interval (D - s/2, D + s/2) and the
+  interval below (D, D + s).
+- No model is retrained in this step.

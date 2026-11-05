@@ -180,6 +180,13 @@ Single reference file for the whole follow-up work (started 2026-11-05).
 - **DONE, B cement mask** (`42_v4_cement_mask.py`): 24 of 893 test photos removed.
   ONE_FEATURE +0.124, 7/10, p 0.024; D1 +0.254, p 0.024; E2 p 0.138.
   Robust; run 2 stays the reported result.
+- **PILOT running** (10:10): raters on 34/4-6 (14 photos), protocol `V4_DIGITISER_PROTOCOL.md`.
+  - Rater A = Opus agent a7e52d99e92d7df45, output `core_digitised/A_opus/34_4-6.csv`.
+  - Rater B = Sonnet agent a36c9997dfd73dfff, output `core_digitised/B_sonnet/34_4-6.csv`.
+  - Check format and agreement before launching the other 6 wells.
+- **Found:** the 24/9-3 Tertiary core (1780-1787 m) has plugs of 3-5 D permeability (clean sand),
+  but the v2 GR labels at the cuttings depths there are clay/mixed. Either a
+  core-to-log depth shift or a label problem (zone r3, weak GR contrast). Check later.
 - **Next steps, in order:**
   2. When thumbnails are done: write the digitiser prompt (protocol in
      V4_PLAN A2); launch raters A (Opus) and B (Sonnet) per well in the

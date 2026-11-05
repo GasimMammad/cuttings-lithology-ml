@@ -400,3 +400,4 @@ eaa36f4 v2 results
     quartzose sand";
   - Sr ages exist only for mudstones and Utsira.
 - **Next:** reviewer check of V6 plan -> commit -> run B (Agent 1), C, D (Agent 2 / me) -> reviewer.
+- **V6 plan FINAL** (reviewer round 12): C dropped (no NGT coverage); B rule tightened; D fixes. Next: A (me), B (Agent 1), D (me), E (agent), F (me).

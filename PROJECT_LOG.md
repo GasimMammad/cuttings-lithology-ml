@@ -386,3 +386,17 @@ eaa36f4 v2 results
   6. the GR/AI test in 34/7-10 and 34/4-6 with fixes;
   7. README/figure corrections.
 - **Awaiting the user's choice** of which to run.
+
+## v6 (sinkite tests) STARTED. The user said: go ahead with corrections + reruns; save everything.
+- Plan draft: `V6_SINKITE_PLAN.md`:
+  - A corrections;
+  - B biostrat of the Oligocene sands (decisive; SWC/core rule);
+  - C spectral GR Th/K;
+  - D pre-registered XRF G test (caving vs sinking);
+  - E pellet check;
+  - F GR/AI redo.
+- The existing biostrat compilation is in `~/sinkite_ml_work/biostrat`:
+  - 34/4-6 Oligocene sand 1359-1387 m sits in the "latest Early Oligocene" unit, described as "coarse white
+    quartzose sand";
+  - Sr ages exist only for mudstones and Utsira.
+- **Next:** reviewer check of V6 plan -> commit -> run B (Agent 1), C, D (Agent 2 / me) -> reviewer.

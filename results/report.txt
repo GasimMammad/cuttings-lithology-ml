@@ -1,0 +1,81 @@
+====================================================================================================
+v2 RESULTS -- leave-one-well-out, 10 labelled wells, depth level
+Pre-registered in V2_PLAN.md. Primary: per-well AUC, wells with >=3 sand & >=3 clay.
+====================================================================================================
+
+PRIMARY ENDPOINT (all zones)
+  E2  engineered 15, per-well z  [PRIMARY]     median 0.731 | mean 0.716 [0.552-0.857] | 6/7 wells > 0.5 | Wilcoxon p = 0.0391
+  E1  engineered 15, raw (v1 recipe)           median 0.752 | mean 0.704 [0.539-0.849] | 5/7 wells > 0.5 | Wilcoxon p = 0.0391
+  E3  engineered 9 no-colour, per-well z       median 0.767 | mean 0.744 [0.643-0.845] | 7/7 wells > 0.5 | Wilcoxon p = 0.0078
+  D1  ResNet-50 RGB, raw                       median 0.731 | mean 0.738 [0.644-0.833] | 7/7 wells > 0.5 | Wilcoxon p = 0.0078
+  D2  ResNet-50 RGB, per-well z                median 0.725 | mean 0.747 [0.619-0.873] | 6/7 wells > 0.5 | Wilcoxon p = 0.0156
+  D3  ResNet-50 grey, per-well z               median 0.822 | mean 0.758 [0.624-0.886] | 6/7 wells > 0.5 | Wilcoxon p = 0.0156
+  --  depth only (leakage baseline)            median 0.432 | mean 0.366 [0.272-0.449] | 0/7 wells > 0.5 | Wilcoxon p = 1.0000
+
+  Holm-adjusted p (secondary models): E1 0.0469, E3 0.0391, D1 0.0391, D2 0.0469, D3 0.0469
+  E2 permutation test (labels shuffled within training wells, 200x): observed mean AUC 0.716, null mean 0.640, null 95th pct 0.706, p = 0.0348
+
+TERTIARY ONLY (Jurassic zones removed from training and test)
+  E2  engineered 15, per-well z  [PRIMARY]     median 0.679 | mean 0.744 [0.631-0.863] | 5/5 wells > 0.5 | Wilcoxon p = 0.0312
+  E1  engineered 15, raw (v1 recipe)           median 0.675 | mean 0.677 [0.593-0.758] | 5/5 wells > 0.5 | Wilcoxon p = 0.0312
+  E3  engineered 9 no-colour, per-well z       median 0.747 | mean 0.727 [0.645-0.806] | 5/5 wells > 0.5 | Wilcoxon p = 0.0312
+  D1  ResNet-50 RGB, raw                       median 0.798 | mean 0.700 [0.587-0.807] | 5/5 wells > 0.5 | Wilcoxon p = 0.0312
+  D2  ResNet-50 RGB, per-well z                median 0.789 | mean 0.704 [0.558-0.849] | 4/5 wells > 0.5 | Wilcoxon p = 0.0625
+  D3  ResNet-50 grey, per-well z               median 0.713 | mean 0.649 [0.460-0.838] | 3/5 wells > 0.5 | Wilcoxon p = 0.1562
+
+PER-WELL AUC (all zones; * = eligible for the primary test)
+  well       sand clay          E2         E1         E3         D1         D2         D3 DEPTH_ONLY
+ *24_9-3       72   75       0.731      0.752      0.767      0.657      0.588      0.499      0.452
+ *24_9-4       10   40       0.922      0.858      0.787      0.805      0.710      0.840      0.432
+  34_4-6        1   36       0.917      0.917      0.806      0.806      0.694      0.639      0.750
+  34_4-7        2   57       0.412      0.325      0.237      0.439      0.263      0.395      0.491
+  34_7-10       2   53       0.406      0.377      0.585      0.717      0.698      0.575      0.113
+ *34_7-4        7   49       0.810      0.790      0.860      0.726      0.816      0.822      0.461
+ *34_7-6       10   52       0.635      0.725      0.598      0.517      0.454      0.519      0.373
+ *34_7-9        9   38       0.614      0.494      0.690      0.731      0.725      0.696      0.482
+ *34_8-3        6   47       0.986      0.993      0.968      0.965      0.972      0.957      0.213
+ *34_8-3_A      4   20       0.312      0.312      0.537      0.762      0.963      0.975      0.150
+
+POOLED CLASSIFICATION at p = 0.5 (all held-out labelled depths)
+  E2: balanced acc 0.728 | sand recall 0.67 [0.59-0.75] | clay recall 0.78 | sand precision 0.45 | {'tp': 83, 'fn': 40, 'tn': 365, 'fp': 102}
+  E1: balanced acc 0.740 | sand recall 0.72 [0.64-0.79] | clay recall 0.76 | sand precision 0.44 | {'tp': 89, 'fn': 34, 'tn': 353, 'fp': 114}
+  E3: balanced acc 0.684 | sand recall 0.58 [0.49-0.66] | clay recall 0.79 | sand precision 0.42 | {'tp': 71, 'fn': 52, 'tn': 369, 'fp': 98}
+  D1: balanced acc 0.704 | sand recall 0.62 [0.53-0.70] | clay recall 0.79 | sand precision 0.44 | {'tp': 76, 'fn': 47, 'tn': 369, 'fp': 98}
+  D2: balanced acc 0.646 | sand recall 0.51 [0.42-0.60] | clay recall 0.78 | sand precision 0.38 | {'tp': 63, 'fn': 60, 'tn': 364, 'fp': 103}
+  D3: balanced acc 0.610 | sand recall 0.46 [0.37-0.54] | clay recall 0.76 | sand precision 0.34 | {'tp': 56, 'fn': 67, 'tn': 357, 'fp': 110}
+
+WITHIN-ZONE AUC (sand and clay from the same label zone)
+  E2 24_9-3    r1_nordland      sand   9 clay   3  AUC 0.667
+  E2 24_9-3    r2_hordaland     sand  19 clay  20  AUC 0.711
+  E2 24_9-3    r4_rogaland      sand  41 clay  37  AUC 0.707
+  E2 24_9-4    r1_hordaland     sand   7 clay  17  AUC 0.899
+  E2 24_9-4    r2_hordaland     sand   3 clay  23  AUC 0.957
+  E2 34_7-4    r2_hordaland     sand   7 clay  36  AUC 0.786
+  E2 34_7-6    hordaland        sand  10 clay  39  AUC 0.715
+  E2 34_7-9    r1_hordaland     sand   9 clay  29  AUC 0.632
+  E2 34_8-3    dunlin           sand   4 clay  47  AUC 0.995
+  D2 24_9-3    r1_nordland      sand   9 clay   3  AUC 0.148
+  D2 24_9-3    r2_hordaland     sand  19 clay  20  AUC 0.511
+  D2 24_9-3    r4_rogaland      sand  41 clay  37  AUC 0.621
+  D2 24_9-4    r1_hordaland     sand   7 clay  17  AUC 0.824
+  D2 24_9-4    r2_hordaland     sand   3 clay  23  AUC 0.899
+  D2 34_7-4    r2_hordaland     sand   7 clay  36  AUC 0.802
+  D2 34_7-6    hordaland        sand  10 clay  39  AUC 0.605
+  D2 34_7-9    r1_hordaland     sand   9 clay  29  AUC 0.697
+  D2 34_8-3    dunlin           sand   4 clay  47  AUC 0.957
+
+LEAKAGE CHECKS (within clay-labelled depths; |rho| < 0.3 = no flag)
+  E2: rho(p, Ba) = +0.010   rho(p, depth) = +0.286
+  E1: rho(p, Ba) = -0.248   rho(p, depth) = +0.082
+  E3: rho(p, Ba) = -0.087   rho(p, depth) = +0.131
+  D1: rho(p, Ba) = -0.017   rho(p, depth) = +0.121
+  D2: rho(p, Ba) = +0.118   rho(p, depth) = +0.152
+  D3: rho(p, Ba) = +0.023   rho(p, depth) = +0.006
+
+CONTINUOUS TARGET -- ridge on Vsh, all in-zone depths (sand+clay+mixed+unstable)
+  E2: median per-well Spearman rho +0.182 | 9/10 wells positive | Wilcoxon p 0.0068
+  E1: median per-well Spearman rho +0.221 | 8/10 wells positive | Wilcoxon p 0.0244
+  E3: median per-well Spearman rho +0.144 | 8/10 wells positive | Wilcoxon p 0.0420
+  D1: median per-well Spearman rho +0.155 | 7/10 wells positive | Wilcoxon p 0.0967
+  D2: median per-well Spearman rho +0.113 | 6/10 wells positive | Wilcoxon p 0.0801
+  D3: median per-well Spearman rho +0.126 | 8/10 wells positive | Wilcoxon p 0.0244

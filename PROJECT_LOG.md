@@ -195,6 +195,17 @@ Single reference file for the whole follow-up work (started 2026-11-05).
   - NB `24_9-3_708-12023.SPW` is mislabelled (header = well 16/10-1, AGIP): excluded.
   - Formats: SPWLA line-based; NORCORE token-based, curve blocks 15/17, data headers 25/40,
     and headerless continuation blocks.
+- **DONE, pilot digitisation** 34/4-6 (14 photos, 244 bins). A (Opus) vs B (Sonnet):
+  5-class kappa 0.90, SAND-vs-rest kappa 0.98, per-metre sand fraction r 0.99.
+  Script `45_v4_rater_agreement.py`. Copies in `results/v4/core_digitised_pilot/`.
+  The reviewer was asked (round 7) whether to scale; its first attempt was stopped by
+  a usage limit (reset 11:50) and it was resumed.
+- **DONE, fine-tuned CNN (exploratory)**, `results/v3/cnn_exploratory_per_well.csv`:
+  - C1: median AUC 0.71, 7/7; local50 3/6; vs rel. depth p 0.055.
+  - C2: 0.70, 7/7; local50 5/6; vs rel. depth p 0.023.
+  - No better than frozen D1.
+  - All models fail locally in 34/7-9 (0.20-0.27).
+- All 256 core thumbnails are ready.
 - **Next steps, in order:**
   2. When thumbnails are done: write the digitiser prompt (protocol in
      V4_PLAN A2); launch raters A (Opus) and B (Sonnet) per well in the

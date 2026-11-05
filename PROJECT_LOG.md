@@ -187,6 +187,13 @@ Single reference file for the whole follow-up work (started 2026-11-05).
 - **Found:** the 24/9-3 Tertiary core (1780-1787 m) has plugs of 3-5 D permeability (clean sand),
   but the v2 GR labels at the cuttings depths there are clay/mixed. Either a
   core-to-log depth shift or a label problem (zone r3, weak GR contrast). Check later.
+- **DONE, plug parser** `44_v4_plug_data.py` -> `v4_results/plug_data.csv`.
+  - 24/9-3: 14 plugs, 1780-1795 m, ~3 D, phi 38%.
+  - 34/8-3: 453 plugs plus core gamma.
+  - 34/8-3 A: 454 plugs plus core gamma.
+  - NB `24_9-3_708-12023.SPW` is mislabelled (header = well 16/10-1, AGIP): excluded.
+  - Formats: SPWLA line-based; NORCORE token-based, curve blocks 15/17, data headers 25/40,
+    and headerless continuation blocks.
 - **Next steps, in order:**
   2. When thumbnails are done: write the digitiser prompt (protocol in
      V4_PLAN A2); launch raters A (Opus) and B (Sonnet) per well in the

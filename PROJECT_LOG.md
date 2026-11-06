@@ -443,3 +443,9 @@ eaa36f4 v2 results
 - **v6 CLOSED.** Final answer: no evidence for sinkites; limited compositional evidence against a glauconitic Utsira source
   for the target sands; the age test is impossible without SWC/core. Future work: Sr dating of hand-picked forams from
   archived bags. See `V6_RESULTS.md`.
+
+## v7 (user: do 1 -> 2 -> 3): sample-matched targets
+- Step 1 = photos -> XRF chemistry; step 2 = photo glauconite detector trained on validated XRF G; step 3 = mud-log
+  lithology labels.
+- All 5,038 W_1 photos have matched XRF.
+- `V7_PLAN.md` step-1 draft is with the reviewer (round 14).

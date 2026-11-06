@@ -428,3 +428,13 @@ eaa36f4 v2 results
   - FLAG: Løseth 2013 apparently proposed upward injection from a Paleocene parent sand, not sinking; the plan's
     attribution may be wrong (second-hand).
 - **NEXT:** reviewer final sinkite verdict (round 13), then write `V6_RESULTS.md` and update the page and memory.
+- **Reviewer round 13 FINAL VERDICT:**
+  - No evidence for sinkites. Limited compositional evidence against a glauconitic Utsira source for the
+    34/7-6 and 34/7-10 target sands.
+  - The decisive age test is impossible (no SWC/core).
+  - The pre-registered D failed via MY reviewer-proposed Al floor (say so).
+  - Hypothesis framing: (i) in-situ turbidite, (ii) upward injection, (iii) sinkite.
+  - Don't attribute "sinkite" to Løseth without reading it; the definition should come from the supervisor.
+  - Skip F. One cheap check G (young-taxa distribution in DC, 34/7-6 and 34/7-10) is pre-registered in the plan; then STOP.
+  - Future work: Sr dating of hand-picked forams from archived bags.
+  - Thesis conclusion text: see V6_RESULTS.md once written.

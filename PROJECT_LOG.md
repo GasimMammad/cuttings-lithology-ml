@@ -418,3 +418,13 @@ eaa36f4 v2 results
   - High-G pellet bags are the Utsira (34/4-6, 34/7-4, 34/8-3 A) plus just below THGU (34/4-6 1250 m; 34/7-10
     1100-1130 m = 7-37 m below THGU; greensand at 1110 m). Caving vs near-THGU glauconitic sand is not separable.
 - 2026-11-06 09:45: Agent 1 (task B) had hit the usage limit after writing only `B_sand_intervals.csv`; resumed via SendMessage.
+- **v6 B DONE** (Agent 1; `results/v6/B_*.csv`): ALL in-scope Oligocene sands are INCONCLUSIVE (DC only; no SWC/core
+  inside any of them; confirmed by Rundberg & Eidvin 2016: 'No cores or sidewall cores have been taken in the
+  Oligocene sands').
+  - 34/7-6 1217-1282 m: young benthics in DC, flagged as caving.
+  - 34/7-10 1314-1325.5 m: rare young taxa in DC (caved).
+  - 34/4-6 1358.5-1387 m: no Neogene taxa in 3 datasets (leans in-situ).
+  - 34/4-7 1175-1200 m: SWCs 4.7-5.1 Ma, but it is basal Utsira above THGU (mislabelled 'late Oligocene').
+  - FLAG: Løseth 2013 apparently proposed upward injection from a Paleocene parent sand, not sinking; the plan's
+    attribution may be wrong (second-hand).
+- **NEXT:** reviewer final sinkite verdict (round 13), then write `V6_RESULTS.md` and update the page and memory.

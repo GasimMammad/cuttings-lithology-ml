@@ -148,3 +148,19 @@ Descriptive.
     Fe-smectite) cannot fire.
 - **E, F:** descriptive. F cites measured Utsira glauconite contents if
   found.
+
+## G. Young-taxa distribution check (added after reviewer round 13; exploratory; rule fixed before tabulating)
+
+- **Wells:** 34/7-6 and 34/7-10.
+- **Taxa:** every DC sample from THGU down to 50 m below the target sand.
+  Young markers: Cibicides grossa, Ammonia (beccarii group), Elphidium
+  spp., Cassidulina teretis, Neogloboquadrina pachyderma/atlantica, plus
+  any other Pliocene/Pleistocene taxon the report names.
+- **Interpretation (fixed now):**
+  - **Confined to the sand:** young taxa present in >= 2 sand samples and
+    in <= 10% of the samples in the ooze above and in the mud below. Simple
+    caving explains this poorly: a weak hint of a young component.
+  - **Scattered:** young taxa at similar frequency above, in and below the
+    sand. Cavings.
+  - Otherwise (too few samples or productive samples): INCONCLUSIVE.
+- **Not a test of the hypothesis.** DC only.

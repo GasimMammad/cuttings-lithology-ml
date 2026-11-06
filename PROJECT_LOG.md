@@ -417,3 +417,4 @@ eaa36f4 v2 results
     Oligocene), 1 uncertain. => The XRF G proxy detects real glauconite pellets.
   - High-G pellet bags are the Utsira (34/4-6, 34/7-4, 34/8-3 A) plus just below THGU (34/4-6 1250 m; 34/7-10
     1100-1130 m = 7-37 m below THGU; greensand at 1110 m). Caving vs near-THGU glauconitic sand is not separable.
+- 2026-11-06 09:45: Agent 1 (task B) had hit the usage limit after writing only `B_sand_intervals.csv`; resumed via SendMessage.

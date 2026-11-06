@@ -449,3 +449,21 @@ eaa36f4 v2 results
   lithology labels.
 - All 5,038 W_1 photos have matched XRF.
 - `V7_PLAN.md` step-1 draft is with the reviewer (round 14).
+- **v7 agents** (the user wants agents for this and all further improvements):
+  - Agent 4 = ML/computer-vision specialist (a6b26e272331d83c3), notes in `v7/agent4_notes.md`.
+  - Agent 5 = wellsite geologist / mud-log specialist (a4ab14a584f6ec6fd), files `v7/agent5_inventory.*`.
+  - Agent 2 = geochemist (target design), `v7/agent2_target_notes.md`.
+  - Agent 3 = reviewer.
+  - Agent 1 = petrophysicist (available).
+- **Reviewer round 14 on step 1** (to fold into the final plan):
+  - Si/Al target with robust Theil-Sen Ba slope; report also UNCORRECTED and Ba-partialled.
+  - Tertiary only, excluding 0-15 m below shoes (pre-Tertiary separately).
+  - Ca as a secondary target.
+  - ±50 m primary, with ±25 m and ±5-bag sensitivities.
+  - LOAO next to the primary.
+  - Effect-size floor: median rho >= 0.10.
+  - Leakage: Ba high-passed, NOROG box batch steps.
+  - Ridge alpha=10 sensitivity; raw embeddings for continuity.
+  - Baselines on the same series with paired tests.
+  - Step 2: use the no-Al-floor G (exploratory), scored by within-well ranking.
+  - Step 3: list which wells have digitisable mud logs first.

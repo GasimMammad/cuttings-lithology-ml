@@ -32,7 +32,7 @@ from the source the thesis title rests on (ask the supervisor).
 | E. Blind pellet check | the high-G bags have pellets 8/10; the low-G Oligocene bags lack them 8/10 | XRF G detects real glauconite pellets | - |
 | B. Biostratigraphy | INCONCLUSIVE for every in-scope sand | 34/4-6 leans in-situ (no Neogene taxa in 3 DC datasets); 34/4-7 "late Oligocene sand" is basal Utsira above THGU (SWC Sr 4.7-5.1 Ma) | the sand age: no SWC or core exists in any Oligocene sand (Rundberg & Eidvin 2016); young taxa in DC (e.g. Cibicides grossa at 34/7-6 1260 m) cannot be told from cavings |
 | Logs, 34/7-6 (STAGE3lite) | clean sand, GR 17.6 API | against a glauconitic Utsira source in this one well | the operator notes "glauconite at base" of the same sand; a thin glauconitic base fits several origins |
-| G. Young-taxa distribution (exploratory) | [PENDING] | | |
+| G. Young-taxa distribution (exploratory) | 34/7-6 SCATTERED (young taxa in 13/18 samples above, 2/7 in, 2/5 below the sand); 34/7-10 INCONCLUSIVE (1 sand sample; 5/22 above, 3/5 below) | the young taxa in 34/7-6 behave like cavings, not like a fauna confined to the sand | anything about sand age |
 
 ## Verdict (agreed with the reviewer agent)
 
@@ -51,6 +51,8 @@ It identifies Sr dating of hand-picked microfossils from archived cuttings as
 the test that could decide the question.
 
 ## Future work that could decide it
+
+Check G (young taxa scattered above, in and below the sand, like cavings) removes the only hint of a young component.
 
 - Sr-isotope dating of shells and foraminifera hand-picked from the archived
   NOROG cuttings bags of the sand intervals and of the ooze above.

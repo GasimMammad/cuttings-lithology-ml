@@ -438,3 +438,8 @@ eaa36f4 v2 results
   - Skip F. One cheap check G (young-taxa distribution in DC, 34/7-6 and 34/7-10) is pre-registered in the plan; then STOP.
   - Future work: Sr dating of hand-picked forams from archived bags.
   - Thesis conclusion text: see V6_RESULTS.md once written.
+- **v6 G DONE:** 34/7-6 SCATTERED (young taxa 72% above, 2/7 in, 40% below: cavings); 34/7-10 INCONCLUSIVE (1 sand sample).
+  Agent 1 corrected its 34/7-10 B rows; the verdicts are unchanged. `results/v6/G_young_taxa.csv`.
+- **v6 CLOSED.** Final answer: no evidence for sinkites; limited compositional evidence against a glauconitic Utsira source
+  for the target sands; the age test is impossible without SWC/core. Future work: Sr dating of hand-picked forams from
+  archived bags. See `V6_RESULTS.md`.

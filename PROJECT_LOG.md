@@ -501,3 +501,8 @@ eaa36f4 v2 results
   - Protocol: sand/clay/carbonate fraction per bag interval, blinded digitisers, a second digitiser on 20%, XRF Si/Al as a cross-check.
   - Pitfalls: cavings, trace symbols, clay symbol confused with the grid, wash-out bias, lag, per-sheet calibration.
   - Effort: ~20 agent-hours (pixel route), 25–35 (text route).
+- **v7 STEP 1 RAN** (bdf7850 script, outputs in results/v7/, draft V7_RESULTS.md 9b76a2f).
+  - **Primary: median hp rho +0.32, 11/11, p 0.0005, CI 0.18–0.49 → claim condition PASS.**
+  - T1-P 0.33 (not-mud PASS); circular null 10/11; lag peak at 0; all sensitivities 0.27–0.40; baselines ~0.
+  - Weak spots: photo→Ba 0.31; Zn+Pb control ambiguous (median 0.05, p 0.012); 34/8-3 fails (0.02); lag asymmetry (+1: 0.13); downstream GR AUC worse than v2.
+  - Sent to the reviewer, round 16. Do NOT report it to the user as final before the reviewer verdict.

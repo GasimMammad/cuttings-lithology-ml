@@ -507,3 +507,4 @@ eaa36f4 v2 results
   - Weak spots: photo→Ba 0.31; Zn+Pb control ambiguous (median 0.05, p 0.012); 34/8-3 fails (0.02); lag asymmetry (+1: 0.13); downstream GR AUC worse than v2.
   - Sent to the reviewer, round 16. Do NOT report it to the user as final before the reviewer verdict.
 - **Reviewer round 16: ACCEPT WITH CHANGES.** No bug or leakage found. 52b checks: colour L*a*b* alone 0.24 (11/11); R-D beats it (paired p 0.016); partial on colour 0.26; below 950 m 0.32 (11/11); S minus v3 shallow set 0.46 (8/8). Wording updated in V7_RESULTS.md (bag scale, chemical not sand, colour does much of it, mud-residue caveat, 34/8-3 fails). Sent to the reviewer for final sign-off.
+- **Round 16b: step 1 SIGNED OFF and CLOSED** (3 wording edits applied). Agent 4 is drafting the step-2 spec (`v7/agent4_step2_spec.md`; blob parameters fixed from mineralogy and pixel scale, not from the 27 positives).

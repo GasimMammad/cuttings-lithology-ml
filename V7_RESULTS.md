@@ -1,4 +1,4 @@
-# v7 results: step 1, photos -> cuttings XRF chemistry (2026-11-10). Reviewer round 16: ACCEPT WITH CHANGES; required checks run (52b)
+# v7 results: step 1, photos -> cuttings XRF chemistry (2026-11-10). Reviewer round 16/16b: ACCEPTED, step 1 CLOSED
 
 - **Plan:** V7_PLAN.md FINAL (b1eeb05).
 - **Scripts:** 52_v7_photo_to_xrf.py (bdf7850, committed before the run) and
@@ -75,8 +75,10 @@ the same bag.
   partialling barite, carbonate and chloride.
 - Si/Al here contrasts detrital quartz and biogenic silica with clay, so this
   is chemical skill, not sand detection.
-- Mean photo colour alone reaches 0.24. The embeddings add to it
-  (partial on colour 0.26; paired p 0.016).
+- Mean photo colour alone reaches 0.24 (brightness L* alone 0.14). The
+  embeddings add modestly to it (partial on colour 0.26; paired p 0.016).
+- The skill is not confined to the glacial section: 0.53 above 950 m
+  (7 wells, 359 bags) and 0.32 below (11/11, 1,662 bags).
 - Photos also predict barite content (0.31). Bentonite Al cannot be
   partialled out, so part of the skill may come from mud residue.
 - One well (34/8-3) shows no Si/Al skill.
@@ -86,8 +88,8 @@ the same bag.
 Further notes:
 - **Scale:** bag scale (a bag integrates 3-10 m), not bed scale.
 - **Relation to v3:** this builds on v3's shallow XRF test (D1 0.25), the
-  first sign. About 870 of the 2,021 bags overlap it; without them, rho is
-  0.46 (8/8).
+  first sign. Without the ~870 overlapping bags, rho is 0.46 (8 of the 8
+  wells that keep >= 30 bags).
 - **Lag asymmetry:** lag +1 is 0.13 and lag -1 is 0.06. That is what
   downhole mixing predicts (cavings and lag carry material from bag k's
   level into the deeper bag, never upward), consistent with v3b. A one-bag

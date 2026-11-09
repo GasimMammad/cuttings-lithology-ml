@@ -475,3 +475,18 @@ eaa36f4 v2 results
   - Secondary target: z log10(Ca), Ba-partialled; local rho with Vsh is only −0.08. Report rho(Ca, S) as a gypsum check (34/8-3_A +0.59).
   - Exclusions: Tertiary only, 0–15 m below shoes, flag Al below the 5th percentile; never use Ti, Mg or K/Al.
   - Leakage: high-passed log Ba / log Cl, plus a block-permuted target null (10-bag blocks).
+- **Agent 4 (ML/CV) done** (`v7/agent4_notes.md`; scratch a4/). No photo-to-target skill computed.
+  - Keep R-D (PCA32, Ridge α=1). Drop the α=10 sensitivity (it changes nothing on 32 PCs). Pre-declare raw 2048-d ridge with α chosen inside the training wells (LOWO) and equal well weights. No fine-tuning or MIL.
+  - Agrees with agent 2: dilution cancels in Si/Al. After high-pass, the Si/Al–Ba correlation runs from −0.43 to +0.31 (positive in 6 wells, negative in 5). Report a partial Spearman controlling high-passed Ba, Ca/Al and Cl.
+  - Controls:
+    - within-well CIRCULAR-SHIFT null: lag-1 autocorrelation after high-pass is 0.06–0.76, so shuffling is invalid;
+    - lag profile k±m, expecting a peak at m=0;
+    - photo→Ba diagnostic;
+    - Zn/Pb pipe-dope negative control;
+    - relative depth after the same high-pass.
+  - Photo batches: camera settings are identical everywhere, but each well has its own Photoshop session; 34/7-10 spans 3 days with 8 reshoots. Proposed: a capture-session table and a reshoot test as a sensitivity.
+  - Statistics: Wilcoxon over 11 wells is fine; add a well-bootstrap CI. LOAO is a stress test only. 34/8-3 and 34/8-3 A are near-twins.
+  - Step 2:
+    - data: only 27 bags with G>0.2 in 5 wells, and position alone gives AUC 0.75–0.99;
+    - design: a full-resolution dark-green round-blob count (pellets are 7–14 px in the tiles, 20–45 px at native resolution);
+    - primary test: conditional ±80 m of THGU, stratified rank-sum with a block null; Lista false positives ≤ 5%; must beat the green index in ≥ 4 of 5 wells; feasibility claim only.

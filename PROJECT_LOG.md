@@ -492,3 +492,12 @@ eaa36f4 v2 results
     - primary test: conditional ±80 m of THGU, stratified rank-sum with a block null; Lista false positives ≤ 5%; must beat the green index in ≥ 4 of 5 wells; feasibility claim only.
 - **V7_PLAN.md step 1 FINAL candidate** written (agents 2 and 4 plus round 14) and sent to the reviewer (round 15). Nothing has been computed.
 - **Reviewer round 15: APPROVE WITH CHANGES** (uncorrected T1 accepted; R-RAW accepted). Applied: EXIF sessions always run; the same Tertiary normalisation set for inputs and targets; circular shift within stretches with Fisher as secondary; lag profile against rho0×ACF; Zn/Pb ambiguity; not-mud condition on T1-P (≥ 0.05); positive sign = skill; expectation removed; step-2 blob parameters to be fixed and the THGU-distance baseline put inside the test. Plan FINAL → implement 52_v7_photo_to_xrf.py.
+- **Capture sessions** (`v7/capture_sessions.csv`, 52a): every W_1 photo has an EXIF time. Sessions break at gaps > 2 h (2–4 per well). There are 58 reshoots (> 24 h after their 10 depth-neighbours; 7 in 34/7-10, matching agent 4). One Photoshop version per well (21.0, 22.2, 22.4). Bug fixed: datetime64[us] was read as ns, so the first run flagged 0 reshoots.
+- **Agent 5 (mud logs) done** (`v7/agent5_inventory.{csv,md}`, agent5_thumbs/).
+  - 10/11 wells have a usable mud log; 34/7-6 has none.
+  - 8 wells have a pixel-readable % cuttings column: 24/9-3, 34/4-6, 34/4-7, 34/7-4, 34/7-9, 34/7-10, 34/8-3, 34/8-3_A.
+  - 34/7-1 and 24/9-4 need the text route (24/9-4 is handwritten). For 34/7-9, the Saga typed lithology log in GEOLOGY is the better source.
+  - Do NOT use interpreted lithology or composite logs (GR leakage).
+  - Protocol: sand/clay/carbonate fraction per bag interval, blinded digitisers, a second digitiser on 20%, XRF Si/Al as a cross-check.
+  - Pitfalls: cavings, trace symbols, clay symbol confused with the grid, wash-out bias, lag, per-sheet calibration.
+  - Effort: ~20 agent-hours (pixel route), 25–35 (text route).

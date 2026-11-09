@@ -468,3 +468,10 @@ eaa36f4 v2 results
   - Step 2: use the no-Al-floor G (exploratory), scored by within-well ranking.
   - Step 3: list which wells have digitisable mud logs first.
 - **2026-11-09 23:30:** the weekly limit has reset. Agents 2, 4 and 5 were resumed via SendMessage. Their earlier runs left nothing in `v7/`. Next: merge their notes with reviewer round 14 into the FINAL V7_PLAN.md, commit, then implement `52_v7_photo_to_xrf.py`.
+- **Agent 2 (geochemist) done** (`v7/agent2_target_notes.md`; scratch v7b.py / v7_target_check.csv). Local check: high-passed ±50 m Spearman vs v2 GR Vsh, Tertiary, 8 wells.
+  - Primary target: z log10(Si/Al) UNCORRECTED. Median local rho with Vsh is −0.19 (right sign in 7/8 wells), against −0.15 with the Theil-Sen Ba correction. The ratio already cancels barite dilution.
+  - OLS and Theil-Sen Ba slopes are immaterial (they differ by ≤ 0.06). Theil-Sen-corrected and fully Ba-partialled versions go in as sensitivities.
+  - Rename the target "quartz + biogenic silica vs clay". Oligocene ooze is biosiliceous (Si/Al 4.0–5.4 vs Lista 3.3); 34/7-6 runs the wrong way (+0.22) but stays in.
+  - Secondary target: z log10(Ca), Ba-partialled; local rho with Vsh is only −0.08. Report rho(Ca, S) as a gypsum check (34/8-3_A +0.59).
+  - Exclusions: Tertiary only, 0–15 m below shoes, flag Al below the 5th percentile; never use Ti, Mg or K/Al.
+  - Leakage: high-passed log Ba / log Cl, plus a block-permuted target null (10-bag blocks).

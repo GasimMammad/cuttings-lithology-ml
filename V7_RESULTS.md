@@ -1,4 +1,4 @@
-# v7 results: step 1, photos -> cuttings XRF chemistry (2026-11-10). DRAFT, awaiting reviewer round 16
+# v7 results: step 1, photos -> cuttings XRF chemistry (2026-11-10). Reviewer round 16: ACCEPT WITH CHANGES; required checks run (52b)
 
 - **Plan:** V7_PLAN.md FINAL (b1eeb05).
 - **Scripts:** 52_v7_photo_to_xrf.py (bdf7850, committed before the run) and
@@ -57,15 +57,42 @@
 | Pre-Tertiary (descriptive, own normalisation) | 0.51 (9/10) |
 | Downstream GR labels (exploratory, 5 wells inside S) | predicted-T1 AUC 0.48-0.77; v2 E2 is better in 4/5. Local AUC 0.40-0.87 |
 
-## Reading (draft, for the reviewer)
-- Within a well, at bag scale (after removing +/-50 m trends), cuttings
-  photographs carry information about the Si/Al chemistry of the same bag,
-  in wells the model never saw.
-- This is the first bed-scale positive in the project. v3 found no
-  bed-scale skill against GR labels; GR is a point log, not the bag.
-- **34/8-3 is the exception.** There the photos track Ba and Zn+Pb rather
-  than Si/Al, consistent with heavy mud residue.
-- **The photos also see barite.** The Si/Al claim is conditional on the
-  partial test, which passes.
-- Predicted Si/Al is not a better GR sand/clay classifier than v2. The two
-  measure different things: bag mixture against formation at a point.
+## Reviewer round-16 checks (52b_v7_reviewer_checks.py, committed before running)
+| check | result |
+|---|---|
+| Colour only: L* mean (1 feature), same LOWO and high-pass | 0.14 (9/11), p 0.009 |
+| Colour only: mean L*a*b* (3 features) | **0.24 (11/11)**, p 0.0005. R-D beats it, paired p 0.016 |
+| R-D partial on high-passed mean L*a*b* (my addition) | 0.26 (10/11), p 0.0015: the embedding carries information beyond mean colour |
+| Primary above 950 m (7 wells, 359 bags) | 0.53 (7/7) |
+| Primary below 950 m (11 wells, 1,662 bags) | 0.32 (11/11): not confined to the glacial top-hole section |
+| Primary on S minus the v3 shallow-test bags (1,152 bags, 8 wells with >= 30) | 0.46 (8/8), p 0.004: not recycled v3 evidence |
+
+## Reading (agreed wording, reviewer round 16)
+In wells not used for training, ResNet-50 embeddings of cuttings photographs
+predict the local (within +/-50 m) variation of the Si/Al ratio measured on
+the same bag.
+- Median per-well rho is +0.32, positive in 11/11 wells, and +0.33 after
+  partialling barite, carbonate and chloride.
+- Si/Al here contrasts detrital quartz and biogenic silica with clay, so this
+  is chemical skill, not sand detection.
+- Mean photo colour alone reaches 0.24. The embeddings add to it
+  (partial on colour 0.26; paired p 0.016).
+- Photos also predict barite content (0.31). Bentonite Al cannot be
+  partialled out, so part of the skill may come from mud residue.
+- One well (34/8-3) shows no Si/Al skill.
+- The analysis was fully pre-specified, but it is exploratory because these
+  wells were used in earlier rounds.
+
+Further notes:
+- **Scale:** bag scale (a bag integrates 3-10 m), not bed scale.
+- **Relation to v3:** this builds on v3's shallow XRF test (D1 0.25), the
+  first sign. About 870 of the 2,021 bags overlap it; without them, rho is
+  0.46 (8/8).
+- **Lag asymmetry:** lag +1 is 0.13 and lag -1 is 0.06. That is what
+  downhole mixing predicts (cavings and lag carry material from bag k's
+  level into the deeper bag, never upward), consistent with v3b. A one-bag
+  depth mislabel would move the peak; it does not move.
+- **Zn+Pb control:** stays pre-declared ambiguous, consistent with photos
+  seeing mud residue.
+- **GR labels:** predicted Si/Al is not a better GR sand/clay classifier
+  than v2. Bag mixture and formation-at-a-point measure different things.

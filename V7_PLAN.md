@@ -5,7 +5,7 @@ glauconite detector, then (3) mud-log lithology labels. This file fixes
 step 1; steps 2 and 3 get their own sections before they run.
 Status: exploratory; the same wells were used before.
 
-**Step 1 status:** FINAL candidate (round 15), merging:
+**Step 1 status:** FINAL (reviewer round 15: APPROVE WITH CHANGES, applied), merging:
 - the draft (e0588e9);
 - reviewer round 14;
 - Agent 2 (geochemist, `v7/agent2_target_notes.md`);
@@ -26,6 +26,8 @@ matched XRF analysis, against 590 GR labels.
 - **Exclude bags 0-15 m below every 30", 20" and 13 3/8" shoe** (Sodir
   casing table; the same mask as 42_v4_cement_mask.py).
 - Bags with no XRF Si or Al are dropped.
+- **Normalisation set:** every per-well z-score (inputs AND targets) uses this same
+  Tertiary, shoe-masked bag set (not all photos as in v2).
 - Bags with Al below the well's 5th percentile are kept in the primary and
   excluded in sensitivity S-Al.
 
@@ -35,6 +37,8 @@ matched XRF analysis, against 590 GR labels.
     it (Agents 2 and 4 agree). The round-14 Theil-Sen Ba correction moved
     local agreement with GR Vsh the wrong way (median local rho -0.19
     uncorrected vs -0.15 corrected, 8 wells; Agent 2).
+  - Disclosure: the target was chosen after a chemistry-vs-GR check (no photo
+    skill seen); the difference was small (-0.19 vs -0.15; partialled -0.16).
   - Name: "detrital quartz + biogenic silica vs clay", not "sand".
     Oligocene ooze is biosiliceous.
 - **T1 sensitivities:**
@@ -50,6 +54,7 @@ matched XRF analysis, against 590 GR labels.
 - **R-D (primary):** ResNet-50 RGB embeddings, per-well z ->
   StandardScaler -> PCA 32 -> Ridge (alpha = 1). Fitted on training wells
   only. Kept for continuity with v2.
+  (alpha chosen per outer fold for R-RAW is reported.)
 - **R-RAW (pre-declared alternative):** raw 2048-d per-well z -> Ridge,
   with alpha chosen from {1, 10, 100, 1e3, 1e4} by inner LOWO on the
   training wells (median per-well high-passed rho), and equal well weights.
@@ -71,19 +76,26 @@ matched XRF analysis, against 590 GR labels.
   within continuous stretches (gaps > 30 m split; highpass() in
   35_v3_xrf_shallow.py).
 - **Statistic:** the per-well Spearman rho of the two high-passed series.
+  Sign: POSITIVE rho (predicted vs measured T1) = skill.
 - **Test:** one-sided Wilcoxon of the 11 per-well rho against 0.
 - **Interval:** a well-bootstrap 95% CI of the median rho.
 - **Positive result:** "photos carry local chemical information" only if
   p < 0.05 AND median rho >= 0.10 (the effect-size floor).
+- **Not-mud condition:** "not riding on barite/mud" may be added only if T1-P has
+  the same sign with median partial rho >= 0.05; otherwise the claim is "photos
+  predict Si/Al, possibly via mud residue".
 
 ### Per-well null and checks
-- **Circular-shift null:** within each well, the high-passed prediction is
-  circularly shifted against the target by every offset >= 10 bags (within
-  the Tertiary series). The per-well p is the rank of the observed rho.
+- **Circular-shift null:** within each continuous stretch (gaps > 30 m split;
+  no wrap-around across gaps), the high-passed prediction is circularly shifted
+  against the target by every offset >= 10 bags (stretches < 30 bags excluded
+  from the null). The per-well p is the rank of the observed rho.
   Shuffling is invalid because lag-1 autocorrelation after the high-pass
-  is 0.06-0.76.
+  is 0.06-0.76. Per-well p are descriptive; a Fisher combination is a
+  SECONDARY test.
 - **Lag profile:** rho of photo k against chemistry k+m for m = -5..+5.
-  A peak at m = 0 is the direct "same bag" test.
+  Shown against the no-skill curve rho(0) x ACF_T1(m). "Same bag" evidence =
+  rho(0) clearly above that curve's shoulders, not merely a peak at m = 0.
 
 ### Sensitivities (reported, not tested for the claim)
 - High-pass windows of +/-25 m and +/-5 bags.
@@ -103,10 +115,11 @@ matched XRF analysis, against 590 GR labels.
 - **High-passed Ba and Cl against prediction:** within-well rho.
 - **Pipe-dope negative control:** residual Zn + Pb after regressing out
   Si/Al and Ba. Photos should NOT predict it (|median rho| < 0.10
-  expected).
-- **Capture sessions (deferred):** EXIF capture times, plus a reshoot test
-  in 34/7-10. Run after the primary, as a sensitivity, if the result is
-  positive.
+  expected). Because barite carries Zn/Pb impurities, Zn+Pb are regressed on Ba
+  first; a failure of this control is AMBIGUOUS, not proof of leakage.
+- **Capture sessions (always run):** EXIF capture times -> session ids; high-pass
+  within sessions as a sensitivity; reshoot test in 34/7-10. Run regardless of
+  the primary outcome.
 
 ### Downstream (EXPLORATORY)
 - The AUC of predicted T1 for the v2 GR sand/clay labels (7 wells), next to
@@ -117,7 +130,9 @@ matched XRF analysis, against 590 GR labels.
 - 34/7-6 is expected to run the wrong way (biosiliceous ooze vs a
   glauconite-bearing sand). It stays in; no well is dropped after seeing
   results.
-- Expected |rho| is about 0.2, since GR itself is an imperfect sand label.
+- Expected photo-XRF |rho|: unknown, likely < 0.3.
+- If leave-one-area-out collapses (e.g. without 34/7), it is reported next to
+  the primary, not in an appendix.
 
 ## Step 2 (outline; final section before it runs)
 - **Target:** binary G > 0.2 (no Al floor; v6 exploratory, validated by
@@ -130,6 +145,10 @@ matched XRF analysis, against 590 GR labels.
 - **Test:** conditional within +/-80 m of THGU, stratified rank-sum with a
   block null. Lista false positives must be <= 5%, and the detector must
   beat the green index in >= 4/5 wells. Feasibility claim only.
+- Round 15: the blob parameters (hue/chroma/lightness gates, size px at full res,
+  min circularity, tile coverage) are fixed in this file before running; the
+  distance-to-THGU model is the baseline INSIDE the conditional test; effective
+  positives are counted as independent intervals (~5-10), not bags.
 
 ## Step 3 (outline)
 - Agent 5's mud-log inventory first; then decide on a digitisation route

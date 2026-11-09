@@ -491,3 +491,4 @@ eaa36f4 v2 results
     - design: a full-resolution dark-green round-blob count (pellets are 7–14 px in the tiles, 20–45 px at native resolution);
     - primary test: conditional ±80 m of THGU, stratified rank-sum with a block null; Lista false positives ≤ 5%; must beat the green index in ≥ 4 of 5 wells; feasibility claim only.
 - **V7_PLAN.md step 1 FINAL candidate** written (agents 2 and 4 plus round 14) and sent to the reviewer (round 15). Nothing has been computed.
+- **Reviewer round 15: APPROVE WITH CHANGES** (uncorrected T1 accepted; R-RAW accepted). Applied: EXIF sessions always run; the same Tertiary normalisation set for inputs and targets; circular shift within stretches with Fisher as secondary; lag profile against rho0×ACF; Zn/Pb ambiguity; not-mud condition on T1-P (≥ 0.05); positive sign = skill; expectation removed; step-2 blob parameters to be fixed and the THGU-distance baseline put inside the test. Plan FINAL → implement 52_v7_photo_to_xrf.py.

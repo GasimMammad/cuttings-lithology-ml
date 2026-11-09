@@ -490,3 +490,4 @@ eaa36f4 v2 results
     - data: only 27 bags with G>0.2 in 5 wells, and position alone gives AUC 0.75–0.99;
     - design: a full-resolution dark-green round-blob count (pellets are 7–14 px in the tiles, 20–45 px at native resolution);
     - primary test: conditional ±80 m of THGU, stratified rank-sum with a block null; Lista false positives ≤ 5%; must beat the green index in ≥ 4 of 5 wells; feasibility claim only.
+- **V7_PLAN.md step 1 FINAL candidate** written (agents 2 and 4 plus round 14) and sent to the reviewer (round 15). Nothing has been computed.

@@ -467,3 +467,4 @@ eaa36f4 v2 results
   - Baselines on the same series with paired tests.
   - Step 2: use the no-Al-floor G (exploratory), scored by within-well ranking.
   - Step 3: list which wells have digitisable mud logs first.
+- **2026-11-09 23:30:** the weekly limit has reset. Agents 2, 4 and 5 were resumed via SendMessage. Their earlier runs left nothing in `v7/`. Next: merge their notes with reviewer round 14 into the FINAL V7_PLAN.md, commit, then implement `52_v7_photo_to_xrf.py`.

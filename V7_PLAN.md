@@ -134,7 +134,7 @@ matched XRF analysis, against 590 GR labels.
 - If leave-one-area-out collapses (e.g. without 34/7), it is reported next to
   the primary, not in an appendix.
 
-## Step 2: photo glauconite-pellet detector. CANDIDATE for reviewer round 17; nothing run on G bags
+## Step 2: photo glauconite-pellet detector. FINAL (round 17 amendments below take precedence); nothing run on G bags
 
 - **Source:** Agent 4's frozen specification (`v7/agent4_step2_spec.md`, part A), copied verbatim below.
 - **Target:** binary G > 0.2 (v6 exploratory G without the Al floor, validated by the blind pellet check).
@@ -332,6 +332,76 @@ matched XRF analysis, against 590 GR labels.
   - GI for 34/7-6: 243 draft decodes, I/O-bound, about 2 min.
   - The ResNet crops in the same pass add about 2-4 min of MPS time.
   - **Total about 30-35 min.** Single process: about 2 h. Throttles on battery.
+
+### A15. Round-17 amendments (reviewer: APPROVE WITH CHANGES; geochemist: freeze gates). These override A1-A14 where they differ.
+Fixed before any run on G-labelled bags. Sources: reviewer round 17 and
+`v7/agent2_step2_review.md`.
+
+**Detector (A3-A6)**
+- The gates are unchanged.
+- **New sensitivity: hole filling off** (S_nofill). Hole filling is the one
+  parameter that traces to the v6 rater's notes on G-labelled bags.
+- **Per-well colour normalisation is NOT run.** It would need a second read
+  of every photo. Instead, the per-well median chip a* and b* over the
+  scored Tertiary bags are reported beside the result (label-free).
+- **Descriptive diagnostics, not tested:**
+  - counts of accepted blobs by size bin and hue bin;
+  - S_brown: the same shape gates with hue 40-95 deg and a* > 0 (oxidised
+    pellets).
+- large_green_frac is measured on connected components before the watershed
+  split.
+
+**Primary test (A9)**
+- **Null changed:** residualise rank(S) on [1, d, |d|] once per well, then
+  circularly shift the RESIDUAL e against G within the well's window (shifts
+  k = 2..n_w-2, independent per well, 10,000 joint draws). Raw S has a trend
+  across THGU, so its shifts are not exchangeable.
+- The original null (shift S, then residualise) is a sensitivity.
+- **Pre-declared secondary:** the same test with [1, d] only. The |d| term
+  may absorb real signal, since glauconite sits at THGU.
+- **Descriptive:** within-window Spearman of S against continuous G, per well.
+- The Firth logistic model is dropped (no further engineering).
+
+**Lista (A10)**
+- Report tau_w for each well.
+- Add a descriptive false-positive row for Balder Fm bags (tuff).
+- Negatives are called "G <= 0.2", not "glauconite-free". Window bags below
+  the threshold may hold up to ~10% pellets, plus cavings.
+
+**Success (A12), revised**
+- **Criterion = (a) AND (c).**
+- (b) (beats GI in >= 4/5 wells) is descriptive only; it is a coin toss with
+  2-3 positives per well.
+- **Wordings:**
+  - (a) and (c) pass and (b) holds: "feasibility demonstration on ~6
+    independent glauconitic intervals".
+  - (a) and (c) pass without (b): "detects glauconite beyond position; not
+    shown to beat the green index".
+  - (a) fails: "not detectable beyond stratigraphic position with this data"
+    (low power; not evidence of absence).
+
+**A13 learned model: NOT run in this pass** (reviewer: no further engineering
+at this sample size). If it is ever run, it is exploratory and makes no claim.
+
+**Detection limit, restated**
+- The Lunde background reaches S = 12.5 (12 photos), and S is about 20 at
+  1% pellets by area. The usable limit is therefore about 1-2% by area.
+- G > 0.2 implies about 12-15 wt% evolved glaucony at minimum (geochemist's
+  mixing model; the positive bags imply ~40-60%). Sensitivity should not be
+  the limit; SPECIFICITY is.
+- **Accepted losses, named in advance:** black pellets (C* < 4), oxidised
+  brown pellets, pale nascent pellets, pellets > 0.51 mm (lags at the
+  unconformity), cracked or foram-infill pellets, pellets locked in mudstone
+  chips, and barite-coated pellets.
+- **Expected false positives:** rounded green-grey claystone granules (Lista,
+  Hordaland), Balder tuff grains, chlorite flakes, and green paint or LCM.
+
+**Label**
+- G > 0.2 stays the positive label. The pellet check is used for concordance
+  only (10 bags, visual).
+
+**The run is done ONCE as frozen.** Only code bugs may be fixed, and any fix
+is disclosed.
 
 ## Step 3 (outline)
 - Agent 5's mud-log inventory first; then decide on a digitisation route

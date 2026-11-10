@@ -519,3 +519,14 @@ eaa36f4 v2 results
 - 53_v7_pellet_blobs.py reproduces agent 4's prototype S exactly on 3 Lunde photos (4.503, 12.496, 0.054). It takes ~12 s per photo single-core with all sensitivities.
 - **Step-2 runs started 2026-11-10 ~11:40:** 53b committed (0bceef0), dry-run only on fake scores (H0 false-alarm rate 6.5% over 200 reps). The Lunde calibration (1,022 photos, 4 nohup shards) writes to `v7/step2/lunde_shard_*.csv`. NEXT: combine (`python 53_v7_pellet_blobs.py lunde`), commit tau_L and the hash, then run set `g` (873 photos) the same way, commit the score hash, then `python 53b_v7_pellet_eval.py` ONCE, then the reviewer.
 - **Lunde calibration done** (1,022 photos, 0 errors, sha256 c9f9f9a9…afdfe6, results/v7/step2_lunde_scores.csv). tau_L is the 99th percentile of S (see the commit message). The background differs strongly between wells (median S: 34/7-10 0.00, 34/7-4 0.06, 34/7-1 2.77), so absolute S is not comparable across wells. No parameter was changed. The G-set score run (873 photos) is started next.
+
+## 2026-11-10 ~14:45: v7 step 2 evaluated (run once, frozen). Criterion NOT met.
+- G-set scores: 873 photos, 0 errors, sha256 85b7f327a8bd2d695decaaf288e3086226ec85aa578701ad070aeadf4c9b9a69 (commit 28e022c, before the join to G).
+- `53b_v7_pellet_eval.py` run once (commit 96a697e): outputs in results/v7/ (step2_results.json, step2_eval_log.txt, g_scores_joined.csv).
+- (a) primary Q 0.741, p 0.0003: PASS. (c) Lista FP 28/125 = 22.4% (limit 5%): FAIL. (b) S beats GI in 3/5 wells (descriptive). GI comparator Q 0.705.
+- 26 of 28 Lista FPs are in 34/8-3 (18/30) and 34/8-3 A (8/34). Lista median S 18.7 > Lunde p99 16.47.
+- Position alone beats S in 3/5 wells (raw AUC); photo adds clearly only in 34/8-3 A.
+- V7_RESULTS.md has the step-2 section (commit 5f6ef44) with a PROPOSED wording, since none was pre-declared for "(a) passes, (c) fails".
+- Sent to the reviewer (round 18) and to the geochemist (what is green in Lista of 34/8). Geochemist notes will be at ~/sinkite_ml_work_v2/v7/agent2_step2_results_notes.md.
+- I have NOT looked at overlays or individual bags yet. Any such look is exploratory and waits for the reviewer.
+- NEXT: apply reviewer round-18 changes to V7_RESULTS.md, close step 2, update memory, then step 3 (write the step-3 plan from results/v7/agent5_inventory.md, reviewer approval, blinded digitisers).

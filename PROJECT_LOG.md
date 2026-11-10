@@ -509,3 +509,11 @@ eaa36f4 v2 results
 - **Reviewer round 16: ACCEPT WITH CHANGES.** No bug or leakage found. 52b checks: colour L*a*b* alone 0.24 (11/11); R-D beats it (paired p 0.016); partial on colour 0.26; below 950 m 0.32 (11/11); S minus v3 shallow set 0.46 (8/8). Wording updated in V7_RESULTS.md (bag scale, chemical not sand, colour does much of it, mud-residue caveat, 34/8-3 fails). Sent to the reviewer for final sign-off.
 - **Round 16b: step 1 SIGNED OFF and CLOSED** (3 wording edits applied). Agent 4 is drafting the step-2 spec (`v7/agent4_step2_spec.md`; blob parameters fixed from mineralogy and pixel scale, not from the 27 positives).
 - **Step-2 spec** from agent 4 copied into V7_PLAN.md (candidate, round 17): CIELAB dark-green gate, 14–72 px blobs at native 7.14 µm/px, score = blobs per 10^6 chip px, Lunde calibration, conditional ±80 m test with a distance residual, Lista FP ≤ 5%, must beat the green index in ≥ 4/5 wells. Sent to the reviewer and the geochemist. Nothing has been run on G bags.
+- **Round 17 (step-2 spec): reviewer APPROVE WITH CHANGES; geochemist says freeze the gates** (`v7/agent2_step2_review.md`). Amendments are in V7_PLAN.md A15:
+  - null = shift the residual; [1,d] as secondary;
+  - success = (a) conditional p < 0.05 AND (c) Lista FP ≤ 5%; (b) beating GI is descriptive only;
+  - hole-fill-off sensitivity;
+  - A13 learned model NOT run; per-well normalisation NOT run;
+  - diagnostics: brown blobs, size/hue bins, Balder FP row, Spearman against continuous G;
+  - run ONCE as frozen.
+- 53_v7_pellet_blobs.py reproduces agent 4's prototype S exactly on 3 Lunde photos (4.503, 12.496, 0.054). It takes ~12 s per photo single-core with all sensitivities.

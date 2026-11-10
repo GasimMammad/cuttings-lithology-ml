@@ -124,14 +124,22 @@ Criterion = (a) AND (c). (a) passes; (c) fails.
 
 No wording was pre-declared for "(a) passes, (c) fails". A12 said "all of
 these, else 'photos add nothing to position for glauconite'", but (a) passed,
-so that sentence would be wrong too. Proposed wording (for the reviewer):
+so that sentence would be wrong too. Wording agreed with the reviewer
+(round 18):
 
-> Within 80 m of the top Hordaland unconformity, the pellet-blob score ranks
-> the glauconitic bags above their neighbours beyond what depth position
-> explains (Q 0.74, p 0.0003, 5 wells). It is not specific to glauconite: it
-> fires on 22% of Lista Fm bags at the same threshold, and it is not shown to
-> beat the simple green index (Q 0.70). It is a "green rounded grain" score,
-> not a glauconite detector.
+> Within 80 m of the top Hordaland unconformity, a native-resolution
+> dark-olive-green pixel score co-locates with the XRF glauconite bags after
+> a piecewise-linear trend in distance from the unconformity is removed
+> (Q 0.74, p < 0.001, 5 wells, about 6 intervals). Distance from the
+> unconformity alone ranks the same bags as well or better in 4 of 5 wells;
+> only in 34/8-3 A does the score follow glauconite away from the
+> unconformity. The score is not specific: it flags 22% of Lista Fm bags at
+> the same threshold, and it does not beat the old green index (Q 0.70). Its
+> shape gates add nothing (score against colour-gate pixel fraction,
+> rho 0.99). The pre-registered criterion is not met; this is not a
+> glauconite detector.
+
+The A13 learned model (ResNet crops) was NOT run, as fixed in A15.
 
 ## Primary and sensitivities (per-well residualised AUC)
 
@@ -153,8 +161,18 @@ so that sentence would be wrong too. Proposed wording (for the reviewer):
   34/7-10 and 34/7-9 the residualised AUC is 0.56, i.e. near chance.
 - Raw AUC per well (S / GI / distance alone): 34/4-6 1.00 / 1.00 / 0.95;
   34/7-10 0.62 / 0.75 / 0.85; 34/7-4 1.00 / 0.96 / 1.00; 34/7-9 0.81 / 0.78 /
-  0.94; 34/8-3 A 0.78 / 0.77 / 0.41. Depth position alone beats the photo
-  score in 3 of 5 wells; only in 34/8-3 A does the photo clearly add.
+  0.94; 34/8-3 A 0.78 / 0.77 / 0.41. Distance alone equals or beats the photo
+  score in 4 of 5 wells; only in 34/8-3 A does the photo clearly add.
+- **How strong is p = 0.0003?** It is valid by the pre-registered statistic,
+  but each well has only 12-13 possible shifts. Shifts scoring at or above
+  the observed AUC: 34/4-6 0 of 13, 34/7-10 4 of 13, 34/7-4 1 of 12, 34/7-9
+  5 of 12, 34/8-3 A 0 of 13. A rank-only (Fisher) combination of those
+  per-well p-values gives about 0.06 (reviewer's arithmetic). Report as:
+  "p < 0.001 by the pre-registered statistic; carried by three wells; a
+  rank-only combination gives about 0.06."
+- **What the null tests.** S and G both peak at the THGU greensand, so the
+  shift null tests co-location within the window, not independence from
+  position.
 - Spearman of S against continuous G in the window: 0.11, -0.08, 0.73, 0.34,
   0.63 (same well order).
 - The gate sensitivities barely move Q (0.71-0.74), so the result does not
@@ -182,8 +200,9 @@ so that sentence would be wrong too. Proposed wording (for the reviewer):
 ## Out-of-window positives (descriptive)
 Five bags with G > 0.2 lie 147-692 m above THGU. Their within-well S
 percentiles are 34, 68, 31, 28 (34/7-4 at 840, 900, 920, 1040 m) and 43
-(34/7-9 at 480 m). The detector does not flag them. Either these G values are
-not pellet glauconite, or the pellets fall in the accepted-loss classes.
+(34/7-9 at 480 m). The detector does not flag them. The geochemist's reading
+(exploratory, below) is that these are artefacts of the index, which is
+consistent with the detector not flagging them.
 
 ## Label-free observations
 - Median S per well in the G set is 2.7-8.8, well above the Lunde median
@@ -195,17 +214,51 @@ not pellet glauconite, or the pellets fall in the accepted-loss classes.
 - Run time was about 25 s per photo per worker with 4 workers (plan A14
   estimated 3.6 s): the detector is far slower than specified.
 
-## Reading (draft, pending reviewer round 18)
-1. A hand-built colour-and-shape detector sees something real at the
-   unconformity: within the window it ranks the G > 0.2 bags higher than
-   depth alone would (p 0.0003), and this survives every gate sensitivity.
+## Exploratory, post hoc (after unsealing; none of this changes the outcome)
+Checked by the reviewer and reproduced by me on g_scores_joined.csv.
+- **S is the colour-gate pixel fraction, not a pellet count.** Spearman of S
+  against gate_frac is 0.99 pooled and 0.95-1.00 within Lista in every well.
+  gate_frac alone gives Q 0.737. The shape gates add nothing.
+- **The accepted blobs are olive, not green.** 93% of accepted blobs in the
+  window positives and 99.8% in Lista fall in hue 95-120 deg, the margin
+  added for the warm colour cast. 81-87% are in the smallest size bin
+  (0.10-0.17 mm).
+- **Sensitivity is poor too.** 12 of the 22 window positives score below the
+  Lunde p99 (16.5). All three in 34/7-9 score 0.5, 2.6 and 8.9; the deeper
+  34/8-3 A interval scores 0.5-3.3.
+- **Blobs with hue >= 120 deg only** (from counts already in the committed
+  score file; chosen after seeing the hue shares): Lista false positives
+  0/125 (Lista maximum 1.3), Q 0.687, p 0.0007, per-well residual AUC 1.00,
+  0.44, 0.92, 0.36, 0.71. Only 2 of 6 intervals stand out. So the 95 deg
+  lower hue bound is what let Lista in; true-green blobs are specific but too
+  rare to detect most glauconitic bags. Not a rescue; no further tuning.
+- **Geochemistry of the Lista false positives** (geochemist,
+  results/v7/agent2_step2_results_notes.md): flagged and unflagged Lista bags
+  in the 34/8 wells do not differ chemically (K/Al, Fe/Al, G, Si/Al;
+  Mann-Whitney p 0.09-0.89), and Lista G is about 0 (maximum 0.12). Within
+  the 34/8 Lista, S against the photo's median a* is -0.96 and -0.92. The
+  detector is counting green claystone, not glaucony.
+- **Out-of-window positives:** K/Al 0.36-0.44 and Fe/Al 0.71-1.02, ordinary
+  mudstone values, three of four with Cl of 35,000-114,000 ppm. They are
+  probably artefacts of the index, so G > 0.2 is a sound label only inside
+  the Hordaland/Utsira window.
+- **Hypotheses only, not shown:** barite coating masks the green in heavily
+  weighted bags (one p of 0.04 among several tests); the 34/8-3 Lista is
+  either genuinely greener clay or rendered greener by that well's photo
+  processing (XRF cannot separate the two).
+
+## Reading (reviewer round 18: ACCEPT WITH CHANGES, applied; step 2 CLOSED)
+1. Within the window, a dark-olive-green pixel score co-locates with the
+   G > 0.2 bags after a piecewise-linear trend in distance is removed
+   (p < 0.001 by the pre-registered statistic, carried by three wells; about
+   0.06 by a rank-only combination). Distance from the unconformity alone
+   does as well or better in 4 of 5 wells.
 2. It is not a glauconite detector. One in five Lista bags passes the same
    threshold, nearly all in the 34/8 area, and Lista's median score is above
    that of the Utsira bags.
-3. It does not clearly improve on the old green index (Q 0.74 against 0.70;
-   3/5 wells), which v6 already showed to be a non-specific green index.
-4. So the v6 conclusion stands: photographs carry a green-grain signal that
-   co-occurs with XRF glauconite near THGU, but colour and shape at 7 um/px
-   do not separate glauconite pellets from other green material (green
-   claystone chips, chlorite, tuff alteration). XRF K+Fe remains the usable
-   glauconite indicator.
+3. It does not improve on the old green index (Q 0.74 against 0.70; 3/5
+   wells), which v6 already showed to be non-specific.
+4. This gate set did not separate glauconite pellets from other green
+   material; its hue margin admitted olive claystone. XRF K+Fe remains the
+   usable glauconite indicator. The v6 conclusion stands.
+5. Run time was about 7 times the estimate (note only).

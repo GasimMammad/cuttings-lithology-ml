@@ -517,3 +517,4 @@ eaa36f4 v2 results
   - diagnostics: brown blobs, size/hue bins, Balder FP row, Spearman against continuous G;
   - run ONCE as frozen.
 - 53_v7_pellet_blobs.py reproduces agent 4's prototype S exactly on 3 Lunde photos (4.503, 12.496, 0.054). It takes ~12 s per photo single-core with all sensitivities.
+- **Step-2 runs started 2026-11-10 ~11:40:** 53b committed (0bceef0), dry-run only on fake scores (H0 false-alarm rate 6.5% over 200 reps). The Lunde calibration (1,022 photos, 4 nohup shards) writes to `v7/step2/lunde_shard_*.csv`. NEXT: combine (`python 53_v7_pellet_blobs.py lunde`), commit tau_L and the hash, then run set `g` (873 photos) the same way, commit the score hash, then `python 53b_v7_pellet_eval.py` ONCE, then the reviewer.

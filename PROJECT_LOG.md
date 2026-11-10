@@ -530,3 +530,11 @@ eaa36f4 v2 results
 - Sent to the reviewer (round 18) and to the geochemist (what is green in Lista of 34/8). Geochemist notes will be at ~/sinkite_ml_work_v2/v7/agent2_step2_results_notes.md.
 - I have NOT looked at overlays or individual bags yet. Any such look is exploratory and waits for the reviewer.
 - NEXT: apply reviewer round-18 changes to V7_RESULTS.md, close step 2, update memory, then step 3 (write the step-3 plan from results/v7/agent5_inventory.md, reviewer approval, blinded digitisers).
+
+## 2026-11-10 ~19:45: v7 step 2 CLOSED (reviewer round 18: ACCEPT WITH CHANGES, applied)
+- V7_RESULTS.md step-2 section revised (commit 632f9e6). Agreed wording: a native-resolution dark-olive-green PIXEL score (not a pellet count: rho with colour-gate fraction 0.99) co-locates with G > 0.2 bags within +/-80 m of THGU after a piecewise-linear distance trend is removed (Q 0.74, p < 0.001 pre-registered; rank-only Fisher about 0.06; carried by 3 wells). Distance alone does as well or better in 4/5 wells. 22% Lista FP; does not beat the green index. NOT a glauconite detector. v6 conclusion stands.
+- Exploratory (labelled so): 93-100% of accepted blobs are hue 95-120 deg (olive); hue >= 120 only gives 0/125 Lista FP but Q 0.687 and only 2/6 intervals; 12/22 window positives score below Lunde p99.
+- Geochemist notes: results/v7/agent2_step2_results_notes.md. Lista FPs are green Fe-smectite claystone (G about 0), not glaucony. Out-of-window G > 0.2 bags are index artefacts (salt, Nordland mineralogy): G is a sound label only inside the Hordaland/Utsira window. Q1 literature in the notes is from memory: verify before citing.
+- A13 learned model NOT run (as fixed in A15).
+- STEP 3 STARTED: mud-log TIFs being copied to ~/sinkite_ml_work_v2/v7/step3/mudlogs/ (about 2.3 GB). The earlier pilot is scratchpad/mudlog_sand.csv (34/7-10, 2510-2670 m only).
+- NEXT: write V7_PLAN.md step 3 (digitiser = script on the cuttings % column, blind to photos by construction; independent visual reader agent on a random 20%; XRF Si/Al as a validity gate; then LOWO photo -> mud-log sand fraction with the step-1 model family and baselines), send to the reviewer BEFORE any join to photos.

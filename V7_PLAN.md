@@ -403,128 +403,196 @@ at this sample size). If it is ever run, it is exploratory and makes no claim.
 **The run is done ONCE as frozen.** Only code bugs may be fixed, and any fix
 is disclosed.
 
-## Step 3: mud-log cuttings % as a wellsite lithology label (DRAFT v1, 2026-11-10; not final until the reviewer approves)
+## Step 3: mud-log cuttings % as a wellsite lithology label (v2, 2026-11-10; reviewer round 19 changes and the wellsite geologist's protocol check applied)
 
 **Question.** Do the photographs predict what the wellsite geologist logged
 in the same cuttings, in wells not used for training? The label is the
-"% cuttings" column of the mud log. It is the only lithology label in the
-data set that was made from the cuttings themselves and without wireline
-logs.
+"cuttings lithology %" column of the mud log. It is the only lithology label
+in the data set that was made from the cuttings themselves and without
+wireline logs.
 
-**Why it is worth doing.** v1/v2 used GR labels (formation at a point).
-Step 1 showed chemical skill at bag scale. The mud-log column describes the
-bag, by eye, at the rig, so it is the label most like the photograph.
+**What it is not.** It is not independent ground truth. The archived bag is
+the washed split of the sample the mud logger described, and the % is an
+estimate by eye.
 
 ### C1. Scope
-- **Wells (8, pixel route):** 24/9-3, 34/4-6, 34/4-7, 34/7-4, 34/7-9,
-  34/7-10, 34/8-3, 34/8-3 A. Source: the cuttings % column of the sheets
-  listed in results/v7/agent5_inventory.csv.
+- **Wells (8):** 24/9-3 (Gearhart-Owen), 34/4-6 (Anadrill), 34/4-7, 34/7-4,
+  34/7-9, 34/7-10 (Exlog, Saga legend), 34/8-3, 34/8-3 A (Exlog, Norsk Hydro
+  legend). Sheets as in results/v7/agent5_inventory.csv.
 - **Not in this pass:** 34/7-1 and 24/9-4 (text route only), 34/7-6 (no mud
-  log). Stated as a limitation, not hidden.
-- **Never used:** interpreted lithology columns, composite logs, ROP, gas
-  (they carry log-type information). Text descriptions are not used for the
-  label in this pass.
-- **Depths digitised:** the whole logged interval of each sheet (cheap once
-  calibrated). Tests use the sets in C5.
+  log). A stated limitation.
+- **Never used:** interpreted lithology columns, composite logs, ROP, gas,
+  and the description text.
+- **Depths digitised first:** from the first logged sample to 40 m below
+  top Shetland (300 tiles of 40 m). The pre-Tertiary is digitised only if
+  the fallback of C4 is triggered, and that is decided from labels alone.
 
-### C2. Label construction (script; reads only the mud-log image)
-1. **Depth calibration per sheet.** Printed depth labels are located on the
-   image, and a piecewise-linear pixel-to-depth function is fitted through
-   them. Every label must be within 0.5 m of a leave-one-out fit, or the
-   sheet is inspected and the label list corrected (a reading error), never
-   the fit loosened.
-2. **Column read.** The cuttings column is cut into rows of 0.25 m. In each
-   row, each pixel column is classified by its local pattern into clay
-   (ruling), sand (stipple), carbonate (brick), other, or blank, with one
-   rule set per contractor family (Anadrill; Exlog; Gearhart-Owen). The row
-   gives fractions that sum to 1 over the non-blank part.
-3. **Sample steps.** The wellsite % is drawn in steps of one sample. The
-   script does not need to find the steps; it averages rows.
-4. **Bag join (done by a separate script, after C3).** A bag at depth D
-   stands for (D_prev, D] (bottom-of-interval, the v3b rule, with D_prev from
-   the NOROG bag list). If D - D_prev > 15 m or there is no previous bag,
-   the interval is (D - 5 m, D]. A bag needs at least 50% of its rows
-   non-blank.
-5. **Targets.** Y = sand fraction (sand + sandstone symbols). Sensitivities:
-   Y_coarse = sand + silt; Y_carb = carbonate fraction; Y shifted by one
-   sample up and down (+/-5 m).
+### C2. Label construction (changed from draft v1: readers, not a texture script)
+The wellsite geologist's check (results/v7/agent5_step3_protocol_check.md)
+showed that a row-texture script would misread the column: the symbols
+differ by sheet, clay ruling repeats only every 1-1.5 m, and the percentages
+are carried by the step outline. So:
 
-The digitiser is developed looking at mud-log images only. It is frozen
-(committed) before C3 and before any join to XRF or photographs.
+1. **Geometry by script** (54_v7_mudlog_geometry.py, 55_v7_mudlog_tiles.py;
+   they read only the mud-log image).
+   - Depth: the heavy 10 m grid lines are followed down the sheet with a
+     comb tracker from one printed label per sheet.
+   - Column: the two heavy border lines are followed tile by tile.
+   - Tiles of 40 m show only the cuttings column, with a depth ruler and a
+     0-100 % ruler added in the margins.
+2. **Reading by two independent AI readers of different models.**
+   - Reader A reads every tile. Reader B reads a random 30 % of each well's
+     tiles (drawn by seed before any reading) plus the symbol-audit tiles.
+   - Each reader gets the tiles in its own random order, the sheet's own
+     legend, and written rules. It sees no photograph, XRF, wireline log,
+     description text, bag list or the other reader's output.
+   - For each tile the reader lists the sample blocks (top and bottom depth
+     from the ruler) and the percentage of each class in the block, read
+     from the widths between the heavy step lines. Exlog and Gearhart-Owen
+     snap to 10 %; Anadrill is read to the nearest 5 %.
+   - Classes: clay (clay, claystone, shale, and the Gearhart-Owen
+     silty-claystone dash-dot), sand (dots not on a line), silt, carbonate
+     (limestone, dolomite, chalk), marl, glauconite, tuff, coal, other.
+   - Not percentages: single glyphs and single outlined cells (traces),
+     digits, shell and fossil marks.
+   - Masks, flagged by the reader: no returns, no sample, cement, core, and
+     blocks where more than 20 % of the fill is unreadable. Blocks where the
+     ruling has faded but the step outline is clear are read and flagged
+     "faded".
+3. **Bag join (script, run after G2).** A bag at depth D stands for
+   (D_prev, D] (bottom of interval; D_prev from the NOROG bag list). If
+   D - D_prev > 15 m or there is no previous bag, the interval is
+   (D - 5 m, D]. The bag value is the length-weighted mean over reader A's
+   blocks. At least 80 % of the interval must be unmasked and not "faded".
+4. **Targets, fixed now.** Primary Y = sand fraction with the bottom-interval
+   join, whatever G3 shows. Sensitivities only: Y + glauconite; Y_coarse =
+   sand + silt; "faded" blocks included; Y shifted one sample up and down
+   (+/-5 m).
+
+Sheets viewed while building the geometry and tiles (mud-log images only):
+all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
+34/7-10 1080 m. Nothing was compared with XRF or photographs.
 
 ### C3. Label gates (no photographs, no model output)
-- **G1 depth.** Passes as in C2.1 for every sheet used.
-- **G2 independent visual reader.** An agent that has seen neither the
-  script output nor any photograph reads sand % (nearest 10) from image
-  crops of 160 intervals of 5 m (20 per well; half drawn from intervals the
-  script reads at >= 10% sand, half from the rest; the reader is not told
-  which; tiles in random order with only the sheet's depth scale visible).
-  - Pass: pooled Spearman >= 0.80, and at most 15% of intervals differ by
-    more than 20 points, and no well below Spearman 0.60.
-  - A well that fails is dropped from the label set, or its family rules
-    are fixed ONCE and a FRESH sample of 20 is drawn. The first result is
-    reported either way.
+- **G1 depth.** Every printed 100 m label in the digitised range lies within
+  1 m of its calibrated line, checked by eye on a contact sheet per sheet
+  (calib/*_labels.png). Readers also report any ruler-label mismatch they see.
+  (Changed from draft v1, which fitted the labels; the grid lines give 10
+  times more knots.)
+- **G2 reader agreement,** computed at bag-interval level on the tiles both
+  readers read. All must hold:
+  - pooled Spearman of sand % >= 0.80;
+  - at most 15 % of bag intervals differ by more than 20 points;
+  - mean signed difference within +/-5 points;
+  - sand presence both ways: where A reads >= 20 %, B reads >= 10 % in at
+    least 80 % of intervals, and the reverse;
+  - no well with Spearman below 0.60 (where it is defined: at least 15
+    intervals and both readers vary). Otherwise that well is judged on its
+    mean absolute difference (<= 10 points).
+  - Reported, not gated: Spearman and mean absolute difference among
+    intervals where either reader sees >= 10 % sand; per-well bias.
+  - **Symbol audit:** 3-5 tiles per non-clay pattern per sheet family, chosen
+    from the column images by pattern alone, scored as a confusion matrix of
+    class presence. A systematic confusion of sand with silt, glauconite or
+    tuff fails the sheet.
+  - A well that fails gets one fix: the written rules for that sheet are
+    clarified (from the legend and the disagreement only), a third reader
+    reads the whole well and a fourth reads a fresh 30 %. If that fails, the
+    well is dropped. The first result is reported either way.
 - **G3 chemistry check (XRF, still no photographs).** Per-well Spearman of Y
-  against the within-well z of log10(Si/Al) on the test set of C5, after the
+  against the within-well z of log10(Si/Al) on the test set, after the
   +/-50 m high-pass. Expected sign: positive.
-  - If the median over wells is <= 0, stop: "the mud-log sand fraction is
-    not a usable bag-scale label here".
-  - Otherwise report it as the reference for how well ANY bag measurement
-    agrees with the mud log. It is not a significance test.
+  - Median <= 0: stop. "The mud-log sand fraction is not a usable bag-scale
+    label here."
+  - Median below 0.15: a failed photo test is "uninformative: the label is
+    too noisy at bag scale".
+  - G3 never chooses the label or the join.
+- **Non-gating:** the 34/7-9 Saga wellsite log as a second source, if time
+  allows; a human spot-check of about 40 intervals is offered to the user.
 
-### C4. Eligibility (decided from the labels alone)
-A well enters a test if it has at least 30 bags in the set with a defined Y
-and at least 10 of them with |high-passed Y| >= 0.05. Wells logged as 100%
-clay throughout cannot show skill and are listed as "no label variance".
+### C4. Eligibility and the test of record (from labels alone; committed before any photo join)
+- A well is eligible if it has at least 30 bags with Y, of which at least 15
+  are informative (|high-passed Y| >= 0.05) in at least 3 depth clusters
+  more than 30 m apart. The number of informative bags per well is reported.
+- **Set S** = Tertiary (depth < TOP_SHETLAND), shoe-masked as in step 1,
+  cored intervals excluded.
+- If S has at least 6 eligible wells, S is the test of record.
+- If it has fewer, S is reported descriptively, the pre-Tertiary is
+  digitised by the same protocol (with its own G2), and **set W** (whole
+  well) becomes the test of record, worded "whole section, not the
+  overburden question". W is always reported in two parts (Tertiary and
+  pre-Tertiary), never pooled.
+- Only one set is ever the test of record.
 
-### C5. Photograph tests (run once, after C3 and C4 are committed)
-- **Set S (primary):** Tertiary (depth < TOP_SHETLAND), shoe-masked, the
-  step-1 set restricted to bags with Y. **Set W (secondary):** all bags
-  with Y in the well, same shoe mask.
-- **P1 (primary).** R-D exactly as in step 1 (ResNet-50 embeddings, per-well
-  z over the set, StandardScaler, PCA 32, Ridge alpha 1), trained
-  leave-one-well-out on Y, scored on the held-out well. Statistic: per-well
-  Spearman of prediction against Y after the +/-50 m high-pass; one-sided
-  Wilcoxon across eligible wells; well-bootstrap CI.
-  - Success: p < 0.05 with median rho > 0. With 8 wells the smallest
-    possible p is 0.004; with fewer than 6 eligible wells the test is
-    reported as underpowered and makes no claim.
-- **P2 (pre-declared secondary, no new training).** The step-1 held-out
-  Si/Al predictions (step1_predictions.csv, already made without the test
-  well) against Y, same statistic. This asks whether a model taught only
-  chemistry agrees with the wellsite geologist.
-- **Baselines, same pipeline:** relative depth, bag dry weight, mean
-  L*a*b* (colour only), and R-E (15 engineered features). Paired Wilcoxon
-  of R-D against colour only.
-- **Reference:** measured Si/Al against Y (from G3). Photo skill is read as
-  a share of this.
+### C5. Photograph tests (run once)
+- **P2 = PRIMARY (no new training).** The step-1 held-out Si/Al predictions
+  (step1_predictions.csv, made without the test well, frozen before this
+  label existed) against Y. Statistic: per-well Spearman after the +/-50 m
+  high-pass; one-sided Wilcoxon across eligible wells; well-bootstrap CI.
+  - Success: p < 0.05 and median rho >= 0.10.
+- **P1 = secondary.** R-D as in step 1 (ResNet-50 embeddings, per-well z,
+  StandardScaler, PCA 32, Ridge alpha 1) trained leave-one-well-out on Y.
+  One pre-declared sensitivity with equal well weights (24/9-3 holds about a
+  quarter of the bags). If P2 fails and P1 passes: "learnable from the
+  label, exploratory".
+- **Tie-robust secondary:** local pair concordance. Pairs of bags less than
+  50 m apart whose Y differs by at least 0.2; the share ordered correctly by
+  the prediction, per well; Wilcoxon against 0.5.
+- **Baselines, same pipeline:** relative depth, bag dry weight, mean L*a*b*,
+  R-E (15 engineered features). Paired Wilcoxon of the photo model against
+  colour only.
+- **Reference:** measured Si/Al against Y (G3). Each well's photo rho is
+  read against its own Si/Al rho, not in absolute terms, because ties in a
+  stepped label cap the attainable rho.
+- **Stress test:** leave-one-area-out for P1 (34/8-3 and 34/8-3 A are one
+  location).
 - **Null and lag:** circular-shift null within stretches per well; lag
-  profile -3..+3 bags against the no-skill curve, as in step 1.
-- **Class view (descriptive):** within-well AUC for sandy bags (Y >= 0.5)
-  against clay bags (Y <= 0.1), raw and after removing a linear depth
-  trend, for wells with at least 5 bags in each class.
-- **Set W** gets the same table, labelled secondary. It mixes the Tertiary
-  with Cretaceous-Triassic rocks, where photo colour differs by formation,
-  so the high-pass matters more there.
+  profile -3..+3 bags against the no-skill curve.
+- **Stated limit of the statistic:** with a stepped label, the +/-50 m
+  median zeroes the interior of sands thicker than about 50 m. The test
+  rests on thin beds and bed edges, where a one-sample lag hurts most.
 
 ### C6. Wording, fixed in advance
-- P1 passes: "in wells not used for training, photographs predict the local
-  (within +/-50 m) variation of the sand fraction logged at the wellsite;
-  exploratory but fully pre-specified".
-- P1 fails with G2 and G3 passed: "no bag-scale agreement between
-  photographs and the wellsite sand fraction was found, although chemistry
-  agrees with it"; not evidence of absence if fewer than 8 wells are
-  eligible.
-- Never "sand detector", never "bed scale". The wellsite % is itself an
-  estimate by eye in 10% steps and is affected by cavings and washing.
+- P2 passes: "a model taught only chemistry, in wells it never saw, follows
+  the local (within +/-50 m) variation of the sand fraction that the
+  wellsite geologist estimated by eye on the same cuttings; agreement with a
+  wellsite estimate, not ground truth; exploratory but fully pre-specified".
+- P1 passes: the same sentence with "photographs predict".
+- Fail with G3 median >= 0.15: "no bag-scale agreement between photographs
+  and the wellsite sand fraction was found, although chemistry agrees with
+  it".
+- Fail with G3 median < 0.15: "uninformative: the label is too noisy at bag
+  scale".
+- Never "sand detector", never "bed scale".
 
-### C7. Known weaknesses, named before the run
+### C7. Known weaknesses and disclosures, named before the run
+- **Both digitisers are AI readers.** They are different models and read
+  independently, but they are not a human and a script. G2 measures their
+  agreement, not their accuracy; the symbol audit and G3 are the checks on
+  accuracy.
+- **Earlier pilot.** A file `mudlog_sand.csv` (34/7-10, 2510-2670 m, 0.25 m
+  rows) was made by a sub-agent on 2026-11-05. The inventory quotes rho of
+  about 0.56 against Si/Al for it. That interval is Jurassic, outside set S.
+  I have no record that it was compared with photographs, and it is not used
+  here.
 - Cavings and washing loss bias the wellsite % (soft clay washes out, so
-  sand is over-stated); the washed photographs share that bias, which helps
-  agreement without being geology.
+  sand is over-stated); the washed photographs share that bias.
 - Lag errors of one sample are common in fast top-hole drilling (tested by
   the +/-1 sample sensitivity, not corrected).
-- The Exlog clay ruling resembles the chart grid (34/7-4); G2 is the check.
-- 1-bit scans (34/7-9, 34/7-10) are speckled; G2 is reported per well.
-- 34/8-3 is logged only from 1318 m and 34/8-3 A from 996 m MD.
+- Dots on lines (silt, silty clay) against dots alone (sand) is the main
+  false-sand risk in all three families.
+- 34/4-7 has bands where the horizontal ruling has faded from the scan; the
+  1-bit scans (34/7-9, 34/7-10) are speckled and 34/7-9 has a dropout near
+  1136-1147 m.
+- 34/8-3 is logged only from 1318 m and is close to 100 % claystone, so it
+  will probably have no label variance; 34/8-3 A is logged from 996 m MD.
+- Loose sand and cemented sandstone share one symbol.
+- The wellsite % is in 10 % steps on Exlog and Gearhart-Owen but continuous
+  on Anadrill, so only within-well rank statistics are used.
 - These wells were used in earlier rounds, so the result is exploratory.
+
+### C8. Exploratory add-on, declared before reading (no claim)
+The mud logs record glauconite as its own % fill near the top Hordaland
+unconformity. After the step-3 tests, the reader's glauconite % is compared
+with the v6 XRF index G and with the step-2 photo score, per well. This was
+thought of only after seeing the sheets, so it is exploratory.

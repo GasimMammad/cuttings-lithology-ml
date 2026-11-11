@@ -353,6 +353,16 @@ combined with the weak link between chemistry and the mud log.
   the audit tiles (class presence agreed in 29 silt, 17 glauconite and 12
   tuff intervals, none one-sided). There is no human key, so accuracy, as
   opposed to agreement, rests on G3.
+- **Block boundaries (computed 2026-11-11 after closing; listed in the plan
+  as reported, not gated):** where both readers draw a boundary they place
+  it at the same metre (median offset 0 m; 73-83 % within 1 m). Between 16 %
+  and 22 % of boundaries have no counterpart within 3 m (up to 40-44 % in
+  34/4-7 and 34/7-4). These are blocks one reader split where the drawing
+  does not change (often at a 10 m grid line); the sand fractions in those
+  wells still agree to within 0.35 points, so they do not affect the label.
+  (results/v7/step3/G2_block_boundary_offset.json)
+- **G1 caveat:** the depth check was by eye on contact sheets; no numerical
+  residual per label was measured, although the reviewer asked for one.
 - **Reader A's seams:** in 23 % of tile seams the sand % changes by 10
   points or more. Real sample steps often fall on 10 m multiples, so this is
   an upper bound on reader inconsistency, not a measure of it.

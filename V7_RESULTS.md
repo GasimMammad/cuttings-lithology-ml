@@ -572,9 +572,11 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
     header interval). The 13 3/8" shoe at 1179 m is drawn at the 1180 m
     label on its sheet. The per-tile depth-uncertainty exclusion asked for
     in the plan was not applied: with labels every 20 m and the shoe within
-    1 m, the uncertainty (10 m) is wider than most bag intervals, and
-    applying it would have removed the well. This is a deviation from the
-    plan.
+    1 m, the uncertainty is 10 m, and only 24 of the 210 bag intervals
+    in the labelled range are that wide (median 3 m). Applied as written,
+    the rule would leave 24 bags, below the 30 needed, and the well would
+    not be eligible. **This is a deviation from the plan, and the seven-well
+    row below depends on it.**
   - **Eligible:** 197 bags in S, 62 informative, 4 depth clusters.
 - **P2 with the eligible new well added (reported beside step 3, not in
   place of it):**

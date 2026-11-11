@@ -54,6 +54,11 @@ def read_reader(reader):
                 continue
             top, bot, well = idx.loc[t, "top_m"], idx.loc[t, "bottom_m"], idx.loc[t, "well"]
             bl = sorted(j.get("blocks", []), key=lambda b: b["top"])
+            # format fix (disclosed): one reader batch wrote depths relative to the tile top (0-40),
+            # copying the made-up example in the rules. Shift them to absolute depth.
+            if bl and top > 0 and bl[0]["top"] == 0 and bl[-1]["bottom"] == bot - top:
+                bl = [{**x, "top": x["top"] + top, "bottom": x["bottom"] + top} for x in bl]
+                problems.append((f.parent.name, "relative depths shifted (format fix)", t))
             if not bl or abs(bl[0]["top"] - top) > 1 or abs(bl[-1]["bottom"] - bot) > 1:
                 problems.append((f.parent.name, "does not span tile", t))
             for a, b in zip(bl[:-1], bl[1:]):

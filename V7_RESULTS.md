@@ -577,3 +577,62 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
     agreement (+0.35 and +0.27); the Tampen wells, with little sand, stay
     weak. The seventh well was added after the six-well result was known, so
     this is supporting evidence, not a second test.
+
+## X1. Fine-tuned CNN on Si/Al (run once, 2026-11-11; 59_v7_cnn_sial.py)
+
+ResNet-18 fine-tuned on T1 with the v2 "C2" recipe, leave-one-well-out,
+2021 bags and 32,336 patches, 11 folds, fixed epochs, one seed per fold.
+Statistic as in step 1 (per-well +/-50 m high-passed Spearman against T1).
+
+| model | median rho | mean rho | wells > 0 | p | 95 % CI of median |
+|---|---|---|---|---|---|
+| Fine-tuned ResNet-18 (C2 recipe) | +0.46 | +0.41 | 11 of 11 | 0.0005 | +0.30 to +0.50 |
+| Control: frozen ResNet-18 + R-D pipeline | +0.33 | +0.39 | 11 of 11 | 0.0005 | +0.30 to +0.57 |
+| R-D (step 1, frozen ResNet-50) | +0.32 | +0.33 | 11 of 11 | 0.0005 | +0.18 to +0.49 |
+
+Pre-declared comparisons (paired one-sided Wilcoxon over the 11 wells):
+
+- **Fine-tuning against the frozen control: no detectable gain (n = 11
+  wells).** The fine-tuned network is higher in 5 wells and lower in 6;
+  p = 0.42 (two-sided 0.83); median paired difference -0.02. The medians in
+  the table (+0.46 against +0.33) overstate the difference: the control has
+  several wells well above its median.
+- **The C2 CNN recipe against R-D: higher in 9 of 11 wells, p = 0.005**,
+  median paired difference +0.04, mean +0.08.
+
+Per well:
+
+| well | fine-tuned | frozen control | R-D |
+|---|---|---|---|
+| 24/9-3 | 0.50 | 0.52 | 0.46 |
+| 24/9-4 | 0.20 | 0.30 | 0.17 |
+| 34/4-6 | 0.60 | 0.62 | 0.49 |
+| 34/4-7 | 0.48 | 0.33 | 0.30 |
+| 34/7-1 | 0.30 | 0.33 | 0.19 |
+| 34/7-10 | 0.50 | 0.57 | 0.51 |
+| 34/7-4 | 0.46 | 0.63 | 0.48 |
+| 34/7-6 | 0.36 | 0.31 | 0.32 |
+| 34/7-9 | 0.61 | 0.48 | 0.53 |
+| 34/8-3 | 0.31 | 0.01 | 0.03 |
+| 34/8-3 A | 0.19 | 0.16 | 0.18 |
+
+Reading:
+
+- The gain over R-D cannot be credited to fine-tuning, because the frozen
+  control reaches the same level. Post hoc (not pre-declared), the frozen
+  control is itself above R-D in 7 of 11 wells (one-sided p = 0.027,
+  two-sided 0.054). R-D and the control differ in the backbone (ResNet-50
+  against ResNet-18) and in how the patches are prepared and pooled; these
+  were not separated here.
+- 34/8-3, the well that failed in step 1, reaches +0.31 with the fine-tuned
+  network and stays at zero with both frozen models. One well, seen after
+  the run: an observation, not a result.
+- Against the mud-log sand fraction (6 eligible wells, descriptive): median
+  +0.12, 4 of 6 wells above zero, p = 0.078, CI -0.04 to +0.22. That is no
+  better than R-D in step 3 (+0.125, p = 0.047).
+- One seed per fold: the fold-to-fold noise of the fine-tuned network was
+  not measured, so per-well differences of a few hundredths carry no weight.
+- Step 1 stands as closed with R-D as the model of record. X1 says that the
+  chemistry signal is robust to the choice of network (three models, all
+  11 of 11 wells positive), and that fine-tuning on 2021 bags does not add
+  to it.

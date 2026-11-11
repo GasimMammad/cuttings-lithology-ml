@@ -481,3 +481,99 @@ chemistry agree only weakly at bag scale.
    tuff, glauconite), and the digitised label has no human key. This does
    not show that photographs would do better against a better label.
 6. Not a sand detector, and not bed scale.
+
+---
+
+# Extras after v7 (requested 2026-11-11; all EXPLORATORY)
+
+Plan: V7_PLAN.md "Extras after v7" (X0-X3), written and reviewed (APPROVE
+WITH CHANGES, applied) before any of them was run; scoring scripts and raw
+readings were committed before scoring. None of this changes a closed
+result. Steps 1-3 stand as written above.
+
+## X0. The 17 symbol-audit tiles, read twice more
+Two further AI readings (same model family; one by the session that wrote
+the rules and had seen 3 of the 17 tiles). They measure reader consistency,
+not accuracy. No human key exists.
+
+| new reading against | bag intervals | sand %, mean abs. difference | class presence that differs |
+|---|---|---|---|
+| main session vs reader of record | 73 | 0.01 points | 1 (tuff) |
+| audit agent vs reader of record | 73 | 0.01 points | 1 (tuff) |
+| either vs the checking reader | 52 | 0.00 points | 1 (tuff), 3 (carbonate) |
+| main session vs audit agent | 73 | 0.00 points | 0 |
+
+- All four readings agree on sand, silt, glauconite, marl and coal in every
+  interval (24 sand, 12 silt, 16 glauconite, 4 marl, 2 coal intervals).
+- The one tuff difference is a stripe with three "v" marks in 10 m (34/7-4,
+  1700-1710 m) that both new readings took as a fill and the reader of
+  record as traces. The carbonate difference is a narrow limestone stripe on
+  34/4-6 that the checking reader did not report.
+- The same picture holds on the 14 tiles the main session had not seen.
+- The two new readings are not copies: they split blocks differently in 10
+  of 17 tiles and share no notes.
+- What this adds: on the tiles chosen for their unusual patterns, four AI
+  readings give the same sand fraction. What it does not add: a human check.
+
+## X2. A second wellsite source for 34/7-9: the Saga "Well Site Lithology Log"
+The operator's own log of the same well, read with the same rules (36 tiles,
+one reader). On this sheet each 10 m sample is one band, so its resolution is
+10 m. The Saga log never replaces the Exlog reading in any statistic.
+
+| comparison (34/7-9, Tertiary) | value |
+|---|---|
+| Bags with both labels | 145 |
+| Spearman, Exlog sand % against Saga sand % | +0.42 (block-bootstrap 95 % CI 0.11 to 0.69) |
+| The same after the +/-50 m high-pass (127 bags in S) | +0.53 |
+| Mean absolute difference | 7.7 points |
+| Mean sand %: Exlog / Saga | 5.6 / 9.1 |
+| Step-1 photo model against Exlog / against Saga (high-passed) | +0.19 / +0.16 |
+| Measured Si/Al against Exlog / against Saga (high-passed) | +0.23 / +0.07 |
+
+- **Two wellsite descriptions of the same cuttings agree only moderately**
+  (+0.4 to +0.5). That is one well and one reader, but it puts a number on
+  the label's own reliability: a photograph or a chemical analysis cannot be
+  expected to agree with one mud log much better than a second mud log does.
+- The photo model agrees with the two logs about equally (+0.19 and +0.16).
+  Si/Al agrees with Exlog but hardly with Saga.
+- This supports reading step 3's small numbers as limited by the reference,
+  with the caveat the reviewer set: it does not show that photographs would
+  do better against a better label.
+
+## X3. The two wells left out of step 3
+- **34/7-1 (text route).** On this sheet the % column holds only scattered
+  single-row symbols, so the description text was transcribed instead (18
+  tiles of 80 m, two readers) and mapped to a sand fraction by a rule fixed
+  beforehand (main sand 0.7; interbedded 0.3; occasional 0.1; trace 0.03).
+  - The two readers transcribed 70 and 71 entries and give the same mapped
+    value for all 139 bags between 440 and 1860 m.
+  - The label is coarse: 15 bags fall under a "sand" entry, 29 under a
+    trace, the rest are claystone. Only 7 bags are informative, in 2 depth
+    clusters, so the well is **not eligible** (the rule needs 15 in 3). As
+    the wellsite geologist agent warned, this is a zone label, not a bag
+    label.
+- **24/9-4 (hand-drawn wellsite geologist log).** Main-bore sheets down to
+  the sidetrack at 1753 m, 36 tiles, depths read from the sheet's own
+  handwritten labels.
+  - Above about 757 m the column is blank (reader A: no returns; reader B:
+    faded). Labels exist for 207 bags between 770 and 1720 m; mean sand
+    14 %.
+  - Reader agreement on the 11 tiles both read (79 bag intervals): Spearman
+    0.96, mean absolute difference 0.7 points. Every tile passed the
+    depth-label check (labels monotonic at 20 m and inside the sheet's
+    header interval). The 13 3/8" shoe at 1179 m is drawn at the 1180 m
+    label on its sheet.
+  - **Eligible:** 197 bags in S, 62 informative, 4 depth clusters.
+- **P2 with the eligible new well added (reported beside step 3, not in
+  place of it):**
+
+| set | wells | median rho | wells > 0 | p | 95 % CI |
+|---|---|---|---|---|---|
+| Step 3 as closed | 6 | +0.125 | 4 positive, 1 zero, 1 negative | 0.047 | -0.03 to +0.27 |
+| With 24/9-4 added | 7 | +0.172 | 5 positive, 1 zero, 1 negative | 0.023 | +0.00 to +0.27 |
+
+  - 24/9-4 itself: photo model +0.27, measured Si/Al +0.35.
+  - Both 24/9 wells, where the Tertiary holds thick sands, show the clearest
+    agreement (+0.35 and +0.27); the Tampen wells, with little sand, stay
+    weak. The seventh well was added after the six-well result was known, so
+    this is supporting evidence, not a second test.

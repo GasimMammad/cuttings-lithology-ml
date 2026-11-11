@@ -182,3 +182,92 @@ Descriptive figure of closed results; no new statistic.
 3. Reviewer: A, B results and D's addendum (before readers start).
 4. D readers; meanwhile E and a first draft of F.
 5. C and D scored once; reviewer; F finalised; reviewer on F.
+
+## Reviewer (v8 plan): APPROVE WITH CHANGES. Amendments, applied before anything is run; they take precedence over the text above
+
+### A (elements)
+- **Why:** all five targets share the Al denominator with Si/Al, so a
+  model that only sees clay would make all five "pass".
+- **A target counts** only if (a) it passes (Holm p < 0.05 and median rho
+  >= 0.10), (b) its partial rho given high-passed log10 Si AND log10 Al
+  (two controls) has median >= 0.05 with Holm p < 0.05 over the tested
+  targets, and (c) its mud-control partial has the same sign with median
+  >= 0.05. "A rough chemical log" needs at least 2 counting targets. The
+  partial given T1 alone is dropped as the criterion (still shown).
+- **Specificity comparator:** rho(pred_T1, E) with its sign fixed from the
+  training wells (mean sign of the other wells), not the absolute value.
+- **Coverage:** the LAS files carry no detection limits; non-detects are
+  stored as 0 (counts checked 2026-11-11, no correlation looked at: K, Fe,
+  Ca, Sr 100 % above zero; Ti and Zr >= 97 % in every well). Rule: element
+  > 0, no offset added. All five targets are tested in all 11 wells.
+- **Controls per element:** Zr also controls Sr (Sr K-beta overlaps Zr
+  K-alpha; barite carries Sr). Reported flags: rho(K, Cl) per well (KCl
+  mud); rho(Fe, Ti) per well (weighting agent, steel). Cl as a control
+  keeps step 1's log10(Cl + 1), since 26 % of bags have Cl = 0.
+- **Zr wording:** "detrital heavy-mineral proxy, insensitive to biogenic
+  silica". Not "independent of Si".
+
+### B (when it works)
+- High-pass the full series first, then window. Windows start at the top
+  of each continuous stretch; windows with fewer than 15 bags are dropped,
+  not merged. Spread = MAD, not SD (in B1, B2, B3 and B4).
+- Wording adds: "a positive B2 is what measurement-error attenuation
+  predicts".
+
+### C (seeds)
+- Optional extra seeding declined: the two new runs must differ from X1 in
+  the seed only. C runs on idle GPU and costs no credits.
+
+### D (now "Jurassic-Triassic mud-log labels")
+- **Range:** from base Cretaceous (Sodir lithostratigraphy, saved in
+  results/v8/sodir_litho_tops.csv) to the deepest bag. Shetland and Cromer
+  Knoll are left out: mostly mudstone and marl, near-zero sand, and
+  limestone stringers break the link between Si/Al and sand.
+  Base Cretaceous used: 34/4-6 2577 m, 34/4-7 2502, 34/7-10 2400, 34/7-4
+  2517, 34/7-9 2443, 34/8-3 2827, 34/8-3 A 3003. 24/9-3 has no section
+  below the Cretaceous and leaves D. About 100 tiles.
+- **Feasibility (label-free counts, done 2026-11-11):** usable bags (below
+  base Cretaceous, XRF present, outside Sodir cored intervals, outside 15 m
+  below every shoe including liners): 34/4-6 208, 34/7-4 186, 34/7-9 179,
+  34/7-10 152, 34/8-3 145, 34/4-7 82, 34/8-3 A 44. Seven wells have >= 30,
+  so D runs. Readers take the wells in this order.
+- **Masks:** Sodir cored intervals (results/v4/sodir_core_table.csv), not
+  reader flags. Shoe mask extended to liner shoes. High-pass stretches are
+  split at every shoe. The Sodir mud table lists water-based mud at every
+  depth in all seven wells (results/v8/sodir_mud_table.csv), so no
+  mud-system split is needed; oil-based mud is not a factor here.
+- **Primary predictor, made precise:** the step-1 pre-Tertiary R-D
+  predictions exactly as that code makes them (trained on all pre-Tertiary
+  bags of the other wells), evaluated on the bags of the range above. One
+  sensitivity: the same model trained on the Jurassic-Triassic range only.
+- **G1** also checks the depth scale of each sheet in the new range
+  (reservoir sections are sometimes drawn at 1:200).
+- **G2 without re-read:** a well that fails its per-well gate is dropped.
+  If a pooled gate fails, the worst well (lowest per-well Spearman; mean
+  absolute difference where Spearman is undefined) is dropped once.
+  Informative top-up allowed. Order: G2, eligibility, commit, G3.
+  Reader B reads a seeded 20 % (not 30 %), with the floor of 30
+  informative intervals kept by top-up.
+- **Futility stop:** after the first three wells are read, G2 and G3 are
+  computed for them (no photographs). If the G3 median is <= 0, D stops.
+- **Twin wells:** 34/8-3 and 34/8-3 A are also reported merged as one unit
+  (mean rho). If the result holds only with them counted separately, the
+  wording adds "depends on the twin wells".
+- **Sensitivity:** without bags where the reader gives carbonate + marl
+  >= 30 % or any coal.
+- **Carbonate exploratory test** carries a Cl partial.
+- **Weaknesses added:** mud loggers leave recognised cavings out of the %,
+  while bags and photographs include them; PDC or turbine bits make rock
+  flour and sand washes out of the bags; arkosic or kaolinitic sandstones
+  (Lunde, Statfjord, Brent) lower Si/Al inside sandstone; the primary is
+  largely predictable from (Si/Al against Y) x (photo against Si/Al), so
+  the informative number is the partial given Si/Al.
+
+### E
+- Smoothing stated on the figure (5-bag running median); every rho printed
+  is computed unsmoothed.
+
+### Order (changed)
+C on the GPU now. A and B run once. E and a first draft of F. Then D in the
+reduced form. Reviewer after A/B (with D's sheet-note addendum), after C/D,
+and on F.

@@ -1,0 +1,398 @@
+{
+ "all 17 tiles": {
+  "main session vs record (A, C)": {
+   "n_intervals": 73,
+   "sand_mad": 0.0136986301369863,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0136986301369863,
+   "class_presence": {
+    "clay": {
+     "both": 73,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 24,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 3,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 16,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "audit agent vs record (A, C)": {
+   "n_intervals": 73,
+   "sand_mad": 0.0136986301369863,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0136986301369863,
+   "class_presence": {
+    "clay": {
+     "both": 73,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 24,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 3,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 16,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "main session vs checker (B, D)": {
+   "n_intervals": 52,
+   "sand_mad": 0.0,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0,
+   "class_presence": {
+    "clay": {
+     "both": 52,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 20,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 0,
+     "new_only": 3,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 16,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "audit agent vs checker (B, D)": {
+   "n_intervals": 52,
+   "sand_mad": 0.0,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0,
+   "class_presence": {
+    "clay": {
+     "both": 52,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 20,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 0,
+     "new_only": 3,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 16,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "main session vs audit agent": {
+   "n_intervals": 73,
+   "sand_mad": 0.0
+  }
+ },
+ "blind tiles only (14)": {
+  "main session vs record (A, C)": {
+   "n_intervals": 61,
+   "sand_mad": 0.0,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0,
+   "class_presence": {
+    "clay": {
+     "both": 61,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 15,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 3,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 9,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "audit agent vs record (A, C)": {
+   "n_intervals": 61,
+   "sand_mad": 0.0,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0,
+   "class_presence": {
+    "clay": {
+     "both": 61,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 15,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 3,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 9,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "main session vs checker (B, D)": {
+   "n_intervals": 44,
+   "sand_mad": 0.0,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0,
+   "class_presence": {
+    "clay": {
+     "both": 44,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 15,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 0,
+     "new_only": 3,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 9,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "audit agent vs checker (B, D)": {
+   "n_intervals": 44,
+   "sand_mad": 0.0,
+   "sand_share_diff_gt20": 0.0,
+   "sand_bias": 0.0,
+   "class_presence": {
+    "clay": {
+     "both": 44,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "sand": {
+     "both": 15,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "silt": {
+     "both": 12,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "carb": {
+     "both": 0,
+     "new_only": 3,
+     "ref_only": 0
+    },
+    "marl": {
+     "both": 4,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "glauc": {
+     "both": 9,
+     "new_only": 0,
+     "ref_only": 0
+    },
+    "tuff": {
+     "both": 10,
+     "new_only": 1,
+     "ref_only": 0
+    },
+    "coal": {
+     "both": 2,
+     "new_only": 0,
+     "ref_only": 0
+    }
+   }
+  },
+  "main session vs audit agent": {
+   "n_intervals": 61,
+   "sand_mad": 0.0
+  }
+ }
+}

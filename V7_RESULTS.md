@@ -275,16 +275,15 @@ agreement result, eligibility and set of record, chemistry check, test
 script, photograph tests. Nothing was joined to XRF or photographs before
 the labels and the set of record were committed.
 
-## Outcome in one paragraph
-The pre-registered primary test passes, but only just, and it is a small
-effect. In wells it never saw, the step-1 model (taught only Si/Al
-chemistry, frozen before these labels existed) follows the local (within
-+/-50 m) variation of the sand fraction the wellsite geologist logged:
-median per-well rho +0.125, positive in 5 of 6 wells, p 0.047. Measured
-Si/Al itself reaches only 0.18 against the same label, and mean photo colour
-alone does as well as the photo models (0.15). So the photographs agree
-with the wellsite sand estimate about as well as chemistry does, which is
-weakly, and not beyond what colour gives.
+## Outcome (headline agreed with the reviewer, round 20)
+In six held-out wells a photograph model trained only on Si/Al agreed weakly
+with the wellsite sand fraction (median per-well Spearman +0.13; one-sided
+p = 3/64 = 0.047; bootstrap 95 % CI -0.03 to +0.27), narrowly meeting the
+pre-registered criterion, no better than mean colour (+0.15) and below
+measured chemistry (+0.18). Four wells are positive, one is zero (+0.003)
+and one is negative. Once measured Si/Al is accounted for, the photographs
+add about nothing (partial +0.02), so step 3 shows little beyond step 1
+combined with the weak link between chemistry and the mud log.
 
 ## Label construction
 - **Sheets:** 8 wells, 300 tiles of 40 m from the first logged sample to
@@ -314,11 +313,32 @@ weakly, and not beyond what colour gives.
 | No well below its limit | | pass | pass |
 | **G2** | | **FAIL** | **PASS** |
 
-- **First pass failed one gate by 0.004.** The whole disagreement was one
-  tile of 24/9-3 (2360-2400 m): reader A called a dotted pattern silty clay
-  (0 % sand), reader B called it sand (75 %). The other seven wells agreed
+- **First pass failed one gate by 0.004.** About four-fifths of the total
+  disagreement (82 % of the summed absolute difference) was one tile of
+  24/9-3 (2360-2400 m): reader A called a dotted pattern silty clay (0 %
+  sand), reader B called it sand (75 %). The other seven wells agreed
   almost exactly (mean absolute difference 0 to 0.35 points; without 24/9-3
   the informative Spearman is 0.999).
+- **How far the fix was covered by the plan.** The one-fix clause covers a
+  well that fails. Here no single well failed its own limit (24/9-3 had
+  Spearman 0.75); a pooled gate failed and was traced to one well. Applying
+  the clause to that well, and writing the second-pass rule, both came after
+  the first result was known. This is legitimate in spirit, not by the
+  letter, and is disclosed as such.
+- **What the fix changed.** The clarification moved 24/9-3 towards sand
+  (mean sand 21 % with reader A, 26 % with reader C; 46 of 492 bags differ
+  by 20 points or more). That well holds 478 of the 1,372 bags and has the
+  highest rho. Had it been dropped instead, only five wells would have been
+  eligible and there would have been no test of record.
+- **The primary does not depend on the re-read (post hoc check).** With
+  reader A's original 24/9-3 labels, P2 is +0.123 (24/9-3 itself +0.17
+  instead of +0.35), same four positive wells, p 0.047.
+- **Are the readers independent?** They ran in separate folders, and reader
+  B's files were complete before reader A's. Their output lines are
+  identical for 4 of 100 tiles and their block boundaries for 63 of 100, so
+  B is not a copy of A. The exact agreement on sand % in four wells comes
+  from the drawing: the percentages are carried by heavy step lines in 10 %
+  steps (and by plotted boxes on 34/4-6), which leave little to judge.
 - **The pre-declared one fix was used.** The rule for 24/9-3 was clarified
   from the legend (cells holding only dots are sand), reader C re-read all
   69 tiles of that well and reader D a fresh 30 % (21 tiles reader B had not
@@ -378,12 +398,21 @@ chemistry agree only weakly at bag scale.
 | Baseline: bag dry weight | -0.073 | 0/6 | 1.0 | | |
 
 - **Criterion met:** p < 0.05 and median >= 0.10. It is a marginal pass: the
-  bootstrap interval of the median includes zero.
+  bootstrap interval of the median includes zero, and "5/6" in the table
+  counts 34/4-7 (+0.003) as positive.
+- **The leave-one-area-out version of P2 fails the criterion** (4/6,
+  p 0.078).
 - **Per well, P2 follows the chemistry reference:** 24/9-3 +0.35 (reference
   +0.37), 34/7-9 +0.19 (+0.23), 34/7-4 +0.17 (+0.31), 34/7-10 +0.08
   (+0.13), 34/4-7 0.00 (+0.05), 34/4-6 -0.06 (-0.09). The photographs agree
-  with the mud log where chemistry does and fail where chemistry fails. The
-  median ratio is 0.66.
+  with the mud log where chemistry does and fail where chemistry fails:
+  +0.125 against +0.177.
+- **Given chemistry, the photographs add about nothing (post hoc).** The
+  rank partial of P2 against the label, given measured Si/Al, has median
+  +0.02 (24/9-3 +0.20; the other five -0.02 to +0.09).
+- **Few bags carry each well's number.** Between 54 % and 83 % of the
+  high-passed label is exactly zero in each well, so outside 24/9-3 (212
+  informative bags) each rho rests on 19 to 35 bags.
 - **Not beyond colour.** Mean colour alone, fitted on the label, gives
   +0.153. Neither P1 nor P2 beats it (paired p 0.50 and 0.42).
 - **Fragile to single wells (exploratory).** Leaving out 24/9-3, 34/7-4 or
@@ -392,13 +421,18 @@ chemistry agree only weakly at bag scale.
 - **Circular-shift null per well:** p 0.005 (24/9-3), 0.005 (34/7-4), 0.045
   (34/7-9), 0.24 (34/7-10), 0.64 (34/4-7), 0.78 (34/4-6). Three wells carry
   the result.
-- **Lag profile (median):** lag -1 0.06, lag 0 0.125, lag +1 0.13, against a
-  no-skill value of 0.03 at +/-1. The photograph agrees with the label of
-  the next bag down as well as with its own. That is what a one-sample lag
-  between logged depth and bag depth, or downhole mixing, would give.
+- **Lag profile:** the median is 0.06 at lag -1, 0.125 at lag 0 and 0.13 at
+  lag +1, but there is no consistent lag across wells. From lag 0 to lag +1,
+  24/9-3 goes 0.35 to 0.26, 34/7-9 0.19 to 0.05, 34/7-10 0.08 to -0.04,
+  34/7-4 0.17 to 0.15, while 34/4-6 goes -0.06 to +0.14 and 34/4-7 0.00 to
+  +0.13. Measured Si/Al shows no plateau at +1 (median 0.08 against 0.18).
+  The bag join is left as pre-registered.
 - **Label sensitivities of P2:** with glauconite added to sand +0.141; sand
-  plus silt +0.133; faded blocks included +0.125; label shifted one bag
-  either way +0.11 and +0.05.
+  plus silt +0.133; faded blocks included +0.125; label shifted by one bag
+  +0.11 (deeper bag's label) and +0.05 (shallower). The shift was made per
+  bag (3 m in 24/9-3, 10 m in the other wells), not the +/-5 m of the plan.
+  It is the same operation as the lag profile, computed over all bags and
+  not within stretches, which is why the numbers differ slightly.
 
 ## C8 (exploratory, declared before reading): the mud log's own glauconite
 - Only 34/8-3 A has 10 or more bags with a glauconite fill (15): Spearman of
@@ -410,25 +444,30 @@ chemistry agree only weakly at bag scale.
 - All five G > 0.2 bags of 34/7-10 and all nine of 34/8-3 A carry a
   mud-log glauconite fill; the three of 34/4-6 and four of the six in
   34/7-4 do not (the out-of-window 34/7-4 bags among them).
-- Reading: a wellsite geologist in 1984-88 and the XRF index, made
-  independently, point at the same bags. This supports the v6 index as a
-  glauconite label near the unconformity. It does nothing for the step-2
-  photo score.
+- Reading: consistent with the index marking glauconite in two of four
+  wells (34/7-10 and 34/8-3 A: 14 of 14 high-G bags carry a fill); in the
+  other two (34/4-6, 34/7-4) 7 of 9 high-G bags have none. The bags are
+  contiguous, so the effective sample is a few intervals, and the glauconite
+  reading has no human key. Exploratory, not a validation. It does nothing
+  for the step-2 photo score.
 
-## Reading (draft, pending reviewer round 20)
-1. Wellsite sand fractions can be recovered from old mud logs with high
-   reader agreement on seven sheets, and on the eighth after one clarified
-   rule.
+## Reading (reviewer round 20: ACCEPT WITH CHANGES, applied; step 3 CLOSED)
+1. Wellsite sand fractions can be read from old mud logs with high
+   agreement between two AI readers on seven sheets, and on the eighth
+   after one clarified rule. Agreement is not accuracy: there is no human
+   key.
 2. The pre-registered wording applies, with its limits: "a model taught only
    chemistry, in wells it never saw, follows the local (within +/-50 m)
    variation of the sand fraction that the wellsite geologist estimated by
    eye on the same cuttings; agreement with a wellsite estimate, not ground
    truth; exploratory but fully pre-specified".
-3. The effect is small (+0.125), marginal (p 0.047, six wells), carried by
-   three wells, and no larger than what mean colour gives. It is about
-   two-thirds of what measured chemistry achieves against the same label.
-4. The weak link is the label, not only the photograph: chemistry itself
-   agrees with the wellsite sand fraction at only +0.18. A 10 % estimate by
-   eye per 5-10 m sample, with cavings and a possible one-sample lag, is a
-   noisy bag-scale reference.
-5. Not a sand detector, and not bed scale.
+3. The effect is small (+0.125), marginal (p 3/64, six wells), carried by
+   three wells, and no larger than what mean colour gives.
+4. Step 3 adds little beyond step 1: given measured Si/Al, the photographs
+   explain almost none of the label (partial +0.02).
+5. The comparison is limited by the reference pair. Measured Si/Al and the
+   wellsite sand fraction agree at only +0.18, and that does not say which
+   is at fault: Si/Al is not sand in a Hordaland section (biogenic silica,
+   tuff, glauconite), and the digitised label has no human key. This does
+   not show that photographs would do better against a better label.
+6. Not a sand detector, and not bed scale.

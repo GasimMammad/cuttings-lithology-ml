@@ -83,7 +83,8 @@ def table():
 
 
 def train():
-    torch.manual_seed(C.SEED); np.random.seed(C.SEED)
+    off = int(sys.argv[2]) if len(sys.argv) > 2 else 0  # v8 part C: seed offset (1000, 2000); 0 = X1 as run
+    torch.manual_seed(C.SEED + off); np.random.seed(C.SEED + off)
     dev = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
     OUT.mkdir(parents=True, exist_ok=True)
     b = table()
@@ -93,7 +94,7 @@ def train():
     print(f"bags {len(b)}, patches {len(tiles)}, missing {int((~ok).sum())}", flush=True)
     tiles = tiles[ok]
     stats = V2.well_stats(b)
-    f = OUT / "cnn_sial_predictions.csv"
+    f = OUT / ("cnn_sial_predictions.csv" if off == 0 else f"cnn_sial_predictions_seed{off}.csv")
     out = [pd.read_csv(f)] if f.exists() else []
     done = set(out[0].well) if out else set()
     import hashlib
@@ -101,7 +102,7 @@ def train():
     for k, w in enumerate(sorted(b.well.unique())):
         if w in done:
             continue
-        torch.manual_seed(C.SEED + k); np.random.seed(C.SEED + k)
+        torch.manual_seed(C.SEED + off + k); np.random.seed(C.SEED + off + k)
         t0 = time.time()
         d = fit_predict(tiles[tiles.well != w], tiles[tiles.well == w], stats, dev)
         out.append(d)

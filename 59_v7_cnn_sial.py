@@ -1,0 +1,137 @@
+"""
+v7 extra X1 (V7_PLAN.md "Extras", EXPLORATORY): fine-tuned ResNet-18 on the
+step-1 Si/Al target T1, leave-one-well-out over the 11 wells, v2 "C2" recipe
+unchanged except a regression head and MSE loss.
+
+  python 59_v7_cnn_sial.py train      LOWO training; writes cnn_sial_predictions.csv (resumes per fold)
+  python 59_v7_cnn_sial.py eval       step-1 statistic, paired vs R-D, and vs the mud-log label
+"""
+import sys
+import time
+from importlib import import_module
+
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+from PIL import Image
+from scipy.stats import wilcoxon
+from torch.utils.data import DataLoader, Dataset
+from torchvision import models, transforms
+
+import config as C
+
+V2 = import_module("31_v2_cnn")
+EV = import_module("29_v2_evaluate")
+M = import_module("52_v7_photo_to_xrf")
+OUT = C.WORK_DIR / "v7" / "x1"
+TILES = V2.TILES
+
+
+class DS(Dataset):
+    def __init__(self, rows, train, stats):
+        self.r = rows.reset_index(drop=True)
+        self.stats = stats
+        aug = [transforms.RandomHorizontalFlip(), transforms.RandomVerticalFlip(),
+               transforms.RandomRotation(15)] if train else []
+        self.tf = transforms.Compose(aug + [transforms.ToTensor()])
+
+    def __len__(self):
+        return len(self.r)
+
+    def __getitem__(self, i):
+        r = self.r.iloc[i]
+        x = self.tf(Image.open(r.patch_path).convert("RGB"))
+        mu, sd = self.stats[r.well]
+        return (x - mu) / sd, torch.tensor(r.y, dtype=torch.float32), i
+
+
+def fit_predict(tr, te, stats, dev):
+    dl = DataLoader(DS(tr, True, stats), batch_size=C.BATCH_SIZE, shuffle=True, num_workers=4,
+                    persistent_workers=True)
+    m = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+    for p in m.parameters():
+        p.requires_grad = False
+    m.fc = nn.Linear(m.fc.in_features, 1)
+    m = m.to(dev)
+    crit = nn.MSELoss()
+    for stage, epochs, lr in (("head", C.EPOCHS_HEAD, C.LR_HEAD), ("ft", C.EPOCHS_FINETUNE, C.LR_FINETUNE)):
+        if stage == "ft":
+            for p in m.layer4.parameters():
+                p.requires_grad = True
+        opt = torch.optim.AdamW([p for p in m.parameters() if p.requires_grad], lr=lr)
+        for _ in range(epochs):
+            m.train()
+            for x, y, _ in dl:
+                x, y = x.to(dev), y.to(dev)
+                opt.zero_grad(); crit(m(x).squeeze(1), y).backward(); opt.step()
+    m.eval()
+    te = te.reset_index(drop=True)
+    pr = np.zeros(len(te))
+    with torch.no_grad():
+        for x, _, i in DataLoader(DS(te, False, stats), batch_size=128, num_workers=4):
+            pr[i.numpy()] = m(x.to(dev)).squeeze(1).cpu().numpy()
+    return te.assign(p=pr).groupby(["well", "depth_m"], as_index=False).p.median()
+
+
+def table():
+    base, _ = EV.load_tables()
+    s1 = pd.read_csv(C.WORK_DIR / "v7" / "step1_predictions.csv")
+    assert (s1.well.values == base.well.values).all()
+    b = base[["well", "depth_m", "stem"]].assign(in_S=s1.in_S.values.astype(bool), T1=s1.T1.values)
+    return b[b.in_S & np.isfinite(b.T1)].reset_index(drop=True)
+
+
+def train():
+    torch.manual_seed(C.SEED); np.random.seed(C.SEED)
+    dev = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    OUT.mkdir(parents=True, exist_ok=True)
+    b = table()
+    tiles = pd.DataFrame([{"patch_path": str(C.PATCH_DIR / r.well / f"{r.stem}__{t}.jpg"), "well": r.well,
+                           "depth_m": r.depth_m, "y": r.T1} for r in b.itertuples() for t in TILES])
+    ok = tiles.patch_path.map(lambda p: __import__("os").path.exists(p))
+    print(f"bags {len(b)}, patches {len(tiles)}, missing {int((~ok).sum())}", flush=True)
+    tiles = tiles[ok]
+    stats = V2.well_stats(b)
+    f = OUT / "cnn_sial_predictions.csv"
+    out = [pd.read_csv(f)] if f.exists() else []
+    done = set(out[0].well) if out else set()
+    for w in sorted(b.well.unique()):
+        if w in done:
+            continue
+        t0 = time.time()
+        d = fit_predict(tiles[tiles.well != w], tiles[tiles.well == w], stats, dev)
+        out.append(d)
+        pd.concat(out).to_csv(f, index=False)
+        print(f"held-out {w}: {len(d)} bags, {time.time() - t0:.0f}s", flush=True)
+    print("done", flush=True)
+
+
+def evaluate():
+    import json
+    b = table()
+    p = pd.read_csv(OUT / "cnn_sial_predictions.csv")
+    base, _ = EV.load_tables()
+    s1 = pd.read_csv(C.WORK_DIR / "v7" / "step1_predictions.csv")
+    wells, d = base.well.values, base.depth_m.values.astype(float)
+    S = s1.in_S.values.astype(bool) & np.isfinite(s1.T1.values)
+    cnn = base[["well", "depth_m"]].merge(p, on=["well", "depth_m"], how="left").p.values
+    s_cnn = M.per_well_hp(cnn, s1.T1.values, wells, d, S)
+    s_rd = M.per_well_hp(s1.pred_RD.values, s1.T1.values, wells, d, S)
+    both = pd.concat([s_cnn, s_rd], axis=1, keys=["cnn", "rd"]).dropna()
+    res = {"CNN vs T1": {**M.summarise(s_cnn), "per_well": s_cnn.round(4).to_dict()},
+           "R-D vs T1 (step 1)": {**M.summarise(s_rd), "per_well": s_rd.round(4).to_dict()},
+           "paired CNN > R-D p": float(wilcoxon(both.cnn - both.rd, alternative="greater").pvalue),
+           "paired CNN < R-D p": float(wilcoxon(both.cnn - both.rd, alternative="less").pvalue)}
+    T = import_module("58_v7_mudlog_tests")
+    _, _, w3, d3, s13, t3, S3 = T.load()
+    e = pd.read_csv(T.OUT / "C4_eligibility.csv")
+    elig = e[e.eligible].well.tolist()
+    res["CNN vs mud-log sand (6 wells, descriptive)"] = T.summ(T.per_well(cnn, t3.Y.values, w3, d3, S3, elig))
+    with open(OUT / "x1_results.json", "w") as f:
+        json.dump(res, f, indent=1, default=float)
+    print(json.dumps(res, indent=1, default=float))
+
+
+if __name__ == "__main__":
+    {"train": train, "eval": evaluate}[sys.argv[1]]()

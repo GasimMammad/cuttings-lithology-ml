@@ -47,7 +47,29 @@ def folder(reader, name, well, tiles, order_rng):
     return {"reader": reader, "folder": name, "well": well, "n": len(tiles)}
 
 
+def fix_2493():
+    """The one pre-declared fix after G2 (V7_PLAN.md C3): reader C re-reads all
+    of 24/9-3 with rules version 3; reader D reads a fresh 30 % (tiles reader B
+    did not read)."""
+    idx = pd.read_csv(OUT / "tiles" / "index.csv")
+    tiles = idx[idx.well == "24_9-3"].tile.tolist()
+    rc, rd = np.random.default_rng(5603), np.random.default_rng(5604)
+    rows = []
+    for i, part in enumerate(np.array_split(list(rc.permutation(tiles)), 2)):
+        rows.append(folder("C", f"24_9-3_{i + 1}", "24_9-3", part, rc))
+    bsel = pd.read_csv(OUT / "readers" / "B_selection.csv")
+    rest = sorted(set(tiles) - set(bsel[bsel.well == "24_9-3"].tile))
+    pick = sorted(rd.choice(rest, int(np.ceil(FRAC_B * len(tiles))), replace=False))
+    rows.append(folder("D", "24_9-3_1", "24_9-3", pick, rd))
+    pd.DataFrame(rows).to_csv(OUT / "readers" / "folders_fix_24_9-3.csv", index=False)
+    print(pd.DataFrame(rows).to_string(index=False))
+
+
 def main():
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "fix_24_9-3":
+        fix_2493()
+        return
     idx = pd.read_csv(OUT / "tiles" / "index.csv")
     ra, rb = np.random.default_rng(SEED_A), np.random.default_rng(SEED_B)
     rows, bsel = [], []

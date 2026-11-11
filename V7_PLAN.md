@@ -708,3 +708,22 @@ here may be used to change a closed result or its wording.
   afterwards; predictions are the out-of-fold step-1 predictions.
 - **X2:** the Saga log never replaces the Exlog reading in any statistic;
   agreement is reported with n and a bootstrap CI.
+
+### X3 changes fixed before any X3 tile was read (2026-11-11)
+- **34/7-1 uses the text route.** On inspection of the sheet geometry (no
+  reading), the % column carries only single-row minor-component symbols
+  across a few stripes, not fills, so its widths cannot be read as
+  percentages. Route B of agent5_inventory.md is used: readers transcribe
+  each description entry and classify its main rock and its sand mention.
+  Fixed mapping to a sand fraction: main sand 0.7; interbedded/sandy 0.3;
+  occasional 0.1; trace 0.03; none 0. An entry applies from its depth to the
+  next entry; "a/a" and lines naming no main rock carry the previous entry
+  forward. Two readers read all 18 tiles; agreement is on the mapped value.
+  The reviewer's blank rule is therefore not needed; the text route never
+  reads the column.
+- **24/9-4:** only main-bore sheets down to 1753 m are used (sidetrack
+  below; bags there cannot be assigned to a bore). Depth check: every
+  reader's labels must lie inside the sheet's printed header interval and be
+  monotonic at 20 m spacing; tiles that fail are excluded.
+- Both wells then go through the C4 eligibility rule; P2 is reported with
+  the eligible new wells added to the six.

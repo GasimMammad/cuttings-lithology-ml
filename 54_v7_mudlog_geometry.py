@@ -42,6 +42,8 @@ SHEETS = {
                     col=(550, 760), anchor=(16606, 1200.0), family="exlog"),
     "34_7-9": dict(f="34_7-9_MUD_LOG_REPORT_1_ENCL_1.TIF", pxm=15.75, grid=(780, 1750), dtrack=(440, 515),
                    col=(515, 720), anchor=(18109, 1300.0), family="exlog"),
+    "34_7-1": dict(f="34_7-1_MUD_LOG_MD_PLOT_1.TIF", pxm=24.2, grid=(560, 1180), dtrack=(1360, 1472),
+                   col=(1472, 1775), anchor=(13289, 820.0), family="gearhart1984"),  # X3 (text route)
     "34_7-9_saga": dict(f="34_7-9_SAGA_LITH.TIF", pxm=24.2, grid=(200, 1000), dtrack=(1091, 1234),
                         col=(1234, 1527), anchor=(21868, 1220.0), family="saga"),  # X2: rendered from the PDF at scale 5
     "24_9-3": dict(f="24_9-3_MUD_LOG_MD_PLOT_1.TIF", pxm=15.7, grid=(1440, 2200), dtrack=(1050, 1150),

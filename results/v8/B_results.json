@@ -1,0 +1,131 @@
+{
+ "B1 between wells: rho vs MAD of measured hp log10(Si/Al)": {
+  "spearman": 0.7818181818181819,
+  "exact_perm_p_one_sided": 0.003198552990219657,
+  "n": 11
+ },
+ "B1 descriptive: rho vs n_bags / spacing / mean log Ba": {
+  "n_bags": -0.018181818181818184,
+  "median_spacing_m": 0.5879685967014486,
+  "mean_logBa": -0.48181818181818187
+ },
+ "B2 within wells: window rho vs window MAD (measured)": {
+  "per_well": {
+   "24_9-3": 0.6936,
+   "24_9-4": 0.6364,
+   "34_4-6": 0.8857,
+   "34_4-7": 0.4643,
+   "34_7-1": -0.4286,
+   "34_7-10": 0.7381,
+   "34_7-4": 0.5714,
+   "34_7-9": 0.5,
+   "34_8-3": -0.5,
+   "34_8-3_A": 0.0
+  },
+  "median": 0.5357142857142858,
+  "n_pos": 7,
+  "n_wells": 10,
+  "wilcoxon_p": 0.013671875,
+  "windows_per_well": {
+   "24_9-3": 17,
+   "24_9-4": 10,
+   "34_4-6": 6,
+   "34_4-7": 7,
+   "34_7-1": 6,
+   "34_7-10": 8,
+   "34_7-4": 8,
+   "34_7-6": 3,
+   "34_7-9": 7,
+   "34_8-3": 5,
+   "34_8-3_A": 5
+  }
+ },
+ "B3 label-free, between wells: rho vs MAD of hp prediction": {
+  "spearman": 0.4727272727272727,
+  "exact_perm_p_one_sided": 0.07285629108545776
+ },
+ "B3 label-free, within wells: window rho vs window MAD (prediction)": {
+  "per_well": {
+   "24_9-3": 0.7304,
+   "24_9-4": 0.3333,
+   "34_4-6": 0.9429,
+   "34_4-7": 0.25,
+   "34_7-1": 0.6,
+   "34_7-10": 0.6429,
+   "34_7-4": 0.7381,
+   "34_7-9": 0.3571,
+   "34_8-3": -0.1,
+   "34_8-3_A": 0.1
+  },
+  "median": 0.4785714285714286,
+  "n_pos": 9,
+  "wilcoxon_p": 0.0029296875
+ },
+ "B4 Tertiary vs pre-Tertiary (descriptive)": {
+  "per_well": {
+   "24_9-3": {
+    "rho_T": 0.4598,
+    "rho_preT": -0.115,
+    "mad_T": 0.0488,
+    "mad_preT": 0.0424
+   },
+   "34_4-6": {
+    "rho_T": 0.493,
+    "rho_preT": 0.4704,
+    "mad_T": 0.0304,
+    "mad_preT": 0.0435
+   },
+   "34_4-7": {
+    "rho_T": 0.3008,
+    "rho_preT": 0.3961,
+    "mad_T": 0.0231,
+    "mad_preT": 0.0317
+   },
+   "34_7-1": {
+    "rho_T": 0.1895,
+    "rho_preT": 0.5347,
+    "mad_T": 0.0269,
+    "mad_preT": 0.0361
+   },
+   "34_7-10": {
+    "rho_T": 0.5101,
+    "rho_preT": 0.7794,
+    "mad_T": 0.0321,
+    "mad_preT": 0.0865
+   },
+   "34_7-4": {
+    "rho_T": 0.4797,
+    "rho_preT": 0.5359,
+    "mad_T": 0.0347,
+    "mad_preT": 0.0348
+   },
+   "34_7-6": {
+    "rho_T": 0.3205,
+    "rho_preT": 0.5274,
+    "mad_T": 0.0221,
+    "mad_preT": 0.0502
+   },
+   "34_7-9": {
+    "rho_T": 0.5293,
+    "rho_preT": 0.4913,
+    "mad_T": 0.0395,
+    "mad_preT": 0.0426
+   },
+   "34_8-3": {
+    "rho_T": 0.025,
+    "rho_preT": 0.6341,
+    "mad_T": 0.0215,
+    "mad_preT": 0.0407
+   },
+   "34_8-3_A": {
+    "rho_T": 0.1801,
+    "rho_preT": 0.4311,
+    "mad_T": 0.0201,
+    "mad_preT": 0.0291
+   }
+  },
+  "n_same_sign": 8,
+  "n_wells": 10
+ },
+ "wording": "skill follows the spread of the chemistry; a label-free rule of thumb is supported"
+}

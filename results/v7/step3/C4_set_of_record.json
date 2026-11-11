@@ -1,0 +1,14 @@
+{
+ "n_eligible_in_S": 6,
+ "min_wells": 6,
+ "set_of_record": "S (Tertiary)",
+ "eligible_wells": [
+  "24_9-3",
+  "34_4-6",
+  "34_4-7",
+  "34_7-10",
+  "34_7-4",
+  "34_7-9"
+ ],
+ "n_bags_S": 1372
+}

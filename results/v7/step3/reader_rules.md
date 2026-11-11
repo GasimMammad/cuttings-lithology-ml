@@ -1,4 +1,4 @@
-# Rules for reading the mud-log cuttings column (v7 step 3; version 2, frozen before the main reading)
+# Rules for reading the mud-log cuttings column (v7 step 3; version 3: version 2 plus one clarification for 24/9-3, made after the first agreement check)
 
 You are reading scanned mud logs from 1981-1988. Each tile is a 40 m piece of
 ONE track: the "cuttings lithology %" column. The wellsite geologist drew,
@@ -88,7 +88,13 @@ no other reader's output. Do not use your knowledge of the area to guess.
     staggered); short dashes; dash-dot-dash; and cells holding short
     vertical ticks, often with a digit 1, 2 or 3 (these are numbered
     claystone types).
-  - Sand is dots with no dashes, sparse or dense.
+  - Sand is dots with no dashes, sparse or dense. A cell that holds only
+    dots is sand, even where rows of single dots alternate with rows of two
+    or three dots. Dash-dot clay has a clear dash, at least a third of a
+    cell wide, in every row; a few specks beside the dots do not make it
+    clay. (Added in version 3 after the two readers disagreed on this
+    pattern.)
+  - A long stripe that is blank except for a letter such as "R" is `unread`.
   - Digits, "T", "6", shell arcs and the clover-like glauconite mark are
     traces.
 

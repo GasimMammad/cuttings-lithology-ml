@@ -1,0 +1,20 @@
+{"tile": "34_8-3_1480.png", "blocks": [{"top": 1480, "bottom": 1520, "clay": 100, "flag": ""}], "notes": "claystone T glyphs throughout; heavy horizontals at 1490/1500/1510 are printed 10 m grid"}
+{"tile": "34_8-3_1280.png", "blocks": [{"top": 1280, "bottom": 1318, "flag": "mask:no_returns"}, {"top": 1318, "bottom": 1320, "clay": 100, "flag": ""}], "notes": "NR cross ends ~1318; claystone below"}
+{"tile": "34_8-3_1960.png", "blocks": [{"top": 1960, "bottom": 1965, "clay": 100, "flag": ""}, {"top": 1965, "bottom": 1975, "clay": 90, "sand": 10, "flag": ""}, {"top": 1975, "bottom": 1985, "clay": 70, "sand": 30, "flag": ""}, {"top": 1985, "bottom": 1995, "clay": 90, "sand": 10, "flag": ""}, {"top": 1995, "bottom": 2000, "clay": 100, "flag": ""}], "notes": ""}
+{"tile": "34_8-3_1560.png", "blocks": [{"top": 1560, "bottom": 1600, "clay": 100, "flag": ""}], "notes": "claystone throughout"}
+{"tile": "34_8-3_1320.png", "blocks": [{"top": 1320, "bottom": 1360, "clay": 100, "flag": ""}], "notes": "claystone throughout"}
+{"tile": "34_8-3_1800.png", "blocks": [{"top": 1800, "bottom": 1840, "clay": 100, "flag": ""}], "notes": "claystone throughout; white line ~1804.5 is a paper seam"}
+{"tile": "34_8-3_1920.png", "blocks": [{"top": 1920, "bottom": 1960, "clay": 100, "flag": ""}], "notes": "claystone throughout; white line at 1950 is a paper seam"}
+{"tile": "34_8-3_2040.png", "blocks": [{"top": 2040, "bottom": 2075, "clay": 100, "flag": ""}, {"top": 2075, "bottom": 2080, "clay": 90, "sand": 10, "flag": ""}], "notes": "seam/smudge ~2050-2053 still readable; 90-100 stripe with dots from 2075"}
+{"tile": "34_8-3_1840.png", "blocks": [{"top": 1840, "bottom": 1880, "clay": 100, "flag": ""}], "notes": "claystone throughout"}
+{"tile": "34_8-3_1360.png", "blocks": [{"top": 1360, "bottom": 1400, "clay": 100, "flag": ""}], "notes": "claystone throughout; white line ~1391 is a paper seam"}
+{"tile": "34_8-3_1760.png", "blocks": [{"top": 1760, "bottom": 1800, "clay": 100, "flag": ""}], "notes": "claystone throughout"}
+{"tile": "34_8-3_2000.png", "blocks": [{"top": 2000, "bottom": 2005, "clay": 80, "sand": 20, "flag": ""}, {"top": 2005, "bottom": 2015, "clay": 90, "sand": 10, "flag": ""}, {"top": 2015, "bottom": 2040, "clay": 100, "flag": ""}], "notes": ""}
+{"tile": "34_8-3_1440.png", "blocks": [{"top": 1440, "bottom": 1480, "clay": 100, "flag": ""}], "notes": "claystone throughout; seams at ~1450 and ~1474"}
+{"tile": "34_8-3_1680.png", "blocks": [{"top": 1680, "bottom": 1720, "clay": 100, "flag": ""}], "notes": "claystone throughout"}
+{"tile": "34_8-3_1720.png", "blocks": [{"top": 1720, "bottom": 1760, "clay": 100, "flag": ""}], "notes": "claystone throughout; seams at ~1722 and 1750"}
+{"tile": "34_8-3_1880.png", "blocks": [{"top": 1880, "bottom": 1920, "clay": 100, "flag": ""}], "notes": "claystone throughout; seam ~1887"}
+{"tile": "34_8-3_1400.png", "blocks": [{"top": 1400, "bottom": 1440, "clay": 100, "flag": ""}], "notes": "claystone throughout"}
+{"tile": "34_8-3_1600.png", "blocks": [{"top": 1600, "bottom": 1640, "clay": 100, "flag": ""}], "notes": "claystone throughout; seam ~1639"}
+{"tile": "34_8-3_1640.png", "blocks": [{"top": 1640, "bottom": 1680, "clay": 100, "flag": ""}], "notes": "claystone throughout"}
+{"tile": "34_8-3_1520.png", "blocks": [{"top": 1520, "bottom": 1560, "clay": 100, "flag": ""}], "notes": "claystone throughout; seam ~1557"}

@@ -1,0 +1,12 @@
+{"tile": "34_7-10_0720.png", "blocks": [{"top": 720, "bottom": 760, "clay": 90, "sand": 10, "flag": "", "unsure": true}], "notes": "90-100 stripe empty with a single small dot in some cells; read as sand or just empty (then 10 unread)"}
+{"tile": "34_7-10_1080.png", "blocks": [{"top": 1080, "bottom": 1090, "clay": 70, "sand": 20, "glauc": 10, "flag": "", "unsure": true}, {"top": 1090, "bottom": 1110, "clay": 80, "glauc": 20, "flag": ""}, {"top": 1110, "bottom": 1120, "clay": 90, "glauc": 10, "flag": ""}], "notes": "1080-1090: 70-90 stripes only sparse dots/dashes, sand uncertain"}
+{"tile": "34_7-10_1280.png", "blocks": [{"top": 1280, "bottom": 1320, "clay": 100, "flag": ""}], "notes": "isolated dots near 70-80 and 30-40 are traces"}
+{"tile": "34_7-10_1120.png", "blocks": [{"top": 1120, "bottom": 1130, "clay": 90, "glauc": 10, "flag": ""}, {"top": 1130, "bottom": 1140, "clay": 100, "flag": ""}, {"top": 1140, "bottom": 1150, "clay": 90, "sand": 10, "flag": "", "unsure": true}, {"top": 1150, "bottom": 1160, "clay": 100, "flag": ""}], "notes": "1140-1150: 90-100 stripe nearly empty with a few dots; sand vs empty uncertain"}
+{"tile": "34_7-10_1600.png", "blocks": [{"top": 1600, "bottom": 1640, "clay": 100, "flag": ""}], "notes": "small outlined cells are traces"}
+{"tile": "34_7-10_1400.png", "blocks": [{"top": 1400, "bottom": 1440, "clay": 100, "flag": ""}], "notes": "small outlined cells with glyphs are traces"}
+{"tile": "34_7-10_1160.png", "blocks": [{"top": 1160, "bottom": 1200, "clay": 100, "flag": ""}], "notes": ""}
+{"tile": "34_7-10_0560.png", "blocks": [{"top": 560, "bottom": 600, "clay": 90, "sand": 10, "flag": ""}], "notes": "90-100 stripe has one small dot per cell; read as sand"}
+{"tile": "34_7-10_0920.png", "blocks": [{"top": 920, "bottom": 960, "clay": 90, "sand": 10, "flag": ""}], "notes": "90-100 stripe has one small dot per cell; read as sand"}
+{"tile": "34_7-10_0640.png", "blocks": [{"top": 640, "bottom": 670, "clay": 100, "flag": ""}, {"top": 670, "bottom": 680, "clay": 90, "sand": 10, "flag": ""}], "notes": "670-680: one dot per cell in 90-100 stripe"}
+{"tile": "34_7-10_1760.png", "blocks": [{"top": 1760, "bottom": 1800, "clay": 100, "flag": ""}], "notes": "P and outlined cells are traces"}
+{"tile": "34_7-10_1680.png", "blocks": [{"top": 1680, "bottom": 1720, "clay": 100, "flag": ""}], "notes": "V marks and outlined cells are traces"}

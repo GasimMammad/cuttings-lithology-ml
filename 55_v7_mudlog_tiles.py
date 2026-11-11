@@ -135,7 +135,8 @@ def main():
         bot = min(XS.TOP_SHETLAND[well] + BELOW_M, t.depth_m.max() - TILE_M)
         tops = np.arange(top, bot, TILE_M)
         cols = track_column(well, im, t, tops)
-        zoom = 450.0 / (cfg["col"][1] - cfg["col"][0])
+        # column about 450 px wide, tile no taller than 1480 px (so the reader's image is not downscaled)
+        zoom = min(450.0 / (cfg["col"][1] - cfg["col"][0]), 1480.0 / ((TILE_M + 2 * PAD_M) * cfg["pxm"]))
         (OUT / "tiles" / well).mkdir(parents=True, exist_ok=True)
         for k, d0 in enumerate(tops):
             xl, xr, v = cols[k]

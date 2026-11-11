@@ -679,3 +679,32 @@ here may be used to change a closed result or its wording.
 - Two readers as in step 3 (reader A all tiles, reader B a seeded 30 %).
 - Eligibility as C4. P2 recomputed with the eligible new wells added to the
   six, reported beside the closed step-3 result, never in place of it.
+
+### Reviewer (extras plan): APPROVE WITH CHANGES, applied before any extra is run
+- **X0 wording:** "two further AI readings (same model family; one by the
+  session that wrote the rules and had seen 3 of the 17 tiles). They measure
+  reader consistency, not accuracy. No human key exists." The audit agent has
+  no access to reader outputs; its readings are committed before scoring.
+- **X1 control:** frozen ResNet-18 features (same patches, same per-well
+  colour standardisation, mean over the 16 patches) through R-D's exact
+  per-well z, StandardScaler, PCA 32, Ridge, same folds. "Fine-tuning beats
+  frozen features" only if the fine-tuned CNN beats this control at paired
+  p < 0.05. Against R-D the comparison is worded "the C2 CNN recipe against
+  R-D". A null is worded "no detectable gain (n = 11 wells)"; a loss is
+  reported as a loss.
+- **X1 hygiene:** torch seed set per fold (SEED + fold index); config.py
+  hash recorded; the test well's colour statistics come from its own
+  unlabelled images, as for R-D; fixed epochs, no early stopping.
+- **X3 depths:** per tile, the reader's depth labels must be monotonic with
+  consistent spacing; each well is checked against one independent marker
+  (a casing shoe from the header). Each tile gets a depth uncertainty (half
+  the label spacing as read, or the shoe misfit, whichever is larger); bag
+  intervals narrower than it are excluded.
+- **X3, 34/7-1 blank rule (fixed now):** blank width counts as claystone
+  only where the description for that interval names claystone or clay as
+  the main lithology; otherwise it is unknown and the interval is excluded.
+  Blank-as-claystone everywhere is a sensitivity only.
+- **X3 P2:** every eligible new well is included and none is dropped
+  afterwards; predictions are the out-of-fold step-1 predictions.
+- **X2:** the Saga log never replaces the Exlog reading in any statistic;
+  agreement is reported with n and a bootstrap CI.

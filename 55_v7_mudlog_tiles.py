@@ -31,7 +31,7 @@ TILE_M = 40.0
 PAD_M = 2.0
 # first logged depth of the cuttings column on each sheet (from the header)
 LOG_TOP = {"34_4-6": 400, "34_4-7": 470, "34_7-4": 480, "34_8-3": 1318, "34_8-3_A": 996,
-           "34_7-10": 440, "34_7-9": 471, "24_9-3": 145}
+           "34_7-10": 440, "34_7-9": 471, "24_9-3": 145, "34_7-9_saga": 471}
 BELOW_M = 40.0  # digitise this far below top Shetland
 
 
@@ -132,7 +132,7 @@ def main():
         im = G.load(well)
         t = pd.read_csv(OUT / "calib" / f"{well}_depth_table.csv")
         top = np.floor(LOG_TOP[well] / TILE_M) * TILE_M
-        bot = min(XS.TOP_SHETLAND[well] + BELOW_M, t.depth_m.max() - TILE_M)
+        bot = min(XS.TOP_SHETLAND[well.replace("_saga", "")] + BELOW_M, t.depth_m.max() - TILE_M)
         tops = np.arange(top, bot, TILE_M)
         cols = track_column(well, im, t, tops)
         # column about 450 px wide, tile no taller than 1480 px (so the reader's image is not downscaled)

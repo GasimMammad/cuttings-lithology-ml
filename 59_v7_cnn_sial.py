@@ -96,15 +96,39 @@ def train():
     f = OUT / "cnn_sial_predictions.csv"
     out = [pd.read_csv(f)] if f.exists() else []
     done = set(out[0].well) if out else set()
-    for w in sorted(b.well.unique()):
+    import hashlib
+    (OUT / "config_sha256.txt").write_text(hashlib.sha256(open("config.py", "rb").read()).hexdigest() + "\n")
+    for k, w in enumerate(sorted(b.well.unique())):
         if w in done:
             continue
+        torch.manual_seed(C.SEED + k); np.random.seed(C.SEED + k)
         t0 = time.time()
         d = fit_predict(tiles[tiles.well != w], tiles[tiles.well == w], stats, dev)
         out.append(d)
         pd.concat(out).to_csv(f, index=False)
         print(f"held-out {w}: {len(d)} bags, {time.time() - t0:.0f}s", flush=True)
     print("done", flush=True)
+
+
+def embed18():
+    """X1 control: frozen ResNet-18 (ImageNet) avgpool features, same patches and
+    per-well colour standardisation, mean over the 16 patches of each bag."""
+    dev = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    b = table()
+    tiles = pd.DataFrame([{"patch_path": str(C.PATCH_DIR / r.well / f"{r.stem}__{t}.jpg"), "well": r.well,
+                           "depth_m": r.depth_m, "y": 0.0} for r in b.itertuples() for t in TILES])
+    tiles = tiles[tiles.patch_path.map(lambda p: __import__("os").path.exists(p))].reset_index(drop=True)
+    stats = V2.well_stats(b)
+    m = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+    m.fc = nn.Identity()
+    m = m.to(dev).eval()
+    F = np.zeros((len(tiles), 512), np.float32)
+    with torch.no_grad():
+        for x, _, i in DataLoader(DS(tiles, False, stats), batch_size=128, num_workers=4):
+            F[i.numpy()] = m(x.to(dev)).cpu().numpy()
+    df = pd.DataFrame(F).assign(well=tiles.well, depth_m=tiles.depth_m)
+    df.groupby(["well", "depth_m"], as_index=False).mean().to_pickle(OUT / "frozen_r18_bag_features.pkl")
+    print("frozen ResNet-18 features written", flush=True)
 
 
 def evaluate():
@@ -119,7 +143,16 @@ def evaluate():
     s_cnn = M.per_well_hp(cnn, s1.T1.values, wells, d, S)
     s_rd = M.per_well_hp(s1.pred_RD.values, s1.T1.values, wells, d, S)
     both = pd.concat([s_cnn, s_rd], axis=1, keys=["cnn", "rd"]).dropna()
+    fz = pd.read_pickle(OUT / "frozen_r18_bag_features.pkl")
+    X18 = base[["well", "depth_m"]].merge(fz, on=["well", "depth_m"], how="left").drop(columns=["well", "depth_m"]).values.astype(float)
+    S18 = S & np.isfinite(X18).all(1)
+    p18, _ = M.cv_predict(M.zwell_mat(X18, wells, S18), s1.T1.values, wells, d, S18, "RD", lambda w: w)
+    s_18 = M.per_well_hp(p18, s1.T1.values, wells, d, S)
+    b18 = pd.concat([s_cnn, s_18], axis=1, keys=["cnn", "r18"]).dropna()
     res = {"CNN vs T1": {**M.summarise(s_cnn), "per_well": s_cnn.round(4).to_dict()},
+           "CONTROL frozen ResNet-18 + R-D pipeline vs T1": {**M.summarise(s_18), "per_well": s_18.round(4).to_dict()},
+           "paired CNN > frozen R18 p (fine-tuning claim)": float(wilcoxon(b18.cnn - b18.r18, alternative="greater").pvalue),
+           "paired CNN < frozen R18 p": float(wilcoxon(b18.cnn - b18.r18, alternative="less").pvalue),
            "R-D vs T1 (step 1)": {**M.summarise(s_rd), "per_well": s_rd.round(4).to_dict()},
            "paired CNN > R-D p": float(wilcoxon(both.cnn - both.rd, alternative="greater").pvalue),
            "paired CNN < R-D p": float(wilcoxon(both.cnn - both.rd, alternative="less").pvalue)}
@@ -134,4 +167,4 @@ def evaluate():
 
 
 if __name__ == "__main__":
-    {"train": train, "eval": evaluate}[sys.argv[1]]()
+    {"train": train, "embed": embed18, "eval": evaluate}[sys.argv[1]]()

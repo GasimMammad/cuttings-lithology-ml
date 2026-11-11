@@ -394,5 +394,7 @@
    "n_intervals": 61,
    "sand_mad": 0.0
   }
- }
+ },
+ "main session vs audit agent: tiles with different block boundaries (of 17)": 10,
+ "main session vs audit agent: tiles with identical notes": 0
 }

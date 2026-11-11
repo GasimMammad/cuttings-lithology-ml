@@ -506,8 +506,8 @@ not accuracy. No human key exists.
 - All four readings agree on sand, silt, glauconite, marl and coal in every
   interval (24 sand, 12 silt, 16 glauconite, 4 marl, 2 coal intervals).
 - The one tuff difference is a stripe with three "v" marks in 10 m (34/7-4,
-  1700-1710 m) that both new readings took as a fill and the reader of
-  record as traces. The carbonate difference is a narrow limestone stripe on
+  1700-1710 m) that both new readings took as a fill and both earlier
+  readers (record and checker) as traces. The carbonate difference is a narrow limestone stripe on
   34/4-6 that the checking reader did not report.
 - The same picture holds on the 14 tiles the main session had not seen.
 - The two new readings are not copies: they split blocks differently in 10
@@ -531,11 +531,13 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
 | Measured Si/Al against Exlog / against Saga (high-passed) | +0.23 / +0.07 |
 
 - **Two wellsite descriptions of the same cuttings agree only moderately**
-  (+0.4 to +0.5). That is one well and one reader, but it puts a number on
-  the label's own reliability: a photograph or a chemical analysis cannot be
-  expected to agree with one mud log much better than a second mud log does.
+  (+0.4 to +0.5). That is one well and one reader. Agreement between two
+  noisy labels is a rough guide to what any predictor can show against one
+  of them. It is not a strict ceiling, and the +0.42 also contains AI-reader
+  error and the 10 m resolution of the Saga log.
 - The photo model agrees with the two logs about equally (+0.19 and +0.16).
-  Si/Al agrees with Exlog but hardly with Saga.
+  Si/Al gives +0.23 against Exlog and +0.07 against Saga. With 127 bags in
+  one well this difference was not tested.
 - This supports reading step 3's small numbers as limited by the reference,
   with the caveat the reviewer set: it does not show that photographs would
   do better against a better label.
@@ -546,9 +548,15 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
   tiles of 80 m, two readers) and mapped to a sand fraction by a rule fixed
   beforehand (main sand 0.7; interbedded 0.3; occasional 0.1; trace 0.03).
   - The two readers transcribed 70 and 71 entries and give the same mapped
-    value for all 139 bags between 440 and 1860 m.
-  - The label is coarse: 15 bags fall under a "sand" entry, 29 under a
-    trace, the rest are claystone. Only 7 bags are informative, in 2 depth
+    value for all 467 labelled bags of the well (490-2903 m); 130 of them
+    are in set S. (An earlier version of this line said "139 bags between
+    440 and 1860 m"; that count was wrong.)
+  - No casing-shoe check of the depths was made for this well, and the
+    per-tile depth-uncertainty exclusion asked for in the plan was not
+    applied; the entries are 20-100 m apart, so it would not change the
+    outcome below.
+  - The label is coarse: of the 130 bags in S, 15 fall under a "sand"
+    entry, 29 under a trace, and 86 are claystone. Only 7 bags are informative, in 2 depth
     clusters, so the well is **not eligible** (the rule needs 15 in 3). As
     the wellsite geologist agent warned, this is a zone label, not a bag
     label.
@@ -557,25 +565,36 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
   handwritten labels.
   - Above about 757 m the column is blank (reader A: no returns; reader B:
     faded). Labels exist for 207 bags between 770 and 1720 m; mean sand
-    14 %.
+    14 % (15 % over the 197 bags in S).
   - Reader agreement on the 11 tiles both read (79 bag intervals): Spearman
     0.96, mean absolute difference 0.7 points. Every tile passed the
     depth-label check (labels monotonic at 20 m and inside the sheet's
     header interval). The 13 3/8" shoe at 1179 m is drawn at the 1180 m
-    label on its sheet.
+    label on its sheet. The per-tile depth-uncertainty exclusion asked for
+    in the plan was not applied: with labels every 20 m and the shoe within
+    1 m, the uncertainty (10 m) is wider than most bag intervals, and
+    applying it would have removed the well. This is a deviation from the
+    plan.
   - **Eligible:** 197 bags in S, 62 informative, 4 depth clusters.
 - **P2 with the eligible new well added (reported beside step 3, not in
   place of it):**
 
-| set | wells | median rho | wells > 0 | p | 95 % CI |
+| set | wells | median rho | positive / about 0 / negative | p | 95 % CI |
 |---|---|---|---|---|---|
-| Step 3 as closed | 6 | +0.125 | 4 positive, 1 zero, 1 negative | 0.047 | -0.03 to +0.27 |
-| With 24/9-4 added | 7 | +0.172 | 5 positive, 1 zero, 1 negative | 0.023 | +0.00 to +0.27 |
+| Step 3 as closed | 6 | +0.125 | 4 / 1 / 1 | 0.047 | -0.03 to +0.27 |
+| With 24/9-4 added | 7 | +0.172 | 5 / 1 / 1 | 0.023 | +0.00 to +0.27 |
+
+  34/4-7 = +0.003, shown as "about 0" (the results file counts it as
+  above zero: 5 and 6 wells).
+
+  - The lower CI bound of the seven-well row (+0.003) is 34/4-7's own
+    value. With 7 wells the interval does not clearly exclude zero.
 
   - 24/9-4 itself: photo model +0.27, measured Si/Al +0.35.
-  - Both 24/9 wells, where the Tertiary holds thick sands, show the clearest
-    agreement (+0.35 and +0.27); the Tampen wells, with little sand, stay
-    weak. The seventh well was added after the six-well result was known, so
+  - Post hoc: both 24/9 wells, where the Tertiary holds thick sands, show
+    the clearest agreement (+0.35 and +0.27); the Tampen wells, with little
+    sand, stay weak. These two wells also have the widest range of sand
+    fraction, which by itself raises a rank correlation. The seventh well was added after the six-well result was known, so
     this is supporting evidence, not a second test.
 
 ## X1. Fine-tuned CNN on Si/Al (run once, 2026-11-11; 59_v7_cnn_sial.py)
@@ -625,14 +644,30 @@ Reading:
   against ResNet-18) and in how the patches are prepared and pooled; these
   were not separated here.
 - 34/8-3, the well that failed in step 1, reaches +0.31 with the fine-tuned
-  network and stays at zero with both frozen models. One well, seen after
-  the run: an observation, not a result.
+  network and stays at zero with both frozen models. One well, one seed,
+  seen after the run. Its sidetrack 34/8-3 A shares the overburden and is in
+  that fold's training set, yet it shows no such change (0.19 / 0.16 /
+  0.18). An observation, not a result.
+- Both ResNet-18 models standardise colour per well using all of that well's
+  images, the test well's included (unlabelled). R-D's per-well z does the
+  same on embeddings. No test-well labels are used.
+- Hygiene as declared: seed per fold = SEED + fold index; the hash of
+  config.py is in results/v7/x1/config_sha256.txt; fixed epochs, no early
+  stopping.
 - Against the mud-log sand fraction (6 eligible wells, descriptive): median
   +0.12, 4 of 6 wells above zero, p = 0.078, CI -0.04 to +0.22. That is no
   better than R-D in step 3 (+0.125, p = 0.047).
 - One seed per fold: the fold-to-fold noise of the fine-tuned network was
   not measured, so per-well differences of a few hundredths carry no weight.
-- Step 1 stands as closed with R-D as the model of record. X1 says that the
-  chemistry signal is robust to the choice of network (three models, all
-  11 of 11 wells positive), and that fine-tuning on 2021 bags does not add
-  to it.
+- Step 1 stands as closed with R-D as the model of record. The chemistry
+  signal reappears with two other ImageNet ResNet pipelines (all 11 of 11
+  wells positive). Fine-tuning on 2021 bags gave no detectable gain over
+  frozen features (n = 11 wells, one seed).
+
+## Reviewer (extras, after results): ACCEPT WITH CHANGES, applied
+All X1 and X2 numbers matched the results files. Changes applied above: a
+wrong bag count for 34/7-1 corrected; the two depth controls that were not
+applied in X3 stated as deviations; the "about 0" well made explicit in the
+P2 table; softer wording for the X2 reliability reading, the X1 summary and
+the 34/8-3 observation; the colour-standardisation note added. Not done
+(optional): a bootstrap interval for the high-passed +0.53 in X2.

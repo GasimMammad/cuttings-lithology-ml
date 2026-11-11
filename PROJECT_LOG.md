@@ -562,3 +562,13 @@ eaa36f4 v2 results
 - **C8 (exploratory):** where the mud log draws a glauconite fill, 17 of 24 bags have XRF G > 0.2; elsewhere 9 of 762. Supports the v6 G index; nothing for the step-2 photo score.
 - **Usage settings changed 2026-11-11 (user approved):** 11 personal skills off via `skillOverrides`, `syncClaudeAiPlugins: false`; backup ~/.claude/settings.json.bak-2026-11-11. `syncClaudeAiSkills` left on (figure/slide skills may be wanted for the conference). Academic-research plugin left on.
 - **NEXT:** apply reviewer round-20 wording to V7_RESULTS.md step 3; close step 3; update memory; final summary of v7 (steps 1-3) for the user. Open offers: human audit key for the symbol-audit tiles; 34/7-9 Saga log as a second source; text route for 34/7-1 and 24/9-4.
+
+## 2026-11-11 evening: v7 step 3 CLOSED (reviewer round 20: ACCEPT WITH CHANGES, applied). v7 programme (steps 1-3) complete.
+- V7_RESULTS.md step-3 section final (commit e9d3896). Post hoc checks in results/v7/step3/step3_reviewer_checks.json.
+- **Agreed headline:** in six held-out wells a photograph model trained only on Si/Al agreed weakly with the wellsite sand fraction (median per-well Spearman +0.13; one-sided p = 3/64 = 0.047; CI -0.03 to +0.27), narrowly meeting the pre-registered criterion, no better than mean colour (+0.15) and below measured chemistry (+0.18). Four wells positive, one zero, one negative.
+- **Given measured Si/Al the photographs add about nothing** (partial +0.02): step 3 shows little beyond step 1 x the weak chemistry-mud-log link.
+- **Disclosures:** the G2 fix was legitimate in spirit, not by the letter (a pooled gate failed, not a well); the fix moved 24/9-3 towards sand (21 % -> 26 %); the primary is unchanged with reader A's original labels (+0.123, p 0.047); leave-one-area-out P2 fails (p 0.078); no human key for the readings.
+- **C8 wording:** mud-log glauconite is consistent with the XRF index in two of four wells; exploratory, not a validation.
+- **v7 in three lines:** (1) photos predict bag Si/Al chemistry in unseen wells (+0.32, 11/11): the solid result; (2) the pellet-blob glauconite detector failed its specificity test: it is a green-pixel score; (3) against wellsite sand fractions the photo model agrees weakly and marginally, not beyond colour or chemistry.
+- **Open offers, none started:** human key for the 17 symbol-audit tiles; 34/7-9 Saga log as a second source; text route for 34/7-1 and 24/9-4; pre-Tertiary digitisation; fine-tuned CNN.
+- NEXT is the user's call: thesis/conference write-up, or one of the open offers.

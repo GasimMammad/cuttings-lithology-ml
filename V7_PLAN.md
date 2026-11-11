@@ -511,6 +511,10 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
     reads the whole well and a fourth reads a fresh 30 %. If that fails, the
     well is dropped. The first result is reported either way. After a fix
     the third reader is the reader of record for that well.
+  - **Second pass, fixed on 2026-11-11 before readers C and D reported:** all
+    eight gates are recomputed with the re-read well's C-D intervals in place
+    of its A-B intervals. Pass: C is the reader of record for that well. Fail:
+    the well is dropped and the gates are recomputed on the other wells.
 - **Order, fixed:** G2, then eligibility (C4), then commit the set of
   record, then G3.
 - **G3 chemistry check (XRF, still no photographs).** Per-well Spearman of Y

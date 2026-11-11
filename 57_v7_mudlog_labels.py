@@ -127,9 +127,27 @@ def bag_table(blocks, wells=None, tiles=None, use_faded=False):
     return pd.DataFrame(rows)
 
 
-def g2():
-    A, pa = read_reader("A")
-    B, pb = read_reader("B")
+FIX_WELL = "24_9-3"  # the one well re-read after the first G2 pass (V7_PLAN.md C3)
+
+
+def readers(fix):
+    """Reader of record and checking reader. After the fix, readers C and D
+    replace A and B for FIX_WELL only."""
+    A, _ = read_reader("A")
+    B, _ = read_reader("B")
+    if fix:
+        Cc, _ = read_reader("C")
+        Dd, _ = read_reader("D")
+        A = pd.concat([A[A.well != FIX_WELL], Cc], ignore_index=True)
+        B = pd.concat([B[B.well != FIX_WELL], Dd], ignore_index=True)
+    return A, B
+
+
+def g2(fix=False, drop=None):
+    A, B = readers(fix)
+    if drop:
+        A, B = A[A.well != drop], B[B.well != drop]
+    tag = ("_fix" if fix else "") + (f"_without_{drop}" if drop else "")
     common = sorted(set(A.tile) & set(B.tile))
     ta = bag_table(A[A.tile.isin(common)], tiles=True)
     tb = bag_table(B[B.tile.isin(common)], tiles=True)
@@ -179,16 +197,18 @@ def g2():
              "wells_ok": all((v["spearman"] >= 0.60) if v["spearman"] is not None else (v["mean_abs_diff"] <= 10) for v in per.values())}
     res["gates"] = {k: bool(v) for k, v in gates.items()}
     res["G2_pass"] = bool(all(gates.values()))
-    m.to_csv(OUT / "G2_bag_intervals.csv", index=False)
-    with open(OUT / "G2_results.json", "w") as f:
+    m.to_csv(OUT / f"G2_bag_intervals{tag}.csv", index=False)
+    with open(OUT / f"G2_results{tag}.json", "w") as f:
         json.dump(res, f, indent=1)
     print(json.dumps({k: v for k, v in res.items() if k not in ("per_well", "class_presence")}, indent=1))
     print(pd.DataFrame(per).T.round(2).to_string())
     print(pd.DataFrame(pres).T.to_string())
 
 
-def labels():
-    A, _ = read_reader("A")
+def labels(fix=False, drop=None):
+    A, _ = readers(fix)
+    if drop:
+        A = A[A.well != drop]
     t = bag_table(A)
     f = bag_table(A, use_faded=True)[["well", "depth_m", "sand"]].rename(columns={"sand": "sand_with_faded"})
     t = t.merge(f, on=["well", "depth_m"], how="outer")
@@ -202,7 +222,9 @@ def labels():
 def main():
     cmd = sys.argv[1]
     if cmd == "check":
-        for r in ("A", "B"):
+        for r in ("A", "B", "C", "D"):
+            if not (OUT / "readers" / r).exists():
+                continue
             b, p = read_reader(r)
             print(r, "tiles", b.tile.nunique() if len(b) else 0, "blocks", len(b), "problems", len(p))
             if len(p):
@@ -210,8 +232,13 @@ def main():
                 print(p.head(25).to_string(index=False))
     elif cmd == "g2":
         g2()
-    elif cmd == "labels":
-        labels()
+    elif cmd == "g2fix":      # second pass: C and D replace A and B for the re-read well
+        g2(fix=True)
+    elif cmd == "g2drop":     # if the second pass fails: the re-read well is dropped
+        g2(drop=FIX_WELL)
+    elif cmd == "labels":     # labels [fix|drop]
+        mode = sys.argv[2] if len(sys.argv) > 2 else ""
+        labels(fix=mode == "fix", drop=FIX_WELL if mode == "drop" else None)
 
 
 if __name__ == "__main__":

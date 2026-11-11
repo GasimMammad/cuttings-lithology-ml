@@ -632,3 +632,50 @@ with the v6 XRF index G and with the step-2 photo score, per well. Wells
 with fewer than 10 bags of non-zero glauconite get no correlation, and the
 audit's glauconite confusion is reported beside it. This was thought of only
 after seeing the sheets, so it is exploratory.
+
+## Extras after v7 (requested by the user 2026-11-11; all EXPLORATORY, written before any of them is run)
+Steps 1-3 are closed and their results stand whatever these show. Nothing
+here may be used to change a closed result or its wording.
+
+### X0. Human-key substitute for the 17 symbol-audit tiles
+- The user asked for the check to be done by the main session and by a
+  dedicated agent, not by the user. Both are AI readers, so this is a third
+  and fourth independent reading, not a human key; it is reported as such.
+- Main session: read blind and committed before comparison (commit 92755d2);
+  3 of the 17 tiles had been seen before (flagged; results shown with and
+  without them).
+- Audit agent: a fresh reader with rules v3, the 17 tiles in a seeded order.
+- Scored against the reader of record (A; C for 24/9-3) and reader B (D
+  for 24/9-3): class presence (>= 10 % in a bag interval) and sand % at
+  bag-interval level, as in G2.
+
+### X1. Fine-tuned CNN on Si/Al (step-1 target)
+- Same set S, target T1 and leave-one-well-out folds as step 1.
+- ResNet-18, ImageNet weights, the v2 "C2" recipe unchanged (per-well colour
+  standardisation, flips and rotation, head then layer4, epochs, learning
+  rates, batch size and seed from config.py), mean-squared-error loss on T1.
+  Bag prediction = median over its 16 patches.
+- Statistic: the step-1 primary (per-well +/-50 m high-passed Spearman,
+  one-sided Wilcoxon). Comparison: paired Wilcoxon of CNN against R-D
+  (step 1, +0.32). Wording: "fine-tuning beats frozen features" only if the
+  paired p < 0.05; otherwise "no gain from fine-tuning".
+- Also scored against the mud-log sand fraction in the 6 eligible wells (the
+  step-3 P2 statistic), descriptive.
+
+### X2. 34/7-9 Saga wellsite lithology log as a second source
+- The Saga log (GEOLOGY/..._LITH_..._ENCL_1.PDF) is rendered from the PDF,
+  calibrated and tiled with scripts 54/55, and read by one reader with the
+  same rules (sheet notes from its own legend).
+- Statistics: agreement of Saga against the Exlog reading of record at
+  bag-interval level (Spearman, mean absolute difference), and P2 (step-1
+  predictions) and measured Si/Al against the Saga label. Inter-source
+  agreement is the result; no claim depends on it.
+
+### X3. 24/9-4 and 34/7-1 by the tile route
+- 24/9-4 (Fina, hand-drawn wellsite geologist log, 23 frames) and 34/7-1
+  (Gearhart 1984; % column with sparse symbols, claystone left blank). Tiles
+  show the sheet's own depth labels; readers report depths from them. Sheet
+  notes for each are written from the legend and header only.
+- Two readers as in step 3 (reader A all tiles, reader B a seeded 30 %).
+- Eligibility as C4. P2 recomputed with the eligible new wells added to the
+  six, reported beside the closed step-3 result, never in place of it.

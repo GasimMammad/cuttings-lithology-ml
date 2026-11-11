@@ -271,3 +271,24 @@ Descriptive figure of closed results; no new statistic.
 C on the GPU now. A and B run once. E and a first draft of F. Then D in the
 reduced form. Reviewer after A/B (with D's sheet-note addendum), after C/D,
 and on F.
+
+### D details fixed on 2026-11-11 after the tiles were made, before any tile was read
+- 101 tiles (34/4-6 18, 34/4-7 12, 34/7-10 15, 34/7-4 16, 34/7-9 20,
+  34/8-3 14, 34/8-3 A 6), script 64. The column was followed down from the
+  last step-3 tile; one tile per sheet family was looked at to confirm the
+  right column.
+- **G1 passed:** all 43 printed 100 m labels in the new range sit on their
+  calibrated line (contact sheets calib/jt_*_labels.png, looked at by the
+  main session). The 10 m line spacing equals the nominal spacing in every
+  sheet, so no sheet changes scale in this range.
+- **Reader rules:** rules v3 unchanged plus
+  results/v7/step3/reader_rules_jt_addendum.md. One decision in it matters
+  for Y: the Exlog "silty sandstone" cell symbol (a dot above a dash) is
+  read as `sand` (the legend names it a sandstone); siltstone stays `silt`.
+  Readers note where they used it. **Sensitivity, declared:** Y = sand +
+  silt.
+- The cuttings column is drawn through the cored intervals on these sheets
+  (probably from core chips). Readers read it; the bags inside Sodir cored
+  intervals are excluded by the mask, as declared.
+- Reader A: one folder per well. Reader B: seeded 20 % per well (at least
+  2 tiles). Stage 1 = 34/4-6, 34/7-4, 34/7-9; then the futility check.

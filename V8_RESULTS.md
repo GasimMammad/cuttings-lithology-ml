@@ -73,8 +73,8 @@ varies more.
 - This explains the failing well. 34/8-3 and 34/8-3 A have the smallest
   spread of Si/Al of the 11 wells (MAD 0.022 and 0.020 in log10 units) and
   the lowest rho (+0.03, +0.18). The four wells with the largest spread
-  (24/9-3, 34/7-9, 34/7-4, 34/7-10; MAD 0.032 to 0.049) have the highest
-  rho but one (+0.46 to +0.53).
+  (24/9-3, 34/7-9, 34/7-4, 34/7-10; MAD 0.032 to 0.049) are four of the five
+  wells with the highest rho (+0.46 to +0.53).
 - Descriptive, no test: rho is unrelated to the number of bags (-0.02),
   and wells with 10 m sampling score higher than wells with 3 m sampling
   (+0.59 with spacing), which is the same effect seen another way (a 10 m

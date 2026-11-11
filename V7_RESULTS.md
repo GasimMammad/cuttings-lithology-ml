@@ -262,3 +262,173 @@ Checked by the reviewer and reproduced by me on g_scores_joined.csv.
    material; its hue margin admitted olive claystone. XRF K+Fe remains the
    usable glauconite indicator. The v6 conclusion stands.
 5. Run time was about 7 times the estimate (note only).
+
+---
+
+# v7 step 3: the mud-log "cuttings lithology %" column as a wellsite label
+
+Run 2026-11-10/11. Plan: V7_PLAN.md step 3 (v3; reviewer rounds 19 and 19b
+and the wellsite geologist's protocol check applied). Order of commits:
+plan, reader rules, reader folders and seeded selections, raw readings,
+agreement script, first agreement result, second-pass rule, second
+agreement result, eligibility and set of record, chemistry check, test
+script, photograph tests. Nothing was joined to XRF or photographs before
+the labels and the set of record were committed.
+
+## Outcome in one paragraph
+The pre-registered primary test passes, but only just, and it is a small
+effect. In wells it never saw, the step-1 model (taught only Si/Al
+chemistry, frozen before these labels existed) follows the local (within
++/-50 m) variation of the sand fraction the wellsite geologist logged:
+median per-well rho +0.125, positive in 5 of 6 wells, p 0.047. Measured
+Si/Al itself reaches only 0.18 against the same label, and mean photo colour
+alone does as well as the photo models (0.15). So the photographs agree
+with the wellsite sand estimate about as well as chemistry does, which is
+weakly, and not beyond what colour gives.
+
+## Label construction
+- **Sheets:** 8 wells, 300 tiles of 40 m from the first logged sample to
+  40 m below top Shetland.
+- **Depth (gate G1):** the 10 m grid lines were followed from one printed
+  label per sheet; every printed 100 m label in the digitised range sits on
+  its calibrated line (checked by eye on contact sheets at about 0.6 of
+  native resolution; results/v7/step3/G1_labels.csv). Four labels were faded
+  or out of frame; their lines are on the grid.
+- **Reading:** reader A (stronger model) read all 300 tiles; reader B
+  (a different, cheaper model) read a seeded 30 % plus 17 symbol-audit
+  tiles (100 tiles). Readers saw only tiles, the sheet legend and the rules.
+- **Format fix, disclosed:** one batch of 18 tiles gave depths counted from
+  the tile top; they were shifted to absolute depth by script.
+
+## Gate G2: reader agreement (bag-interval level)
+
+| check | limit | first pass (A vs B, 481 intervals) | second pass (24/9-3 re-read, 470 intervals) |
+|---|---|---|---|
+| Pooled Spearman of sand % | >= 0.80 | 0.890 | 0.955 |
+| Share differing by > 20 points | <= 15 % | 2.5 % | 0 % |
+| Mean signed difference | within +/-5 | -1.9 | -0.1 |
+| Sand presence, both ways | >= 80 % | 100 % and 87 % | 100 % and 100 % |
+| Informative intervals: number | >= 30 | 163 | 145 |
+| Informative: mean absolute difference | <= 10 | 6.6 | 0.9 |
+| Informative: Spearman | >= 0.60 | **0.596 (fail)** | 0.974 |
+| No well below its limit | | pass | pass |
+| **G2** | | **FAIL** | **PASS** |
+
+- **First pass failed one gate by 0.004.** The whole disagreement was one
+  tile of 24/9-3 (2360-2400 m): reader A called a dotted pattern silty clay
+  (0 % sand), reader B called it sand (75 %). The other seven wells agreed
+  almost exactly (mean absolute difference 0 to 0.35 points; without 24/9-3
+  the informative Spearman is 0.999).
+- **The pre-declared one fix was used.** The rule for 24/9-3 was clarified
+  from the legend (cells holding only dots are sand), reader C re-read all
+  69 tiles of that well and reader D a fresh 30 % (21 tiles reader B had not
+  read). The second-pass rule was committed before C and D reported. C
+  against D on 24/9-3: Spearman 0.94, mean absolute difference 1.0. Reader C
+  is the reader of record for 24/9-3.
+- **What G2 does not show.** On 24/9-3 the two readers still disagree on
+  clay against carbonate (44 intervals where C reads clay and D reads
+  bricks). The sand fraction is not affected, but a carbonate label from
+  this sheet would not be reliable.
+- **Symbol audit:** no confusion of sand with silt, glauconite or tuff on
+  the audit tiles (class presence agreed in 29 silt, 17 glauconite and 12
+  tuff intervals, none one-sided). There is no human key, so accuracy, as
+  opposed to agreement, rests on G3.
+- **Reader A's seams:** in 23 % of tile seams the sand % changes by 10
+  points or more. Real sample steps often fall on 10 m multiples, so this is
+  an upper bound on reader inconsistency, not a measure of it.
+
+## Eligibility and set of record (labels only, committed before G3)
+
+| well | bags in S | informative bags | depth clusters | mean sand | eligible |
+|---|---|---|---|---|---|
+| 24/9-3 | 478 | 212 | 7 | 27 % | yes |
+| 34/4-6 | 120 | 35 | 7 | 12 % | yes |
+| 34/4-7 | 113 | 26 | 7 | 5 % | yes |
+| 34/7-10 | 142 | 30 | 5 | 4 % | yes |
+| 34/7-4 | 144 | 29 | 6 | 7 % | yes |
+| 34/7-9 | 129 | 19 | 7 | 6 % | yes |
+| 34/8-3 | 100 | 6 | 1 | 1 % | no (no label variance) |
+| 34/8-3 A | 146 | 12 | 3 | 4 % | no (12 informative bags) |
+
+Six wells are eligible, so the Tertiary set S (1,372 bags) is the test of
+record and the pre-Tertiary was not digitised. With six wells the smallest
+possible p is 0.016.
+
+## Gate G3: the label against measured Si/Al (no photographs)
+Per-well high-passed Spearman: 24/9-3 +0.37, 34/7-4 +0.31, 34/7-9 +0.23,
+34/7-10 +0.13, 34/4-7 +0.05, 34/4-6 -0.09. Median +0.18 (5/6 positive). Not
+stopped; just above the 0.15 line below which a failed photo test would
+have been called uninformative. The wellsite sand fraction and bag
+chemistry agree only weakly at bag scale.
+
+## Photograph tests (run once)
+
+| test | median rho | wells > 0 | p | 95 % CI of median | pair concordance |
+|---|---|---|---|---|---|
+| **P2 PRIMARY: step-1 Si/Al model, no retraining** | **+0.125** | **5/6** | **0.047** | -0.03 to +0.27 | 0.68 (5/6), p 0.031 |
+| P2 with the 15 engineered features | +0.114 | 5/6 | 0.047 | -0.01 to +0.20 | 0.63 |
+| P2 from the leave-one-area-out model | +0.134 | 4/6 | 0.078 | -0.03 to +0.26 | 0.71 |
+| Reference: measured Si/Al | +0.177 | 5/6 | 0.047 | -0.02 to +0.34 | 0.69 (6/6) |
+| P1: R-D retrained on the label, LOWO | +0.135 | 5/6 | 0.031 | +0.04 to +0.22 | 0.66 (6/6) |
+| P1 with equal well weights | +0.130 | 6/6 | 0.016 | +0.04 to +0.25 | 0.65 |
+| P1 leave-one-area-out | +0.160 | 5/6 | 0.031 | +0.04 to +0.24 | 0.65 |
+| R-E retrained on the label | +0.131 | 5/6 | 0.031 | +0.02 to +0.23 | 0.70 |
+| **Colour only (mean L\*a\*b\*) retrained on the label** | **+0.153** | 5/6 | 0.078 | -0.06 to +0.23 | 0.69 |
+| Baseline: relative depth | +0.063 | 5/6 | 0.16 | | |
+| Baseline: bag dry weight | -0.073 | 0/6 | 1.0 | | |
+
+- **Criterion met:** p < 0.05 and median >= 0.10. It is a marginal pass: the
+  bootstrap interval of the median includes zero.
+- **Per well, P2 follows the chemistry reference:** 24/9-3 +0.35 (reference
+  +0.37), 34/7-9 +0.19 (+0.23), 34/7-4 +0.17 (+0.31), 34/7-10 +0.08
+  (+0.13), 34/4-7 0.00 (+0.05), 34/4-6 -0.06 (-0.09). The photographs agree
+  with the mud log where chemistry does and fail where chemistry fails. The
+  median ratio is 0.66.
+- **Not beyond colour.** Mean colour alone, fitted on the label, gives
+  +0.153. Neither P1 nor P2 beats it (paired p 0.50 and 0.42).
+- **Fragile to single wells (exploratory).** Leaving out 24/9-3, 34/7-4 or
+  34/7-9 drops the median to +0.08, below the 0.10 floor; leaving out any of
+  the other three raises it to +0.17.
+- **Circular-shift null per well:** p 0.005 (24/9-3), 0.005 (34/7-4), 0.045
+  (34/7-9), 0.24 (34/7-10), 0.64 (34/4-7), 0.78 (34/4-6). Three wells carry
+  the result.
+- **Lag profile (median):** lag -1 0.06, lag 0 0.125, lag +1 0.13, against a
+  no-skill value of 0.03 at +/-1. The photograph agrees with the label of
+  the next bag down as well as with its own. That is what a one-sample lag
+  between logged depth and bag depth, or downhole mixing, would give.
+- **Label sensitivities of P2:** with glauconite added to sand +0.141; sand
+  plus silt +0.133; faded blocks included +0.125; label shifted one bag
+  either way +0.11 and +0.05.
+
+## C8 (exploratory, declared before reading): the mud log's own glauconite
+- Only 34/8-3 A has 10 or more bags with a glauconite fill (15): Spearman of
+  glauconite % against the XRF index G is +0.52; median G is 0.23 where the
+  mud log draws glauconite and -0.07 elsewhere; the step-2 photo score is
+  unrelated (+0.03).
+- Pooled over the six wells with both (786 bags): where the mud log draws a
+  glauconite fill, 17 of 24 bags have G > 0.2; where it does not, 9 of 762.
+- All five G > 0.2 bags of 34/7-10 and all nine of 34/8-3 A carry a
+  mud-log glauconite fill; the three of 34/4-6 and four of the six in
+  34/7-4 do not (the out-of-window 34/7-4 bags among them).
+- Reading: a wellsite geologist in 1984-88 and the XRF index, made
+  independently, point at the same bags. This supports the v6 index as a
+  glauconite label near the unconformity. It does nothing for the step-2
+  photo score.
+
+## Reading (draft, pending reviewer round 20)
+1. Wellsite sand fractions can be recovered from old mud logs with high
+   reader agreement on seven sheets, and on the eighth after one clarified
+   rule.
+2. The pre-registered wording applies, with its limits: "a model taught only
+   chemistry, in wells it never saw, follows the local (within +/-50 m)
+   variation of the sand fraction that the wellsite geologist estimated by
+   eye on the same cuttings; agreement with a wellsite estimate, not ground
+   truth; exploratory but fully pre-specified".
+3. The effect is small (+0.125), marginal (p 0.047, six wells), carried by
+   three wells, and no larger than what mean colour gives. It is about
+   two-thirds of what measured chemistry achieves against the same label.
+4. The weak link is the label, not only the photograph: chemistry itself
+   agrees with the wellsite sand fraction at only +0.18. A 10 % estimate by
+   eye per 5-10 m sample, with cavings and a possible one-sample lag, is a
+   noisy bag-scale reference.
+5. Not a sand detector, and not bed scale.

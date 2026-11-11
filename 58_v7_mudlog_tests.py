@@ -17,6 +17,10 @@ from importlib import import_module
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr, wilcoxon
+from sklearn.decomposition import PCA
+from sklearn.linear_model import Ridge
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 import config as C
 from features import FEATURE_NAMES
@@ -113,8 +117,12 @@ def lowo(X, y, wells, d, S, kind, fold=lambda w: w, weights=False):
     folds = np.array([fold(w) for w in wells])
     for f in np.unique(folds[ok]):
         tr, te = ok & (folds != f), ok & (folds == f)
-        fit = M.fit_rd if kind == "RD" else M.fit_re
-        pred[te] = fit(X[tr], y[tr], M.well_weights(wells[tr]) if weights else None).predict(X[te])
+        if weights:  # equal weight per training well (step 1's fit_rd ignores weights, so fit here)
+            p = make_pipeline(StandardScaler(), PCA(n_components=32, random_state=0), Ridge(alpha=1.0))
+            p.fit(X[tr], y[tr], ridge__sample_weight=M.well_weights(wells[tr]))
+            pred[te] = p.predict(X[te])
+        else:
+            pred[te] = (M.fit_rd if kind == "RD" else M.fit_re)(X[tr], y[tr]).predict(X[te])
     return pred
 
 
@@ -200,8 +208,13 @@ def stage_photo():
 
     # ---- baselines (direct, as in step 1)
     dw = BL.dry_weight(base)
-    both(d.copy(), "baseline relative depth")
-    both(np.log10(dw), "baseline bag dry weight")
+    for name, sig in (("relative depth", d.copy()), ("bag dry weight", np.log10(dw))):
+        raw = per_well(sig, Y, wells, d, S, elig)
+        signed = {}
+        for w in raw.index:  # sign taken from the other wells, as in step 1
+            oth = raw.drop(w).dropna()
+            signed[w] = (np.sign(oth.mean()) if len(oth) else 1.0) * raw[w]
+        res[f"baseline {name} (sign from the other wells)"] = {**summ(pd.Series(signed)), "concordance": {}}
 
     # ---- sensitivities of the primary to the label
     tt = t.copy()

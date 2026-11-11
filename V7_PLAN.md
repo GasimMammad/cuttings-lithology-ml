@@ -403,7 +403,7 @@ at this sample size). If it is ever run, it is exploratory and makes no claim.
 **The run is done ONCE as frozen.** Only code bugs may be fixed, and any fix
 is disclosed.
 
-## Step 3: mud-log cuttings % as a wellsite lithology label (v2, 2026-11-10; reviewer round 19 changes and the wellsite geologist's protocol check applied)
+## Step 3: mud-log cuttings % as a wellsite lithology label (v3, 2026-11-11; reviewer rounds 19 and 19b and the wellsite geologist's protocol check applied)
 
 **Question.** Do the photographs predict what the wellsite geologist logged
 in the same cuttings, in wells not used for training? The label is the
@@ -476,9 +476,11 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
 ### C3. Label gates (no photographs, no model output)
 - **G1 depth.** Every printed 100 m label in the digitised range lies within
   1 m of its calibrated line, checked by eye on a contact sheet per sheet
-  (calib/*_labels.png). Readers also report any ruler-label mismatch they see.
-  (Changed from draft v1, which fitted the labels; the grid lines give 10
-  times more knots.)
+  (calib/*_labels.png), with one row per label in calib/G1_labels.csv. No
+  bag is used more than 100 m beyond the last checked label. A comb slip is
+  a 10 m error and shows at the labels. (Changed from draft v1, which fitted
+  the labels; the grid lines give 10 times more knots. The check was made on
+  crops at about 0.6 of native resolution, not native.)
 - **G2 reader agreement,** computed at bag-interval level on the tiles both
   readers read. All must hold:
   - pooled Spearman of sand % >= 0.80;
@@ -489,16 +491,28 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
   - no well with Spearman below 0.60 (where it is defined: at least 15
     intervals and both readers vary). Otherwise that well is judged on its
     mean absolute difference (<= 10 points).
-  - Reported, not gated: Spearman and mean absolute difference among
-    intervals where either reader sees >= 10 % sand; per-well bias.
+  - **informative subset** (either reader sees >= 10 % sand), gated because
+    the pooled figure is inflated by zero ties and between-well differences:
+    at least 30 intervals, mean absolute difference <= 10 points, Spearman
+    >= 0.60. If there are fewer than 30, reader B is topped up with tiles
+    where A read sand (B is not told why).
+  - Reported, not gated: per-well bias; A's test-retest at tile seams (the
+    share of seams where the composition changes although no step is drawn
+    there); the A-B offset of block boundaries in metres.
   - **Symbol audit:** 3-5 tiles per non-clay pattern per sheet family, chosen
     from the column images by pattern alone, scored as a confusion matrix of
     class presence. A systematic confusion of sand with silt, glauconite or
-    tuff fails the sheet.
+    tuff fails the sheet. The audit key should come from a person: the user
+    is asked to mark class presence on the audit tiles. If that is not done,
+    the audit is A against B only and the write-up says that accuracy rests
+    on G3 alone.
   - A well that fails gets one fix: the written rules for that sheet are
     clarified (from the legend and the disagreement only), a third reader
     reads the whole well and a fourth reads a fresh 30 %. If that fails, the
-    well is dropped. The first result is reported either way.
+    well is dropped. The first result is reported either way. After a fix
+    the third reader is the reader of record for that well.
+- **Order, fixed:** G2, then eligibility (C4), then commit the set of
+  record, then G3.
 - **G3 chemistry check (XRF, still no photographs).** Per-well Spearman of Y
   against the within-well z of log10(Si/Al) on the test set, after the
   +/-50 m high-pass. Expected sign: positive.
@@ -508,7 +522,7 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
     too noisy at bag scale".
   - G3 never chooses the label or the join.
 - **Non-gating:** the 34/7-9 Saga wellsite log as a second source, if time
-  allows; a human spot-check of about 40 intervals is offered to the user.
+  allows.
 
 ### C4. Eligibility and the test of record (from labels alone; committed before any photo join)
 - A well is eligible if it has at least 30 bags with Y, of which at least 15
@@ -520,8 +534,12 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
 - If it has fewer, S is reported descriptively, the pre-Tertiary is
   digitised by the same protocol (with its own G2), and **set W** (whole
   well) becomes the test of record, worded "whole section, not the
-  overburden question". W is always reported in two parts (Tertiary and
-  pre-Tertiary), never pooled.
+  overburden question". Under W the single statistic of record is the
+  per-well rho over the whole well (high-pass within each part); the
+  Tertiary and pre-Tertiary parts are also shown, as description.
+- If W also has fewer than 6 eligible wells: descriptive only, no test.
+- Under W, one sensitivity leaves out the earlier pilot interval
+  (34/7-10, 2510-2670 m).
 - Only one set is ever the test of record.
 
 ### C5. Photograph tests (run once)
@@ -575,6 +593,18 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
   about 0.56 against Si/Al for it. That interval is Jurassic, outside set S.
   I have no record that it was compared with photographs, and it is not used
   here.
+- **One rule came from the description text.** That the dash-dot pattern and
+  the numbered cells on 24/9-3 are claystone was established by the wellsite
+  geologist agent from the adjacent descriptions ("1.CLST ... sl slt"). C1
+  says the text is never used for the label; this is the one exception, and
+  it is used to decode a symbol, not to label a bag.
+- **Pilot.** Four tiles (34/8-3 A 1080, 34/4-6 1040, 24/9-3 1080, 34/7-10
+  1080) were read by two models before the rules were frozen at version 2.
+  The pilot showed two ambiguities in version 1 (fill against trace on the
+  Exlog sheets; clay ruling against bricks on 24/9-3), which were fixed from
+  the legends. These tiles are read again in the main run.
+- Tile file names carry the well name, and so do the legends; readers are
+  not blind to the well.
 - Cavings and washing loss bias the wellsite % (soft clay washes out, so
   sand is over-stated); the washed photographs share that bias.
 - Lag errors of one sample are common in fast top-hole drilling (tested by
@@ -594,5 +624,7 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
 ### C8. Exploratory add-on, declared before reading (no claim)
 The mud logs record glauconite as its own % fill near the top Hordaland
 unconformity. After the step-3 tests, the reader's glauconite % is compared
-with the v6 XRF index G and with the step-2 photo score, per well. This was
-thought of only after seeing the sheets, so it is exploratory.
+with the v6 XRF index G and with the step-2 photo score, per well. Wells
+with fewer than 10 bags of non-zero glauconite get no correlation, and the
+audit's glauconite confusion is reported beside it. This was thought of only
+after seeing the sheets, so it is exploratory.

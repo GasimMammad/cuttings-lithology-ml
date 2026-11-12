@@ -129,12 +129,13 @@ qualify.
   the dash-dot pattern on 34/7-10) and thin limestone stripes (6 against 5).
   The readers never used the silty-sandstone class, so the primary Y is
   plain sand.
-- Sand is the main lithology: mean 43 to 76 % per well (34/7-9 in the
-  Tertiary: 6 %).
+- Sand is the main lithology: mean 35 to 81 % per well over the labelled
+  bags of the test set (34/7-9 in the Tertiary: 6 %).
 - **Eligibility.** By the letter: 34/7-10, 34/7-9, 34/8-3. The step-3 rule
   asks for informative bags in three clusters more than 30 m apart; here
-  informative bags are nearly continuous (they fill 12 to 23 thirty-metre
-  bins in the wells that failed), so the cluster count is 1 or 2. Amended
+  informative bags are nearly continuous (they fill 23 and 20 thirty-metre
+  bins in 34/4-6 and 34/7-4, and 5 in 34/8-3 A), so the cluster count is 1
+  or 2. Amended
   rule: informative bags in at least 3 distinct 30 m bins spanning at least
   90 m. Six wells qualify. 34/4-7 does not: its scan has faded and only 17
   bags have a label. 34/8-3 A is small (44 bags).
@@ -170,28 +171,42 @@ condition set with the amendment.
 | Y = sand + silt | +0.51 | 6 of 6 | 0.016 |
 
 Exploratory, carbonate (limestone + half of marl): measured Ca/Al against
-the mud-log carbonate +0.12 (5 of 5 wells with any carbonate); the photo
-Ca/Al model +0.03, and +0.03 with Cl partialled out (5 of 6, p 0.078).
-Nothing there.
+the mud-log carbonate is itself only +0.12 (5 of 5 wells with any
+carbonate). The photo Ca/Al model gives +0.03 (5 of 5, p 0.031): nominally
+positive, negligible in size. With Cl partialled out, +0.03 (5 of 6, p
+0.078); this line includes 34/8-3, which the other two drop because its
+label has no carbonate.
 
-### Reading (before review)
+### Reading (reviewer: ACCEPT WITH CHANGES, applied)
 1. Where sandstone is common, the photograph model follows the wellsite
    sand fraction about as well as the measured chemistry does (+0.52
-   against +0.51), in every well tested. In the Tertiary the same
-   comparison gave +0.13.
-2. Unlike step 3, the photographs here add something beyond Si/Al: the
-   partial correlation given measured Si/Al is +0.15, positive in all six
-   wells. It is small, and in three wells it is near zero (+0.02 to
-   +0.05).
+   against +0.51), in every well tested. In the Tertiary (step 3: a
+   Tertiary-trained model, the unamended rule, a label that barely varied)
+   it gave +0.13, and measured Si/Al +0.18. The contrast is descriptive and
+   mainly reflects how much the label varies.
+2. Given measured Si/Al, a partial of +0.15 remains (6 of 6; three wells
+   +0.02 to +0.05). As in part A, it is an upper bound. Measured Si/Al is a
+   noisy and imperfect sand proxy (arkosic and kaolinitic sandstones). The
+   mud logger and the photographs also judge the same cuttings by eye
+   (colour and texture alone +0.47), so the residual may be shared visual
+   information rather than skill beyond chemistry.
 3. Colour and texture features alone reach +0.47. The deep-network
    embeddings are not clearly better; no paired test was declared.
-4. It is not depth: the depth baseline is negative.
+4. The depth baseline after the same high-pass is negative (-0.10). The
+   high-pass already removes trends longer than about 100 m, so this only
+   rules out short residual trends.
 5. Limits: an amended test, not a test of record; six wells from one area
    (Tampen), two of them twins; AI readers with no human key (very high
    agreement between readers says the sheets are clear, not that the
    wellsite geologist was right); 34/4-6, the one Anadrill sheet and the
    most strongly skewed scan, is the weakest (+0.16); cavings, cored
    intervals and the first 15 m below shoes are handled by masks only.
+   Both p values are the smallest possible for 6 and 5 units, so one
+   negative unit would fail the five-unit version. Each twin was in the
+   other's training fold. The readers worked in separate folders and their
+   block lists differ in 18 of 23 shared tiles, so agreement reflects clear
+   10 %-step drawings, not copying. It cannot exclude errors shared by one
+   model family.
 6. Together with step 3 this fits part B: the model agrees with a
    reference where the rock varies, and has little to agree with where it
    does not.

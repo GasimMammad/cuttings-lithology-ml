@@ -180,6 +180,21 @@ def labels():
                                 mean_carb=("carb", "mean"), mean_coal=("coal", "mean")).round(1).to_string())
 
 
+def irregular_grid(wells, d, inJ):
+    """Bags inside a 10 m grid interval whose pixel height differs from the sheet's median by more than 5 %
+    (a paper seam, or the comb running past the end of the log). Label-free rule added on 2026-11-12 before
+    any scoring, after a reader reported an uneven depth ruler at the foot of 34/7-9."""
+    bad = np.zeros(len(d), bool)
+    for w in np.unique(wells[inJ]):
+        c = pd.read_csv(SRC / "calib" / f"{w}_depth_table.csv")
+        m = inJ & (wells == w)
+        c = c[(c.depth_m >= d[m].min() - 10) & (c.depth_m <= np.ceil(d[m].max() / 10) * 10)]
+        sp = np.diff(c.y.values)
+        for bot in c.depth_m.values[1:][np.abs(sp - np.median(sp)) > 0.05 * np.median(sp)]:
+            bad |= (wells == w) & (d > bot - 10) & (d <= bot)
+    return bad
+
+
 def load(wells_only=None):
     base, emb, wells, d, s1, S, Lg = E.load()
     q = pd.read_csv(OUT / "preT_predictions.csv")
@@ -189,7 +204,7 @@ def load(wells_only=None):
     t = pd.DataFrame({"well": wells, "depth_m": np.round(d, 2)}).merge(
         lab.drop(columns=["a", "tile"]), on=["well", "depth_m"], how="left")
     assert len(t) == len(wells)
-    J = q.in_J.values.astype(bool) & np.isfinite(t.Y.values)
+    J = q.in_J.values.astype(bool) & np.isfinite(t.Y.values) & ~irregular_grid(wells, d, q.in_J.values.astype(bool))
     if wells_only:
         J &= np.isin(wells, wells_only)
     return wells, d, q, t, J, Lg

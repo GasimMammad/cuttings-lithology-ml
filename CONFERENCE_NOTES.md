@@ -1,7 +1,7 @@
 # Conference notes: the machine-learning part of "Looking for Sinkites"
 
 Working notes for the talk in early December 2026. Not a slide deck. Every
-number comes from V2-V8 results files in this repository; the consolidated
+number comes from V2-V10 results files in this repository; the consolidated
 tables are in THESIS_NOTES.md (sections 1 and 7).
 
 ## 1. One-sentence message
@@ -28,11 +28,12 @@ where the chemistry varies most, consistent with the one well where it
 fails (measurement noise predicts the same pattern). Against wellsite sand
 percentages digitised from 1980s mud logs, the model agrees only weakly in
 the clay-rich Tertiary (+0.13, six wells). Below the Cretaceous, where
-sandstone is common, the pre-Tertiary photo model agrees at +0.52 (6 of 6
-wells; an exploratory test whose eligibility rule was amended after the
-labels were read), about as well as measured Si/Al (+0.51). A detector for
-glauconite pellets failed its specificity test, and fine-tuning a network
-gave no detectable gain over frozen features.
+sandstone is common, the pre-Tertiary photo model agrees at +0.50 (5 of 5
+locations; an exploratory test whose eligibility rule was amended after
+the labels were read), about as well as measured Si/Al. A detector for
+glauconite pellets failed its specificity test, fine-tuning a network gave
+no detectable gain over frozen features, and the photographs placed
+stratigraphic tops less well than an offset well.
 
 The data give no evidence for sinkites in the Oligocene sands; the
 decisive data, sidewall cores, do not exist. The practical result is a
@@ -59,14 +60,19 @@ it resolves.
 6. **Against wellsite sand percentages it depends on the section.** In
    the clay-rich Tertiary: +0.13 (p 0.047, six wells), no better than
    colour, and two mud logs of the same well agree at only +0.42. Below the
-   Cretaceous, where sandstone is 35-81 % of the cuttings: +0.52 in six of
-   six wells (p 0.016), as good as measured Si/Al (+0.51). The second
-   number comes from a test whose eligibility rule was amended before the
-   photographs were joined: say so. It also uses a different (pre-Tertiary)
-   model; colour features alone give +0.47; the partial given Si/Al is
-   +0.15, an upper bound.
+   Cretaceous, where sandstone is 35-81 % of the cuttings: +0.50 with the
+   twin wells held out together (5 of 5 locations, p 0.031; +0.52 leaving
+   one well out), as good as measured Si/Al (+0.51). This number comes
+   from a test whose eligibility rule was amended before the photographs
+   were joined: say so. It also uses a different (pre-Tertiary) model;
+   colour features alone give +0.47; the partial given Si/Al is +0.15, an
+   upper bound. The digitised labels there follow wireline gamma ray
+   (-0.26, 6 of 6 wells); the Tertiary labels do not meet that bar.
 7. **Things that did not work, stated as such.** Glauconite-pellet detector
-   (22 % false positives in the Lista Formation); fine-tuning (no detectable gain).
+   (22 % false positives in the Lista Formation); fine-tuning (no
+   detectable gain); stratigraphic tops (photo error 65 m against 43 m for
+   an offset well; worse in 8 of 10 locations); the vertical resolution of
+   cuttings (could not be measured).
 8. **Sinkites.** No evidence for them; limited compositional evidence
    against a glauconitic Utsira source; the age test is impossible without
    sidewall cores.
@@ -83,8 +89,8 @@ it resolves.
 | 6 | Best, middle, worst | detail figure with gamma ray and mud-log sand | results/v8/fig_v8_detail.png |
 | 7 | More elements | table of five ratios; which survive the Si-and-Al and mud controls | V8_RESULTS A |
 | 8 | Where it works | scatter: per-well rho against spread of Si/Al (11 points) | results/v8/fig_v8_where.png |
-| 9 | Mud logs as labels | one tile, the two-reader design; Tertiary +0.13 against Jurassic-Triassic +0.52 (different models; measured Si/Al +0.18 against +0.51); two logs of one well +0.42 | V7_RESULTS step 3, X2; V8_RESULTS D |
-| 10 | What failed | glauconite detector on Lista; fine-tuning | V7_RESULTS step 2, X1 |
+| 9 | Mud logs as labels | one tile, the two-reader design; Tertiary +0.13 against Jurassic-Triassic +0.50 (different models; measured Si/Al +0.18 against +0.51); two logs of one well +0.42; gamma-ray key -0.26 below base Cretaceous | V7_RESULTS step 3, X2; V8_RESULTS D; V9_RESULTS K2b, K3 |
+| 10 | What failed | glauconite detector on Lista; fine-tuning; stratigraphic tops against an offset well | V7_RESULTS step 2, X1; V8_RESULTS C; V10_RESULTS S |
 | 11 | Sinkites | three alternatives, what the data can and cannot decide | V6_RESULTS |
 | 12 | Take-home and limits | the one-sentence message; 11 wells; bag scale; mud residue; no human key | THESIS_NOTES 7c |
 
@@ -109,29 +115,41 @@ it resolves.
   legitimate carrier: it is what a geologist uses too.
 - **"Is it drilling mud?"** Partly possible. The photographs also predict
   barite (+0.31). Partialling out Ba, Ca and Cl leaves Si/Al at +0.33, but
-  bentonite cannot be separated, and an ilmenite weighting agent has not
-  been ruled out for Fe-Ti.
+  bentonite cannot be separated. For Fe-Ti: the mud-materials tables of
+  ten wells list barite as the only solid weighting material; only
+  24/9-3 has no materials list.
 - **"Why not sand?"** Si/Al is quartz plus biogenic silica against clay. In
   the Hordaland Group opal, tuff and glauconite move it. Against gamma-ray
   sand labels the Si/Al prediction is no better than the earlier model.
   Below the Cretaceous, where Si/Al does follow sand (+0.51), the model
-  follows the wellsite sand fraction (+0.52, amended test).
+  follows the wellsite sand fraction (+0.50, amended test).
 - **"Only 11 wells?"** Yes, and all were used in earlier rounds. Each test
   was fixed beforehand, but none is a fresh hold-out. With 11 wells the
   smallest possible p is 0.0005; with six, 0.016.
 - **"Who read the mud logs?"** Two AI readers of different models, on
   tiles made by a script, blind to photographs and chemistry. They agree
   with each other; there is no human key. Say this before being asked.
+  An instrument check exists: below the Cretaceous the digitised sand
+  fraction follows wireline gamma ray (-0.26, 6 of 6 wells), as well as
+  measured Si/Al does. None of the eight sheets prints a gamma-ray track.
 - **"Why does 34/8-3 fail?"** Its Si/Al is nearly flat (second-smallest
   spread of the 11 wells), and the frozen model finds nothing there. A
   fine-tuned network gave +0.21 to +0.41 there in three runs with
-  different seeds, so it may not be all noise. One well, singled out after the first run,
-  with its sidetrack in the training data: an observation, not a result.
+  different seeds, so it may not be all noise. It still gave +0.17 to
+  +0.40 with its sidetrack taken out of training. One well, singled out
+  after the first run: an observation, not a result.
 - **"Does deep learning help?"** Frozen ImageNet features plus ridge
   regression is the model of record. Fine-tuning gave no detectable gain
   over frozen features of the same network in three runs (+0.38 against
   +0.33 medians; higher in 4 of 11 wells, p 0.52). The median moved from
   +0.31 to +0.46 between seeds: quote +0.38, never the best run.
+- **"Can it pick formation tops?"** No. Tested against the official
+  tops in 10 locations, the photo picks were 65 m off in the median against
+  43 m for the nearest well, and worse in 8 of 10 locations. The bag
+  chemistry did no better per location. Only the base Cretaceous
+  unconformity was placed to about 25 m, and that was noticed afterwards.
+- **"What is the vertical resolution?"** Not measured. A test at sharp
+  gamma-ray steps had too few steps to give a number.
 - **"So where are the sinkites?"** Not shown. The photographs cannot date a
   sand, and no sidewall cores exist in the target sands. Use the
   supervisor's definition of "sinkite"; do not attribute it to a paper
@@ -148,5 +166,12 @@ it resolves.
 - That the seven-well mud-log number (+0.17) is a result: it depends on a
   deviation from the plan.
 - That the readers are accurate: they are consistent.
-- That the Jurassic-Triassic mud-log result (+0.52) is a pre-registered
-  test: it is an amended, exploratory one. Six wells, one area, twin wells.
+- That the Jurassic-Triassic mud-log result (+0.50) is a pre-registered
+  test: it is an amended, exploratory one. Six wells, one area, twin
+  wells; it depends in part on the twin being in training.
+- That photographs pick formation tops or beat a depth prognosis.
+- Any number for the vertical resolution of cuttings.
+- That the gamma-ray check is a human key, or that the Tertiary mud-log
+  labels passed it.
+- That casing or mud changes are shown to steer the top picks: at top
+  Cretaceous the two cannot be separated.

@@ -66,7 +66,7 @@ it resolves.
    model; colour features alone give +0.47; the partial given Si/Al is
    +0.15, an upper bound.
 7. **Things that did not work, stated as such.** Glauconite-pellet detector
-   (22 % false positives in the Lista Formation); fine-tuning (no gain).
+   (22 % false positives in the Lista Formation); fine-tuning (no detectable gain).
 8. **Sinkites.** No evidence for them; limited compositional evidence
    against a glauconitic Utsira source; the age test is impossible without
    sidewall cores.
@@ -123,9 +123,9 @@ it resolves.
   tiles made by a script, blind to photographs and chemistry. They agree
   with each other; there is no human key. Say this before being asked.
 - **"Why does 34/8-3 fail?"** Its Si/Al is nearly flat (second-smallest
-  spread of the 11 wells), and the frozen model finds nothing there. It is
-  not all noise: a fine-tuned network gave +0.21 to +0.41 there in three
-  runs with different seeds. One well, singled out after the first run,
+  spread of the 11 wells), and the frozen model finds nothing there. A
+  fine-tuned network gave +0.21 to +0.41 there in three runs with
+  different seeds, so it may not be all noise. One well, singled out after the first run,
   with its sidetrack in the training data: an observation, not a result.
 - **"Does deep learning help?"** Frozen ImageNet features plus ridge
   regression is the model of record. Fine-tuning gave no detectable gain

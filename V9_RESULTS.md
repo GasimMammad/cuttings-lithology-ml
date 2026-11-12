@@ -25,11 +25,13 @@ Reference (fixed in the plan): dropping any one OTHER training well moves
 
 **By the pre-declared rule: the result depends in part on the twin being in
 training.** Both twins stay above +0.30, but each falls more when its twin
-is dropped than when any other well is dropped. The size of the dependence
-is small: the six-well median goes from +0.52 to +0.50, all six wells stay
-positive, and both versions of the test give the same p values. The number
-to quote for v8 D is therefore **+0.50 with the twins held out together**,
-with +0.52 as the leave-one-well-out value.
+is dropped than when any other well is dropped. 34/8-3 falls by 0.12, eight
+times the largest fall from dropping any other well (0.016). 34/8-3 A falls
+by 0.04 (other wells at most 0.019). The six-well p cannot go below 0.016,
+so it is uninformative here. The number to quote for v8 D from now on is
+**+0.50 with the twins held out together (five locations: 5 of 5, p 0.031;
+EXPLORATORY); +0.52 leave-one-well-out.** +0.50 is not to be paired with
+p 0.016.
 
 Main Si/Al result (K2a): nothing was run. v7 step 1 already reports
 leave-one-area-out, +0.31 in 10 of 11 wells.
@@ -53,7 +55,7 @@ Wilcoxon over wells.
 
 | set | row | median | wells < 0 | p | 95 % CI |
 |---|---|---|---|---|---|
-| Below base Cretaceous (v8 D, 6 wells, 891 bags) | **key: sand fraction against gamma ray** | **-0.27** | 6 of 6 | 0.016 | -0.46 to -0.21 |
+| Below base Cretaceous (v8 D, 6 wells, 891 bags) | **key: sand fraction against gamma ray** | **-0.26** | 6 of 6 | 0.016 | -0.46 to -0.21 |
 | | without carbonate >= 30 % or coal bags | -0.29 | 6 of 6 | 0.016 | -0.46 to -0.18 |
 | | point gamma ray at the bag depth (descriptive) | -0.24 | 6 of 6 | 0.016 | -0.46 to -0.03 |
 | | reference: measured Si/Al against gamma ray | -0.26 | 6 of 6 | 0.016 | -0.43 to -0.19 |
@@ -72,22 +74,22 @@ out; no bag drops out below base Cretaceous.
 
 **By the pre-declared rule (median <= -0.20 and p < 0.05):**
 - **Below base Cretaceous: the digitised sand fraction follows gamma ray**
-  (-0.27, 6 of 6). It does so as well as the Si/Al measured on the same
+  (-0.26, 6 of 6). It does so as well as the Si/Al measured on the same
   bags (-0.26).
-- **Tertiary: no detectable agreement with gamma ray** by the rule. The
-  median (-0.14) misses the -0.20 bar although 5 of 6 wells are negative
-  (p 0.047). Measured Si/Al reaches -0.21 there.
+- **Tertiary: does not meet the pre-declared bar** (median <= -0.20 and
+  p < 0.05): -0.14, 5 of 6, p 0.047. By the rule this is written "no
+  detectable agreement with gamma ray". Measured Si/Al reaches -0.21 there.
 
 ### Reading
 
 1. Below base Cretaceous the labels pass an instrument check that no AI
    reader or photograph touched. Together with reader agreement (0.997)
    and the Si/Al check (+0.51) this supports the label chain of v8 D.
-2. The agreement is modest in size (-0.27). Gamma ray is not sand: mica,
+2. The agreement is modest in size (-0.26). Gamma ray is not sand: mica,
    potassium feldspar and heavy minerals raise it in sandstone, coal and
    limestone lower it, and a bag is a lagged 3 to 10 m mixture. Measured
-   Si/Al does no better against gamma ray, so the size says more about
-   cuttings against wireline than about the readers.
+   Si/Al does no better against gamma ray, so the size suggests a limit of
+   cuttings against wireline more than a fault of the readers.
 3. In the Tertiary the label is weakly tied to gamma ray, weaker than
    measured Si/Al. This fits step 3 (the sand fraction barely varies
    there; glauconitic sands and tuffs raise gamma ray) and is one more
@@ -112,21 +114,24 @@ a local OCR. Keywords were fixed before the search. Every page counted was
 then opened and read as an image by me, and the products were copied word
 for word.
 
-**Deviations from the plan, both towards more coverage.** (1) The plan
-fixed the page list from contents pages and used an AI reader for the
-scans. Instead every page of every report was OCR-searched, and I read the
-materials tables myself; no second reader was used. (2) The "10 % of
-not-stated pages" check became: one seeded page per well among the
-mud-related pages without any keyword hit, read as an image (11 pages;
-nothing missed).
+**Deviations from the plan.** (1) OCR over every multi-page PDF replaced
+the contents-based page list (more coverage). The cited pages were read as
+images by one reader, the AI assistant running the analysis. No second
+reader and no human checked them (less verification). (2) The no-hit check
+read 11 of 173 candidate pages (6 %, below the planned 10 %). The pool was
+the OCR pages that mention mud three or more times and have no keyword
+hit; one page per well was drawn with seed 911. 34/7-6 had no such page
+(its report has a text layer), so its page was drawn the same way from its
+text-layer pages. (3) Unweighted sections were taken from the materials
+tables, not from the Sodir mud-weight table.
 
 **Result.**
 
 | | wells |
 |---|---|
-| Complete mud-materials table found, barite the only weighting material | 10: 24/9-4, 34/4-6, 34/4-7, 34/7-1, 34/7-10, 34/7-4, 34/7-6, 34/7-9, 34/8-3, 34/8-3 A |
+| Complete mud-materials table found, barite the only solid weighting material | 10: 24/9-4, 34/4-6, 34/4-7, 34/7-1, 34/7-10, 34/7-4, 34/7-6, 34/7-9, 34/8-3, 34/8-3 A |
 | Weighted mud, weighting material not named | 1: 24/9-3 (mud summary gives mud types and weights up to 11.0 ppg, but no materials list) |
-| Ilmenite, hematite, iron oxide or any titanium-bearing name | none, on any of the 3,474 pages |
+| Ilmenite, hematite, iron oxide or any titanium-bearing name | none, in the text layer or OCR of any of the 3,474 pages |
 
 - The ten tables are well totals or cover every hole section, so they cover
   the sections that hold the v8 A bags.
@@ -137,31 +142,34 @@ nothing missed).
 
 **By the pre-declared rule: the caveat is reworded for ten wells and stays
 for 24/9-3.** New wording for v8 A: "The mud-materials tables of ten wells
-name barite as the only weighting material and no iron-titanium product;
+list barite as the only solid weighting material and no product named
+ilmenite, hematite or iron oxide (trade-named additives not interpreted).
 24/9-3 has no materials list, so an iron-titanium weighting agent is not
-excluded there."
+excluded there." KCl and CaCl2 brines also raise mud density; they carry no
+iron or titanium.
 
-**Consequence for v8 A (no model refitted; from the saved per-well
-values).** Without 24/9-3 the Fe/Al and Ti/Al rows are given below.
+**Post hoc, descriptive (no model refitted; from the saved per-well values
+of v8 A).** Fe/Al and Ti/Al with and without 24/9-3. p: one-sided Wilcoxon,
+not Holm-adjusted (v8 A quoted Holm).
 
 | ratio | row | wells | median | wells > 0 | p |
 |---|---|---|---|---|---|
 | Fe/Al | photo prediction against measured | 11 wells | +0.28 | 11 of 11 | 0.0005 |
 | Fe/Al | photo prediction against measured | without 24/9-3 | +0.29 | 10 of 10 | 0.001 |
-| Fe/Al | partial given Ba, Ca, Cl | 11 wells | +0.29 | 11 of 11 | 0.0005 |
-| Fe/Al | partial given Ba, Ca, Cl | without 24/9-3 | +0.29 | 10 of 10 | 0.001 |
-| Fe/Al | partial given Si and Al as well | 11 wells | +0.14 | 11 of 11 | 0.0005 |
-| Fe/Al | partial given Si and Al as well | without 24/9-3 | +0.13 | 10 of 10 | 0.001 |
+| Fe/Al | partial given Ba and Cl | 11 wells | +0.29 | 11 of 11 | 0.0005 |
+| Fe/Al | partial given Ba and Cl | without 24/9-3 | +0.29 | 10 of 10 | 0.001 |
+| Fe/Al | partial given Si and Al | 11 wells | +0.14 | 11 of 11 | 0.0005 |
+| Fe/Al | partial given Si and Al | without 24/9-3 | +0.13 | 10 of 10 | 0.001 |
 | Ti/Al | photo prediction against measured | 11 wells | +0.27 | 10 of 11 | 0.001 |
 | Ti/Al | photo prediction against measured | without 24/9-3 | +0.27 | 9 of 10 | 0.003 |
-| Ti/Al | partial given Ba, Ca, Cl | 11 wells | +0.21 | 10 of 11 | 0.001 |
-| Ti/Al | partial given Ba, Ca, Cl | without 24/9-3 | +0.19 | 9 of 10 | 0.003 |
-| Ti/Al | partial given Si and Al as well | 11 wells | +0.16 | 10 of 11 | 0.001 |
-| Ti/Al | partial given Si and Al as well | without 24/9-3 | +0.17 | 9 of 10 | 0.002 |
+| Ti/Al | partial given Ba and Cl | 11 wells | +0.21 | 10 of 11 | 0.001 |
+| Ti/Al | partial given Ba and Cl | without 24/9-3 | +0.19 | 9 of 10 | 0.003 |
+| Ti/Al | partial given Si and Al | 11 wells | +0.16 | 10 of 11 | 0.001 |
+| Ti/Al | partial given Si and Al | without 24/9-3 | +0.17 | 9 of 10 | 0.002 |
 
 This table was not pre-declared (no iron-titanium material was found, so the
-planned re-scoring did not apply). It is descriptive: removing the one well
-without a materials list changes nothing.
+planned re-scoring did not apply). Removing the one well without a materials
+list moves no median by more than 0.02.
 
 **Limits.** A materials table says what was mixed into the mud, not what
 is in a given bag. Barite is a natural product and may carry iron
@@ -170,3 +178,12 @@ a casing window was milled at about 945 to 985 m. Natural iron-titanium
 minerals in the rock are what the Fe-Ti signal is taken to be; this check
 only removes one alternative. The OCR could miss a word on a poor scan;
 the tables themselves were read as images.
+
+## Reviewer (K1, K2b, K3 after results): ACCEPT WITH CHANGES, applied
+
+Every number was checked against the result files. One rounding error
+(K3 key median -0.2646 was printed as -0.27; now -0.26), the K2b reading
+sharpened (which p belongs to +0.50), two wrong row labels in the K1 table,
+the K1 deviations restated (more coverage, less verification), and the
+ilmenite wording narrowed to "solid weighting material". K2c is reviewed
+separately when it has run.

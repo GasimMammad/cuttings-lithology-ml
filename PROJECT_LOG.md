@@ -697,3 +697,37 @@ eaa36f4 v2 results
   PyMuPDF was made in the session scratchpad (recreate with
   `python -m venv X && X/bin/pip install pymupdf` if needed again). The
   OCR binary is ~/sinkite_ml_work_v2/v9/k1/ocr (source tools/ocr.swift).
+
+## 2026-11-12 late: leftover items done; thesis read; pushed to GitHub
+
+- User: "I added my MSc thesis here for your reference ... update this
+  project repo in my github and do the leftover part of the project".
+- Thesis found at ~/GasimMammadov_MScThesis2026.pdf (51 pages, 4 Sep 2026;
+  same file in Downloads). It is a seismic study of the Visund SE mound;
+  the cuttings work is sections 3.6, 4.7, 6.6 (Table 6) and Appendix A.
+  The term "sinkite" is from Rudjord and Huuse (2025), cited in 1.3;
+  Løseth et al. (2013) is the injection model.
+- THESIS_CHECK.md (new, reviewed): four thesis statements the follow-up
+  changes (colour index is a green index and its support for 4.7/5.4 is
+  withdrawn; XRF did not fail as a measurement; photographs see barite;
+  classifier negative stands). Two things to keep apart when presenting:
+  the case for sinking is the thesis's seismic evidence (the cuttings
+  cannot test it), and the thesis AI declaration (code and grammar only)
+  does not cover the follow-up.
+- CONFERENCE_NOTES.md: sinkite passages reworded to match; three new Q&A.
+- README.md rewritten for v2-v10 (answers table, how the work was run,
+  script-to-result map, AI use); requirements-lock.txt (pip freeze of the
+  project venv, Python 3.13).
+- 72_v10_figures.py: results/v10/fig_v10_tops and
+  results/v9/fig_v9_mudlog_tile (slide 9).
+- Reviewer (fresh opus agent): ACCEPT WITH CHANGES, 11 changes applied
+  (a1cc95e).
+- Results page updated in place: https://claude.ai/artifact/RwqvWSiQp2PEkypgCq87u7
+  (was the v2-v4 page; now v2-v10; private).
+- GitHub: branch v2-ten-wells pushed to GasimMammad/cuttings-lithology-ml
+  (private). main was NOT changed. Push needs
+  `git -c credential.helper='!gh auth git-credential' push origin v2-ten-wells`
+  because git has no credential helper configured.
+- Still open, not done: slide deck (held by the user twice; never lifted by
+  name), a human key for the audit tiles (declined), zero-shot AI reader,
+  parentage test.

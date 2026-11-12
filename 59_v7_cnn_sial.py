@@ -167,5 +167,42 @@ def evaluate():
     print(json.dumps(res, indent=1, default=float))
 
 
+def evaluate_seeds():
+    """v8 part C: X1 with two more seeds (offsets 1000 and 2000). Same statistic and comparisons as X1."""
+    base, _ = EV.load_tables()
+    s1 = pd.read_csv(C.WORK_DIR / "v7" / "step1_predictions.csv")
+    wells, d = base.well.values, base.depth_m.values.astype(float)
+    S = s1.in_S.values.astype(bool) & np.isfinite(s1.T1.values)
+    T1 = s1.T1.values
+    files = {0: "cnn_sial_predictions.csv", 1000: "cnn_sial_predictions_seed1000.csv", 2000: "cnn_sial_predictions_seed2000.csv"}
+    P, R = {}, {}
+    for k, f in files.items():
+        p = pd.read_csv(OUT / f)
+        P[k] = base[["well", "depth_m"]].merge(p, on=["well", "depth_m"], how="left").p.values
+        R[k] = M.per_well_hp(P[k], T1, wells, d, S)
+    R = pd.DataFrame(R)
+    fz = pd.read_pickle(OUT / "frozen_r18_bag_features.pkl")
+    X18 = base[["well", "depth_m"]].merge(fz, on=["well", "depth_m"], how="left").drop(columns=["well", "depth_m"]).values.astype(float)
+    S18 = S & np.isfinite(X18).all(1)
+    p18, _ = M.cv_predict(M.zwell_mat(X18, wells, S18), T1, wells, d, S18, "RD", lambda w: w)
+    t = pd.DataFrame({"mean3": R.mean(1), "seed_sd": R.std(1, ddof=1), "r18": M.per_well_hp(p18, T1, wells, d, S),
+                      "rd": M.per_well_hp(s1.pred_RD.values, T1, wells, d, S),
+                      "ensemble": M.per_well_hp(np.nanmean(np.column_stack(list(P.values())), axis=1), T1, wells, d, S)})
+    w = lambda a, b, alt: float(wilcoxon(t[a] - t[b], alternative=alt).pvalue)
+    res = {"per_well_by_seed": R.round(4).to_dict(orient="index"), "per_well": t.round(4).to_dict(orient="index"),
+           "median_by_seed": R.median().round(4).to_dict(), "median_seed_sd": float(t.seed_sd.median()),
+           "mean over 3 seeds vs T1": M.summarise(t.mean3), "ensemble of 3 seeds vs T1": M.summarise(t.ensemble),
+           "paired mean3 > frozen R18 p (fine-tuning claim)": w("mean3", "r18", "greater"), "paired mean3 < frozen R18 p": w("mean3", "r18", "less"),
+           "wells mean3 > frozen R18": int((t.mean3 > t.r18).sum()),
+           "paired mean3 > R-D p": w("mean3", "rd", "greater"), "wells mean3 > R-D": int((t.mean3 > t.rd).sum()),
+           "paired ensemble > frozen R18 p": w("ensemble", "r18", "greater"), "paired ensemble > R-D p": w("ensemble", "rd", "greater"),
+           "34_8-3 by seed": R.loc["34_8-3"].round(4).to_dict(),
+           "34_8-3 reproduces (both new seeds >= 0.15)": bool((R.loc["34_8-3", [1000, 2000]] >= 0.15).all())}
+    with open(OUT / "x1_seeds_results.json", "w") as f:
+        json.dump(res, f, indent=1, default=float)
+    print(pd.concat([R.round(3), t.round(3)], axis=1).to_string())
+    print(json.dumps({k: v for k, v in res.items() if not k.startswith("per_well")}, indent=1, default=float))
+
+
 if __name__ == "__main__":
-    {"train": train, "embed": embed18, "eval": evaluate}[sys.argv[1]]()
+    {"train": train, "embed": embed18, "eval": evaluate, "evalseeds": evaluate_seeds}[sys.argv[1]]()

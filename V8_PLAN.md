@@ -292,3 +292,8 @@ and on F.
   intervals are excluded by the mask, as declared.
 - Reader A: one folder per well. Reader B: seeded 20 % per well (at least
   2 tiles). Stage 1 = 34/4-6, 34/7-4, 34/7-9; then the futility check.
+- **After the reviewer's check of the addendum (2026-11-12, before any tile
+  was read):** silty sandstone gets its own reader class `ssst`. Primary Y
+  = sand + ssst. Sensitivities: ssst counted as silt (Y = sand only), and
+  Y = sand + ssst + silt. The addendum no longer says what to expect in
+  these sections.

@@ -1,0 +1,81 @@
+well,z,s,s_over_sd,sharp,excluded,ideal_candidate,ideal_in_stack,sial_candidate,sial_in_stack,k_candidate,k_in_stack,photo_candidate,photo_in_stack
+24_9-3,2047.0,41.781,3.523,-0.039,not sharp,,,,,,,,
+24_9-3,268.0,-37.625,3.172,1.078,outside photographed range,,,,,,,,
+24_9-3,2204.0,-28.391,2.394,0.682,,True,True,True,True,True,True,True,True
+24_9-3,2561.0,26.844,2.263,0.882,,True,True,True,True,True,True,True,True
+24_9-3,1043.0,-25.062,2.113,1.106,,True,True,True,False,True,False,True,False
+24_9-3,2680.0,-19.328,1.63,0.198,not sharp,,,,,,,,
+24_9-3,1196.0,-19.328,1.63,0.306,not sharp,,,,,,,,
+24_9-3,2434.0,19.141,1.614,1.954,,True,False,True,True,True,True,True,True
+24_9-3,1346.0,-17.328,1.461,-0.063,not sharp,,,,,,,,
+24_9-3,437.0,14.617,1.232,0.317,not sharp,,,,,,,,
+24_9-3,696.0,13.406,1.13,1.218,,True,True,True,False,True,True,True,True
+24_9-3,2831.0,-12.0,1.012,2.218,,True,False,True,True,True,False,False,False
+24_9-4,1078.0,-30.375,3.142,-0.16,not sharp,,,,,,,,
+24_9-4,747.0,24.641,2.549,0.438,not sharp,,,,,,,,
+24_9-4,1241.0,24.594,2.544,1.163,,True,True,True,True,True,False,True,False
+24_9-4,667.0,-14.297,1.479,-0.203,not sharp,,,,,,,,
+24_9-4,1334.0,-11.547,1.194,0.449,not sharp,,,,,,,,
+34_4-6,535.0,40.891,4.878,0.497,not sharp,,,,,,,,
+34_4-6,1120.0,-27.562,3.288,0.295,not sharp,,,,,,,,
+34_4-6,903.0,-25.875,3.087,0.371,not sharp,,,,,,,,
+34_4-6,1352.0,-19.609,2.339,-0.41,not sharp,,,,,,,,
+34_4-6,3137.0,-18.156,2.166,0.608,,True,True,True,True,True,False,True,False
+34_4-6,1690.0,16.742,1.997,0.278,not sharp,,,,,,,,
+34_4-6,2934.0,-16.469,1.965,0.32,not sharp,,,,,,,,
+34_4-6,3255.0,14.312,1.707,0.39,not sharp,,,,,,,,
+34_4-6,2854.0,13.438,1.603,1.241,,True,True,True,True,True,False,True,True
+34_4-6,1241.0,-11.719,1.398,0.907,,True,True,True,True,True,False,True,True
+34_4-6,2762.0,11.062,1.32,0.829,near casing shoe,,,,,,,,
+34_4-6,2568.0,-10.727,1.28,1.365,,True,False,True,False,True,True,True,True
+34_4-6,1562.0,-9.672,1.154,1.083,,False,False,False,False,False,False,False,False
+34_4-7,1096.0,27.677,1.361,1.139,,True,False,True,False,True,True,True,False
+34_4-7,1858.0,23.001,1.131,0.008,not sharp,,,,,,,,
+34_4-7,922.0,21.797,1.072,0.097,not sharp,,,,,,,,
+34_7-10,1002.0,-35.124,1.276,0.239,not sharp,,,,,,,,
+34_7-4,473.0,40.504,3.967,0.241,not sharp,,,,,,,,
+34_7-4,1026.0,-32.135,3.147,0.093,not sharp,,,,,,,,
+34_7-4,3090.0,27.095,2.654,-1.294,not sharp,,,,,,,,
+34_7-4,1120.0,25.691,2.516,0.762,,True,True,True,True,True,True,True,True
+34_7-4,940.0,-24.397,2.39,0.263,not sharp,,,,,,,,
+34_7-4,2772.0,18.172,1.78,0.533,near casing shoe,,,,,,,,
+34_7-4,1201.0,-14.096,1.381,-0.144,not sharp,,,,,,,,
+34_7-4,1626.0,-13.321,1.305,0.675,,True,True,True,False,True,False,True,True
+34_7-4,2892.0,-12.829,1.256,1.469,,True,False,True,False,True,False,True,False
+34_7-4,1907.0,-12.117,1.187,0.79,near casing shoe,,,,,,,,
+34_7-4,1706.0,12.042,1.179,1.949,,True,True,True,False,True,False,True,False
+34_7-4,2985.0,-11.632,1.139,2.303,,True,False,True,False,True,False,True,False
+34_7-6,3648.0,54.97,4.88,-0.08,not sharp,,,,,,,,
+34_7-6,3282.0,26.318,2.336,0.872,outside photographed range,,,,,,,,
+34_7-6,3523.0,-24.077,2.137,0.809,outside photographed range,,,,,,,,
+34_7-6,951.0,23.894,2.121,0.277,not sharp,,,,,,,,
+34_7-6,1290.0,21.361,1.896,0.043,not sharp,,,,,,,,
+34_7-6,1431.0,21.053,1.869,-0.016,not sharp,,,,,,,,
+34_7-6,1210.0,-19.413,1.723,0.225,not sharp,,,,,,,,
+34_7-6,1705.0,18.855,1.674,0.926,,False,False,False,False,False,False,False,False
+34_7-6,3140.0,17.704,1.572,0.619,outside photographed range,,,,,,,,
+34_7-6,3380.0,-17.635,1.566,0.523,outside photographed range,,,,,,,,
+34_7-6,1870.0,-17.226,1.529,1.561,near casing shoe,,,,,,,,
+34_7-6,2509.0,-14.748,1.309,1.058,outside photographed range,,,,,,,,
+34_7-6,3013.0,14.341,1.273,1.521,near casing shoe,,,,,,,,
+34_7-6,2768.0,-11.353,1.008,1.26,outside photographed range,,,,,,,,
+34_7-9,904.0,29.986,2.84,0.038,not sharp,,,,,,,,
+34_7-9,1037.0,-25.749,2.438,-0.03,not sharp,,,,,,,,
+34_7-9,1431.0,-19.699,1.866,-0.049,not sharp,,,,,,,,
+34_7-9,1514.0,18.502,1.752,0.952,,True,True,True,True,True,True,True,True
+34_7-9,1688.0,15.057,1.426,-0.335,not sharp,,,,,,,,
+34_7-9,2917.0,13.229,1.253,1.388,,True,False,True,False,True,True,True,False
+34_7-9,1846.0,13.19,1.249,0.51,near casing shoe,,,,,,,,
+34_7-9,2715.0,-12.006,1.137,1.234,cored,,,,,,,,
+34_8-3,3006.0,-41.136,3.823,1.405,,True,True,True,True,True,True,True,True
+34_8-3,2842.0,-38.613,3.589,1.395,cored,,,,,,,,
+34_8-3,1311.0,29.557,2.747,0.136,not sharp,,,,,,,,
+34_8-3,1852.0,27.054,2.514,0.264,not sharp,,,,,,,,
+34_8-3,3255.0,-17.652,1.641,1.562,near casing shoe,,,,,,,,
+34_8-3,3167.0,12.998,1.208,1.067,,True,True,True,True,True,True,True,True
+34_8-3,1497.0,-11.124,1.034,0.122,not sharp,,,,,,,,
+34_8-3_A,938.0,36.482,3.755,0.45,not sharp,,,,,,,,
+34_8-3_A,3166.0,31.503,3.243,0.091,not sharp,,,,,,,,
+34_8-3_A,3081.0,-31.326,3.224,0.256,not sharp,,,,,,,,
+34_8-3_A,1913.0,24.479,2.52,0.077,not sharp,,,,,,,,
+34_8-3_A,3001.0,22.009,2.265,5.098,,True,False,True,False,True,False,True,False

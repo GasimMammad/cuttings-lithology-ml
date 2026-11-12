@@ -1,0 +1,342 @@
+{
+ "n_evaluated_tops": {
+  "10 primary wells": 34,
+  "34_8-3_A (descriptive)": 4
+ },
+ "photo": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 64.5,
+  "median_of_location_medians_m": 71.5,
+  "share_within_30m": 0.29411764705882354,
+  "per_location_median_m": {
+   "24_9-3": 430.0,
+   "24_9-4": 935.0,
+   "34_4-6": 41.2,
+   "34_4-7": 47.8,
+   "34_7-1": 52.2,
+   "34_7-10": 90.8,
+   "34_7-4": 51.8,
+   "34_7-6": 249.5,
+   "34_7-9": 38.8,
+   "34_8-3": 140.5
+  }
+ },
+ "S2 PRIMARY photo vs offset well": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 64.5,
+  "median_of_location_medians_m": 71.5,
+  "share_within_30m": 0.29411764705882354,
+  "per_location_median_m": {
+   "24_9-3": 430.0,
+   "24_9-4": 935.0,
+   "34_4-6": 41.2,
+   "34_4-7": 47.8,
+   "34_7-1": 52.2,
+   "34_7-10": 90.8,
+   "34_7-4": 51.8,
+   "34_7-6": 249.5,
+   "34_7-9": 38.8,
+   "34_8-3": 140.5
+  },
+  "wins (location median smaller)": 2,
+  "p_better": 0.986328125,
+  "p_worse": 0.0185546875,
+  "median_paired_difference_m": 28.5
+ },
+ "S1 secondary photo vs regional prognosis": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 64.5,
+  "median_of_location_medians_m": 71.5,
+  "share_within_30m": 0.29411764705882354,
+  "per_location_median_m": {
+   "24_9-3": 430.0,
+   "24_9-4": 935.0,
+   "34_4-6": 41.2,
+   "34_4-7": 47.8,
+   "34_7-1": 52.2,
+   "34_7-10": 90.8,
+   "34_7-4": 51.8,
+   "34_7-6": 249.5,
+   "34_7-9": 38.8,
+   "34_8-3": 140.5
+  },
+  "wins (location median smaller)": 3,
+  "p_better": 0.9677734375,
+  "p_worse": 0.0419921875,
+  "median_paired_difference_m": 14.125
+ },
+ "baseline offset well": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 42.5,
+  "median_of_location_medians_m": 35.0,
+  "share_within_30m": 0.4411764705882353,
+  "per_location_median_m": {
+   "24_9-3": 101.5,
+   "24_9-4": 57.5,
+   "34_4-6": 49.5,
+   "34_4-7": 35.5,
+   "34_7-1": 17.0,
+   "34_7-10": 19.0,
+   "34_7-4": 34.5,
+   "34_7-6": 9.0,
+   "34_7-9": 17.0,
+   "34_8-3": 191.0
+  }
+ },
+ "baseline regional": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 50.25,
+  "median_of_location_medians_m": 46.25,
+  "share_within_30m": 0.2647058823529412,
+  "per_location_median_m": {
+   "24_9-3": 432.0,
+   "24_9-4": 490.5,
+   "34_4-6": 82.5,
+   "34_4-7": 36.5,
+   "34_7-1": 42.5,
+   "34_7-10": 48.5,
+   "34_7-4": 34.8,
+   "34_7-6": 8.0,
+   "34_7-9": 44.0,
+   "34_8-3": 120.5
+  }
+ },
+ "reference: measured XRF chemistry, same method": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 52.25,
+  "median_of_location_medians_m": 74.25,
+  "share_within_30m": 0.4117647058823529,
+  "per_location_median_m": {
+   "24_9-3": 515.0,
+   "24_9-4": 755.0,
+   "34_4-6": 46.2,
+   "34_4-7": 16.8,
+   "34_7-1": 54.2,
+   "34_7-10": 40.8,
+   "34_7-4": 30.2,
+   "34_7-6": 111.0,
+   "34_7-9": 94.2,
+   "34_8-3": 598.0
+  }
+ },
+ "photo error in bags (median)": 9.0,
+ "tops with no bag assigned to the deeper unit": 0,
+ "tops with all bags assigned deeper": 1,
+ "per boundary": {
+  "top Hordaland": {
+   "n": 7,
+   "median_error_m": 55.0,
+   "signed_median_m": -15.0,
+   "offset_median_m": 21.0,
+   "regional_median_m": 50.0,
+   "xrf_median_m": 23.0,
+   "within_30m": 2
+  },
+  "top Rogaland": {
+   "n": 10,
+   "median_error_m": 127.5,
+   "signed_median_m": 51.0,
+   "offset_median_m": 35.0,
+   "regional_median_m": 32.5,
+   "xrf_median_m": 137.75,
+   "within_30m": 2
+  },
+  "top Cretaceous": {
+   "n": 9,
+   "median_error_m": 80.0,
+   "signed_median_m": 75.5,
+   "offset_median_m": 17.0,
+   "regional_median_m": 57.0,
+   "xrf_median_m": 42.5,
+   "within_30m": 1
+  },
+  "base Cretaceous": {
+   "n": 8,
+   "median_error_m": 24.5,
+   "signed_median_m": -10.75,
+   "offset_median_m": 64.5,
+   "regional_median_m": 53.0,
+   "xrf_median_m": 20.5,
+   "within_30m": 5
+  }
+ },
+ "casing and mud diagnostic": {
+  "near tops (shoe or mud change within 70 m)": 8,
+  "far tops": 26,
+  "near by boundary": {
+   "top Cretaceous": 7,
+   "base Cretaceous": 1
+  },
+  "near: median photo error m": 77.75,
+  "near: median error of the shoe baseline m": 37.0,
+  "far: median photo error m": 56.0,
+  "near: pick closer to the shoe or change than to the true top": 7,
+  "near: pick no closer to the true top than the shoe baseline": 7,
+  "near: either": 7,
+  "wording": "at these tops the picks cannot be separated from casing or mud changes",
+  "FAR tops only: S2 photo vs offset": {
+   "n_tops": 26,
+   "n_locations": 10,
+   "median_error_m": 56.0,
+   "median_of_location_medians_m": 52.75,
+   "share_within_30m": 0.34615384615384615,
+   "per_location_median_m": {
+    "24_9-3": 430.0,
+    "24_9-4": 935.0,
+    "34_4-6": 25.5,
+    "34_4-7": 50.5,
+    "34_7-1": 55.0,
+    "34_7-10": 39.5,
+    "34_7-4": 28.0,
+    "34_7-6": 129.2,
+    "34_7-9": 47.0,
+    "34_8-3": 140.5
+   },
+   "wins (location median smaller)": 2,
+   "p_better": 0.962890625,
+   "p_worse": 0.048828125,
+   "median_paired_difference_m": 28.0
+  },
+  "FAR tops only: S1 photo vs regional": {
+   "n_tops": 26,
+   "n_locations": 10,
+   "median_error_m": 56.0,
+   "median_of_location_medians_m": 52.75,
+   "share_within_30m": 0.34615384615384615,
+   "per_location_median_m": {
+    "24_9-3": 430.0,
+    "24_9-4": 935.0,
+    "34_4-6": 25.5,
+    "34_4-7": 50.5,
+    "34_7-1": 55.0,
+    "34_7-10": 39.5,
+    "34_7-4": 28.0,
+    "34_7-6": 129.2,
+    "34_7-9": 47.0,
+    "34_8-3": 140.5
+   },
+   "wins (location median smaller)": 3,
+   "p_better": 0.8837890625,
+   "p_worse": 0.1376953125,
+   "median_paired_difference_m": 7.5
+  }
+ },
+ "bag level (primary wells)": {
+  "balanced accuracy, segmented": 0.676396754957584,
+  "balanced accuracy, per-bag argmax (no order constraint)": 0.6047462760377773,
+  "confusion (rows true, columns segmented)": [
+   [
+    405,
+    66,
+    0,
+    0,
+    0
+   ],
+   [
+    39,
+    579,
+    281,
+    6,
+    0
+   ],
+   [
+    0,
+    118,
+    64,
+    348,
+    0
+   ],
+   [
+    0,
+    34,
+    116,
+    1057,
+    81
+   ],
+   [
+    0,
+    0,
+    0,
+    83,
+    1322
+   ]
+  ]
+ },
+ "34_8-3_A (descriptive, depths in MD)": [
+  {
+   "boundary": "top Hordaland",
+   "true_m": 1180.0,
+   "photo_m": 1250.0,
+   "err_photo": 70.0,
+   "xrf_m": 1365.0
+  },
+  {
+   "boundary": "top Rogaland",
+   "true_m": 1873.0,
+   "photo_m": 2127.5,
+   "err_photo": 254.5,
+   "xrf_m": 1877.5
+  },
+  {
+   "boundary": "top Cretaceous",
+   "true_m": 2088.0,
+   "photo_m": 3073.5,
+   "err_photo": 985.5,
+   "xrf_m": 2092.5
+  },
+  {
+   "boundary": "base Cretaceous",
+   "true_m": 3003.0,
+   "photo_m": 3096.0,
+   "err_photo": 93.0,
+   "xrf_m": 2762.5
+  }
+ ],
+ "wording S2": "worse than an offset well",
+ "wording S1": "not shown to be better than a regional depth prognosis (n = 10 locations, two areas, all used before)"
+}
+    well        boundary  true_m  photo_m  err_photo  err_offset  err_regional  err_xrf  near  event_dist_m photo_flag
+  24_9-3   top Hordaland   640.0    210.0      430.0       102.0         322.0    515.0 False         137.0 all deeper
+  24_9-3    top Rogaland  1918.0   1998.0       80.0        58.0         432.0     20.0 False         331.0           
+  24_9-3  top Cretaceous  2836.0   2000.0      836.0       973.0        1204.0    560.0 False         215.0           
+  24_9-4    top Rogaland  1974.0   1039.0      935.0        58.0         490.0    755.0 False         234.0           
+  34_4-6   top Hordaland  1250.0   1235.0       15.0        50.0          80.0      5.0 False         346.0           
+  34_4-6    top Rogaland  1658.0   1715.0       57.0        42.0          84.0    157.0 False         183.0           
+  34_4-6  top Cretaceous  1775.0   1855.0       80.0        49.0         132.0     88.0  True          66.0           
+  34_4-6 base Cretaceous  2577.0   2552.0       26.0        75.0          64.0      2.0 False         183.0           
+  34_4-7   top Hordaland  1200.0   1105.0       95.0        28.0          50.0     15.0 False         285.0           
+  34_4-7    top Rogaland  1700.0   1745.0       45.0        43.0          23.0      5.0 False         172.0           
+  34_4-7  top Cretaceous  1824.0   1838.0       14.0        17.0          64.0     18.0  True          48.0           
+  34_4-7 base Cretaceous  2502.0   2552.0       50.0        59.0           8.0     34.0 False          79.0           
+  34_7-1   top Hordaland  1170.0   1225.0       55.0         1.0          47.0    105.0 False         100.0           
+  34_7-1    top Rogaland  1673.0   1415.0      258.0        17.0          23.0    388.0 False         171.0           
+  34_7-1  top Cretaceous  1823.0   1872.0       50.0        17.0          38.0      2.0  True          21.0           
+  34_7-1 base Cretaceous  2392.0   2388.0        4.0        50.0          83.0      4.0 False         240.0           
+ 34_7-10   top Hordaland  1093.0   1165.0       72.0        21.0          49.0     62.0 False         175.0           
+ 34_7-10    top Rogaland  1682.0   1675.0        7.0         6.0          16.0      3.0 False         225.0           
+ 34_7-10  top Cretaceous  1863.0   1972.0      110.0        17.0          50.0     20.0  True          44.0           
+ 34_7-10 base Cretaceous  2400.0   2598.0      198.0        47.0          48.0    107.0  True          13.0           
+  34_7-4   top Hordaland  1187.0   1215.0       28.0        15.0          72.0     18.0 False         172.0           
+  34_7-4    top Rogaland  1685.0   1864.0      178.0        28.0           3.0    120.0 False         230.0           
+  34_7-4  top Cretaceous  1848.0   1924.0       76.0        41.0          12.0     42.0  True          67.0           
+  34_7-4 base Cretaceous  2517.0   2501.0       16.0        74.0          58.0      6.0 False         228.0           
+  34_7-6    top Rogaland  1676.0   1685.0        9.0         9.0           3.0    111.0 False         200.0           
+  34_7-6  top Cretaceous  1846.0   2098.0      252.0         2.0          26.0    454.0  True          30.0           
+  34_7-6 base Cretaceous  2447.0   2198.0      250.0        70.0           8.0     70.0 False         553.0           
+  34_7-9   top Hordaland  1172.0   1125.0       47.0         1.0          46.0     23.0 False         257.0           
+  34_7-9    top Rogaland  1657.0   1832.0      176.0        17.0          42.0    156.0 False         164.0           
+  34_7-9  top Cretaceous  1807.0   1838.0       30.0        17.0          57.0     33.0  True          14.0           
+  34_7-9 base Cretaceous  2443.0   2438.0        6.0        50.0          35.0    180.0 False         193.0           
+  34_8-3    top Rogaland  1820.0   2132.0      312.0       149.0          75.0    782.0 False         503.0           
+  34_8-3  top Cretaceous  2012.0   2152.0      140.0       191.0         120.0    598.0 False         586.0           
+  34_8-3 base Cretaceous  2827.0   2804.0       24.0       437.0         308.0      2.0 False         229.0           
+34_8-3_A   top Hordaland  1180.0   1250.0       70.0        12.0          41.0    185.0 False         236.0           
+34_8-3_A    top Rogaland  1873.0   2128.0      254.0       202.0         128.0      4.0 False         569.0           
+34_8-3_A  top Cretaceous  2088.0   3074.0      986.0       267.0         196.0      4.0 False         354.0           
+34_8-3_A base Cretaceous  3003.0   3096.0       93.0       613.0         484.0    240.0 False         224.0           

@@ -1,0 +1,163 @@
+{
+ "steps found (gamma ray only)": 80,
+ "excluded": {
+  "not sharp": 40,
+  "kept": 24,
+  "outside photographed range": 7,
+  "near casing shoe": 7,
+  "cored": 2
+ },
+ "kept per well": {
+  "24_9-3": 6,
+  "24_9-4": 1,
+  "34_4-6": 5,
+  "34_4-7": 1,
+  "34_7-4": 5,
+  "34_7-6": 1,
+  "34_7-9": 2,
+  "34_8-3": 2,
+  "34_8-3_A": 1
+ },
+ "variables": {
+  "ideal bag (gamma ray over the bag interval)": {
+   "candidate steps": 22,
+   "steps in stack": 14,
+   "wells in stack": 6,
+   "bags in stack": 359,
+   "lag_x0_m": 2.111808847020092,
+   "width_10_90_m": 5.3667916510323925,
+   "amplitude_b": 1.0348601075532087,
+   "noise-matched ideal: width_m (median of draws)": 5.11969143838636,
+   "noise-matched ideal: lag_m": 2.272849361623954,
+   "noise-matched ideal: amplitude": 1.026298226265863,
+   "width 95 % interval m": [
+    0.43947144157677737,
+    26.424963635887913
+   ],
+   "W minus noise-matched W0: 95 % interval m": [
+    -43.679548558294464,
+    7.907406729476813
+   ],
+   "W minus noise-matched W0: median m": 0.22109918365066994,
+   "lag minus noise-matched lag: 95 % interval m": [
+    -3.147148056926173,
+    3.1270668117381986
+   ],
+   "smearing detected (interval of W - W0 excludes zero)": false
+  },
+  "measured Si/Al": {
+   "candidate steps": 22,
+   "steps in stack": 12,
+   "wells in stack": 6,
+   "bags in stack": 391,
+   "lag_x0_m": 3.1730983457021362,
+   "width_10_90_m": 14.1221407777853,
+   "amplitude_b": 1.0185219936115688,
+   "noise-matched ideal: width_m (median of draws)": 3.877585845888116,
+   "noise-matched ideal: lag_m": 1.6630050076412826,
+   "noise-matched ideal: amplitude": 1.02334713509189,
+   "width 95 % interval m": [
+    0.4394449157917349,
+    39.17400290444328
+   ],
+   "W minus noise-matched W0: 95 % interval m": [
+    -59.08405564844396,
+    27.929628062577105
+   ],
+   "W minus noise-matched W0: median m": 4.381400608497347,
+   "lag minus noise-matched lag: 95 % interval m": [
+    -5.27188335699354,
+    9.808376960438432
+   ],
+   "smearing detected (interval of W - W0 excludes zero)": false
+  },
+  "measured K": {
+   "candidate steps": 22,
+   "steps in stack": 11,
+   "wells in stack": 6,
+   "bags in stack": 338,
+   "lag_x0_m": -10.004960518511496,
+   "width_10_90_m": 44.250828587846314,
+   "amplitude_b": 1.1818235765808076,
+   "noise-matched ideal: width_m (median of draws)": 2.306578799061002,
+   "noise-matched ideal: lag_m": 1.533792000488337,
+   "noise-matched ideal: amplitude": 1.0642419808856605,
+   "width 95 % interval m": [
+    0.4395743134754731,
+    87.07091103312136
+   ],
+   "W minus noise-matched W0: 95 % interval m": [
+    -27.76642111926713,
+    84.80459910273859
+   ],
+   "W minus noise-matched W0: median m": 18.09093934496851,
+   "lag minus noise-matched lag: 95 % interval m": [
+    -38.862650981058344,
+    9.232000094296803
+   ],
+   "smearing detected (interval of W - W0 excludes zero)": false
+  },
+  "photo prediction of Si/Al": {
+   "candidate steps": 21,
+   "steps in stack": 12,
+   "wells in stack": 5,
+   "bags in stack": 349,
+   "lag_x0_m": -0.8471458434026192,
+   "width_10_90_m": 17.78094379924606,
+   "amplitude_b": 1.059627159852377,
+   "noise-matched ideal: width_m (median of draws)": 3.111398367326209,
+   "noise-matched ideal: lag_m": 1.4454833845262147,
+   "noise-matched ideal: amplitude": 1.0486948345239677,
+   "width 95 % interval m": [
+    0.43944491557206083,
+    31.289929552150287
+   ],
+   "W minus noise-matched W0: 95 % interval m": [
+    -56.16677401544228,
+    26.506452835802314
+   ],
+   "W minus noise-matched W0: median m": 3.655547987937272,
+   "lag minus noise-matched lag: 95 % interval m": [
+    -16.12778334619608,
+    10.781227355157002
+   ],
+   "smearing detected (interval of W - W0 excludes zero)": false
+  }
+ },
+ "photo vs Si/Al on common steps": {
+  "common steps": 9,
+  "width photo m": 19.77425128870621,
+  "width Si/Al m": 15.73716302033026,
+  "W_photo - W_Si/Al: 95 % interval m": [
+   -27.64027136534802,
+   21.34879004486683
+  ],
+  "wording": "as fast as the chemistry"
+ },
+ "bootstrap": {
+  "resamples": 2000,
+  "wells": [
+   "24_9-3",
+   "24_9-4",
+   "34_4-6",
+   "34_4-7",
+   "34_7-4",
+   "34_7-9",
+   "34_8-3",
+   "34_8-3_A"
+  ],
+  "failed fits": 10
+ },
+ "robust SD of gamma ray per well": {
+  "24_9-3": 11.8608,
+  "24_9-4": 9.667293299999997,
+  "34_4-6": 8.38232388,
+  "34_4-7": 20.336157029999995,
+  "34_7-10": 27.528027240000004,
+  "34_7-4": 10.210221420000002,
+  "34_7-6": 11.264350019999998,
+  "34_7-9": 10.559521979999992,
+  "34_8-3": 10.759672980000001,
+  "34_8-3_A": 9.715477800000016
+ }
+}

@@ -172,7 +172,7 @@ are trained without the test well.
 | same with a 7th well, 24/9-4 | EX | +0.17; p 0.023 | supporting only; depends on a disclosed deviation from the plan |
 | Two mud logs of one well, 34/7-9 (Exlog against Saga) | EX | Spearman +0.42 (CI 0.11 to 0.69) | the wellsite label is itself only moderately reproducible |
 | Fine-tuned CNN against frozen features (X1) | EX | +0.46 against +0.33 medians; paired p 0.42 | no detectable gain from fine-tuning (11 wells, one seed) |
-| Fine-tuned CNN, three seeds (v8 C) | EX | PENDING | |
+| Fine-tuned CNN, three seeds (v8 C) | EX | per-well mean of three seeds +0.38 (seed medians +0.46 / +0.31 / +0.41) against +0.33 control; paired p 0.52 (higher in 4 of 11); against R-D 8 of 11, p 0.027 | no detectable gain from fine-tuning; quote +0.38, not +0.46; at 34/8-3 all three runs give +0.21 to +0.41 where frozen models give about 0 (one well, noticed after X1) |
 | Photo -> K, Fe, Ca, Ti, Zr over Al (v8 A) | PS | +0.20, +0.28, +0.19, +0.27, +0.10; all pass | a rough chemical log; robustly two axes beyond Si and Al: Fe(-Ti) and Ca; mostly carried by colour |
 | Where does it work? (v8 B) | PS | skill against spread of Si/Al: between wells +0.78 (p 0.003); within wells +0.54 (p 0.014) | skill follows the spread of the chemistry; 34/8-3 fails where Si/Al is nearly flat |
 | Pre-Tertiary photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic, 6 wells (v8 D) | EX (amended test; no test of record) | +0.52; 6 of 6 wells; p 0.016; twins merged +0.51, 5 of 5, p 0.031 | where sandstone is common the photo model follows the wellsite sand fraction as well as measured Si/Al does (+0.51); partial given Si/Al +0.15 (upper bound); colour features alone +0.47 |
@@ -236,8 +236,13 @@ itself.
   eye.
 - The "where it works" result is what measurement noise alone predicts, and
   also what real contrast predicts; the two are not separated.
-- Fine-tuning brought no detectable gain; the frozen model stays the model
-  of record.
+- Fine-tuning brought no detectable gain in three runs with different
+  seeds; the frozen model stays the model of record. The median over wells
+  moved between +0.31 and +0.46 from seed to seed, so single-run medians
+  of a fine-tuned network should not be quoted.
+- At 34/8-3 the fine-tuned network gave +0.21 to +0.41 in all three runs
+  where frozen features give about zero. It is one well, singled out after
+  the first run, and its sidetrack was in the training fold.
 
 ### 7d. Reproducibility (v7, v8)
 

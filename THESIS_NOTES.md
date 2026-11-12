@@ -149,10 +149,10 @@ were siltstone or very fine sandstone with no grain-size data. If those count
 as not-sand, the advantage of A is no longer significant (14 vs 8; p = 0.29),
 so part of the disagreement is a class-boundary problem.
 
-## 7. v7 and v8: chemistry and wellsite lithology from the same photographs
+## 7. v7 to v10: chemistry, wellsite lithology and stratigraphy from the same photographs
 
-Sources: V7_RESULTS.md, V8_RESULTS.md and the result files they name
-(results/v7/, results/v8/). **PS** = fully pre-specified (plan and code
+Sources: V7_RESULTS.md, V8_RESULTS.md, V9_RESULTS.md, V10_RESULTS.md and the
+result files they name (results/v7/ to results/v10/). **PS** = fully pre-specified (plan and code
 committed before the run) but exploratory, because the same 11 wells were
 used in earlier rounds. **EX** = exploratory or post hoc. Unless stated, the
 statistic is the per-well Spearman correlation after removing a +/-50 m
@@ -175,7 +175,13 @@ are trained without the test well.
 | Fine-tuned CNN, three seeds (v8 C) | EX | per-well mean of three seeds +0.38 (seed medians +0.46 / +0.31 / +0.41) against +0.33 control; paired p 0.52 (higher in 4 of 11); against R-D 8 of 11, p 0.027 | no detectable gain from fine-tuning; quote +0.38, not +0.46; at 34/8-3 all three runs give +0.21 to +0.41 where frozen models give about 0, so its flat chemistry may not be all noise (one well, noticed after X1; rules out seed noise, not a property of that fold) |
 | Photo -> K, Fe, Ca, Ti, Zr over Al (v8 A) | PS | +0.20, +0.28, +0.19, +0.27, +0.10; all pass | a rough chemical log; robustly two axes beyond Si and Al: Fe(-Ti) and Ca; mostly carried by colour |
 | Where does it work? (v8 B) | PS | skill against spread of Si/Al: between wells +0.78 (p 0.003); within wells +0.54 (p 0.014) | skill follows the spread of the chemistry; 34/8-3 fails for R-D where Si/Al is nearly flat (see v8 C) |
-| Pre-Tertiary photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic, 6 wells (v8 D) | EX (amended test; no test of record) | +0.52; 6 of 6 wells; p 0.016; twins merged +0.51, 5 of 5, p 0.031 | where sandstone is common the photo model follows the wellsite sand fraction as well as measured Si/Al does (+0.51); partial given Si/Al +0.15 (upper bound); colour features alone +0.47 |
+| Pre-Tertiary photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic, 6 wells (v8 D) | EX (amended test; no test of record) | **+0.50 with the twin wells held out together (five locations: 5 of 5, p 0.031)**; +0.52 leave-one-well-out (6 of 6) | where sandstone is common the photo model follows the wellsite sand fraction as well as measured Si/Al does (+0.51); partial given Si/Al +0.15 (upper bound); colour features alone +0.47; quote +0.50 (v9 K2b) |
+| Does the v8 D result depend on the twin being in training? (v9 K2b) | EX | 34/8-3 falls 0.63 to 0.51 and 34/8-3 A 0.53 to 0.49 when the twin is dropped; dropping any other well moves them by at most 0.02 | depends in part on the twin; the six-well median moves from +0.52 to +0.50 |
+| Gamma-ray key for the digitised mud-log sand fraction (v9 K3) | EX | below base Cretaceous -0.26, 6 of 6, p 0.016 (measured Si/Al -0.26); Tertiary -0.14, 5 of 6, p 0.047 | below base Cretaceous the labels follow gamma ray (bar: median <= -0.20 and p < 0.05); the Tertiary labels do not meet the bar; an instrument key, not a human key |
+| Mud weighting material in the well reports (v9 K1) | document check | 10 of 11 wells: complete mud-materials table, barite the only solid weighting material; 24/9-3: no materials list; no ilmenite, hematite or iron oxide in the text of 3,474 pages | an iron-titanium weighting agent is not excluded only at 24/9-3; without that well Fe/Al and Ti/Al move by at most 0.02 |
+| Fine-tuned CNN at 34/8-3 without its sidetrack in training (v9 K2c) | EX | +0.40 / +0.17 / +0.23, mean +0.27 (with the sidetrack +0.31); frozen models about 0 either way | the 34/8-3 observation does not depend on the sidetrack; three seeds cannot exclude a contribution of up to about 0.2 |
+| Photo stratigraphy: four major tops in an unseen location, against Sodir tops (v10 S) | PS | photo median error 65 m (34 tops); offset well 43 m; regional prognosis 50 m; measured XRF by the same method 52 m; photo better than the offset well in 2 of 10 locations, p (worse) 0.019 | **negative: photographs cannot replace an offset well for placing tops**; the bag chemistry does no better per location; base Cretaceous alone is placed to 25 m (descriptive, post hoc); top Cretaceous picks cannot be separated from the 13 3/8" shoe |
+| Step response of cuttings at sharp gamma-ray steps (v10 R) | PS | 24 steps kept, 11 to 14 per stack from 5 or 6 wells; width intervals 0.4 to 30+ m | **inconclusive: no resolution number can be quoted** |
 
 ### 7b. Methods text (draft)
 
@@ -221,16 +227,25 @@ itself.
 - Si/Al is not sand: biogenic silica, tuff and glauconite move it in the
   Hordaland Group. "Chemical skill", not "sand detection".
 - Photographs also predict barite (+0.31). Mud residue contributes an
-  unknown part of every result. An ilmenite weighting agent would explain
-  the Fe-Ti result and has not been excluded.
+  unknown part of every result. The mud-materials tables of ten wells
+  list barite as the only solid weighting material and no product named
+  ilmenite, hematite or iron oxide (trade-named additives not
+  interpreted); 24/9-3 has no materials list, so an iron-titanium
+  weighting agent is not excluded there (v9 K1). A materials table says
+  what went into the mud, not what is in a bag.
 - Most of the element signal is colour: simple colour and texture features
   do as well as the deep network for Fe, Ca and Ti.
 - Mud-log labels: AI readers of one model family, no human key; two logs of
-  the same well agree only at +0.42.
+  the same well agree only at +0.42. Below base Cretaceous the labels
+  follow wireline gamma ray (-0.26, 6 of 6 wells); in the Tertiary they do
+  not meet the pre-declared bar (-0.14). The gamma-ray check supports the
+  label chain as a whole; it is not a human key.
 - The Jurassic-Triassic mud-log result is an amended test. The eligibility
   rule written for the Tertiary failed by its letter (three wells) and was
   changed after the labels were read, before any photograph was joined.
-  Six wells from one area, two of them twins. The partial correlation
+  Six wells from one area, two of them twins; with the twins held out
+  together the result is +0.50 (five locations), and it depends in part
+  on the twin being in training. The partial correlation
   given measured Si/Al (+0.15) is an upper bound: Si/Al is a noisy sand
   proxy, and the mud logger and the photographs both judge the cuttings by
   eye.
@@ -242,9 +257,16 @@ itself.
   of a fine-tuned network should not be quoted.
 - At 34/8-3 the fine-tuned network gave +0.21 to +0.41 in all three runs
   where frozen features give about zero. It is one well, singled out after
-  the first run, and its sidetrack was in the training fold.
+  the first run. Retrained without its sidetrack it still gave +0.17 to
+  +0.40 (mean +0.27), so the sidetrack does not explain it; three seeds
+  cannot exclude a contribution of up to about 0.2.
+- Photographs do not place stratigraphic tops as well as an offset well
+  (v10 S, negative). Where a casing shoe sits near a boundary (top
+  Cretaceous in Tampen), the photo pick cannot be separated from the shoe.
+- The vertical resolution of cuttings could not be measured: too few
+  sharp gamma-ray steps (v10 R, inconclusive). No resolution number exists.
 
-### 7d. Reproducibility (v7, v8)
+### 7d. Reproducibility (v7 to v10)
 
 | result | commit |
 |---|---|
@@ -257,6 +279,13 @@ itself.
 | v8 A and B results | ad06c38 (write-up f51869e) |
 | v8 figures | 120dec2 |
 | v8 D raw readings / eligibility amendment / results | 4c047ec, 633470a / 49d1d0a / 60818cd |
+| v8 C three seeds / reviewer changes | a073a8d / 7e903e5 |
+| V9_PLAN with reviewer amendments | de7b78b |
+| v9 code before the runs (K2c training / scoring, sheet check / OCR search) | 14789de / b8d1187 / 97e32d4 |
+| v9 results (K2b, K3 / K1 / K2c) and reviewer changes | 4ac036a / 9d528a5, db8f000 / 84cb605; 61dc194, 54099fb |
+| V10_PLAN with reviewer amendments | 0925a5d |
+| v10 code before the runs (S, with one label fix / R) | de44ec2, 74fe170 / 2a1b808 |
+| v10 results and reviewer changes | 65d2340 / 54099fb |
 
 ### 7e. Additions to the AI-use statement (section 5)
 
@@ -268,3 +297,8 @@ itself.
 >    geochemist, a computer-vision specialist, a wellsite geologist and a
 >    senior reviewer, critiqued plans before each run and results after it.
 >    These were not human reviews.
+> 8. **Well reports.** The drilling, mud and completion reports of the
+>    wells (3,474 pages) were searched for the mud weighting material with
+>    an optical character reader run locally. The AI assistant then read
+>    the mud-materials tables as page images and copied the products word
+>    for word. No person checked these pages.

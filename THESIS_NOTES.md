@@ -175,7 +175,7 @@ are trained without the test well.
 | Fine-tuned CNN, three seeds (v8 C) | EX | PENDING | |
 | Photo -> K, Fe, Ca, Ti, Zr over Al (v8 A) | PS | +0.20, +0.28, +0.19, +0.27, +0.10; all pass | a rough chemical log; robustly two axes beyond Si and Al: Fe(-Ti) and Ca; mostly carried by colour |
 | Where does it work? (v8 B) | PS | skill against spread of Si/Al: between wells +0.78 (p 0.003); within wells +0.54 (p 0.014) | skill follows the spread of the chemistry; 34/8-3 fails where Si/Al is nearly flat |
-| Photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic, 6 wells (v8 D) | EX (amended test; no test of record) | +0.52; 6 of 6 wells; p 0.016; twins merged +0.51, 5 of 5, p 0.031 | where sandstone is common the photo model follows the wellsite sand fraction as well as measured Si/Al does (+0.51); partial given Si/Al +0.15; colour features alone +0.47 |
+| Pre-Tertiary photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic, 6 wells (v8 D) | EX (amended test; no test of record) | +0.52; 6 of 6 wells; p 0.016; twins merged +0.51, 5 of 5, p 0.031 | where sandstone is common the photo model follows the wellsite sand fraction as well as measured Si/Al does (+0.51); partial given Si/Al +0.15 (upper bound); colour features alone +0.47 |
 
 ### 7b. Methods text (draft)
 
@@ -197,8 +197,10 @@ that calibrates depth from the printed 10 m grid and adds a depth ruler and
 a percentage ruler, and does nothing else. Two AI readers of different
 models read the tiles following written rules taken from each sheet's
 legend: one read every tile, the other a seeded sample. Agreement gates,
-well eligibility and the test were fixed beforehand; photographs entered
-only after the labels were committed. The label for a bag is the
+well eligibility and the test were fixed beforehand for the Tertiary; for
+the Jurassic-Triassic the eligibility rule was amended after the labels
+were read, before any photograph was joined. Photographs entered only after
+the labels were committed. The label for a bag is the
 length-weighted sand percentage over the interval since the previous bag.
 No human key exists for these readings.
 
@@ -228,7 +230,10 @@ itself.
 - The Jurassic-Triassic mud-log result is an amended test. The eligibility
   rule written for the Tertiary failed by its letter (three wells) and was
   changed after the labels were read, before any photograph was joined.
-  Six wells from one area, two of them twins.
+  Six wells from one area, two of them twins. The partial correlation
+  given measured Si/Al (+0.15) is an upper bound: Si/Al is a noisy sand
+  proxy, and the mud logger and the photographs both judge the cuttings by
+  eye.
 - The "where it works" result is what measurement noise alone predicts, and
   also what real contrast predicts; the two are not separated.
 - Fine-tuning brought no detectable gain; the frozen model stays the model

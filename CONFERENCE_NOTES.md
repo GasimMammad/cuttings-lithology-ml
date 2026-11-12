@@ -2,8 +2,7 @@
 
 Working notes for the talk in early December 2026. Not a slide deck. Every
 number comes from V2-V8 results files in this repository; the consolidated
-tables are in THESIS_NOTES.md (sections 1 and 7). Lines marked PENDING wait
-for v8 part C.
+tables are in THESIS_NOTES.md (sections 1 and 7).
 
 ## 1. One-sentence message
 
@@ -124,11 +123,15 @@ it resolves.
   tiles made by a script, blind to photographs and chemistry. They agree
   with each other; there is no human key. Say this before being asked.
 - **"Why does 34/8-3 fail?"** Its Si/Al is nearly flat (second-smallest
-  spread of the 11 wells), so there is little to predict. A fine-tuned
-  network reached +0.31 there in one run. PENDING: whether that repeats
-  with other seeds (v8 C).
+  spread of the 11 wells), and the frozen model finds nothing there. It is
+  not all noise: a fine-tuned network gave +0.21 to +0.41 there in three
+  runs with different seeds. One well, singled out after the first run,
+  with its sidetrack in the training data: an observation, not a result.
 - **"Does deep learning help?"** Frozen ImageNet features plus ridge
-  regression is the model of record. Fine-tuning gave no detectable gain.
+  regression is the model of record. Fine-tuning gave no detectable gain
+  over frozen features of the same network in three runs (+0.38 against
+  +0.33 medians; higher in 4 of 11 wells, p 0.52). The median moved from
+  +0.31 to +0.46 between seeds: quote +0.38, never the best run.
 - **"So where are the sinkites?"** Not shown. The photographs cannot date a
   sand, and no sidewall cores exist in the target sands. Use the
   supervisor's definition of "sinkite"; do not attribute it to a paper

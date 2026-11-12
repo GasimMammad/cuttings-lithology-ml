@@ -601,6 +601,10 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
 
 ## X1. Fine-tuned CNN on Si/Al (run once, 2026-11-11; 59_v7_cnn_sial.py)
 
+Note added 2026-11-12: two more seeds are in V8_RESULTS.md part C. The
++0.46 median below was the highest of three (+0.46, +0.31, +0.41); the
+per-well mean of three seeds gives +0.38. The conclusions are unchanged.
+
 ResNet-18 fine-tuned on T1 with the v2 "C2" recipe, leave-one-well-out,
 2021 bags and 32,336 patches, 11 folds, fixed epochs, one seed per fold.
 Statistic as in step 1 (per-well +/-50 m high-passed Spearman against T1).

@@ -109,6 +109,81 @@ partials stated as upper bounds, with the robust count given as two (Fe-Ti
 and Ca); the ilmenite caveat; the attenuation sentence made two-sided; the
 declared Ba result reported; B4 and the B2-B3 dependence stated.
 
+## C. Fine-tuned network, two more seeds (59_v7_cnn_sial.py train 1000, train 2000, evalseeds)
+
+X1 (V7_RESULTS.md) repeated twice with only the seed changed (seed offsets
+1000 and 2000). Same 2,021 bags, 32,336 patches and 11 held-out wells; same
+statistic. Training ran 2026-11-11 to 2026-11-12 (paused about six hours
+while the Mac slept; folds are independent and none was restarted).
+Scored once on 2026-11-12 with code committed before the runs ended.
+Files: results/v8/x1_seeds_results.json, evalseeds_stdout.txt,
+cnn_sial_predictions_seed1000.csv, cnn_sial_predictions_seed2000.csv.
+
+| model | median rho | mean rho | wells > 0 | p | 95 % CI of median |
+|---|---|---|---|---|---|
+| Fine-tuned, seed 0 (X1) | +0.46 | +0.41 | 11 of 11 | | |
+| Fine-tuned, seed 1000 | +0.31 | +0.38 | 11 of 11 | | |
+| Fine-tuned, seed 2000 | +0.41 | +0.40 | 11 of 11 | | |
+| **Fine-tuned, per-well mean of three seeds** | **+0.38** | +0.40 | 11 of 11 | 0.0005 | +0.30 to +0.50 |
+| Fine-tuned, ensemble of three seeds (secondary) | +0.40 | +0.41 | 11 of 11 | 0.0005 | +0.28 to +0.51 |
+| Control: frozen ResNet-18 + R-D pipeline | +0.33 | +0.39 | 11 of 11 | 0.0005 | +0.30 to +0.57 |
+| R-D (step 1, frozen ResNet-50) | +0.32 | +0.33 | 11 of 11 | 0.0005 | +0.18 to +0.49 |
+
+Pre-declared comparisons (paired one-sided Wilcoxon over the 11 wells, on
+the per-well mean of the three seeds):
+
+- **Fine-tuning against the frozen control: no detectable gain (n = 11
+  wells, three seeds).** Higher in 4 wells, lower in 7; p = 0.52; median
+  paired difference -0.01, mean +0.01. Ensemble: p = 0.48. X1's conclusion
+  stands.
+- **The CNN recipe against R-D: higher in 8 of 11 wells, p = 0.027**,
+  median paired difference +0.05. Ensemble: 9 of 11, p = 0.027. This is
+  weaker than the single-seed X1 figure (9 of 11, p = 0.005).
+- **Seed noise.** Per-well SD over the three seeds: median 0.03, largest
+  0.10 (34/8-3) and 0.09 (34/7-4). The median over wells moved between
+  +0.31 and +0.46 from seed to seed while the mean stayed at +0.38 to
+  +0.41. X1's +0.46 was the highest of the three; +0.38 is the number to
+  quote for the fine-tuned network.
+- **34/8-3: by the pre-declared rule the X1 observation reproduces**
+  (+0.31, +0.21, +0.41; both new seeds >= 0.15). The frozen control gives
+  +0.01 and R-D +0.03 there.
+
+Per well:
+
+| well | seed 0 | seed 1000 | seed 2000 | mean of 3 | seed SD | frozen control | R-D |
+|---|---|---|---|---|---|---|---|
+| 24/9-3 | 0.50 | 0.48 | 0.48 | 0.49 | 0.01 | 0.52 | 0.46 |
+| 24/9-4 | 0.20 | 0.23 | 0.22 | 0.22 | 0.02 | 0.30 | 0.17 |
+| 34/4-6 | 0.60 | 0.62 | 0.59 | 0.60 | 0.02 | 0.62 | 0.49 |
+| 34/4-7 | 0.48 | 0.44 | 0.46 | 0.46 | 0.03 | 0.33 | 0.30 |
+| 34/7-1 | 0.30 | 0.31 | 0.36 | 0.32 | 0.03 | 0.33 | 0.19 |
+| 34/7-10 | 0.50 | 0.53 | 0.48 | 0.50 | 0.03 | 0.57 | 0.51 |
+| 34/7-4 | 0.46 | 0.29 | 0.40 | 0.38 | 0.09 | 0.63 | 0.48 |
+| 34/7-6 | 0.36 | 0.25 | 0.30 | 0.30 | 0.06 | 0.31 | 0.32 |
+| 34/7-9 | 0.60 | 0.56 | 0.56 | 0.58 | 0.03 | 0.48 | 0.53 |
+| 34/8-3 | 0.31 | 0.21 | 0.41 | 0.31 | 0.10 | 0.01 | 0.03 |
+| 34/8-3 A | 0.18 | 0.25 | 0.15 | 0.20 | 0.05 | 0.16 | 0.18 |
+
+### Reading
+
+1. Fine-tuning does not beat frozen features of the same backbone. R-D
+   stays the model of record. The recipe's edge over R-D (p 0.027) cannot be
+   credited to fine-tuning, because the frozen ResNet-18 control has it too
+   (X1, post hoc: 7 of 11, p 0.027).
+2. 34/8-3 is the exception, and it is one well. All three fine-tuned runs
+   give +0.21 to +0.41 where both frozen models give about zero. Limits:
+   the well was singled out after X1 was seen (the 0.15 rule was fixed
+   before the new seeds ran); it has the largest seed SD; the sidetrack
+   34/8-3 A, drilled from the same location, is in the training fold when
+   34/8-3 is held out, and a fine-tuned network can use that more than a
+   32-component ridge can; the sidetrack itself shows no gain (+0.20
+   against +0.16 and +0.18). No test of 34/8-3 alone was declared.
+3. Consequence for part B: "little to predict" is too strong for 34/8-3.
+   Its Si/Al spread is small, and the frozen model finds nothing there, but
+   part of that small variation can be predicted from the photographs.
+   Part B's between-well and within-well results are for R-D and are
+   unchanged.
+
 ## D. Wellsite sand fraction below base Cretaceous (Jurassic-Triassic) (scripts 64, 66, 67)
 
 **Status: amended, exploratory test. By the letter of the pre-registered

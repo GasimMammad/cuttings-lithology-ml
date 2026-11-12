@@ -62,6 +62,8 @@ def unit_of(d, groups):
     for r in groups.itertuples():
         m[(d > r.lsuTopDepth) & (d <= r.lsuBottomDepth)] = MEGA.get(r.lsuName, 4)
     m[d <= groups.lsuTopDepth.min()] = 0
+    last = groups.sort_values("lsuBottomDepth").iloc[-1]  # a bag just below the last listed base keeps that unit
+    m[d > last.lsuBottomDepth] = MEGA.get(last.lsuName, 4)
     return m
 
 

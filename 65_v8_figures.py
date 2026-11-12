@@ -24,6 +24,7 @@ LB = import_module("03_make_labels")
 OUT = C.REPO_DIR / "results" / "v8" if hasattr(C, "REPO_DIR") else __import__("pathlib").Path("results/v8")
 BLUE, ORANGE = "#2a78d6", "#eb6834"      # categorical slots 1 and 2 (validated: CVD dE 24.7)
 INK, INK2, GRID, SURF = "#0b0b0b", "#52514e", "#e4e3df", "#fcfcfb"
+STEP1 = pd.read_csv("results/v7/step1_per_well.csv", index_col=0)["primary"].to_dict()
 DETAIL = ["34_7-9", "34_7-6", "34_8-3"]  # best, middle, worst by step-1 rho (fixed in the plan)
 plt.rcParams.update({"font.family": "Helvetica", "font.size": 8, "axes.edgecolor": GRID, "axes.labelcolor": INK2,
                      "xtick.color": INK2, "ytick.color": INK2, "axes.facecolor": SURF, "figure.facecolor": SURF,
@@ -57,7 +58,7 @@ def series(s1, w):
     o = np.argsort(d)
     d = d[o]
     hy, hp = M.highpass(d, s1.T1.values[m][o]), M.highpass(d, s1.pred_RD.values[m][o])
-    rho = M.rho(hp, hy)
+    rho = STEP1.get(w, M.rho(hp, hy))  # the stored step-1 value (4 decimals), so figure and tables agree
     z = lambda v: v / np.nanstd(v)
     return d, smooth(d, z(hy)), smooth(d, z(hp)), rho, M.stretch_ids(d)
 

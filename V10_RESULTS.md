@@ -38,10 +38,10 @@ Per boundary (10 primary wells):
 
 | boundary | tops | photo median error | signed median (+ = too deep) | within 30 m | offset | regional | XRF |
 |---|---|---|---|---|---|---|---|
-| top Hordaland | 7 | 55 m | -15 m | 2 | 21 m | 50 m | 23 m |
-| top Rogaland | 10 | 128 m | +51 m | 2 | 35 m | 33 m | 138 m |
-| top Cretaceous | 9 | 80 m | +76 m | 1 | 17 m | 57 m | 43 m |
-| base Cretaceous | 8 | 25 m | -11 m | 5 | 65 m | 53 m | 21 m |
+| top Hordaland | 7 | 55 m (6 bags) | -15 m | 2 | 21 m | 50 m | 23 m |
+| top Rogaland | 10 | 128 m (18 bags) | +51 m | 2 | 35 m | 33 m | 138 m |
+| top Cretaceous | 9 | 80 m (22 bags) | +76 m | 1 | 17 m | 57 m | 43 m |
+| base Cretaceous | 8 | 25 m (8 bags) | -11 m | 5 | 65 m | 53 m | 21 m |
 
 No top was left without a bag in the deeper unit; at one top (24/9-3 top
 Hordaland) every bag was assigned deeper. Bag level: balanced accuracy
@@ -56,7 +56,10 @@ closer to the shoe or change than to the true top, and no closer to the
 true top than the shoe itself would be (the exception is 34/4-7).
 **By the rule: at these tops the picks cannot be separated from casing or
 mud changes.** The top Cretaceous picks are 76 m too deep in the median,
-which is where the 13 3/8" shoes are. On the 26 far tops alone: photo
+at the nine top Cretaceous tops. At the seven near ones the 13 3/8" shoe lies
+14 to 67 m (median 44 m) below the top: four picks fall 8 to 28 m below the
+shoe, two overshoot it by 66 and 222 m, and one (34/4-7) lies 34 m above
+it. On the 26 far tops alone: photo
 56 m; S2 still "worse than an offset well" (2 of 10, p 0.049); S1 not
 shown to be better (3 of 10).
 
@@ -65,13 +68,17 @@ shown to be better (3 of 10).
 ### Reading
 
 1. The photographs do not place major tops as well as the nearest well
-   does. In this densely drilled area the nearest well is 2 to 6 km away
-   for nine of ten locations, and its tops are a hard baseline.
-2. It is not the photographs alone that fall short. Measured XRF chemistry
-   on the same bags, through the same method, does no better (52 m; 74 m
-   as the median over locations). The limit sits in what a five-unit model
-   trained on nine locations can carry to a tenth, and in the bags, more
-   than in the images.
+   does. In this densely drilled area the nearest well is 1.9 to 6 km away
+   for nine of ten locations, and its tops are a hard baseline. For one
+   top (24/9-3 top Cretaceous) the offset well is 34/7-10, 228 km away,
+   because 24/9-4 did not reach the Cretaceous (per the amended rule).
+2. The shortfall is not specific to the photographs. Measured XRF
+   chemistry, through the same method, is also worse than the offset well
+   (smaller error in 3 of 10 locations; post hoc, p = 0.014). Per location
+   it cannot be told apart from the photographs (photo smaller in 5 of
+   10). Per top it is somewhat closer (52 against 65 m; 41 against 29 %
+   within 30 m). Whether the limit lies in the method or in the bags is
+   not tested.
 3. The two 24/9 wells fail outright (430 and 935 m). They are the other
    area, their Rogaland Group is thick and sandy where Tampen's is thin
    and clay-rich, and 24/9-4 covers only two units, which shifts its
@@ -79,15 +86,19 @@ shown to be better (3 of 10).
    learn from, and the reverse.
 4. Base Cretaceous is the one boundary where the photographs do well
    (median 25 m, 5 of 8 within 30 m). Post hoc count, not a test: the
-   photo pick is closer than the offset well at 6 of 8. This is the
-   unconformity, where depth prognoses are weakest (offset 65 m) and the
-   change in the cuttings is strongest (red beds and sandstone below).
-   Measured chemistry does the same (21 m). The one near top here
-   (34/7-10, mud change 13 m away) is one of the two misses.
-5. The casing diagnostic matters beyond this test: where a shoe or mud
-   change sits near a boundary, the photographs follow the shoe. This is
-   direct evidence for the mud and hole-size imprint that v7 and v8 could
-   only flag.
+   photo pick is closer than the offset well at 6 of 8 (a sign test would
+   give p = 0.14). This is the unconformity, where the offset well is
+   weakest (65 m; regional 53 m). The picks are within 30 m in three of
+   the four wells with Hegre Group directly below the unconformity (the
+   fourth, 34/4-7, is 51 m off), and in 34/8-3 (Viking then Brent below)
+   and 34/7-4. The two large misses (34/7-10 and 34/7-6, 199 and 250 m)
+   have Dunlin Group directly below. Measured chemistry does the same
+   overall (21 m).
+5. Near tops are almost all one boundary (7 of 8 are top Cretaceous, and
+   every Tampen top Cretaceous is near a 13 3/8" shoe), so a shoe effect
+   cannot be separated from the boundary type. Four picks sit just below
+   the shoe. This is consistent with a casing or mud imprint (or with
+   cavings stopping at the shoe), but it is not direct evidence for one.
 6. Limits: eleven wells, two areas, all used before; Sodir tops have their
    own error; bags 3 to 10 m apart; mud-system changes are known for six
    wells only (shoes for all); the dynamic programme assumes no unit is
@@ -95,8 +106,10 @@ shown to be better (3 of 10).
    photographs is a change in the look of the cuttings, not an age.
 
 **What may be said:** "Photographs cannot replace an offset well for
-placing major tops. They, like the bag chemistry, locate the base
-Cretaceous unconformity to about 25 m (descriptive, 8 wells)."
+placing major tops. At the base Cretaceous unconformity the median photo
+error was 25 m (5 of 8 tops within 30 m; two misses of about 200 and
+250 m), close to the bag chemistry (21 m); this boundary was singled out
+after the results and is descriptive."
 **What may not be said:** that photographs pick formation tops, or that
 they beat any depth prognosis.
 
@@ -121,7 +134,10 @@ steps: 20 m against 16 m; W_photo - W_Si/Al interval -28 to +21 m.
 
 **By the pre-declared rules:** smearing is not detected for any variable
 (every interval of W - W0 includes zero), and the photographs are "as fast
-as the chemistry" (the interval includes zero).
+as the chemistry" (the interval includes zero). The pre-declared sentence
+"The stacked transition is W m wide ..." is not used: the lower end of
+every W interval (0.4 m) is the fit's minimum width, so the intervals are
+set by the fit bounds.
 
 ### Reading
 
@@ -129,18 +145,20 @@ as the chemistry" (the interval includes zero).
    intervals run from under a metre to tens of metres. With 12 steps from
    6 wells the stack cannot tell 5 m from 30 m. R gives no number for the
    resolution of cuttings, and none may be quoted.
-2. The point estimates (Si/Al 14 m and the photo prediction 18 m against
-   4 m for a noise-matched ideal bag) lean towards a smear of about 10 m
-   beyond the bag. They are not evidence. They are the reason the question
-   is worth asking again with more wells.
-3. Why it fell short: half of the gamma-ray steps were gradual over more
-   than 10 m, and a quarter more failed the bag-count or contrast rules.
-   Loosening those rules now would be tuning after the result, so it was
-   not done.
+2. The point estimates are in the table for completeness only. The
+   bootstrap medians of W - W0 (4 m for Si/Al and for the photo
+   prediction, 18 m for K) lie inside intervals about 85 m wide and show
+   no direction.
+3. Why it fell short: 40 of the 80 steps failed the sharpness rule. The
+   rule also rejects about a quarter of perfectly sharp steps, because the
+   step statistic locates a step only to about +/-15 m (reviewer's
+   synthetic check), so "not sharp" does not mean gradual. Of the 24 kept
+   steps, 10 to 13 failed the bag-count or contrast rules. Loosening the
+   rules now would be tuning after the result, so it was not done.
 4. The earlier evidence on this question stands unchanged: bag support at
    the bottom of the interval (v3b), agreement that follows the spread of
    the chemistry (v8 B), and the gamma-ray key of v9 K3, where sand
-   fraction and Si/Al reach only about -0.26 against gamma ray.
+   fraction and Si/Al reach only -0.14 to -0.26 against gamma ray.
 5. The photo pipeline is not independent of gamma ray (v1, v2).
 
 ## What v10 adds to the thesis
@@ -150,6 +168,18 @@ as the chemistry" (the interval includes zero).
   well is better.
 - One place where they do carry usable information: the base Cretaceous
   unconformity (descriptive).
-- Direct evidence that casing points and mud changes steer the picks.
+- Picks at top Cretaceous that cannot be separated from the 13 3/8" shoe.
 - No resolution number. R should be repeated only with more wells, with
   the rules of V10_PLAN unchanged.
+
+## Reviewer (v10 results): ACCEPT WITH CHANGES for S and R, applied
+
+Every number was recomputed from the result files; no code bug that changes
+a verdict (labels without gaps, twins kept together in the folds, dynamic
+programme correct, depth conversions as amended). Changes applied above:
+the offset distances stated exactly, the casing paragraph and Reading 5
+toned down from "direct evidence" to "cannot be separated", Reading 2
+replaced by what was tested, the base Cretaceous note made exact, and in R
+the point estimates demoted, the sharpness explanation corrected and the
+pre-declared width sentence withdrawn because the intervals hit the fit
+bounds.

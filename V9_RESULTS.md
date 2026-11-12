@@ -146,11 +146,11 @@ values).** Without 24/9-3 the Fe/Al and Ti/Al rows are given below.
 
 | ratio | row | wells | median | wells > 0 | p |
 |---|---|---|---|---|---|
-| Fe/Al | photo prediction against measured | 11 wells | +0.28 | 11 of 11 | 0.000 |
+| Fe/Al | photo prediction against measured | 11 wells | +0.28 | 11 of 11 | 0.0005 |
 | Fe/Al | photo prediction against measured | without 24/9-3 | +0.29 | 10 of 10 | 0.001 |
-| Fe/Al | partial given Ba, Ca, Cl | 11 wells | +0.29 | 11 of 11 | 0.000 |
+| Fe/Al | partial given Ba, Ca, Cl | 11 wells | +0.29 | 11 of 11 | 0.0005 |
 | Fe/Al | partial given Ba, Ca, Cl | without 24/9-3 | +0.29 | 10 of 10 | 0.001 |
-| Fe/Al | partial given Si and Al as well | 11 wells | +0.14 | 11 of 11 | 0.000 |
+| Fe/Al | partial given Si and Al as well | 11 wells | +0.14 | 11 of 11 | 0.0005 |
 | Fe/Al | partial given Si and Al as well | without 24/9-3 | +0.13 | 10 of 10 | 0.001 |
 | Ti/Al | photo prediction against measured | 11 wells | +0.27 | 10 of 11 | 0.001 |
 | Ti/Al | photo prediction against measured | without 24/9-3 | +0.27 | 9 of 10 | 0.003 |

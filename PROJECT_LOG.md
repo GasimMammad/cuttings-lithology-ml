@@ -655,7 +655,7 @@ eaa36f4 v2 results
   as an image; a seeded 10 % of "not stated" pages too. Deviation from the
   plan to disclose: OCR over ALL pages replaces "contents pages fix the
   page list" as the way pages are found (more thorough).
-- Text-layer hits so far (5 wells): barite named in 34/4-6, 34/4-7 and
+- K1 DONE 2026-11-12 (results/v9/k1_weighting_material.md): 10 wells have a complete mud-materials table with barite as the only weighting material; 24/9-3 has no materials list; no ilmenite, hematite or titanium word on any of 3,474 pages. Old text-layer note follows.
   34/7-1 drilling programmes and in the 34/7-4 and 34/7-6 mud-log reports;
   no ilmenite or hematite hit yet. Not yet read as images.
 - Then: fill K2c and K1 in V9_RESULTS.md, reviewer check of all four,

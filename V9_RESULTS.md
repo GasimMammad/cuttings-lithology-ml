@@ -132,7 +132,11 @@ without). The frozen models stay at about zero either way.
 
 1. The sidetrack hypothesis of v8 C is not supported: without 34/8-3 A in
    training, three fine-tuned runs still give +0.17 to +0.40 where frozen
-   features give nothing.
+   features give nothing. Three seeds cannot exclude a contribution from
+   the twin of up to about 0.2 (seed SD 0.10 to 0.12). The seed-by-seed
+   differences in the table are not truly paired: a smaller training set
+   changes the batch order, so the two runs of a seed are effectively
+   independent.
 2. The v8 C limits that remain: one well, singled out after the first run;
    the largest seed SD of all wells; no test of 34/8-3 alone and no p
    value. Removing a well also makes the training set one well smaller,
@@ -221,5 +225,5 @@ Every number was checked against the result files. One rounding error
 (K3 key median -0.2646 was printed as -0.27; now -0.26), the K2b reading
 sharpened (which p belongs to +0.50), two wrong row labels in the K1 table,
 the K1 deviations restated (more coverage, less verification), and the
-ilmenite wording narrowed to "solid weighting material". K2c is reviewed
-separately when it has run.
+ilmenite wording narrowed to "solid weighting material". K2c was reviewed after it ran (ACCEPT WITH CHANGES: the limit of three
+seeds added to its Reading 1).

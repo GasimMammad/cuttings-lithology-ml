@@ -168,10 +168,33 @@ def detail(s1):
     plt.close(fig)
 
 
+def where():
+    """v8 B1: per-well agreement against the spread of the measured ratio (11 points)."""
+    t = pd.read_csv(OUT / "B_per_well.csv", index_col=0)
+    fig, ax = plt.subplots(figsize=(5.6, 4.2))
+    ax.scatter(t.mad_meas, t.rho, s=46, color=BLUE, edgecolor=SURF, linewidth=1.2, zorder=3)
+    left = {"34_7-10", "34_7-4"}
+    for w, r in t.iterrows():
+        ax.annotate(name(w), (r.mad_meas, r.rho), xytext=(-6 if w in left else 6, -9 if w == "34_7-4" else 4 if w in left else 5 if w == "34_8-3_A" else -3),
+                    textcoords="offset points", ha="right" if w in left else "left", fontsize=7.5, color=INK2)
+    ax.set_xlabel("Spread of measured Si/Al in the well\n(median absolute deviation of high-passed log10 Si/Al)")
+    ax.set_ylabel("Agreement of photo prediction with XRF\n(per-well Spearman, held-out)")
+    ax.set_ylim(-0.03, 0.6)
+    ax.set_xlim(0.017, 0.053)
+    ax.set_title("Agreement is higher where the chemistry varies more\nSpearman +0.78 across 11 wells, exact permutation p = 0.003",
+                 fontsize=9, color=INK, loc="left", pad=10)
+    tidy(ax)
+    fig.subplots_adjust(left=0.17, right=0.97, top=0.86, bottom=0.17)
+    for ext in ("png", "pdf"):
+        fig.savefig(OUT / f"fig_v8_where.{ext}", dpi=220)
+    plt.close(fig)
+
+
 def main():
     s1 = pd.read_csv(C.WORK_DIR / "v7" / "step1_predictions.csv")
     overview(s1)
     detail(s1)
+    where()
     print("written to", OUT)
 
 

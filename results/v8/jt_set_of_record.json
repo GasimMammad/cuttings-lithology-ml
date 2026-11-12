@@ -1,0 +1,11 @@
+{
+ "n_eligible": 3,
+ "min_wells": 6,
+ "test": false,
+ "eligible_wells": [
+  "34_7-10",
+  "34_7-9",
+  "34_8-3"
+ ],
+ "n_bags_J_with_label": 908
+}

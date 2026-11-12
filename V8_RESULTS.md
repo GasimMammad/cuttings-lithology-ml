@@ -129,7 +129,8 @@ qualify.
   the dash-dot pattern on 34/7-10) and thin limestone stripes (6 against 5).
   The readers never used the silty-sandstone class, so the primary Y is
   plain sand.
-- Sand is the main lithology: mean 43 to 76 % per well (Tertiary: a few %).
+- Sand is the main lithology: mean 43 to 76 % per well (34/7-9 in the
+  Tertiary: 6 %).
 - **Eligibility.** By the letter: 34/7-10, 34/7-9, 34/8-3. The step-3 rule
   asks for informative bags in three clusters more than 30 m apart; here
   informative bags are nearly continuous (they fill 12 to 23 thirty-metre
@@ -180,7 +181,8 @@ Nothing there.
    comparison gave +0.13.
 2. Unlike step 3, the photographs here add something beyond Si/Al: the
    partial correlation given measured Si/Al is +0.15, positive in all six
-   wells. It is small, and in two wells it is near zero (+0.02, +0.05).
+   wells. It is small, and in three wells it is near zero (+0.02 to
+   +0.05).
 3. Colour and texture features alone reach +0.47. The deep-network
    embeddings are not clearly better; no paired test was declared.
 4. It is not depth: the depth baseline is negative.

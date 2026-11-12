@@ -175,7 +175,7 @@ are trained without the test well.
 | Fine-tuned CNN, three seeds (v8 C) | EX | PENDING | |
 | Photo -> K, Fe, Ca, Ti, Zr over Al (v8 A) | PS | +0.20, +0.28, +0.19, +0.27, +0.10; all pass | a rough chemical log; robustly two axes beyond Si and Al: Fe(-Ti) and Ca; mostly carried by colour |
 | Where does it work? (v8 B) | PS | skill against spread of Si/Al: between wells +0.78 (p 0.003); within wells +0.54 (p 0.014) | skill follows the spread of the chemistry; 34/8-3 fails where Si/Al is nearly flat |
-| Photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic (v8 D) | PS | PENDING | |
+| Photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic, 6 wells (v8 D) | EX (amended test; no test of record) | +0.52; 6 of 6 wells; p 0.016; twins merged +0.51, 5 of 5, p 0.031 | where sandstone is common the photo model follows the wellsite sand fraction as well as measured Si/Al does (+0.51); partial given Si/Al +0.15; colour features alone +0.47 |
 
 ### 7b. Methods text (draft)
 
@@ -225,6 +225,10 @@ itself.
   do as well as the deep network for Fe, Ca and Ti.
 - Mud-log labels: AI readers of one model family, no human key; two logs of
   the same well agree only at +0.42.
+- The Jurassic-Triassic mud-log result is an amended test. The eligibility
+  rule written for the Tertiary failed by its letter (three wells) and was
+  changed after the labels were read, before any photograph was joined.
+  Six wells from one area, two of them twins.
 - The "where it works" result is what measurement noise alone predicts, and
   also what real contrast predicts; the two are not separated.
 - Fine-tuning brought no detectable gain; the frozen model stays the model
@@ -242,6 +246,7 @@ itself.
 | v8 D photograph predictions frozen before tiles | 40b5c49 |
 | v8 A and B results | ad06c38 (write-up f51869e) |
 | v8 figures | 120dec2 |
+| v8 D raw readings / eligibility amendment / results | 4c047ec, 633470a / 49d1d0a / 60818cd |
 
 ### 7e. Additions to the AI-use statement (section 5)
 

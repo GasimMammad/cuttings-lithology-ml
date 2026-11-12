@@ -603,3 +603,22 @@ eaa36f4 v2 results
 - **F:** THESIS_NOTES.md section 7 and CONFERENCE_NOTES.md are complete except the part C lines (marked PENDING).
 - **C STILL RUNNING:** seed 1000 at 7 of 11 folds at 08:23; then seed 2000 (11 folds). Expected end about 14:00 on 2026-11-12 if the Mac stays awake and on AC. THEN run ONCE: `python 59_v7_cnn_sial.py evalseeds`; copy x1/x1_seeds_results.json to results/v8/; write part C into V8_RESULTS.md with the pre-declared wording (mean of 3 seeds vs frozen control and vs R-D; 34/8-3 "reproduces" only if both new seeds >= 0.15); fill the PENDING lines in THESIS_NOTES.md (7a row) and CONFERENCE_NOTES.md ("Why does 34/8-3 fail?"); compact reviewer check; final report to the user.
 - **Open caveat for the user:** mud reports not checked for an ilmenite weighting agent (would explain the Fe-Ti signal of part A).
+
+## 2026-11-12 14:10: v8 C DONE and reviewed. v8 is COMPLETE (A, B, C, D, E, F)
+
+- GPU runs for seeds 1000 and 2000 finished 09:29 and 13:29 (11 folds each,
+  2,021 bags). Scored ONCE: `python 59_v7_cnn_sial.py evalseeds`.
+- Result (V8_RESULTS.md part C): per-well mean of three seeds +0.38 median
+  (seed medians +0.46 / +0.31 / +0.41), 11 of 11. Against frozen ResNet-18
+  control: higher in 4 of 11, p 0.52 -> "no detectable gain". Against R-D:
+  8 of 11, p 0.027. Median seed SD 0.03. 34/8-3: +0.31 / +0.21 / +0.41
+  against about 0 for frozen models -> "reproduces" by the rule (one well,
+  post hoc, sidetrack in the training fold).
+- Quote +0.38 for the fine-tuned network, never +0.46.
+- Reviewer (fresh opus agent): ACCEPT WITH CHANGES, nine changes applied.
+- PENDING lines in THESIS_NOTES.md and CONFERENCE_NOTES.md filled.
+- Files: results/v8/x1_seeds_results.json, evalseeds_stdout.txt,
+  cnn_sial_predictions_seed1000.csv / _seed2000.csv, run_log_seeds.txt.
+- Nothing is running. Open, not requested: mud reports not checked for
+  ilmenite; no human key for audit tiles; no slide deck; one annotated
+  mud-log tile for slide 9.

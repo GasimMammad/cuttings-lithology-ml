@@ -113,9 +113,12 @@ declared Ba result reported; B4 and the B2-B3 dependence stated.
 
 X1 (V7_RESULTS.md) repeated twice with only the seed changed (seed offsets
 1000 and 2000). Same 2,021 bags, 32,336 patches and 11 held-out wells; same
-statistic. Training ran 2026-11-11 to 2026-11-12 (paused about six hours
-while the Mac slept; folds are independent and none was restarted).
-Scored once on 2026-11-12 with code committed before the runs ended.
+statistic. Seed offsets were fixed in V8_PLAN (4152f8b) before the runs;
+scoring code dad2dd7 / b7c54b3, committed before the runs ended. Training
+ran 2026-11-11 to 2026-11-12 and paused about six and a half hours while
+the Mac slept, inside the 34/7-4 fold of seed 1000 (24,688 s against about
+1,000 to 2,300 s for the other folds); the process was suspended, not
+restarted. Scored once on 2026-11-12.
 Files: results/v8/x1_seeds_results.json, evalseeds_stdout.txt,
 cnn_sial_predictions_seed1000.csv, cnn_sial_predictions_seed2000.csv.
 
@@ -133,20 +136,25 @@ Pre-declared comparisons (paired one-sided Wilcoxon over the 11 wells, on
 the per-well mean of the three seeds):
 
 - **Fine-tuning against the frozen control: no detectable gain (n = 11
-  wells, three seeds).** Higher in 4 wells, lower in 7; p = 0.52; median
-  paired difference -0.01, mean +0.01. Ensemble: p = 0.48. X1's conclusion
+  wells, three seeds).** Higher in 4 wells, lower in 7; p = 0.52 in either
+  direction (W+ = 33, the centre of the null distribution); median paired
+  difference -0.01, mean +0.01. Ensemble: p = 0.48. X1's conclusion
   stands.
 - **The CNN recipe against R-D: higher in 8 of 11 wells, p = 0.027**,
   median paired difference +0.05. Ensemble: 9 of 11, p = 0.027. This is
-  weaker than the single-seed X1 figure (9 of 11, p = 0.005).
+  weaker than the single-seed X1 figure (9 of 11, p = 0.005). Each new
+  seed alone: 9 and 7 of 11, p = 0.074 and 0.087.
 - **Seed noise.** Per-well SD over the three seeds: median 0.03, largest
   0.10 (34/8-3) and 0.09 (34/7-4). The median over wells moved between
   +0.31 and +0.46 from seed to seed while the mean stayed at +0.38 to
   +0.41. X1's +0.46 was the highest of the three; +0.38 is the number to
   quote for the fine-tuned network.
-- **34/8-3: by the pre-declared rule the X1 observation reproduces**
-  (+0.31, +0.21, +0.41; both new seeds >= 0.15). The frozen control gives
-  +0.01 and R-D +0.03 there.
+- **34/8-3: by the pre-declared rule the X1 observation reproduces across
+  seeds** (+0.31, +0.21, +0.41; both new seeds >= 0.15). This rules out
+  seed noise. It cannot rule out a property of this fold, because the data
+  and the training wells are identical in all three runs. The frozen
+  control gives +0.01 and R-D +0.03 there (0.025; printed as 0.02 in the
+  V7 step-1 table).
 
 Per well:
 
@@ -166,7 +174,8 @@ Per well:
 
 ### Reading
 
-1. Fine-tuning does not beat frozen features of the same backbone. R-D
+1. Fine-tuning shows no detectable gain over frozen features of the same
+   backbone (n = 11 wells, three seeds). R-D
    stays the model of record. The recipe's edge over R-D (p 0.027) cannot be
    credited to fine-tuning, because the frozen ResNet-18 control has it too
    (X1, post hoc: 7 of 11, p 0.027).
@@ -175,14 +184,23 @@ Per well:
    the well was singled out after X1 was seen (the 0.15 rule was fixed
    before the new seeds ran); it has the largest seed SD; the sidetrack
    34/8-3 A, drilled from the same location, is in the training fold when
-   34/8-3 is held out, and a fine-tuned network can use that more than a
-   32-component ridge can; the sidetrack itself shows no gain (+0.20
-   against +0.16 and +0.18). No test of 34/8-3 alone was declared.
-3. Consequence for part B: "little to predict" is too strong for 34/8-3.
-   Its Si/Al spread is small, and the frozen model finds nothing there, but
-   part of that small variation can be predicted from the photographs.
-   Part B's between-well and within-well results are for R-D and are
-   unchanged.
+   34/8-3 is held out, with bags at 100 of the same 101 depths; whether a
+   fine-tuned network exploits this more than a 32-component ridge was not
+   tested. The reviewer's post hoc check: the sidetrack's high-passed Si/Al
+   at matched depths does not track 34/8-3's (rho about -0.25), so a simple
+   depth lookup does not explain it. The sidetrack itself shows no gain
+   (+0.20 against +0.16 and +0.18). No test of 34/8-3 alone was declared.
+3. Consequence for part B: 34/8-3's low R-D rho matches its small spread,
+   but a fine-tuned network found some signal there in all three runs, so
+   the flat chemistry may not be all noise (one well, post hoc). Part B's
+   results are for R-D and are unchanged.
+
+### Reviewer (C, after results): ACCEPT WITH CHANGES, applied
+
+Every number was checked against the result files and matched; the scoring
+code follows the plan; no leak beyond the colour-standardisation point
+disclosed in X1. Nine wording and disclosure changes, all applied above and
+in THESIS_NOTES.md and CONFERENCE_NOTES.md.
 
 ## D. Wellsite sand fraction below base Cretaceous (Jurassic-Triassic) (scripts 64, 66, 67)
 

@@ -131,3 +131,64 @@ stratigraphy against Sodir formation tops; a zero-shot AI reader of the bag
 photographs; the resolution limit of cuttings from gamma ray against XRF
 potassium; a parentage test for the target sands. Each would get its own
 plan and review.
+
+## Reviewer (v9 plan): APPROVE WITH CHANGES. Amendments (2026-11-12, before any run; they take precedence over the text above)
+
+### K1
+- The "fewer than 6 of 11" rule is dropped. New rule: the caveat is
+  reworded only for wells whose statement covers the hole sections that
+  hold the v8 A bags. All other wells keep the caveat, by name.
+- The two minerals are kept apart: hematite bears on Fe/Al only, ilmenite
+  on both Fe/Al and Ti/Al.
+- Reading: the list of pages to render is fixed from the contents pages
+  before any page is read. Trade names in materials tables are recorded
+  word for word, and a trade name is mapped to a mineral only with a cited
+  source. I also read a seeded 10 % of the scanned pages the reader marked
+  "not stated", at least one per well, to catch misses.
+- Hole sections drilled with unweighted mud carry no weighting agent; they
+  are listed from the Sodir mud-weight table.
+- Steel wear can add Fe but not Ti. This is stated as a limit, with no
+  number.
+- Declined (optional): a Ti-on-Fe slope check. It cannot separate natural
+  from added ilmenite, so it would add a number without closing the caveat.
+
+### K2b
+- Area-out is cut: it does not address the twin, and v7 step 1 already
+  covers leaving out whole areas.
+- New rule. Reference: the R-D model is refitted for each twin dropping
+  each of the other training wells in turn. "Does not depend on the twin"
+  if both twins stay >= +0.30 under location-out and each twin's fall is no
+  larger than the largest fall from dropping one other well at that twin.
+  Otherwise "depends in part on the twin", with both numbers. The six-well
+  median, Wilcoxon p and five-unit version are still reported.
+
+### K2c
+- New rule for 34/8-3: mean of three seeds >= 0.15 and all three above
+  zero: "does not depend on the sidetrack being in training". Mean <= 0.10
+  (a fall of at least 0.21): "depends". Otherwise "unclear".
+- Seed-paired differences (with minus without the twin) are reported.
+- The 34/8-3 A fold is descriptive, with no rule.
+- Removing a well also makes the training set one well smaller. This is
+  not controlled, and is said with the result.
+
+### K3
+- **Primary gamma-ray value:** the mean of the gamma-ray curve over the
+  label's own interval (D_prev, D], as the bag join of the labels defines
+  it. The point value at D is reported as descriptive only.
+- **Independence of the sheets:** for every mud-log sheet used, the header
+  and legend are checked first, and it is recorded whether the sheet is a
+  wellsite mud log or a later composite and whether it prints a gamma-ray
+  track (MWD or wireline). A well whose sheet shows gamma ray is reported
+  separately and left out of the key. This is done before the key is run.
+- Stretches are split at every casing shoe with the same 15 m mask as D.
+  The composite curve does not name its runs; if open-hole and
+  through-casing gamma ray cannot be told apart for a stretch, that is
+  stated.
+- The reference row "photograph prediction against gamma ray" is not
+  independent of gamma ray: the embedding and patch pipeline was developed
+  against gamma-ray sand/clay labels in v1 and v2. This is said with it.
+- Added limits: coal and limestone have low gamma ray and are not sand, so
+  the D set is also reported with D's sensitivity applied (bags with
+  carbonate + marl >= 30 % or any coal removed), descriptive. In the
+  Tertiary, glauconitic sands and tuffs raise gamma ray, so a weak negative
+  there is expected.

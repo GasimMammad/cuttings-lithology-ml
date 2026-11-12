@@ -1,0 +1,71 @@
+{
+ "34_8-3": {
+  "by seed": {
+   "0": {
+    "with twin": 0.31049963424894256,
+    "without twin": 0.4019371071964341,
+    "difference (with minus without)": -0.09143747294749155
+   },
+   "1000": {
+    "with twin": 0.20646928546450638,
+    "without twin": 0.1735193373289193,
+    "difference (with minus without)": 0.032949948135587076
+   },
+   "2000": {
+    "with twin": 0.4070191976102923,
+    "without twin": 0.2346427322531764,
+    "difference (with minus without)": 0.17237646535711593
+   }
+  },
+  "mean with twin": 0.30799603910791373,
+  "mean without twin": 0.2700330589261766,
+  "seed SD without twin": 0.11824984488077983,
+  "all three seeds above zero without twin": true,
+  "R-D (frozen ResNet-50)": {
+   "with twin": 0.02498506974014678,
+   "without twin": -0.004509701292574999
+  },
+  "frozen ResNet-18 control": {
+   "with twin": 0.0060962816179041856,
+   "without twin": -0.011321635180462756
+  }
+ },
+ "34_8-3_A": {
+  "by seed": {
+   "0": {
+    "with twin": 0.18504050133478905,
+    "without twin": 0.1547381463213455,
+    "difference (with minus without)": 0.030302355013443555
+   },
+   "1000": {
+    "with twin": 0.25394688930593196,
+    "without twin": 0.17578607498781723,
+    "difference (with minus without)": 0.07816081431811472
+   },
+   "2000": {
+    "with twin": 0.15277940514165975,
+    "without twin": 0.10645978659971886,
+    "difference (with minus without)": 0.04631961854194089
+   }
+  },
+  "mean with twin": 0.19725559859412692,
+  "mean without twin": 0.1456613359696272,
+  "seed SD without twin": 0.03554328248823174,
+  "all three seeds above zero without twin": true,
+  "R-D (frozen ResNet-50)": {
+   "with twin": 0.18010266634554126,
+   "without twin": 0.1668531336155067
+  },
+  "frozen ResNet-18 control": {
+   "with twin": 0.15516281523767325,
+   "without twin": 0.13708324782047285
+  }
+ },
+ "wording for 34/8-3 (rule fixed in V9_PLAN)": "does not depend on the sidetrack being in training",
+ "notes": [
+  "seed SD at 34/8-3 with the twin was 0.10: a change below about 0.2 is within seed noise",
+  "removing a well also makes the training set one well smaller; not controlled",
+  "34/8-3 A fold: descriptive, no rule",
+  "one well, singled out after X1; no p value"
+ ]
+}

@@ -102,9 +102,45 @@ out; no bag drops out below base Cretaceous.
    supports the whole chain (wellsite geologist, sheet, reader, bag join),
    not the reader alone; "no human key" stays a stated limitation.
 
-## K2c. Fine-tuned network at 34/8-3 without the sidetrack in training
+## K2c. Fine-tuned network at 34/8-3 without the sidetrack in training (59_v7_cnn_sial.py trainx; 68_v9_checks.py k2c)
 
-PENDING (GPU, six folds; started 2026-11-12).
+The 34/8-3 fold was retrained with 34/8-3 A removed from training, and the
+reverse, with the three seeds and fold seeds of v8 C. Six folds, trained
+2026-11-12 (code 14789de), scored once. The script first reproduced the
+step-1 R-D predictions of both wells to 1e-6.
+
+| held-out well | model | seed 0 | seed 1000 | seed 2000 | mean of 3 |
+|---|---|---|---|---|---|
+| 34/8-3 | fine-tuned, twin in training (v8 C) | 0.31 | 0.21 | 0.41 | 0.31 |
+| 34/8-3 | **fine-tuned, twin removed** | 0.40 | 0.17 | 0.23 | **0.27** |
+| 34/8-3 | difference (with minus without) | -0.09 | +0.03 | +0.17 | +0.04 |
+| 34/8-3 A | fine-tuned, twin in training (v8 C) | 0.19 | 0.25 | 0.15 | 0.20 |
+| 34/8-3 A | fine-tuned, twin removed | 0.15 | 0.18 | 0.11 | 0.15 |
+| 34/8-3 A | difference (with minus without) | +0.03 | +0.08 | +0.05 | +0.05 |
+
+Frozen models, with the twin and without it: at 34/8-3, R-D +0.02 and
+-0.00, frozen ResNet-18 control +0.01 and -0.01; at 34/8-3 A, R-D +0.18 and
++0.17, control +0.16 and +0.14.
+
+**By the pre-declared rule (mean of three seeds >= 0.15 and all three above
+zero): the 34/8-3 observation does not depend on the sidetrack being in
+training.** The mean goes from +0.31 to +0.27; the change (0.04) is well
+inside the seed noise at this well (seed SD 0.10 with the twin, 0.12
+without). The frozen models stay at about zero either way.
+
+### Reading
+
+1. The sidetrack hypothesis of v8 C is not supported: without 34/8-3 A in
+   training, three fine-tuned runs still give +0.17 to +0.40 where frozen
+   features give nothing.
+2. The v8 C limits that remain: one well, singled out after the first run;
+   the largest seed SD of all wells; no test of 34/8-3 alone and no p
+   value. Removing a well also makes the training set one well smaller,
+   which is not controlled. It stays an observation: at 34/8-3 the flat
+   chemistry may not be all noise, and a fine-tuned network picks up part
+   of it.
+3. 34/8-3 A (descriptive, no rule): +0.20 with the twin, +0.15 without, in
+   all three seeds slightly lower without; the frozen models barely move.
 
 ## K1. Mud weighting material (the ilmenite caveat of v8 A) (69_v9_k1_ocr.py; results/v9/k1_weighting_material.md)
 

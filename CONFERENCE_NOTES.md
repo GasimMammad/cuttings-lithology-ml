@@ -29,8 +29,9 @@ in all 11 held-out wells (median rank correlation +0.32), and Fe, Ca and Ti
 ratios carry further signal, mostly through colour. Agreement is highest
 where the chemistry varies most, which explains the one well where it
 fails. Against wellsite sand percentages digitised from 1980s mud logs the
-same model agrees only weakly (+0.13 in six wells), and two mud logs of one
-well agree with each other at only +0.42. A detector for glauconite pellets
+same model agrees only weakly in the clay-rich Tertiary (+0.13 in six
+wells) but clearly in the sandstone-rich Jurassic-Triassic (+0.52 in six of
+six wells); two mud logs of one well agree with each other at only +0.42. A detector for glauconite pellets
 failed its specificity test: it responds to green claystone. Fine-tuning a
 network gave no detectable gain over frozen features.
 
@@ -54,10 +55,13 @@ log from photographs, with a known limit on what it can resolve.
 5. **You can tell where to trust it.** Agreement follows the spread of the
    chemistry (between wells +0.78, p 0.003; within wells p 0.014). The
    model's own output varies more where it is more right.
-6. **Wellsite labels are a weak yardstick.** Photo model against mud-log
-   sand %: +0.13 (p 0.047, six wells). Two mud logs of the same well:
-   +0.42.
-   PENDING: the Jurassic-Triassic test (v8 D).
+6. **Against wellsite sand percentages it depends on the section.** In
+   the clay-rich Tertiary: +0.13 (p 0.047, six wells), no better than
+   colour, and two mud logs of the same well agree at only +0.42. Below the
+   Cretaceous, where sandstone is 40-75 % of the cuttings: +0.52 in six of
+   six wells (p 0.016), as good as measured Si/Al (+0.51). The second
+   number comes from a test whose eligibility rule was amended before the
+   photographs were joined: say so.
 7. **Things that did not work, stated as such.** Glauconite-pellet detector
    (22 % false positives in the Lista Formation); fine-tuning (no gain).
 8. **Sinkites.** No evidence for them; limited compositional evidence
@@ -76,7 +80,7 @@ log from photographs, with a known limit on what it can resolve.
 | 6 | Best, middle, worst | detail figure with gamma ray and mud-log sand | results/v8/fig_v8_detail.png |
 | 7 | More elements | table of five ratios; which survive the Si-and-Al and mud controls | V8_RESULTS A |
 | 8 | Where it works | scatter: per-well rho against spread of Si/Al (11 points) | results/v8/fig_v8_where.png |
-| 9 | Mud logs as labels | one tile, the two-reader design, +0.13; two logs of one well +0.42 | V7_RESULTS step 3, X2 |
+| 9 | Mud logs as labels | one tile, the two-reader design; Tertiary +0.13 against Jurassic-Triassic +0.52; two logs of one well +0.42 | V7_RESULTS step 3, X2; V8_RESULTS D |
 | 10 | What failed | glauconite detector on Lista; fine-tuning | V7_RESULTS step 2, X1 |
 | 11 | Sinkites | three alternatives, what the data can and cannot decide | V6_RESULTS |
 | 12 | Take-home and limits | the one-sentence message; 11 wells; bag scale; mud residue; no human key | THESIS_NOTES 7c |
@@ -133,3 +137,5 @@ log from photographs, with a known limit on what it can resolve.
 - That the seven-well mud-log number (+0.17) is a result: it depends on a
   deviation from the plan.
 - That the readers are accurate: they are consistent.
+- That the Jurassic-Triassic mud-log result (+0.52) is a pre-registered
+  test: it is an amended, exploratory one. Six wells, one area, twin wells.

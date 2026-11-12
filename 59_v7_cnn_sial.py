@@ -169,6 +169,7 @@ def evaluate():
 
 def evaluate_seeds():
     """v8 part C: X1 with two more seeds (offsets 1000 and 2000). Same statistic and comparisons as X1."""
+    import json
     base, _ = EV.load_tables()
     s1 = pd.read_csv(C.WORK_DIR / "v7" / "step1_predictions.csv")
     wells, d = base.well.values, base.depth_m.values.astype(float)

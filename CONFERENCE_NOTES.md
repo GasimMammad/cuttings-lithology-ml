@@ -13,16 +13,15 @@ identify sand beds, and they do not find sinkites.
 
 ## 2. Abstract (about 250 words, draft)
 
-Using 11 wells from the northern North Sea (Tampen area and block 24/9),
-5,038 photographed cuttings bags and handheld-XRF analyses of the same
-bags, we asked what a model can learn from cuttings photographs. Each
-question was fixed in a written plan before it was run (one eligibility
-rule was later amended), with one well held out at a time.
+Using 11 northern North Sea wells, 5,038 photographed cuttings bags and
+handheld-XRF analyses of the same bags, we asked what a model can learn
+from cuttings photographs. Each question was fixed in a written plan before
+it was run (one eligibility rule was later amended), with one well held out
+at a time.
 
-A first attempt to classify sand against clay from gamma-ray labels did not
-transfer between wells. With more labels and per-well standardisation, the
-photographs separated sand-prone from clay-prone intervals (median AUC
-0.73), but no better than depth within the well. The photographs do predict
+Classifying sand against clay from gamma-ray labels did not transfer
+between wells at first; with more labels it worked at the scale of zones
+(median AUC 0.73), but no better than depth within the well. The photographs do predict
 the chemistry of the bag: the local variation of Si/Al is weakly predicted
 in all 11 held-out wells (median rank correlation +0.32), and Fe, Ca and Ti
 ratios carry further signal, mostly through colour. Agreement is highest
@@ -36,10 +35,10 @@ labels were read), about as well as measured Si/Al (+0.51). A detector for
 glauconite pellets failed its specificity test, and fine-tuning a network
 gave no detectable gain over frozen features.
 
-The photographs and XRF give no evidence for sinkites in the Oligocene
-sands; the decisive data, sidewall cores in the sands, do not exist. The
-practical result is a cheap, bag-scale chemical log from photographs, with
-a known limit on what it resolves.
+The data give no evidence for sinkites in the Oligocene sands; the
+decisive data, sidewall cores, do not exist. The practical result is a
+cheap, bag-scale chemical log from photographs, with a known limit on what
+it resolves.
 
 ## 3. Key messages (in the order to say them)
 

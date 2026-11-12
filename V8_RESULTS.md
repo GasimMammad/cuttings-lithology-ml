@@ -108,3 +108,88 @@ wells corrected; Ti added to the colour-baseline caveat; the "beyond"
 partials stated as upper bounds, with the robust count given as two (Fe-Ti
 and Ca); the ilmenite caveat; the attenuation sentence made two-sided; the
 declared Ba result reported; B4 and the B2-B3 dependence stated.
+
+## D. Wellsite sand fraction below base Cretaceous (Jurassic-Triassic) (scripts 64, 66, 67)
+
+**Status: amended, exploratory test. By the letter of the pre-registered
+eligibility rule only three wells qualified, so no test of record exists.**
+Under an eligibility rule amended after the labels were read but before any
+photograph was joined (commit 49d1d0a), six wells (five independent units)
+qualify.
+
+### Labels
+- Seven wells, base Cretaceous to the deepest bag, 101 tiles of 40 m.
+  Reader A (Opus) read all, reader B (Sonnet) a seeded 20 % (23 tiles).
+  Rules v3 plus an addendum for these sheets, both written from the legends.
+- **G1 (depth):** all 43 printed 100 m labels sit on their calibrated line.
+- **G2 (reader agreement): passes every gate.** 283 bag intervals:
+  Spearman 0.997, mean absolute difference 0.7 points, 1 interval differing
+  by more than 20 points. Worst well 34/7-10 (Spearman 0.97, 3.2 points).
+  Class presence differs mainly for silt (reader A alone in 20 intervals,
+  the dash-dot pattern on 34/7-10) and thin limestone stripes (6 against 5).
+  The readers never used the silty-sandstone class, so the primary Y is
+  plain sand.
+- Sand is the main lithology: mean 43 to 76 % per well (Tertiary: a few %).
+- **Eligibility.** By the letter: 34/7-10, 34/7-9, 34/8-3. The step-3 rule
+  asks for informative bags in three clusters more than 30 m apart; here
+  informative bags are nearly continuous (they fill 12 to 23 thirty-metre
+  bins in the wells that failed), so the cluster count is 1 or 2. Amended
+  rule: informative bags in at least 3 distinct 30 m bins spanning at least
+  90 m. Six wells qualify. 34/4-7 does not: its scan has faded and only 17
+  bags have a label. 34/8-3 A is small (44 bags).
+- 908 labelled bags after the masks (Sodir cored intervals, 15 m below
+  every shoe including liners, 10 bags in irregular depth-grid intervals).
+- **G3 (label against measured Si/Al, no photographs):** median +0.51, 6 of
+  6 wells, p = 0.016. In the Tertiary this was +0.18.
+
+### Photograph test (run once)
+Predictor: the step-1 pre-Tertiary Si/Al model, trained without the test
+well, frozen and committed before any tile was read (40b5c49).
+
+| | wells or units | median rho | positive | p | 95 % CI |
+|---|---|---|---|---|---|
+| **Amended test** | 6 wells | **+0.52** | 6 of 6 | 0.016 | +0.23 to +0.58 |
+| Amended test, 34/8-3 pair merged | 5 units | +0.51 | 5 of 5 | 0.031 | +0.16 to +0.58 |
+| By the letter (descriptive, no test) | 3 wells | +0.52 | 3 of 3 | - | - |
+
+Per well: 34/4-6 +0.16; 34/7-10 +0.31; 34/7-4 +0.51; 34/7-9 +0.52; 34/8-3
++0.63; 34/8-3 A +0.53. Both versions reach p < 0.05 (each is the smallest p
+its number of units allows) and a median above 0.10, which was the pass
+condition set with the amendment.
+
+| context and sensitivities (6 wells) | median rho | positive | p |
+|---|---|---|---|
+| Colour and texture features (R-E) against Y | +0.47 | 5 of 6 | 0.031 |
+| Measured Si/Al against Y (= G3) | +0.51 | 6 of 6 | 0.016 |
+| **Photo prediction given measured Si/Al (partial)** | **+0.15** | 6 of 6 | 0.016 |
+| Relative depth, sign from the other wells | -0.10 | 1 of 6 | 0.92 |
+| Model trained on the Jurassic-Triassic range only | +0.50 | 6 of 6 | 0.016 |
+| Without the earlier pilot interval (34/7-10, 2510-2670 m) | +0.52 | 6 of 6 | 0.016 |
+| Without bags with carbonate + marl >= 30 % or any coal | +0.52 | 6 of 6 | 0.016 |
+| Y = sand + silt | +0.51 | 6 of 6 | 0.016 |
+
+Exploratory, carbonate (limestone + half of marl): measured Ca/Al against
+the mud-log carbonate +0.12 (5 of 5 wells with any carbonate); the photo
+Ca/Al model +0.03, and +0.03 with Cl partialled out (5 of 6, p 0.078).
+Nothing there.
+
+### Reading (before review)
+1. Where sandstone is common, the photograph model follows the wellsite
+   sand fraction about as well as the measured chemistry does (+0.52
+   against +0.51), in every well tested. In the Tertiary the same
+   comparison gave +0.13.
+2. Unlike step 3, the photographs here add something beyond Si/Al: the
+   partial correlation given measured Si/Al is +0.15, positive in all six
+   wells. It is small, and in two wells it is near zero (+0.02, +0.05).
+3. Colour and texture features alone reach +0.47. The deep-network
+   embeddings are not clearly better; no paired test was declared.
+4. It is not depth: the depth baseline is negative.
+5. Limits: an amended test, not a test of record; six wells from one area
+   (Tampen), two of them twins; AI readers with no human key (very high
+   agreement between readers says the sheets are clear, not that the
+   wellsite geologist was right); 34/4-6, the one Anadrill sheet and the
+   most strongly skewed scan, is the weakest (+0.16); cavings, cored
+   intervals and the first 15 m below shoes are handled by masks only.
+6. Together with step 3 this fits part B: the model agrees with a
+   reference where the rock varies, and has little to agree with where it
+   does not.

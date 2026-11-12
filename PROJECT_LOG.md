@@ -622,3 +622,42 @@ eaa36f4 v2 results
 - Nothing is running. Open, not requested: mud reports not checked for
   ilmenite; no human key for audit tiles; no slide deck; one annotated
   mud-log tile for slide 9.
+
+## 2026-11-12 afternoon: v9 started (checks that close caveats); K2b and K3 DONE, K2c and K1 running
+
+- User (2026-11-12): will NOT make a human key ("I want you to do it. I
+  won't look at them"); no new wells available; presentation waits; asked
+  for the most original further ideas. Four ideas were put to the user and
+  wait for a decision (V9_PLAN.md "Not in this plan"): A photo stratigraphy
+  against Sodir tops, B zero-shot AI reader of bag photos, C resolution
+  limit of cuttings (GR against XRF K), D parentage test for target sands.
+  My recommendation: A, then C, then B.
+- V9_PLAN.md (a062be2) reviewed: APPROVE WITH CHANGES, amendments de7b78b.
+- K2b DONE (run once): v8 D with twins held out together: 34/8-3 0.63 ->
+  0.51, 34/8-3 A 0.53 -> 0.49; median +0.50, 6 of 6, p 0.016; five units
+  +0.50, p 0.031. By the rule "depends in part on the twin" (falls 0.12 and
+  0.04 against <= 0.02 for any other well). Quote +0.50.
+- K3 DONE (run once): gamma-ray key. Sheets checked first: 8 wellsite mud
+  logs, none prints GR. Below base Cretaceous: sand fraction vs interval
+  mean GR -0.27, 6 of 6, p 0.016 -> "follows gamma ray" (measured Si/Al
+  -0.26). Tertiary: -0.14, 5 of 6, p 0.047 -> by the rule "no detectable
+  agreement" (bar was -0.20).
+- K2c RUNNING: `59_v7_cnn_sial.py trainx` (six folds, log
+  ~/sinkite_ml_work_v2/v7/x1/run_log_notwin.txt, caffeinate inside the
+  command). When it prints "done": run ONCE
+  `python -W ignore 68_v9_checks.py k2c`, copy
+  ~/sinkite_ml_work_v2/v9/k2c_results.json to results/v9/.
+- K1 RUNNING: `69_v9_k1_ocr.py ocr` with the throwaway venv
+  (scratchpad pdfenv, has PyMuPDF; the project venv has no PDF library) and
+  the Vision OCR tool ~/sinkite_ml_work_v2/v9/k1/ocr (source
+  tools/ocr.swift). Output ~/sinkite_ml_work_v2/v9/k1/pages.jsonl. Then
+  `69_v9_k1_ocr.py search` -> k1_hits.csv; then every counted page is read
+  as an image; a seeded 10 % of "not stated" pages too. Deviation from the
+  plan to disclose: OCR over ALL pages replaces "contents pages fix the
+  page list" as the way pages are found (more thorough).
+- Text-layer hits so far (5 wells): barite named in 34/4-6, 34/4-7 and
+  34/7-1 drilling programmes and in the 34/7-4 and 34/7-6 mud-log reports;
+  no ilmenite or hematite hit yet. Not yet read as images.
+- Then: fill K2c and K1 in V9_RESULTS.md, reviewer check of all four,
+  update THESIS_NOTES.md / CONFERENCE_NOTES.md (D number +0.50 with twins
+  out; gamma-ray key; ilmenite wording), memory, commit.

@@ -83,7 +83,7 @@ def tops():
             med = float(x[col].median())
             b.plot([med, med], [y - 0.13, y + 0.13], color=INK, lw=1.4, zorder=4)
             rows.append((k, j, med))
-        b.text(1.02, k, f"{rows[-2][2]:.0f} m\n{rows[-1][2]:.0f} m", transform=b.get_yaxis_transform(), va="center", ha="left",
+        b.text(1.02, k, f"{np.floor(rows[-2][2] + 0.5):.0f} m\n{np.floor(rows[-1][2] + 0.5):.0f} m", transform=b.get_yaxis_transform(), va="center", ha="left",
                fontsize=7, color=INK, linespacing=1.55)
     b.text(1.02, -0.62, "median", transform=b.get_yaxis_transform(), va="center", ha="left", fontsize=7, color=INK2)
     b.set_xscale("log")
@@ -101,10 +101,11 @@ def tops():
         b.spines[s].set_visible(False)
     b.set_title("Each dot is one top; black bar = median", loc="left", fontsize=8, color=INK2, pad=32)
     b.legend(loc="lower left", bbox_to_anchor=(-0.02, 1.0), ncol=2, frameon=False, fontsize=7, handletextpad=0.2, columnspacing=1.0)
-    fig.suptitle("Photographs place major tops less well than the nearest well, except at base Cretaceous",
-                 x=0.06, y=1.10, ha="left", fontsize=10, color=INK, weight="bold")
-    fig.text(0.06, 1.04, "34 tops in 10 held-out locations; the model sees no depth. Median error: photographs 65 m, offset well 43 m (v10 S).",
-             fontsize=8, color=INK2, ha="left")
+    fig.suptitle("Photographs place major tops less well than the nearest well",
+                 x=0.06, y=1.135, ha="left", fontsize=10, color=INK, weight="bold")
+    fig.text(0.06, 1.085, "34 tops in 10 held-out locations; the model sees no depth. Median error: photographs 65 m, offset well 43 m (v10 S).\n"
+                         "Base Cretaceous is the exception; it was singled out after the results and is descriptive.",
+             fontsize=8, color=INK2, ha="left", va="top")
     save(fig, "fig_v10_tops")
 
 
@@ -162,10 +163,11 @@ def tile():
     ax[0].tick_params(length=0)
     ax[1].legend(handles=[Patch(color=BLUE, label="sand and sandstone"), Patch(color=NEUTRAL, label="everything else")],
                  loc="upper left", bbox_to_anchor=(0.0, -0.075), ncol=2, frameon=False, fontsize=7, handlelength=1.0, columnspacing=1.0)
-    fig.suptitle("From a 1986 mud log to a label for every bag: well 34/7-9, 2800 to 2840 m", x=0.06, y=1.035, ha="left",
+    fig.suptitle("From a 1986 mud log to a label for every bag: well 34/7-9, 2800 to 2840 m", x=0.06, y=1.06, ha="left",
                  fontsize=10, color=INK, weight="bold")
-    fig.text(0.06, 0.985, "In the tile, dots are sand and dashes are clay; the script added the red depth ruler and the blue 0-100 % ruler.\n"
-                          "Two AI readers of different models read the same tile without seeing each other, the photographs or the chemistry.",
+    fig.text(0.06, 1.012, "In the tile, dots are sand and dashes are clay; the script added the red depth ruler and the blue 0-100 % ruler.\n"
+                          "Two AI readers (Claude Opus and Sonnet, one model family; no human key) read the same tile without seeing each other,\n"
+                          "the photographs or the chemistry.",
              fontsize=8, color=INK2, ha="left", va="top")
     save(fig, "fig_v9_mudlog_tile")
 

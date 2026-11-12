@@ -23,14 +23,14 @@ reported as such.
 | Question | Answer | Where |
 |---|---|---|
 | Can photographs separate sand from clay, with labels from gamma ray? | Not with three labelled wells (v1: at chance). With ten wells, only at the scale of zones (median held-out AUC 0.73), and no better than depth within the well | `V3_RESULTS.md` |
-| Can photographs predict the chemistry of the same bag? | **Yes, weakly, in every well.** Si/Al: median rank correlation +0.32 in 11 of 11 held-out wells. Also K, Fe, Ca, Ti and Zr over Al (+0.10 to +0.28), mostly through colour | `V7_RESULTS.md` step 1, `V8_RESULTS.md` A |
-| When does it work? | Where the chemistry varies. Agreement follows the spread of Si/Al between wells (+0.78) and within wells | `V8_RESULTS.md` B |
+| Can photographs predict the chemistry of the same bag? | **Yes, weakly, in every well.** Si/Al: median rank correlation +0.32 in 11 of 11 held-out wells. K, Fe, Ca, Ti and Zr over Al also pass (+0.10 to +0.28); Fe, Ca and Ti count as signal beyond Si/Al and mud (robustly two axes, Fe-Ti and Ca), mostly through colour | `V7_RESULTS.md` step 1, `V8_RESULTS.md` A |
+| When does it work? | Where the chemistry varies. Agreement follows the spread of Si/Al between wells (+0.78) and within wells (not separated from measurement noise) | `V8_RESULTS.md` B |
 | Does the prediction follow the wellsite geologist's sand percentage? | Weakly in the clay-rich Tertiary (+0.13). Below the Cretaceous, where sandstone is common, +0.50 (five locations; an amended, exploratory test) | `V7_RESULTS.md` step 3, `V8_RESULTS.md` D, `V9_RESULTS.md` K2b |
 | Does fine-tuning a network help? | No detectable gain over frozen features (three seeds) | `V8_RESULTS.md` C |
 | Can a colour or pellet detector find glauconite? | No. The colour index of the dissertation is a green-hue index; a new detector fired on 22 % of Lista Formation bags | `GLAUCONITE_CORRECTIONS.md`, `V7_RESULTS.md` step 2 |
 | Can photographs place stratigraphic tops in an unseen well? | No. Median error 65 m against 43 m for the nearest offset well | `V10_RESULTS.md` S |
 | What is the vertical resolution of cuttings? | Could not be measured with these wells | `V10_RESULTS.md` R |
-| Do the cuttings say anything about the origin of the sands (sinkites)? | No evidence either way. The decisive test is age, and no sidewall cores exist | `V6_RESULTS.md` |
+| Do the cuttings say anything about the origin of the sands (sinkites)? | No evidence for; limited compositional evidence against a glauconitic Utsira source. The decisive test is age, and no sidewall cores exist | `V6_RESULTS.md` |
 
 The consolidated tables, methods text and limitations are in
 `THESIS_NOTES.md`. `THESIS_CHECK.md` lists the four statements in the

@@ -297,3 +297,33 @@ and on F.
   = sand + ssst. Sensitivities: ssst counted as silt (Y = sand only), and
   Y = sand + ssst + silt. The addendum no longer says what to expect in
   these sections.
+
+### D eligibility amendment (2026-11-12; after the labels were read, BEFORE any photograph was joined)
+- **What happened.** All seven wells were read; G2 passes (283 intervals,
+  Spearman 0.997, mean absolute difference 0.7 points). By the letter of
+  rule C4 only three wells are eligible (34/7-10, 34/7-9, 34/8-3), because
+  C4 asks for informative bags in at least 3 depth clusters more than 30 m
+  apart. Below base Cretaceous sand is 35-80 % of the column and informative
+  bags are nearly continuous, so a well whose informative bags span 600 m
+  counts as one cluster. **By the letter no test of record exists.**
+- **What was known when amending:** the labels, reader agreement, and the
+  label-against-Si/Al futility values of the first three wells read
+  (34/4-6 +0.25, 34/7-4 +0.53, 34/7-9 +0.50). No photograph had been joined.
+  The photograph predictions were frozen in commit 40b5c49. A positive
+  result is expected from step 1.
+- **Amended rule (reviewer's wording):** at least 30 bags with Y; at least
+  15 informative bags (|high-passed Y| >= 0.05); informative bags in at
+  least 3 distinct 30 m bins on a fixed grid from 0 m MD, spanning at least
+  90 m. Six wells qualify (all but 34/4-7, which has 17 labelled bags
+  because its scan is faded). 34/8-3 A (44 bags) is flagged as small.
+- **Status: amended, exploratory test.** Not "pre-specified": the rule
+  changed after the label-against-Si/Al values of two of the wells it adds
+  were known.
+- **Pass** only if both the six-well version and the five-unit version
+  (34/8-3 and 34/8-3 A merged by the plain mean of their two rho) reach
+  p < 0.05 and median >= 0.10. The G3 rules still apply. The three
+  by-the-letter wells are shown beside it.
+- **Other changes made before scoring, both label-free:** reader blocks are
+  clipped to the tile; bags inside a 10 m grid interval whose pixel height
+  differs from the sheet median by more than 5 % are excluded (10 bags: the
+  foot of the 34/7-9 log, and one paper seam each in 34/4-6 and 34/4-7).

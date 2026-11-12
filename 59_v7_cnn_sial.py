@@ -111,6 +111,35 @@ def train():
     print("done", flush=True)
 
 
+def train_notwin():
+    """v9 K2c: the 34/8-3 fold retrained without its sidetrack in training, and the reverse.
+    Seeds 0, 1000, 2000 with the fold seed of the original runs, so only the training set changes."""
+    PAIRS = [("34_8-3", "34_8-3_A"), ("34_8-3_A", "34_8-3")]  # (held-out, also removed from training)
+    dev = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    b = table()
+    tiles = pd.DataFrame([{"patch_path": str(C.PATCH_DIR / r.well / f"{r.stem}__{t}.jpg"), "well": r.well,
+                           "depth_m": r.depth_m, "y": r.T1} for r in b.itertuples() for t in TILES])
+    tiles = tiles[tiles.patch_path.map(lambda q: __import__("os").path.exists(q))]
+    stats = V2.well_stats(b)
+    order = sorted(b.well.unique())
+    f = OUT / "cnn_sial_predictions_notwin.csv"
+    out = [pd.read_csv(f)] if f.exists() else []
+    done = set(zip(out[0].well, out[0].seed)) if out else set()
+    print(f"bags {len(b)}, patches {len(tiles)}", flush=True)
+    for w, drop in PAIRS:
+        for off in (0, 1000, 2000):
+            if (w, off) in done:
+                continue
+            k = order.index(w)
+            torch.manual_seed(C.SEED + off + k); np.random.seed(C.SEED + off + k)
+            t0 = time.time()
+            d = fit_predict(tiles[~tiles.well.isin([w, drop])], tiles[tiles.well == w], stats, dev).assign(seed=off)
+            out.append(d)
+            pd.concat(out).to_csv(f, index=False)
+            print(f"held-out {w} without {drop}, seed {off}: {len(d)} bags, {time.time() - t0:.0f}s", flush=True)
+    print("done", flush=True)
+
+
 def embed18():
     """X1 control: frozen ResNet-18 (ImageNet) avgpool features, same patches and
     per-well colour standardisation, mean over the 16 patches of each bag."""
@@ -206,4 +235,4 @@ def evaluate_seeds():
 
 
 if __name__ == "__main__":
-    {"train": train, "embed": embed18, "eval": evaluate, "evalseeds": evaluate_seeds}[sys.argv[1]]()
+    {"train": train, "trainx": train_notwin, "embed": embed18, "eval": evaluate, "evalseeds": evaluate_seeds}[sys.argv[1]]()

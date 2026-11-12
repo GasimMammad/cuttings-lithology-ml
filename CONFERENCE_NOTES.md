@@ -8,7 +8,7 @@ tables are in THESIS_NOTES.md (sections 1 and 7).
 
 Photographs of drill-cuttings bags carry a weak but repeatable chemical
 signal that transfers to wells the model has never seen; they do not
-identify sand beds, and they add no evidence on the origin of the sands.
+identify sand beds, and they cannot test the origin of the sands.
 
 ## 2. Abstract (about 250 words, draft)
 
@@ -24,7 +24,7 @@ photographs do predict the chemistry of the bag: the local variation of Si/Al is
 in all 11 held-out wells (median rank correlation +0.32), and Fe, Ca and Ti
 ratios carry further signal, mostly through colour. Agreement is highest
 where the chemistry varies most, consistent with the one well where it
-fails. Against wellsite sand
+fails (measurement noise predicts the same pattern). Against wellsite sand
 percentages digitised from 1980s mud logs, the model agrees only weakly in
 the clay-rich Tertiary (+0.13, six wells). Below the Cretaceous, where
 sandstone is common, the pre-Tertiary photo model agrees at +0.50 (5 of 5
@@ -34,8 +34,8 @@ glauconite pellets failed its specificity test, fine-tuning a network gave
 no detectable gain over frozen features, and the photographs placed
 stratigraphic tops less well than an offset well.
 
-The cuttings add no evidence for or against a sinkite origin of the
-Oligocene sands; the decisive data, sidewall cores, do not exist. The
+The cuttings add no evidence for a sinkite origin of the
+Oligocene sands, and none that tests it; the decisive data, sidewall cores, do not exist. The
 practical result is a cheap, bag-scale chemical log from photographs, with a known limit on what
 it resolves.
 
@@ -73,7 +73,7 @@ it resolves.
    detectable gain); stratigraphic tops (photo error 65 m against 43 m for
    an offset well; worse in 8 of 10 locations); the vertical resolution of
    cuttings (could not be measured).
-8. **Sinkites.** The cuttings add no evidence either way; limited
+8. **Sinkites.** The cuttings add no evidence for them; limited
    compositional evidence against a glauconitic Utsira source; the age
    test is impossible without sidewall cores. The case for sinking is the
    thesis's seismic and log evidence at the Visund SE mound, which this
@@ -153,7 +153,7 @@ it resolves.
   afterwards, descriptive.
 - **"What is the vertical resolution?"** Not measured. A test at sharp
   gamma-ray steps had too few steps to give a number.
-- **"So where are the sinkites?"** Not in the cuttings. The thesis shows
+- **"So where are the sinkites?"** The cuttings cannot say. The thesis argues for
   sinking at the Visund SE mound from seismic volumetrics and logs. The
   photographs cannot date a sand, and no sidewall cores exist in the
   target sands of these eleven wells, so the cuttings neither support nor
@@ -161,7 +161,9 @@ it resolves.
   the thesis (section 1.3); Løseth et al. (2013) is the injection model.
 - **"The thesis says the colour index detects glauconite."** The
   follow-up withdrew that: it is a green-hue index and fires on green
-  mudstones. The thesis conclusion does not use it (THESIS_CHECK.md).
+  mudstones. The thesis used it in 4.7 and 5.4 to
+  explain a glauconitic Utsira; that sentence no longer stands. Its
+  numbered conclusions do not use it (THESIS_CHECK.md).
 - **"How was AI used?"** More than in the thesis. In this follow-up an AI
   assistant drafted the plans, ran the analyses, read the mud logs and
   well reports, and acted as reviewer. Say so before being asked; the
@@ -172,7 +174,7 @@ it resolves.
 - "Sand detector", "lithology classifier", or anything at bed scale.
 - "Glauconite detector", for the new detector or for the thesis's colour
   index.
-- That the cuttings work argues against sinkites: it is silent on them.
+- That the cuttings work argues against sinkites: it cannot test their age.
 - That the photographs add beyond chemistry below the Cretaceous: +0.15 is
   an upper bound.
 - That the Tertiary mud-log result validates the photographs: it narrowly met its

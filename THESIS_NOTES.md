@@ -148,3 +148,108 @@ rater B under-called clean, plug-proven sandstone. A further 7 disputed bins
 were siltstone or very fine sandstone with no grain-size data. If those count
 as not-sand, the advantage of A is no longer significant (14 vs 8; p = 0.29),
 so part of the disagreement is a class-boundary problem.
+
+## 7. v7 and v8: chemistry and wellsite lithology from the same photographs
+
+Sources: V7_RESULTS.md, V8_RESULTS.md and the result files they name
+(results/v7/, results/v8/). **PS** = fully pre-specified (plan and code
+committed before the run) but exploratory, because the same 11 wells were
+used in earlier rounds. **EX** = exploratory or post hoc. Unless stated, the
+statistic is the per-well Spearman correlation after removing a +/-50 m
+running median, tested across wells with a one-sided Wilcoxon test; models
+are trained without the test well.
+
+### 7a. Consolidated results
+
+| question | status | result | reading |
+|---|---|---|---|
+| Photo -> Si/Al of the same bag, Tertiary (v7 step 1) | PS | median +0.32; 11 of 11 wells; p 0.0005; CI 0.18 to 0.49 | **the solid result**; chemical skill at bag scale, not sand detection |
+| same, with barite, carbonate and chloride partialled out | PS | +0.33 | not explained by those mud signals; bentonite cannot be excluded |
+| mean colour alone | PS | +0.24 | embeddings add modestly (partial +0.26, paired p 0.016) |
+| Photo -> Si/Al, pre-Tertiary | EX (descriptive) | +0.51; 9 of 10 wells | larger where the chemistry varies more |
+| Photo glauconite-pellet detector (v7 step 2) | PS | criterion NOT met: 22 % false positives in Lista Fm | a green-pixel score, not a glauconite detector |
+| Photo Si/Al model against the wellsite sand fraction, Tertiary, 6 wells (v7 step 3) | PS | +0.13; p 0.047; CI -0.03 to +0.27 | criterion narrowly met; no better than colour (+0.15); partial given Si/Al +0.02 |
+| same with a 7th well, 24/9-4 | EX | +0.17; p 0.023 | supporting only; depends on a disclosed deviation from the plan |
+| Two mud logs of one well, 34/7-9 (Exlog against Saga) | EX | Spearman +0.42 (CI 0.11 to 0.69) | the wellsite label is itself only moderately reproducible |
+| Fine-tuned CNN against frozen features (X1) | EX | +0.46 against +0.33 medians; paired p 0.42 | no detectable gain from fine-tuning (11 wells, one seed) |
+| Fine-tuned CNN, three seeds (v8 C) | EX | PENDING | |
+| Photo -> K, Fe, Ca, Ti, Zr over Al (v8 A) | PS | +0.20, +0.28, +0.19, +0.27, +0.10; all pass | a rough chemical log; robustly two axes beyond Si and Al: Fe(-Ti) and Ca; mostly carried by colour |
+| Where does it work? (v8 B) | PS | skill against spread of Si/Al: between wells +0.78 (p 0.003); within wells +0.54 (p 0.014) | skill follows the spread of the chemistry; 34/8-3 fails where Si/Al is nearly flat |
+| Photo Si/Al model against the wellsite sand fraction, Jurassic-Triassic (v8 D) | PS | PENDING | |
+
+### 7b. Methods text (draft)
+
+**Chemistry from photographs.** Each cuttings bag has a photograph and a
+handheld-XRF analysis. For every Tertiary bag outside 15 m below a casing
+shoe (2,021 bags, 11 wells), the photograph was summarised by ImageNet
+ResNet-50 embeddings, standardised within the well, reduced to 32 principal
+components and regressed (ridge, alpha 1) on the within-well z-score of
+log10(Si/Al). The model was fitted on ten wells and applied to the eleventh.
+Because both the photographs and the chemistry drift slowly with depth, a
++/-50 m running median was removed from predicted and measured series
+before the Spearman correlation was computed in each well. A claim required
+a one-sided Wilcoxon p < 0.05 across wells and a median correlation of at
+least 0.10; both were fixed before the run.
+
+**Wellsite sand fraction from mud logs.** The "cuttings lithology %" column
+of eight scanned mud logs (1981-1988) was cut into 40 m tiles by a script
+that calibrates depth from the printed 10 m grid and adds a depth ruler and
+a percentage ruler, and does nothing else. Two AI readers of different
+models read the tiles following written rules taken from each sheet's
+legend: one read every tile, the other a seeded sample. Agreement gates,
+well eligibility and the test were fixed beforehand; photographs entered
+only after the labels were committed. The label for a bag is the
+length-weighted sand percentage over the interval since the previous bag.
+No human key exists for these readings.
+
+**More elements; where it works.** The same model and validation were
+applied to log10 ratios of K, Fe, Ca, Ti and Zr to Al. A target was counted
+only if it passed the step-1 rule with Holm correction, kept a partial
+correlation given measured Si and Al, and survived a drilling-mud control
+(Ba, Cl; S for Ca; Sr for Zr). To ask where the Si/Al model works, its
+per-well and per-150 m-window correlation was compared with the spread
+(median absolute deviation) of the measured ratio and of the prediction
+itself.
+
+### 7c. Limitations to state
+
+- Eleven wells, all used in earlier rounds; nothing here is a fresh
+  hold-out. The tests are pre-specified, not confirmatory.
+- Bag scale. A bag integrates 3-10 m and includes cavings.
+- Si/Al is not sand: biogenic silica, tuff and glauconite move it in the
+  Hordaland Group. "Chemical skill", not "sand detection".
+- Photographs also predict barite (+0.31). Mud residue contributes an
+  unknown part of every result. An ilmenite weighting agent would explain
+  the Fe-Ti result and has not been excluded.
+- Most of the element signal is colour: simple colour and texture features
+  do as well as the deep network for Fe, Ca and Ti.
+- Mud-log labels: AI readers of one model family, no human key; two logs of
+  the same well agree only at +0.42.
+- The "where it works" result is what measurement noise alone predicts, and
+  also what real contrast predicts; the two are not separated.
+- Fine-tuning brought no detectable gain; the frozen model stays the model
+  of record.
+
+### 7d. Reproducibility (v7, v8)
+
+| result | commit |
+|---|---|
+| V7_PLAN final / step-1 script | b1eeb05 / bdf7850 |
+| step 2 closed | 632f9e6 |
+| step 3 closed (and block-boundary addition) | e9d3896 (676af22) |
+| extras X0-X3 and reviewer changes | b2d3c02, 95b5cde, 0b41978, 3d2b4f4 |
+| V8_PLAN with reviewer amendments | c675477 |
+| v8 D photograph predictions frozen before tiles | 40b5c49 |
+| v8 A and B results | ad06c38 (write-up f51869e) |
+| v8 figures | 120dec2 |
+
+### 7e. Additions to the AI-use statement (section 5)
+
+> 6. **Mud-log digitisation.** Scanned mud logs were cut into tiles by a
+>    script. AI agents (Claude Opus and Claude Sonnet) read the lithology
+>    percentages from the tiles under written rules, blind to photographs
+>    and chemistry. Their agreement is reported; there is no human key.
+> 7. **Specialist and review agents.** Further Claude agents, prompted as a
+>    geochemist, a computer-vision specialist, a wellsite geologist and a
+>    senior reviewer, critiqued plans before each run and results after it.
+>    These were not human reviews.

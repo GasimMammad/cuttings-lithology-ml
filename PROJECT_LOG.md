@@ -661,3 +661,39 @@ eaa36f4 v2 results
 - Then: fill K2c and K1 in V9_RESULTS.md, reviewer check of all four,
   update THESIS_NOTES.md / CONFERENCE_NOTES.md (D number +0.50 with twins
   out; gamma-ray key; ilmenite wording), memory, commit.
+
+## 2026-11-12 evening: v9 all four checks DONE; v10 S and R run once; results with the reviewer
+
+- User (2026-11-12): "do whatever you think will be the best and the most
+  useful for our project". Chosen: v10 S (photo stratigraphy) and R (step
+  response); the zero-shot AI reader (credits) and the parentage test
+  (cavings) were NOT done.
+- v9 K2c DONE (scored once): 34/8-3 fine-tuned without the sidetrack:
+  +0.40 / +0.17 / +0.23, mean +0.27 (with twin +0.31); rule -> "does not
+  depend on the sidetrack being in training". Frozen models ~0 either way.
+- v9 K1, K2b, K3 reviewed (ACCEPT WITH CHANGES, applied, 61dc194): quote
+  v8 D as "+0.50 with the twins held out together (five locations: 5 of 5,
+  p 0.031; EXPLORATORY); +0.52 leave-one-well-out"; K3 key -0.26.
+- V10_PLAN.md reviewed before the run (APPROVE WITH CHANGES, 0925a5d): S2
+  (offset well) made the primary test; casing/mud rule rewritten; R fit
+  with free asymptotes and a noise-matched reference.
+- v10 S (70_v10_strat.py, run once): NEGATIVE. Photo top picks: median
+  error 65 m (34 tops, 10 locations); offset well 43 m; regional 50 m;
+  measured XRF with the same method 52 m. S2: worse than an offset well
+  (2 of 10, p 0.019). S1: not shown to be better than regional. Casing
+  rule: at 7 of 8 near tops the pick follows the shoe or mud change. Only
+  base Cretaceous is good (25 m, 5 of 8 within 30 m; post hoc 6 of 8
+  closer than the offset well).
+- v10 R (71_v10_step.py, run once): INCONCLUSIVE. 24 sharp steps kept, 11
+  to 14 per stack from 5 or 6 wells; widths: ideal 5 m, Si/Al 14 m, photo
+  18 m, K 44 m, but intervals 0.4 to 30+ m; no number may be quoted. Rules
+  were NOT loosened after the result.
+- Reviewer of v10 results + K2c: launched (fresh opus agent). THEN: apply
+  changes; update THESIS_NOTES.md section 7 (new rows for v9 and v10; D
+  number; ilmenite wording; gamma-ray key) and CONFERENCE_NOTES.md (key
+  message 6, Q&A, do-not-claim, "things that did not work"); memory;
+  commit; final report to the user.
+- Tools: the project venv has no PDF library; a throwaway venv with
+  PyMuPDF was made in the session scratchpad (recreate with
+  `python -m venv X && X/bin/pip install pymupdf` if needed again). The
+  OCR binary is ~/sinkite_ml_work_v2/v9/k1/ocr (source tools/ocr.swift).

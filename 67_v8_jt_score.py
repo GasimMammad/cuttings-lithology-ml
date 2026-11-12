@@ -59,6 +59,12 @@ def read_reader(reader):
             if bl and bl[0]["top"] == 0 and bl[-1]["bottom"] == bot - top:  # tile-relative depths (as in step 3)
                 bl = [{**x, "top": x["top"] + top, "bottom": x["bottom"] + top} for x in bl]
                 problems.append((reader, f.parent.name, "relative depths shifted (format fix)", t))
+            # format fix (disclosed, added 2026-11-12 before any scoring): a reader may run a block past the
+            # green line; blocks are clipped to the tile's 40 m and anything wholly outside is dropped
+            if bl and (bl[0]["top"] < top - 0.5 or bl[-1]["bottom"] > bot + 0.5):
+                problems.append((reader, f.parent.name, "blocks clipped to the tile (format fix)", t))
+            bl = [{**x, "top": max(x["top"], top), "bottom": min(x["bottom"], bot)} for x in bl]
+            bl = [x for x in bl if x["bottom"] > x["top"]]
             if not bl or abs(bl[0]["top"] - top) > 1 or abs(bl[-1]["bottom"] - bot) > 1:
                 problems.append((reader, f.parent.name, "does not span tile", t))
             for a, b in zip(bl[:-1], bl[1:]):

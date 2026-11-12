@@ -62,12 +62,13 @@ it resolves.
    colour, and two mud logs of the same well agree at only +0.42. Below the
    Cretaceous, where sandstone is 35-81 % of the cuttings: +0.50 with the
    twin wells held out together (5 of 5 locations, p 0.031; +0.52 leaving
-   one well out), as good as measured Si/Al (+0.51). This number comes
+   one well out), as good as measured Si/Al (+0.51). This exploratory number comes
    from a test whose eligibility rule was amended before the photographs
    were joined: say so. It also uses a different (pre-Tertiary) model;
    colour features alone give +0.47; the partial given Si/Al is +0.15, an
    upper bound. The digitised labels there follow wireline gamma ray
-   (-0.26, 6 of 6 wells); the Tertiary labels do not meet that bar.
+   (-0.26, 6 of 6 wells); the Tertiary labels (-0.14) do not meet the
+   pre-declared bar. An instrument key, not a human key.
 7. **Things that did not work, stated as such.** Glauconite-pellet detector
    (22 % false positives in the Lista Formation); fine-tuning (no
    detectable gain); stratigraphic tops (photo error 65 m against 43 m for
@@ -83,13 +84,13 @@ it resolves.
 |---|---|---|---|
 | 1 | Title, question | cuttings photo, one sentence: what can a model learn from these? | - |
 | 2 | Data | map or list of 11 wells; one bag photo; bag = 3-10 m of hole; XRF on the same bag | THESIS_NOTES 4 |
-| 3 | How each test was run | plan committed -> code committed -> run once -> reviewed; one well held out | V2-V8 plans |
+| 3 | How each test was run | plan committed -> code committed -> run once -> reviewed; one well held out | V2-V10 plans |
 | 4 | Sand/clay from GR labels | v1 negative; v2 AUC 0.73 but equal to depth-in-well | THESIS_NOTES 1a, results/v3 figures |
 | 5 | Chemistry: the main figure | overview figure, 11 wells, measured vs predicted Si/Al | results/v8/fig_v8_overview.png |
 | 6 | Best, middle, worst | detail figure with gamma ray and mud-log sand | results/v8/fig_v8_detail.png |
 | 7 | More elements | table of five ratios; which survive the Si-and-Al and mud controls | V8_RESULTS A |
 | 8 | Where it works | scatter: per-well rho against spread of Si/Al (11 points) | results/v8/fig_v8_where.png |
-| 9 | Mud logs as labels | one tile, the two-reader design; Tertiary +0.13 against Jurassic-Triassic +0.50 (different models; measured Si/Al +0.18 against +0.51); two logs of one well +0.42; gamma-ray key -0.26 below base Cretaceous | V7_RESULTS step 3, X2; V8_RESULTS D; V9_RESULTS K2b, K3 |
+| 9 | Mud logs as labels | one tile, the two-reader design; Tertiary +0.13 against Jurassic-Triassic +0.50 (five locations; amended, exploratory; different models; measured Si/Al +0.18 against +0.51); two logs of one well +0.42; gamma-ray key -0.26 below base Cretaceous | V7_RESULTS step 3, X2; V8_RESULTS D; V9_RESULTS K2b, K3 |
 | 10 | What failed | glauconite detector on Lista; fine-tuning; stratigraphic tops against an offset well | V7_RESULTS step 2, X1; V8_RESULTS C; V10_RESULTS S |
 | 11 | Sinkites | three alternatives, what the data can and cannot decide | V6_RESULTS |
 | 12 | Take-home and limits | the one-sentence message; 11 wells; bag scale; mud residue; no human key | THESIS_NOTES 7c |
@@ -116,13 +117,12 @@ it resolves.
 - **"Is it drilling mud?"** Partly possible. The photographs also predict
   barite (+0.31). Partialling out Ba, Ca and Cl leaves Si/Al at +0.33, but
   bentonite cannot be separated. For Fe-Ti: the mud-materials tables of
-  ten wells list barite as the only solid weighting material; only
-  24/9-3 has no materials list.
+  ten wells list barite as the only solid weighting material; 24/9-3 has no materials list, so an iron-titanium weighting agent is not excluded there.
 - **"Why not sand?"** Si/Al is quartz plus biogenic silica against clay. In
   the Hordaland Group opal, tuff and glauconite move it. Against gamma-ray
   sand labels the Si/Al prediction is no better than the earlier model.
   Below the Cretaceous, where Si/Al does follow sand (+0.51), the model
-  follows the wellsite sand fraction (+0.50, amended test).
+  follows the wellsite sand fraction (+0.50, five locations; amended, exploratory test).
 - **"Only 11 wells?"** Yes, and all were used in earlier rounds. Each test
   was fixed beforehand, but none is a fresh hold-out. With 11 wells the
   smallest possible p is 0.0005; with six, 0.016.
@@ -130,13 +130,14 @@ it resolves.
   tiles made by a script, blind to photographs and chemistry. They agree
   with each other; there is no human key. Say this before being asked.
   An instrument check exists: below the Cretaceous the digitised sand
-  fraction follows wireline gamma ray (-0.26, 6 of 6 wells), as well as
-  measured Si/Al does. None of the eight sheets prints a gamma-ray track.
+  fraction follows wireline gamma ray (-0.26, 6 of 6 wells), as well as measured Si/Al does; the Tertiary labels do not meet
+  the bar (-0.14). It is not a human key. None of the eight sheets prints a gamma-ray track.
 - **"Why does 34/8-3 fail?"** Its Si/Al is nearly flat (second-smallest
   spread of the 11 wells), and the frozen model finds nothing there. A
   fine-tuned network gave +0.21 to +0.41 there in three runs with
   different seeds, so it may not be all noise. It still gave +0.17 to
-  +0.40 with its sidetrack taken out of training. One well, singled out
+  +0.40 with its sidetrack taken out of training. Three seeds cannot
+  exclude a contribution of the sidetrack of up to about 0.2. One well, singled out
   after the first run: an observation, not a result.
 - **"Does deep learning help?"** Frozen ImageNet features plus ridge
   regression is the model of record. Fine-tuning gave no detectable gain
@@ -146,8 +147,9 @@ it resolves.
 - **"Can it pick formation tops?"** No. Tested against the official
   tops in 10 locations, the photo picks were 65 m off in the median against
   43 m for the nearest well, and worse in 8 of 10 locations. The bag
-  chemistry did no better per location. Only the base Cretaceous
-  unconformity was placed to about 25 m, and that was noticed afterwards.
+  chemistry did no better per location. At the base Cretaceous unconformity alone the median error was 25 m
+  (5 of 8 within 30 m; two misses of about 200 and 250 m); singled out
+  afterwards, descriptive.
 - **"What is the vertical resolution?"** Not measured. A test at sharp
   gamma-ray steps had too few steps to give a number.
 - **"So where are the sinkites?"** Not shown. The photographs cannot date a
@@ -167,7 +169,7 @@ it resolves.
   deviation from the plan.
 - That the readers are accurate: they are consistent.
 - That the Jurassic-Triassic mud-log result (+0.50) is a pre-registered
-  test: it is an amended, exploratory one. Six wells, one area, twin
+  test: it is an amended, exploratory one. Six wells (five locations), one area, twin
   wells; it depends in part on the twin being in training.
 - That photographs pick formation tops or beat a depth prognosis.
 - Any number for the vertical resolution of cuttings.

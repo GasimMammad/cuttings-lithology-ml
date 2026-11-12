@@ -104,6 +104,69 @@ out; no bag drops out below base Cretaceous.
 
 PENDING (GPU, six folds; started 2026-11-12).
 
-## K1. Mud weighting material (ilmenite caveat)
+## K1. Mud weighting material (the ilmenite caveat of v8 A) (69_v9_k1_ocr.py; results/v9/k1_weighting_material.md)
 
-PENDING (OCR of the well reports running; then reading of the cited pages).
+**What was read.** 29 drilling, mud and completion reports of the 11 wells,
+3,474 pages. 800 pages had a text layer; 2,674 were scans and were read by
+a local OCR. Keywords were fixed before the search. Every page counted was
+then opened and read as an image by me, and the products were copied word
+for word.
+
+**Deviations from the plan, both towards more coverage.** (1) The plan
+fixed the page list from contents pages and used an AI reader for the
+scans. Instead every page of every report was OCR-searched, and I read the
+materials tables myself; no second reader was used. (2) The "10 % of
+not-stated pages" check became: one seeded page per well among the
+mud-related pages without any keyword hit, read as an image (11 pages;
+nothing missed).
+
+**Result.**
+
+| | wells |
+|---|---|
+| Complete mud-materials table found, barite the only weighting material | 10: 24/9-4, 34/4-6, 34/4-7, 34/7-1, 34/7-10, 34/7-4, 34/7-6, 34/7-9, 34/8-3, 34/8-3 A |
+| Weighted mud, weighting material not named | 1: 24/9-3 (mud summary gives mud types and weights up to 11.0 ppg, but no materials list) |
+| Ilmenite, hematite, iron oxide or any titanium-bearing name | none, on any of the 3,474 pages |
+
+- The ten tables are well totals or cover every hole section, so they cover
+  the sections that hold the v8 A bags.
+- Unweighted sections (no weighting agent at all): the 36" holes; in 34/8-3
+  also the 17 1/2" hole to 1317 m (bentonite and caustic soda only).
+- Trade-named products (polymers, thinners, lost-circulation material such
+  as "Mica") are listed in the evidence file and are not interpreted.
+
+**By the pre-declared rule: the caveat is reworded for ten wells and stays
+for 24/9-3.** New wording for v8 A: "The mud-materials tables of ten wells
+name barite as the only weighting material and no iron-titanium product;
+24/9-3 has no materials list, so an iron-titanium weighting agent is not
+excluded there."
+
+**Consequence for v8 A (no model refitted; from the saved per-well
+values).** Without 24/9-3 the Fe/Al and Ti/Al rows are given below.
+
+| ratio | row | wells | median | wells > 0 | p |
+|---|---|---|---|---|---|
+| Fe/Al | photo prediction against measured | 11 wells | +0.28 | 11 of 11 | 0.000 |
+| Fe/Al | photo prediction against measured | without 24/9-3 | +0.29 | 10 of 10 | 0.001 |
+| Fe/Al | partial given Ba, Ca, Cl | 11 wells | +0.29 | 11 of 11 | 0.000 |
+| Fe/Al | partial given Ba, Ca, Cl | without 24/9-3 | +0.29 | 10 of 10 | 0.001 |
+| Fe/Al | partial given Si and Al as well | 11 wells | +0.14 | 11 of 11 | 0.000 |
+| Fe/Al | partial given Si and Al as well | without 24/9-3 | +0.13 | 10 of 10 | 0.001 |
+| Ti/Al | photo prediction against measured | 11 wells | +0.27 | 10 of 11 | 0.001 |
+| Ti/Al | photo prediction against measured | without 24/9-3 | +0.27 | 9 of 10 | 0.003 |
+| Ti/Al | partial given Ba, Ca, Cl | 11 wells | +0.21 | 10 of 11 | 0.001 |
+| Ti/Al | partial given Ba, Ca, Cl | without 24/9-3 | +0.19 | 9 of 10 | 0.003 |
+| Ti/Al | partial given Si and Al as well | 11 wells | +0.16 | 10 of 11 | 0.001 |
+| Ti/Al | partial given Si and Al as well | without 24/9-3 | +0.17 | 9 of 10 | 0.002 |
+
+This table was not pre-declared (no iron-titanium material was found, so the
+planned re-scoring did not apply). It is descriptive: removing the one well
+without a materials list changes nothing.
+
+**Limits.** A materials table says what was mixed into the mud, not what
+is in a given bag. Barite is a natural product and may carry iron
+impurities (not checked). Steel wear adds iron but no titanium; in 34/8-3 A
+a casing window was milled at about 945 to 985 m. Natural iron-titanium
+minerals in the rock are what the Fe-Ti signal is taken to be; this check
+only removes one alternative. The OCR could miss a word on a poor scan;
+the tables themselves were read as images.

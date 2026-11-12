@@ -227,11 +227,17 @@ def eligibility(wells, d, Y, J, grp):
     rows = []
     for w in np.unique(wells[J]):
         m = J & (wells == w)
-        r = {"well": w, "n_bags": int(m.sum()), "n_informative": 0, "n_clusters": 0}
+        r = {"well": w, "n_bags": int(m.sum()), "n_informative": 0, "n_clusters": 0, "n_bins30": 0, "span_m": 0.0}
         if m.sum() >= 3:
             inf = np.abs(hp(d, Y, m, grp)) >= T.INF_THR
-            r.update(n_informative=int(inf.sum()), n_clusters=T.clusters(d[m][inf]), mean_Y=float(Y[m].mean()))
-        r["eligible"] = bool(r["n_bags"] >= T.MIN_BAGS and r["n_informative"] >= T.MIN_INF and r["n_clusters"] >= T.MIN_CLUST)
+            di = d[m][inf]
+            r.update(n_informative=int(inf.sum()), n_clusters=T.clusters(di), mean_Y=float(Y[m].mean()),
+                     n_bins30=int(len(np.unique(np.floor(di / 30.0)))), span_m=float(di.max() - di.min()) if len(di) else 0.0)
+        base_ok = r["n_bags"] >= T.MIN_BAGS and r["n_informative"] >= T.MIN_INF
+        r["eligible_by_the_letter"] = bool(base_ok and r["n_clusters"] >= T.MIN_CLUST)  # step-3 rule C4 as written
+        # amended 2026-11-12 after the labels were read, before any photograph was joined (V8_PLAN.md):
+        # informative bags in >= 3 distinct 30 m bins on a fixed grid from 0 m MD, spanning >= 90 m
+        r["eligible"] = bool(base_ok and r["n_bins30"] >= 3 and r["span_m"] >= 90.0)
         rows.append(r)
     return pd.DataFrame(rows)
 
@@ -242,10 +248,14 @@ def stage_elig():
     e.to_csv(OUT / "jt_eligibility.csv", index=False)
     n = int(e.eligible.sum())
     with open(OUT / "jt_set_of_record.json", "w") as f:
-        json.dump({"n_eligible": n, "min_wells": T.MIN_WELLS, "test": bool(n >= T.MIN_WELLS),
+        json.dump({"n_eligible_by_the_letter": int(e.eligible_by_the_letter.sum()),
+                   "eligible_by_the_letter": e[e.eligible_by_the_letter].well.tolist(),
+                   "test_of_record": bool(e.eligible_by_the_letter.sum() >= T.MIN_WELLS),
+                   "n_eligible_amended": n, "min_wells": T.MIN_WELLS, "amended_test": bool(n >= T.MIN_WELLS),
                    "eligible_wells": e[e.eligible].well.tolist(), "n_bags_J_with_label": int(J.sum())}, f, indent=1)
     print(e.round(3).to_string(index=False))
-    print(f"eligible wells: {n} -> {'TEST' if n >= T.MIN_WELLS else 'descriptive only'}")
+    print(f"by the letter: {int(e.eligible_by_the_letter.sum())} wells (no test of record if < {T.MIN_WELLS}); "
+          f"amended rule: {n} wells -> {'amended, exploratory test' if n >= T.MIN_WELLS else 'descriptive only'}")
 
 
 def stage_g3(ws=None):
@@ -268,11 +278,22 @@ def stage_photo():
     el = e[e.eligible].well.tolist()
     Y = t.Y.values
     pw = lambda pred, y=Y, sel=J, ws=el: per_well(pred, y, wells, d, sel, grp, ws)
-    res = {"eligible_wells": el, "test_made": bool(len(el) >= T.MIN_WELLS)}
+    letter = e[e.eligible_by_the_letter].well.tolist()
+    res = {"eligible_wells (amended rule)": el, "eligible by the letter": letter,
+           "status": "amended, exploratory test: no test of record exists (by the letter fewer than 6 wells qualified)"}
     prim = pw(q.pred_P.values)
     r = T.summ(prim)
-    r["success"] = bool(len(el) >= T.MIN_WELLS and r.get("wilcoxon_p", 1) < 0.05 and r.get("median", 0) >= 0.10)
-    res["PRIMARY step-1 pre-Tertiary R-D prediction vs Y"] = r
+    tw = prim.copy()
+    if all(w in tw.index for w in TWINS):
+        tw["34_8-3 pair"] = tw[TWINS].mean()
+        tw = tw.drop(TWINS)
+    r5 = T.summ(tw)
+    ok = lambda x: bool(x.get("wilcoxon_p", 1) < 0.05 and x.get("median", 0) >= 0.10)
+    r["pass (needs the six-well AND the five-unit version)"] = bool(len(el) >= T.MIN_WELLS and ok(r) and ok(r5))
+    r["success"] = r["pass (needs the six-well AND the five-unit version)"]
+    res["AMENDED TEST step-1 pre-Tertiary R-D prediction vs Y"] = r
+    res["AMENDED TEST, 34/8-3 and 34/8-3 A merged as one unit"] = r5
+    res["by the letter (descriptive): the three wells that qualified"] = T.summ(prim[[w for w in letter if w in prim.index]])
     res["context: R-E (colour and texture) vs Y"] = T.summ(pw(q.pred_P_RE.values))
     ref = pw(q.T1_J.values)
     res["context: measured Si/Al vs Y (G3)"] = T.summ(ref)
@@ -291,11 +312,6 @@ def stage_photo():
     res["sensitivity: without bags with carbonate+marl >= 30 % or any coal"] = T.summ(pw(q.pred_P.values, sel=clean))
     for k in ("Y_sand_only", "Y_with_silt"):
         res[f"sensitivity: {k}"] = T.summ(pw(q.pred_P.values, y=t[k].values))
-    tw = prim.copy()
-    if all(w in tw.index for w in TWINS):
-        tw["34_8-3 pair"] = tw[TWINS].mean()
-        tw = tw.drop(TWINS)
-    res["sensitivity: 34/8-3 and 34/8-3 A merged as one unit"] = T.summ(tw)
     # exploratory: carbonate
     yc = t.Y_carb.values
     ok = J & np.isfinite(q.T_CaAl_P.values)

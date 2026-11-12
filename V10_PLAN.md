@@ -172,3 +172,67 @@ here once and not tuned.
 
 S and R are independent. Each is scored once. If the reviewer asks for a
 change after results, it is reported as post hoc.
+
+## Reviewer (v10 plan): APPROVE WITH CHANGES. Amendments (2026-11-12, before any run; they take precedence over the text above)
+
+### S
+- **The primary test is now the offset well (S2).** The regional prognosis
+  mixes two areas whose tops differ by hundreds of metres, so beating it is
+  the soft test. S1 (regional) is secondary. A sentence of the form
+  "photographs place the major tops better than ..." may only name the
+  baselines it beats.
+- **Baselines, exact.** Regional: the median depth below sea floor
+  (MD - kelly bushing - water depth) of that top in the other locations,
+  converted to the held-out well's MD. Offset: the depth below sea level
+  (MD - kelly bushing) of that top in the nearest other location, converted
+  to the held-out well's MD; if the nearest location does not have that
+  top, the next nearest that has it. Baselines may use any Sodir top of the
+  other wells, photographed or not. 34/8-3 A is never an offset or regional
+  well.
+- **Wording.** "no better than a regional depth prognosis" becomes "not
+  shown to be better than a regional depth prognosis (n = 10 locations, two
+  areas, all used before)". The S2 wordings stay as written.
+- **Casing and mud rule, replaced.** Near = a casing shoe (Sodir casing
+  table) or a mud-system change within 70 m of the true top. Mud-system
+  changes are known only from the mud-log headers of six wells (34/4-7,
+  34/7-10, 34/7-4, 34/7-9, 34/8-3, 34/8-3 A; listed in
+  results/v9/k3_sheet_check.md). The Sodir mud table gives only "water
+  based" for every well and is of no use here; for the other five wells
+  only shoes are known, and this is said. For every near top the shoe or
+  change is also scored as a prediction (shoe baseline). If, at more than
+  half of the near tops, the photo pick is closer to the shoe or change
+  than to the true top, or no closer to the true top than the shoe
+  baseline, the result is written "at these tops the picks cannot be
+  separated from casing or mud changes". S1 and S2 are always also reported
+  on far tops only.
+- **Also reported:** the signed median error per boundary (cavings should
+  push picks deeper), and the number of tops for which no bag was assigned
+  to the deeper unit. The dynamic programme assumes that no unit is missing
+  between the first and the last unit of a well; this is stated.
+- **Cut:** the colour-feature row and the row without the per-well z-score.
+  Kept: measured XRF chemistry, bag-level accuracy, 34/8-3 A.
+
+### R
+- **Fit with free asymptotes:** y = a + b / (1 + exp(-(x - x0) / w)); the
+  amplitude b is reported. Selecting and scaling on the same plateau means
+  shrinks the bags in between towards the middle, which widens W, and more
+  for noisy variables.
+- **Noise-matched reference:** for each variable, the ideal-bag series of
+  every candidate step is given that variable's plateau difference and
+  Gaussian noise at that variable's plateau SD, and goes through the same
+  contrast rule, scaling and fit. This gives a noise-matched W0 for each
+  variable (median over 200 noise draws). W is compared with this W0, not
+  with the noise-free one (which is also reported).
+- **Comparisons:** paired well-bootstrap intervals (2,000 resamples) of
+  W - W0 for each variable, and of W_photo - W_Si/Al on the steps that
+  enter both stacks. No comparison by overlap of separate intervals.
+- **Wording, replaced.** "The stacked transition is W m wide (10 to 90 %)
+  against W0 m for a noise-matched ideal bag. W includes depth mismatch and
+  gradational boundaries, so it is an upper bound on the smearing by
+  cuttings." Smearing is called detected only if the interval of W - W0
+  excludes zero. The sentence about beds that "cannot be resolved by any
+  method" is dropped. Photographs: "as fast as the chemistry" if the
+  interval of W_photo - W_Si/Al includes zero; otherwise slower or faster
+  with the numbers.
+- Stated with the result: the photo pipeline is not independent of gamma
+  ray (it was developed against gamma-ray labels in v1 and v2).

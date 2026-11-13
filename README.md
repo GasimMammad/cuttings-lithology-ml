@@ -8,11 +8,11 @@ The data are released Norwegian North Sea wells: photographs of washed
 cuttings bags, handheld XRF on the same bags, wireline logs, mud logs and
 well reports for 11 wells. **The data are not in this repository.**
 
-- `main` holds the code as it stood for the dissertation (v1).
-- `v2-ten-wells` (this branch) holds the follow-up, v2 to v10. The follow-up
-  scripts start at number 25. Five v1 files were extended for it
-  (`config.py`, `features.py`, `03_make_labels.py`, `04_prepare_patches.py`,
-  `12_glauconite_test.py`); `main` keeps them as they were.
+- The tag `v1-dissertation` marks the code as it stood for the dissertation.
+- `main` now also holds the follow-up, v2 to v10. The follow-up scripts start
+  at number 25. Five v1 files were extended for it (`config.py`,
+  `features.py`, `03_make_labels.py`, `04_prepare_patches.py`,
+  `12_glauconite_test.py`); the tag keeps them as they were.
 
 ## What came out of it
 
@@ -63,7 +63,7 @@ quote are copied to `results/`.
 
 | Stage | Scripts | Output |
 |---|---|---|
-| v1 (dissertation) | `01` to `24` | see the README on `main` |
+| v1 (dissertation) | `01` to `24` | see the README at the tag `v1-dissertation` |
 | v2 inputs | `25_v2_index`, `26_v2_tiles`, `27_v2_embed`, `28_v2_features` | photo index, tiles, ResNet-50 embeddings, 15 colour and texture features |
 | v2 sand/clay, ten wells | `29_v2_evaluate`, `30_v2_figures`, `31_v2_cnn`, `32_v2_report` | `results/summary.json`, `results/v2_fig*` |
 | v3 baselines and first XRF test | `33` to `41` | `results/v3/` |

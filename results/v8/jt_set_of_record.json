@@ -1,0 +1,21 @@
+{
+ "n_eligible_by_the_letter": 3,
+ "eligible_by_the_letter": [
+  "34_7-10",
+  "34_7-9",
+  "34_8-3"
+ ],
+ "test_of_record": false,
+ "n_eligible_amended": 6,
+ "min_wells": 6,
+ "amended_test": true,
+ "eligible_wells": [
+  "34_4-6",
+  "34_7-10",
+  "34_7-4",
+  "34_7-9",
+  "34_8-3",
+  "34_8-3_A"
+ ],
+ "n_bags_J_with_label": 908
+}

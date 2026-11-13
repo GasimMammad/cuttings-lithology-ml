@@ -1,0 +1,230 @@
+{
+ "gamma ray": "mean of the composite wireline curve over the label's own interval (D_prev, D] (primary); point value at D (descriptive)",
+ "sheet check": "results/v9/k3_sheet_check.md: none of the eight sheets prints a gamma-ray track",
+ "D set (below base Cretaceous, six wells)": {
+  "bags per well": {
+   "34_4-6": 205,
+   "34_7-10": 151,
+   "34_7-4": 174,
+   "34_7-9": 175,
+   "34_8-3": 142,
+   "34_8-3_A": 44
+  },
+  "bags without gamma ray": {
+   "34_4-6": 0,
+   "34_7-10": 0,
+   "34_7-4": 0,
+   "34_7-9": 0,
+   "34_8-3": 0,
+   "34_8-3_A": 0
+  },
+  "median samples per interval": 24.0,
+  "KEY: sand fraction vs interval-mean gamma ray": {
+   "n_wells": 6,
+   "per_well": {
+    "34_4-6": -0.2262,
+    "34_7-10": -0.3658,
+    "34_7-4": -0.2987,
+    "34_7-9": -0.2305,
+    "34_8-3": -0.2031,
+    "34_8-3_A": -0.5578
+   },
+   "median": -0.2646110913776861,
+   "n_below_zero": 6,
+   "wilcoxon_p_less": 0.015625,
+   "boot95_median": [
+    -0.46180101314773797,
+    -0.21462897783716728
+   ]
+  },
+  "wording": "the digitised sand fraction follows gamma ray",
+  "descriptive: sand fraction vs point gamma ray at D": {
+   "n_wells": 6,
+   "per_well": {
+    "34_4-6": -0.1796,
+    "34_7-10": -0.0537,
+    "34_7-4": -0.3961,
+    "34_7-9": -0.0001,
+    "34_8-3": -0.2989,
+    "34_8-3_A": -0.5301
+   },
+   "median": -0.2392399331579793,
+   "n_below_zero": 6,
+   "wilcoxon_p_less": 0.015625,
+   "boot95_median": [
+    -0.4631312783672445,
+    -0.02687254539436506
+   ]
+  },
+  "descriptive: without bags with carbonate+marl >= 30 % or any coal": {
+   "n_wells": 6,
+   "per_well": {
+    "34_4-6": -0.1266,
+    "34_7-10": -0.3658,
+    "34_7-4": -0.315,
+    "34_7-9": -0.2305,
+    "34_8-3": -0.2645,
+    "34_8-3_A": -0.5578
+   },
+   "median": -0.289742467349109,
+   "n_below_zero": 6,
+   "wilcoxon_p_less": 0.015625,
+   "boot95_median": [
+    -0.46180101314773797,
+    -0.17855330070848568
+   ]
+  },
+  "reference: measured Si/Al vs interval-mean gamma ray": {
+   "n_wells": 6,
+   "per_well": {
+    "34_4-6": -0.2595,
+    "34_7-10": -0.2584,
+    "34_7-4": -0.2605,
+    "34_7-9": -0.1132,
+    "34_8-3": -0.4237,
+    "34_8-3_A": -0.4452
+   },
+   "median": -0.2600038819917245,
+   "n_below_zero": 6,
+   "wilcoxon_p_less": 0.015625,
+   "boot95_median": [
+    -0.434469712541967,
+    -0.1858023482334988
+   ]
+  },
+  "reference (not independent of gamma ray): photo prediction vs interval-mean gamma ray": {
+   "n_wells": 6,
+   "per_well": {
+    "34_4-6": -0.2071,
+    "34_7-10": -0.2458,
+    "34_7-4": -0.2922,
+    "34_7-9": -0.1847,
+    "34_8-3": -0.379,
+    "34_8-3_A": -0.5085
+   },
+   "median": -0.26899788404720515,
+   "n_below_zero": 6,
+   "wilcoxon_p_less": 0.015625,
+   "boot95_median": [
+    -0.44377403342013017,
+    -0.19588358870647082
+   ]
+  }
+ },
+ "Tertiary set (v7 step 3, six wells)": {
+  "bags per well": {
+   "24_9-3": 478,
+   "34_4-6": 120,
+   "34_4-7": 84,
+   "34_7-10": 142,
+   "34_7-4": 144,
+   "34_7-9": 129
+  },
+  "bags without gamma ray": {
+   "24_9-3": 0,
+   "34_4-6": 0,
+   "34_4-7": 29,
+   "34_7-10": 0,
+   "34_7-4": 0,
+   "34_7-9": 0
+  },
+  "KEY: sand fraction vs interval-mean gamma ray (stretches split at casing shoes)": {
+   "n_wells": 6,
+   "per_well": {
+    "24_9-3": -0.1642,
+    "34_4-6": -0.1305,
+    "34_4-7": 0.1289,
+    "34_7-10": -0.1481,
+    "34_7-4": -0.2353,
+    "34_7-9": -0.1086
+   },
+   "median": -0.13928638553083875,
+   "n_below_zero": 5,
+   "wilcoxon_p_less": 0.046875,
+   "boot95_median": [
+    -0.19973601522472706,
+    0.01011646593417808
+   ]
+  },
+  "wording": "no detectable agreement with gamma ray",
+  "descriptive: step 3's own high-pass (no split at shoes)": {
+   "n_wells": 6,
+   "per_well": {
+    "24_9-3": -0.1644,
+    "34_4-6": -0.1914,
+    "34_4-7": 0.1332,
+    "34_7-10": -0.144,
+    "34_7-4": -0.1989,
+    "34_7-9": -0.101
+   },
+   "median": -0.1542237457127416,
+   "n_below_zero": 5,
+   "wilcoxon_p_less": 0.046875,
+   "boot95_median": [
+    -0.19516283585902133,
+    0.01608917531657352
+   ]
+  },
+  "descriptive: sand fraction vs point gamma ray at D": {
+   "n_wells": 6,
+   "per_well": {
+    "24_9-3": -0.178,
+    "34_4-6": -0.1574,
+    "34_4-7": 0.0288,
+    "34_7-10": -0.0457,
+    "34_7-4": -0.1052,
+    "34_7-9": -0.0676
+   },
+   "median": -0.0864082245489958,
+   "n_below_zero": 5,
+   "wilcoxon_p_less": 0.03125,
+   "boot95_median": [
+    -0.16770233239414412,
+    -0.008407584641950816
+   ]
+  },
+  "reference: measured Si/Al vs interval-mean gamma ray": {
+   "n_wells": 6,
+   "per_well": {
+    "24_9-3": -0.2363,
+    "34_4-6": -0.0791,
+    "34_4-7": -0.1858,
+    "34_7-10": -0.2585,
+    "34_7-4": -0.3154,
+    "34_7-9": -0.0306
+   },
+   "median": -0.2110802670499965,
+   "n_below_zero": 6,
+   "wilcoxon_p_less": 0.015625,
+   "boot95_median": [
+    -0.2869440491926784,
+    -0.05487672106728323
+   ]
+  },
+  "reference (not independent of gamma ray): photo prediction vs interval-mean gamma ray": {
+   "n_wells": 6,
+   "per_well": {
+    "24_9-3": -0.0947,
+    "34_4-6": -0.0194,
+    "34_4-7": -0.0576,
+    "34_7-10": -0.1293,
+    "34_7-4": -0.1403,
+    "34_7-9": 0.0754
+   },
+   "median": -0.07615322560484426,
+   "n_below_zero": 5,
+   "wilcoxon_p_less": 0.078125,
+   "boot95_median": [
+    -0.1347582633916698,
+    0.027983556523068484
+   ]
+  }
+ },
+ "limits": [
+  "gamma ray is not sand: mica, potassium feldspar and heavy minerals raise it in sandstone; coal and limestone lower it",
+  "Tertiary: glauconitic sands and tuffs raise gamma ray, so a weak negative is expected",
+  "the composite curve does not name its runs: open-hole and through-casing gamma ray cannot be told apart from the file",
+  "agreement supports the whole chain (wellsite geologist, sheet, reader, bag join), not the reader alone",
+  "this is an instrument key, not a human key"
+ ]
+}

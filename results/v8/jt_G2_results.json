@@ -1,0 +1,144 @@
+{
+ "wells": [
+  "34_4-6",
+  "34_4-7",
+  "34_7-10",
+  "34_7-4",
+  "34_7-9",
+  "34_8-3",
+  "34_8-3_A"
+ ],
+ "n_tiles_common": 23,
+ "n_bag_intervals": 283,
+ "n_only_one_reader_usable": 2,
+ "pooled_spearman": 0.9971205813053413,
+ "share_diff_gt20": 0.0035335689045936395,
+ "mean_signed_diff": -0.14723203769140156,
+ "mean_abs_diff": 0.7008244994110718,
+ "presence_A20_then_B10": 1.0,
+ "presence_B20_then_A10": 0.9961089494163424,
+ "informative": {
+  "n": 275,
+  "mean_abs_diff": 0.7090909090909091,
+  "spearman": 0.9969925546768855
+ },
+ "per_well": {
+  "34_4-6": {
+   "n": 50,
+   "spearman": 0.9995666540070602,
+   "mean_abs_diff": 0.23333333333333342,
+   "bias_A_minus_B": 0.23333333333333342,
+   "ok": true
+  },
+  "34_4-7": {
+   "n": 35,
+   "spearman": 0.9975886625178679,
+   "mean_abs_diff": 0.2857142857142859,
+   "bias_A_minus_B": -0.0952380952380949,
+   "ok": true
+  },
+  "34_7-10": {
+   "n": 39,
+   "spearman": 0.9738382563775869,
+   "mean_abs_diff": 3.2478632478632474,
+   "bias_A_minus_B": -2.3931623931623935,
+   "ok": true
+  },
+  "34_7-4": {
+   "n": 50,
+   "spearman": 0.9934894266349527,
+   "mean_abs_diff": 1.0,
+   "bias_A_minus_B": 0.8666666666666668,
+   "ok": true
+  },
+  "34_7-9": {
+   "n": 52,
+   "spearman": 1.0,
+   "mean_abs_diff": 0.0,
+   "bias_A_minus_B": 0.0,
+   "ok": true
+  },
+  "34_8-3": {
+   "n": 26,
+   "spearman": 0.9999999999999999,
+   "mean_abs_diff": 0.0,
+   "bias_A_minus_B": 0.0,
+   "ok": true
+  },
+  "34_8-3_A": {
+   "n": 31,
+   "spearman": 0.9999999999999998,
+   "mean_abs_diff": 0.0,
+   "bias_A_minus_B": 0.0,
+   "ok": true
+  }
+ },
+ "class_presence": {
+  "clay": {
+   "both": 184,
+   "A_only": 8,
+   "B_only": 3
+  },
+  "sand": {
+   "both": 273,
+   "A_only": 1,
+   "B_only": 1
+  },
+  "silt": {
+   "both": 25,
+   "A_only": 20,
+   "B_only": 1
+  },
+  "carb": {
+   "both": 21,
+   "A_only": 6,
+   "B_only": 5
+  },
+  "marl": {
+   "both": 0,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "glauc": {
+   "both": 0,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "tuff": {
+   "both": 0,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "coal": {
+   "both": 1,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "other": {
+   "both": 0,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "unread": {
+   "both": 0,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "ssst": {
+   "both": 0,
+   "A_only": 0,
+   "B_only": 0
+  }
+ },
+ "gates": {
+  "pooled_spearman>=0.80": true,
+  "share_diff_gt20<=0.15": true,
+  "|mean_signed_diff|<=5": true,
+  "presence_both_ways>=0.80": true,
+  "informative_n>=30": true,
+  "informative_mad<=10": true,
+  "informative_spearman>=0.60": true,
+  "wells_ok": true
+ },
+ "G2_pass": true
+}

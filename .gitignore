@@ -21,3 +21,4 @@ audit/
 *.CR2
 *.pt
 *.pth
+.venv

@@ -1,0 +1,53 @@
+/Users/gasimmammadov/Projects/cuttings-lithology-ml-v2/52_v7_photo_to_xrf.py:306: RuntimeWarning: divide by zero encountered in log10
+  L = {e: np.log10(x[e].values.astype(float) + (0 if e in ("SI", "AL", "BA", "CA") else 1.0)) for e in ELEM}
+bags: all 5038, Tertiary 2051, shoe-masked 30, no XRF 0, selected S 2021, pre-Tertiary P 2928
+{
+ "tag": "PRIMARY R-D T1 LOWO +/-50 m",
+ "n_wells": 11,
+ "median_rho": 0.32046401080877074,
+ "n_pos": 11,
+ "wilcoxon_p": 0.00048828125,
+ "boot95_median": [
+  0.18010266634554126,
+  0.49302015078526557
+ ],
+ "per_well": {
+  "24_9-3": 0.4598,
+  "24_9-4": 0.1684,
+  "34_4-6": 0.493,
+  "34_4-7": 0.3008,
+  "34_7-1": 0.1895,
+  "34_7-10": 0.5101,
+  "34_7-4": 0.4797,
+  "34_7-6": 0.3205,
+  "34_7-9": 0.5293,
+  "34_8-3": 0.025,
+  "34_8-3_A": 0.1801
+ },
+ "claim_pass": true
+}
+
+===== summary =====
+primary                                       med rho +0.320  pos 11/11  p 0.0005
+T1_P                                          med rho +0.328  pos 11/11  p 0.0005
+sens hp +/-25 m                               med rho +0.274  pos 10/11  p 0.0010
+sens hp +/-5 bags                             med rho +0.333  pos 10/11  p 0.0010
+sens unfiltered                               med rho +0.837  pos 11/11  p 0.0005
+sens T1-TS                                    med rho +0.402  pos 10/11  p 0.0010
+sens S-Al                                     med rho +0.301  pos 11/11  p 0.0005
+sens R-E                                      med rho +0.297  pos 11/11  p 0.0005
+sens R-RAW                                    med rho +0.292  pos 10/11  p 0.0010
+sens LOAO                                     med rho +0.314  pos 10/11  p 0.0010
+secondary T2 Ca                               med rho +0.123  pos 10/11  p 0.0034
+baseline relative depth                       med rho +0.040  pos 8/11  p 0.0874
+baseline bag dry weight                       med rho -0.092  pos 4/11  p 0.9385
+leak photo->Ba                                med rho +0.305  pos 11/11  p 0.0005
+leak rho(pred T1, hp Ba)                      med rho -0.119  pos -/-  p nan
+leak rho(pred T1, hp Cl)                      med rho -0.046  pos -/-  p nan
+neg control Zn+Pb resid                       med rho +0.050  pos 8/11  p 0.0122
+sens within capture sessions                  med rho +0.313  pos 11/11  p 0.0005
+pre-Tertiary (descriptive)                    med rho +0.509  pos 9/10  p 0.0020
+claim_pass: True  not_mud_pass: True
+Fisher (secondary): 2.898740264552141e-12
+lag median: {-5: -0.0634, -4: 0.0054, -3: -0.1155, -2: 0.0171, -1: 0.063, 0: 0.3205, 1: 0.1288, 2: 0.0421, 3: -0.0438, 4: -0.0312, 5: -0.0787}
+no-skill:   {-5: -0.0311, -4: -0.0223, -3: -0.0162, -2: 0.0128, -1: 0.0394, 0: 0.3205, 1: 0.0394, 2: 0.0128, 3: -0.0162, 4: -0.0223, 5: -0.0311}

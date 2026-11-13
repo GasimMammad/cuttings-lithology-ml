@@ -1,0 +1,141 @@
+{
+ "n_tiles_common": 100,
+ "n_bag_intervals": 481,
+ "n_only_one_reader_usable": 3,
+ "pooled_spearman": 0.8901861703513686,
+ "share_diff_gt20": 0.02494802494802495,
+ "mean_signed_diff": -1.878031878031878,
+ "mean_abs_diff": 2.277200277200277,
+ "presence_A20_then_B10": 1.0,
+ "presence_B20_then_A10": 0.8681318681318682,
+ "informative": {
+  "n": 163,
+  "mean_abs_diff": 6.570552147239264,
+  "spearman": 0.59575951285633
+ },
+ "per_well": {
+  "24_9-3": {
+   "n": 146,
+   "spearman": 0.7531678742880544,
+   "mean_abs_diff": 7.351598173515981,
+   "bias_A_minus_B": -6.324200913242009,
+   "n_informative": 70
+  },
+  "34_4-6": {
+   "n": 56,
+   "spearman": 1.0,
+   "mean_abs_diff": 0.0,
+   "bias_A_minus_B": 0.0,
+   "n_informative": 16
+  },
+  "34_4-7": {
+   "n": 44,
+   "spearman": 0.9999999999999998,
+   "mean_abs_diff": 0.0,
+   "bias_A_minus_B": 0.0,
+   "n_informative": 13
+  },
+  "34_7-10": {
+   "n": 48,
+   "spearman": 1.0,
+   "mean_abs_diff": 0.020833333333333332,
+   "bias_A_minus_B": -0.020833333333333332,
+   "n_informative": 15
+  },
+  "34_7-4": {
+   "n": 48,
+   "spearman": 0.8777300750739001,
+   "mean_abs_diff": 0.3541666666666667,
+   "bias_A_minus_B": 0.3541666666666667,
+   "n_informative": 13
+  },
+  "34_7-9": {
+   "n": 52,
+   "spearman": 0.9783536814086845,
+   "mean_abs_diff": 0.07692307692307693,
+   "bias_A_minus_B": 0.07692307692307693,
+   "n_informative": 15
+  },
+  "34_8-3": {
+   "n": 32,
+   "spearman": 0.9999999999999999,
+   "mean_abs_diff": 0.0,
+   "bias_A_minus_B": 0.0,
+   "n_informative": 6
+  },
+  "34_8-3_A": {
+   "n": 55,
+   "spearman": 0.9999999999999999,
+   "mean_abs_diff": 0.0,
+   "bias_A_minus_B": 0.0,
+   "n_informative": 15
+  }
+ },
+ "class_presence": {
+  "clay": {
+   "both": 475,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "sand": {
+   "both": 150,
+   "A_only": 0,
+   "B_only": 13
+  },
+  "silt": {
+   "both": 29,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "carb": {
+   "both": 1,
+   "A_only": 3,
+   "B_only": 0
+  },
+  "marl": {
+   "both": 4,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "glauc": {
+   "both": 17,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "tuff": {
+   "both": 12,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "coal": {
+   "both": 2,
+   "A_only": 0,
+   "B_only": 0
+  },
+  "other": {
+   "both": 5,
+   "A_only": 1,
+   "B_only": 0
+  },
+  "unread": {
+   "both": 0,
+   "A_only": 13,
+   "B_only": 3
+  }
+ },
+ "A_seams": {
+  "n": 284,
+  "share_sand_differs_ge10": 0.22887323943661972
+ },
+ "gates": {
+  "pooled_spearman>=0.80": true,
+  "share_diff_gt20<=0.15": true,
+  "|mean_signed_diff|<=5": true,
+  "presence_both_ways>=0.80": true,
+  "informative_n>=30": true,
+  "informative_mad<=10": true,
+  "informative_spearman>=0.60": false,
+  "wells_ok": true
+ },
+ "G2_pass": false
+}

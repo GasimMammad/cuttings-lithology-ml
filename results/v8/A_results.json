@@ -1,0 +1,287 @@
+{
+ "K/Al": {
+  "n_wells": 11,
+  "rho": {
+   "n_wells": 11,
+   "median_rho": 0.19588153765519153,
+   "n_pos": 11,
+   "wilcoxon_p": 0.00048828125,
+   "boot95_median": [
+    0.11536682351861305,
+    0.2736603578802784
+   ]
+  },
+  "mud": {
+   "median": 0.18107114845532105,
+   "n_pos": 10,
+   "wilcoxon_p": 0.00146484375
+  },
+  "beyond": {
+   "median": 0.06026889147614033,
+   "n_pos": 7,
+   "wilcoxon_p": 0.05078125,
+   "holm_p": 0.05078125
+  },
+  "given_T1": {
+   "median": 0.11482074512959278,
+   "n_pos": 10,
+   "wilcoxon_p": 0.00341796875
+  },
+  "specificity: own model minus Si/Al model (sign from other wells)": {
+   "median_own": 0.19588153765519153,
+   "median_t1model": 0.19351208108218626,
+   "paired_p": 0.48291015625
+  },
+  "colour baseline R-E": {
+   "median": 0.07590899774543962,
+   "paired_RD_gt_RE_p": 0.00244140625
+  },
+  "holm_p": 0.00244140625,
+  "passes": true,
+  "counts": false,
+  "criteria": {
+   "a_passes": true,
+   "b_beyond_Si_and_Al": false,
+   "c_mud_partial": true
+  }
+ },
+ "FE/Al": {
+  "n_wells": 11,
+  "rho": {
+   "n_wells": 11,
+   "median_rho": 0.27891179465856936,
+   "n_pos": 11,
+   "wilcoxon_p": 0.00048828125,
+   "boot95_median": [
+    0.04991780353678731,
+    0.39527406014480065
+   ]
+  },
+  "mud": {
+   "median": 0.2883798511469097,
+   "n_pos": 11,
+   "wilcoxon_p": 0.00048828125
+  },
+  "beyond": {
+   "median": 0.13568336462957697,
+   "n_pos": 11,
+   "wilcoxon_p": 0.00048828125,
+   "holm_p": 0.00244140625
+  },
+  "given_T1": {
+   "median": 0.27174210160408874,
+   "n_pos": 11,
+   "wilcoxon_p": 0.00048828125
+  },
+  "specificity: own model minus Si/Al model (sign from other wells)": {
+   "median_own": 0.27891179465856936,
+   "median_t1model": 0.08508172127311503,
+   "paired_p": 0.00244140625
+  },
+  "colour baseline R-E": {
+   "median": 0.2293983765192709,
+   "paired_RD_gt_RE_p": 0.232421875
+  },
+  "holm_p": 0.00244140625,
+  "passes": true,
+  "counts": true,
+  "criteria": {
+   "a_passes": true,
+   "b_beyond_Si_and_Al": true,
+   "c_mud_partial": true
+  }
+ },
+ "CA/Al": {
+  "n_wells": 11,
+  "rho": {
+   "n_wells": 11,
+   "median_rho": 0.19139937889938635,
+   "n_pos": 11,
+   "wilcoxon_p": 0.00048828125,
+   "boot95_median": [
+    0.14212427200773606,
+    0.246425746928158
+   ]
+  },
+  "mud": {
+   "median": 0.17122943684149722,
+   "n_pos": 10,
+   "wilcoxon_p": 0.0009765625
+  },
+  "beyond": {
+   "median": 0.12693431142600256,
+   "n_pos": 9,
+   "wilcoxon_p": 0.00341796875,
+   "holm_p": 0.01025390625
+  },
+  "given_T1": {
+   "median": 0.1788336669695895,
+   "n_pos": 11,
+   "wilcoxon_p": 0.00048828125
+  },
+  "specificity: own model minus Si/Al model (sign from other wells)": {
+   "median_own": 0.19139937889938635,
+   "median_t1model": 0.12687074458117928,
+   "paired_p": 0.0048828125
+  },
+  "colour baseline R-E": {
+   "median": 0.1833627109380337,
+   "paired_RD_gt_RE_p": 0.58447265625
+  },
+  "holm_p": 0.00244140625,
+  "passes": true,
+  "counts": true,
+  "criteria": {
+   "a_passes": true,
+   "b_beyond_Si_and_Al": true,
+   "c_mud_partial": true
+  }
+ },
+ "TI/Al": {
+  "n_wells": 11,
+  "rho": {
+   "n_wells": 11,
+   "median_rho": 0.26816971414021623,
+   "n_pos": 10,
+   "wilcoxon_p": 0.00146484375,
+   "boot95_median": [
+    0.09153995438913143,
+    0.34465006048331887
+   ]
+  },
+  "mud": {
+   "median": 0.20666112760647273,
+   "n_pos": 10,
+   "wilcoxon_p": 0.00146484375
+  },
+  "beyond": {
+   "median": 0.16164337204621448,
+   "n_pos": 10,
+   "wilcoxon_p": 0.0009765625,
+   "holm_p": 0.00390625
+  },
+  "given_T1": {
+   "median": 0.16132790755490592,
+   "n_pos": 10,
+   "wilcoxon_p": 0.0009765625
+  },
+  "specificity: own model minus Si/Al model (sign from other wells)": {
+   "median_own": 0.26816971414021623,
+   "median_t1model": 0.2611338109739418,
+   "paired_p": 0.55078125
+  },
+  "colour baseline R-E": {
+   "median": 0.18286784239061946,
+   "paired_RD_gt_RE_p": 0.08740234375
+  },
+  "holm_p": 0.0029296875,
+  "passes": true,
+  "counts": true,
+  "criteria": {
+   "a_passes": true,
+   "b_beyond_Si_and_Al": true,
+   "c_mud_partial": true
+  }
+ },
+ "ZR/Al": {
+  "n_wells": 11,
+  "rho": {
+   "n_wells": 11,
+   "median_rho": 0.10279973363053589,
+   "n_pos": 10,
+   "wilcoxon_p": 0.00341796875,
+   "boot95_median": [
+    0.011898207185023258,
+    0.29916004788876055
+   ]
+  },
+  "mud": {
+   "median": 0.034488224579951245,
+   "n_pos": 7,
+   "wilcoxon_p": 0.02099609375
+  },
+  "beyond": {
+   "median": 0.11800286421861547,
+   "n_pos": 9,
+   "wilcoxon_p": 0.00927734375,
+   "holm_p": 0.0185546875
+  },
+  "given_T1": {
+   "median": 0.0989763541422232,
+   "n_pos": 10,
+   "wilcoxon_p": 0.00244140625
+  },
+  "specificity: own model minus Si/Al model (sign from other wells)": {
+   "median_own": 0.10279973363053589,
+   "median_t1model": 0.02324471527852964,
+   "paired_p": 0.02685546875
+  },
+  "colour baseline R-E": {
+   "median": 0.14718950603372957,
+   "paired_RD_gt_RE_p": 0.44921875
+  },
+  "holm_p": 0.00341796875,
+  "passes": true,
+  "counts": false,
+  "criteria": {
+   "a_passes": true,
+   "b_beyond_Si_and_Al": true,
+   "c_mud_partial": false
+  }
+ },
+ "summary": {
+  "n_pass": 5,
+  "counting_targets": [
+   "FE",
+   "CA",
+   "TI"
+  ],
+  "wording": "a rough chemical log"
+ },
+ "flags (high-passed, per well)": {
+  "24_9-3": {
+   "rho_K_Cl": 0.03867919665245075,
+   "rho_Fe_Ti": 0.7103379025561856
+  },
+  "24_9-4": {
+   "rho_K_Cl": 0.401729565147775,
+   "rho_Fe_Ti": 0.38930722282969304
+  },
+  "34_4-6": {
+   "rho_K_Cl": 0.14340586164909827,
+   "rho_Fe_Ti": 0.7356524932733972
+  },
+  "34_4-7": {
+   "rho_K_Cl": 0.0904273467396546,
+   "rho_Fe_Ti": 0.6445488485222571
+  },
+  "34_7-1": {
+   "rho_K_Cl": 0.06386479336743327,
+   "rho_Fe_Ti": 0.5461515510676679
+  },
+  "34_7-10": {
+   "rho_K_Cl": 0.085862951254544,
+   "rho_Fe_Ti": 0.6802908910046394
+  },
+  "34_7-4": {
+   "rho_K_Cl": -0.01637766710852116,
+   "rho_Fe_Ti": 0.6874732529551278
+  },
+  "34_7-6": {
+   "rho_K_Cl": 0.35590324258465267,
+   "rho_Fe_Ti": 0.5062782466648517
+  },
+  "34_7-9": {
+   "rho_K_Cl": -0.07297925243289664,
+   "rho_Fe_Ti": 0.661651225813691
+  },
+  "34_8-3": {
+   "rho_K_Cl": 0.2686407853355769,
+   "rho_Fe_Ti": 0.6106139379317295
+  },
+  "34_8-3_A": {
+   "rho_K_Cl": 0.16428251880114034,
+   "rho_Fe_Ti": 0.41812811912542625
+  }
+ }
+}

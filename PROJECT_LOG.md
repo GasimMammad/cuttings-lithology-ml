@@ -731,3 +731,16 @@ eaa36f4 v2 results
 - Still open, not done: slide deck (held by the user twice; never lifted by
   name), a human key for the audit tiles (declined), zero-shot AI reader,
   parentage test.
+
+## 2026-11-13: merged to main on GitHub
+
+- User: "merge the pull request, update everything in my github"; the user
+  reports that the professor has no issue with the result.
+- Tag `v1-dissertation` set on the old main (c6f1aca) and pushed, so the
+  dissertation code stays reachable. README updated to say so.
+- PR #1 merged into main with a merge commit (not squashed, so the commit
+  hashes cited in the results files stay valid). Repository description
+  updated.
+- The original local folder ~/Projects/cuttings-lithology-ml was NOT
+  pulled or changed: it has two uncommitted edits (12_glauconite_test.py,
+  config.py) and now sits behind origin/main.

@@ -1,0 +1,1166 @@
+{
+ "n_G_bags": 926,
+ "n_with_photo_score": 873,
+ "n_pos_total": 27,
+ "n_pos_with_score": 27,
+ "PRIMARY S [1,d,|d|] resid-shift null": {
+  "Q": 0.7414208014208014,
+  "p": 0.00029997000299970003,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9230769230769231,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.10588235294117648
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.5636363636363636,
+    "auc_raw": 0.6181818181818182,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.07799854944594697
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.8076923076923077,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.7285714285714285
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.5555555555555556,
+    "auc_raw": 0.8055555555555556,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.3413763650906046
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.8571428571428571,
+    "auc_raw": 0.7777777777777778,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.6294117647058822
+   }
+  }
+ },
+ "secondary S [1,d]": {
+  "Q": 0.8423942723942724,
+  "p": 9.999000099990002e-05,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 1.0,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.10588235294117648
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.6909090909090909,
+    "auc_raw": 0.6181818181818182,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.07799854944594697
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.9615384615384616,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.7285714285714285
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.75,
+    "auc_raw": 0.8055555555555556,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.3413763650906046
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.8095238095238095,
+    "auc_raw": 0.7777777777777778,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.6294117647058822
+   }
+  }
+ },
+ "sens original null (shift S)": {
+  "Q": 0.7414208014208014,
+  "p": 9.999000099990002e-05,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9230769230769231,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.10588235294117648
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.5636363636363636,
+    "auc_raw": 0.6181818181818182,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.07799854944594697
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.8076923076923077,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.7285714285714285
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.5555555555555556,
+    "auc_raw": 0.8055555555555556,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.3413763650906046
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.8571428571428571,
+    "auc_raw": 0.7777777777777778,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.6294117647058822
+   }
+  }
+ },
+ "GI [1,d,|d|] (comparator)": {
+  "Q": 0.705031635031635,
+  "p": 0.00019998000199980003,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9487179487179487,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.029433414885263007
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.6909090909090909,
+    "auc_raw": 0.7454545454545455,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": 0.10882352941176471
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.7307692307692307,
+    "auc_raw": 0.9615384615384616,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.6964285714285713
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.3611111111111111,
+    "auc_raw": 0.7777777777777778,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.4357142857142856
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.7936507936507936,
+    "auc_raw": 0.7698412698412699,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.6181017125905232
+   }
+  }
+ },
+ "sens S_area": {
+  "Q": 0.7113764013764013,
+  "p": 0.00019998000199980003,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9230769230769231,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.1411764705882353
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.5272727272727272,
+    "auc_raw": 0.6,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.11331864730826259
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.7692307692307693,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.6928571428571427
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.5277777777777778,
+    "auc_raw": 0.7777777777777778,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.3092047704747361
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.8095238095238095,
+    "auc_raw": 0.7777777777777778,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.6264705882352941
+   }
+  }
+ },
+ "sens S_L45": {
+  "Q": 0.722949272949273,
+  "p": 0.00019998000199980003,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9230769230769231,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.10448862284268369
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.5454545454545454,
+    "auc_raw": 0.6181818181818182,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.05739515902626287
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.7692307692307693,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.7035714285714285
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.5833333333333334,
+    "auc_raw": 0.8055555555555556,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.3092047704747361
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.7936507936507936,
+    "auc_raw": 0.746031746031746,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.5852941176470587
+   }
+  }
+ },
+ "sens S_L55": {
+  "Q": 0.7441070041070041,
+  "p": 9.999000099990002e-05,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9230769230769231,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.13529411764705881
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.5636363636363636,
+    "auc_raw": 0.6181818181818182,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.07799854944594697
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.8846153846153846,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.7256481896690339
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.5555555555555556,
+    "auc_raw": 0.8055555555555556,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.3413763650906046
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.7936507936507936,
+    "auc_raw": 0.746031746031746,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.5823529411764706
+   }
+  }
+ },
+ "sens S_nofill": {
+  "Q": 0.7280352980352982,
+  "p": 9.999000099990002e-05,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9487179487179487,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.14411764705882352
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.4909090909090909,
+    "auc_raw": 0.6,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.08388523242299958
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 2,
+    "auc_resid": 0.8076923076923077,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.7392857142857142
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.5833333333333334,
+    "auc_raw": 0.8055555555555556,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.33065250021864845
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 9,
+    "auc_resid": 0.8095238095238095,
+    "auc_raw": 0.7619047619047619,
+    "auc_dist_only": 0.4126984126984127,
+    "rho_S_G": 0.6058823529411764
+   }
+  }
+ },
+ "sens G>0.15": {
+  "Q": 0.7149537684537683,
+  "p": 9.999000099990002e-05,
+  "n_wells": 5,
+  "n_bags": 88,
+  "n_pos": 28,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9230769230769231,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.10588235294117648
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 5,
+    "auc_resid": 0.5636363636363636,
+    "auc_raw": 0.6181818181818182,
+    "auc_dist_only": 0.8545454545454545,
+    "rho_S_G": -0.07799854944594697
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 5,
+    "auc_resid": 0.72,
+    "auc_raw": 0.94,
+    "auc_dist_only": 0.98,
+    "rho_S_G": 0.7285714285714285
+   },
+   "34_7-9": {
+    "n": 15,
+    "n_pos": 3,
+    "auc_resid": 0.5555555555555556,
+    "auc_raw": 0.8055555555555556,
+    "auc_dist_only": 0.9444444444444444,
+    "rho_S_G": 0.3413763650906046
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 12,
+    "auc_resid": 0.8125,
+    "auc_raw": 0.6875,
+    "auc_dist_only": 0.5833333333333334,
+    "rho_S_G": 0.6294117647058822
+   }
+  }
+ },
+ "sens G>0.3": {
+  "Q": 0.6913347069597069,
+  "p": 0.014498550144985502,
+  "n_wells": 4,
+  "n_bags": 88,
+  "n_pos": 12,
+  "per_well": {
+   "34_4-6": {
+    "n": 16,
+    "n_pos": 3,
+    "auc_resid": 0.9230769230769231,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9487179487179487,
+    "rho_S_G": 0.10588235294117648
+   },
+   "34_7-10": {
+    "n": 16,
+    "n_pos": 4,
+    "auc_resid": 0.4583333333333333,
+    "auc_raw": 0.5,
+    "auc_dist_only": 0.7916666666666666,
+    "rho_S_G": -0.07799854944594697
+   },
+   "34_7-4": {
+    "n": 15,
+    "n_pos": 1,
+    "auc_resid": 0.5714285714285714,
+    "auc_raw": 0.9285714285714286,
+    "auc_dist_only": 0.9285714285714286,
+    "rho_S_G": 0.7285714285714285
+   },
+   "34_8-3_A": {
+    "n": 16,
+    "n_pos": 4,
+    "auc_resid": 0.8125,
+    "auc_raw": 0.8541666666666666,
+    "auc_dist_only": 0.4166666666666667,
+    "rho_S_G": 0.6294117647058822
+   }
+  }
+ },
+ "sens window 120 m": {
+  "Q": 0.7935032024505709,
+  "p": 9.999000099990002e-05,
+  "n_wells": 5,
+  "n_bags": 132,
+  "n_pos": 22,
+  "per_well": {
+   "34_4-6": {
+    "n": 24,
+    "n_pos": 3,
+    "auc_resid": 1.0,
+    "auc_raw": 1.0,
+    "auc_dist_only": 0.9682539682539683,
+    "rho_S_G": 0.07523374824513145
+   },
+   "34_7-10": {
+    "n": 24,
+    "n_pos": 5,
+    "auc_resid": 0.5894736842105263,
+    "auc_raw": 0.6631578947368421,
+    "auc_dist_only": 0.9157894736842105,
+    "rho_S_G": -0.21643571528326266
+   },
+   "34_7-4": {
+    "n": 23,
+    "n_pos": 2,
+    "auc_resid": 0.9761904761904762,
+    "auc_raw": 1.0,
+    "auc_dist_only": 1.0,
+    "rho_S_G": 0.5489616928728727
+   },
+   "34_7-9": {
+    "n": 23,
+    "n_pos": 3,
+    "auc_resid": 0.6166666666666667,
+    "auc_raw": 0.7333333333333333,
+    "auc_dist_only": 0.9666666666666667,
+    "rho_S_G": 0.37438395958019643
+   },
+   "34_8-3_A": {
+    "n": 24,
+    "n_pos": 9,
+    "auc_resid": 0.7851851851851852,
+    "auc_raw": 0.8148148148148148,
+    "auc_dist_only": 0.725925925925926,
+    "rho_S_G": 0.6732042120670846
+   }
+  }
+ },
+ "(b) S beats GI (descriptive)": {
+  "wins": 3,
+  "of": 5,
+  "per_well": {
+   "34_4-6": false,
+   "34_7-10": false,
+   "34_7-4": true,
+   "34_7-9": true,
+   "34_8-3_A": true
+  }
+ },
+ "intervals": [
+  {
+   "well": "34_4-6",
+   "top": 1230.0,
+   "base": 1250.0,
+   "n_bags": 3,
+   "has_top20pct_S": true
+  },
+  {
+   "well": "34_7-10",
+   "top": 1080.0,
+   "base": 1130.0,
+   "n_bags": 5,
+   "has_top20pct_S": true
+  },
+  {
+   "well": "34_7-4",
+   "top": 1180.0,
+   "base": 1190.0,
+   "n_bags": 2,
+   "has_top20pct_S": true
+  },
+  {
+   "well": "34_7-9",
+   "top": 1150.0,
+   "base": 1180.0,
+   "n_bags": 3,
+   "has_top20pct_S": true
+  },
+  {
+   "well": "34_8-3_A",
+   "top": 1110.0,
+   "base": 1160.0,
+   "n_bags": 5,
+   "has_top20pct_S": true
+  },
+  {
+   "well": "34_8-3_A",
+   "top": 1190.0,
+   "base": 1240.0,
+   "n_bags": 4,
+   "has_top20pct_S": false
+  }
+ ],
+ "LISTA S": {
+  "fp": 28,
+  "n": 125,
+  "fp_rate": 0.224,
+  "per_well": {
+   "34_4-6": {
+    "tau_w": 29.853013981200267,
+    "n_lista": 8,
+    "fp": 1
+   },
+   "34_7-10": {
+    "tau_w": 29.853013981200267,
+    "n_lista": 8,
+    "fp": 1
+   },
+   "34_7-4": {
+    "tau_w": 41.48839298138293,
+    "n_lista": 24,
+    "fp": 0
+   },
+   "34_7-6": {
+    "tau_w": 41.48839298138293,
+    "n_lista": 8,
+    "fp": 0
+   },
+   "34_7-9": {
+    "tau_w": 41.48839298138293,
+    "n_lista": 13,
+    "fp": 0
+   },
+   "34_8-3": {
+    "tau_w": 41.48839298138293,
+    "n_lista": 30,
+    "fp": 18
+   },
+   "34_8-3_A": {
+    "tau_w": 41.48839298138293,
+    "n_lista": 34,
+    "fp": 8
+   }
+  },
+  "tau_L_lunde_p99": 16.470893697728734,
+  "fp_at_tau_L": 73,
+  "interval_recall_at_tau_L": 0.6666666666666666,
+  "interval_max": [
+   187.372,
+   41.488,
+   29.853,
+   8.931,
+   119.527,
+   3.283
+  ]
+ },
+ "LISTA GI": {
+  "fp": 35,
+  "n": 125,
+  "fp_rate": 0.28,
+  "per_well": {
+   "34_4-6": {
+    "tau_w": 0.009898278031030612,
+    "n_lista": 8,
+    "fp": 4
+   },
+   "34_7-10": {
+    "tau_w": 0.009898278031030612,
+    "n_lista": 8,
+    "fp": 4
+   },
+   "34_7-4": {
+    "tau_w": 0.01802115600524842,
+    "n_lista": 24,
+    "fp": 1
+   },
+   "34_7-6": {
+    "tau_w": 0.01802115600524842,
+    "n_lista": 8,
+    "fp": 1
+   },
+   "34_7-9": {
+    "tau_w": 0.01802115600524842,
+    "n_lista": 13,
+    "fp": 2
+   },
+   "34_8-3": {
+    "tau_w": 0.01802115600524842,
+    "n_lista": 30,
+    "fp": 11
+   },
+   "34_8-3_A": {
+    "tau_w": 0.01802115600524842,
+    "n_lista": 34,
+    "fp": 12
+   }
+  },
+  "tau_L_lunde_p99": 0.01794709646002135,
+  "fp_at_tau_L": 32,
+  "interval_recall_at_tau_L": 0.5,
+  "interval_max": [
+   0.036,
+   0.018,
+   0.008,
+   0.01,
+   0.058,
+   0.003
+  ]
+ },
+ "FP row: Balder Fm": {
+  "n": 34,
+  "above_tau_L": 1,
+  "S_median": 3.076818577738388,
+  "S_max": 20.385473625117413
+ },
+ "FP row: Oligocene > 60 m below THGU, G < 0.05": {
+  "n": 90,
+  "above_tau_L": 0,
+  "S_median": 0.11263315429352973,
+  "S_max": 5.127971739747742
+ },
+ "out-of-window positives": [
+  {
+   "well": "34_7-4",
+   "depth_m": 840.0,
+   "dist": -347.0,
+   "G": 0.229,
+   "S": 2.88,
+   "S_pctile_in_well": 34.4
+  },
+  {
+   "well": "34_7-4",
+   "depth_m": 900.0,
+   "dist": -287.0,
+   "G": 0.202,
+   "S": 10.85,
+   "S_pctile_in_well": 67.9
+  },
+  {
+   "well": "34_7-4",
+   "depth_m": 920.0,
+   "dist": -267.0,
+   "G": 0.288,
+   "S": 2.41,
+   "S_pctile_in_well": 31.3
+  },
+  {
+   "well": "34_7-4",
+   "depth_m": 1040.0,
+   "dist": -147.0,
+   "G": 0.239,
+   "S": 1.58,
+   "S_pctile_in_well": 27.5
+  },
+  {
+   "well": "34_7-9",
+   "depth_m": 480.0,
+   "dist": -692.0,
+   "G": 0.211,
+   "S": 5.09,
+   "S_pctile_in_well": 43.2
+  }
+ ],
+ "per-well medians (label-free)": {
+  "34_4-6": {
+   "S": 8.84,
+   "GI": 0.002,
+   "S_brown": 311.249,
+   "a_med": 2.656,
+   "b_med": 22.752,
+   "L_mean": 44.778
+  },
+  "34_7-10": {
+   "S": 7.247,
+   "GI": 0.001,
+   "S_brown": 312.429,
+   "a_med": 2.283,
+   "b_med": 23.154,
+   "L_mean": 43.301
+  },
+  "34_7-4": {
+   "S": 5.808,
+   "GI": 0.001,
+   "S_brown": 254.449,
+   "a_med": 1.788,
+   "b_med": 25.728,
+   "L_mean": 47.635
+  },
+  "34_7-6": {
+   "S": 4.927,
+   "GI": 0.004,
+   "S_brown": 139.232,
+   "a_med": 1.404,
+   "b_med": 22.767,
+   "L_mean": 51.878
+  },
+  "34_7-9": {
+   "S": 5.759,
+   "GI": 0.001,
+   "S_brown": 241.827,
+   "a_med": 2.247,
+   "b_med": 21.667,
+   "L_mean": 49.227
+  },
+  "34_8-3": {
+   "S": 7.951,
+   "GI": 0.007,
+   "S_brown": 158.31,
+   "a_med": 1.673,
+   "b_med": 22.72,
+   "L_mean": 47.94
+  },
+  "34_8-3_A": {
+   "S": 2.732,
+   "GI": 0.004,
+   "S_brown": 162.408,
+   "a_med": 1.764,
+   "b_med": 28.136,
+   "L_mean": 47.539
+  }
+ },
+ "lunde": {
+  "n": 1022,
+  "S_median": 0.9798561529570903,
+  "S_p99": 16.470893697728734,
+  "S_max": 58.14365262732742
+ },
+ "S by window (median, p90, max)": {
+  "LISTA": [
+   18.66,
+   58.8,
+   118.62
+  ],
+  "OLIG": [
+   0.17,
+   2.78,
+   58.37
+  ],
+  "UTSIRA": [
+   2.5,
+   96.02,
+   187.37
+  ],
+  "other": [
+   6.65,
+   26.14,
+   69.76
+  ]
+ },
+ "pellet-check bags": [
+  {
+   "item": "p01",
+   "well": "34_7-10",
+   "depth_m": 1110.0,
+   "window": "OLIG",
+   "G": 0.526,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-10/DRILLING/34_7-10_CUTTINGS_PHOTO_M_111000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "abundant",
+   "other_green": "none significant",
+   "confidence": "high",
+   "notes": "Loose dark-green rounded cracked pellets 0.15-0.3 mm fill much of the fine fraction between pale marl/claystone aggregates; aggregates carry dark specks",
+   "S": 41.488,
+   "GI": 0.018
+  },
+  {
+   "item": "p02",
+   "well": "34_7-10",
+   "depth_m": 1100.0,
+   "window": "OLIG",
+   "G": 0.516,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-10/DRILLING/34_7-10_CUTTINGS_PHOTO_M_110000_W_1.JPG",
+   "glauconite_pellets": "UNCERTAIN",
+   "abundance": NaN,
+   "other_green": "green clay chip (one olive angular chip)",
+   "confidence": "low",
+   "notes": "Argillaceous/marly aggregates with common black-green specks possibly embedded glauconite; few dark grains in interstices too shadowed to confirm; no clear loose pellets",
+   "S": 0.533,
+   "GI": 0.0
+  },
+  {
+   "item": "p03",
+   "well": "34_7-9",
+   "depth_m": 1280.0,
+   "window": "OLIG",
+   "G": -0.208,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-9/DRILLING/34_7-9_CUTTINGS_PHOTO_M_128000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "none",
+   "confidence": "high",
+   "notes": "Grey-brown claystone cuttings with white carbonate fragments; no green grains seen",
+   "S": 0.113,
+   "GI": 0.0
+  },
+  {
+   "item": "p04",
+   "well": "34_8-3_A",
+   "depth_m": 1120.0,
+   "window": "UTSIRA",
+   "G": 0.423,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_8-3_A/DRILLING/34_8-3_A_CUTTINGS_PHOTO_M_112000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "abundant",
+   "other_green": "pale olive-green grains (possibly lighter glauconite)",
+   "confidence": "high",
+   "notes": "Greensand: fine fraction dominated by dark-green rounded pellets with lighter-green crack networks; scattered claystone/carbonate cuttings",
+   "S": 72.507,
+   "GI": 0.035
+  },
+  {
+   "item": "p05",
+   "well": "34_7-10",
+   "depth_m": 1170.0,
+   "window": "OLIG",
+   "G": -0.152,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-10/DRILLING/34_7-10_CUTTINGS_PHOTO_M_117000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "none",
+   "confidence": "high",
+   "notes": "Pale grey-brown claystone with orange stain; only isolated tiny green specks inside claystone",
+   "S": 0.0,
+   "GI": 0.0
+  },
+  {
+   "item": "p06",
+   "well": "34_7-10",
+   "depth_m": 1270.0,
+   "window": "OLIG",
+   "G": -0.223,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-10/DRILLING/34_7-10_CUTTINGS_PHOTO_M_127000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "pale yellow chips (yellow claystone or additive)",
+   "confidence": "high",
+   "notes": "Brown claystone plus pale yellow chips; no green pellets",
+   "S": 0.0,
+   "GI": 0.0
+  },
+  {
+   "item": "p07",
+   "well": "34_4-6",
+   "depth_m": 1390.0,
+   "window": "OLIG",
+   "G": -0.041,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_4-6/DRILLING/34_4-6_CUTTINGS_PHOTO_M_139000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "trace",
+   "other_green": "green-grey speckled lithic/mudstone chips",
+   "confidence": "high",
+   "notes": "Few rounded dark-green lumpy grains 0.3-0.4 mm among quartz sand and claystone; larger angular grey-green speckled fragments are lithic chips not pellets",
+   "S": 3.251,
+   "GI": 0.001
+  },
+  {
+   "item": "p08",
+   "well": "34_7-4",
+   "depth_m": 1180.0,
+   "window": "UTSIRA",
+   "G": 0.349,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-4/DRILLING/34_7-4_CUTTINGS_PHOTO_M_118000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "common",
+   "other_green": "green clay mottles on aggregates and one blue-green fluffy patch (possible LCM/paint)",
+   "confidence": "high",
+   "notes": "Loose dark-green rounded pellets in the fine sand fraction plus many dark-green grains embedded in sandy marl aggregates",
+   "S": 13.811,
+   "GI": 0.007
+  },
+  {
+   "item": "p09",
+   "well": "34_7-4",
+   "depth_m": 1230.0,
+   "window": "OLIG",
+   "G": -0.316,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-4/DRILLING/34_7-4_CUTTINGS_PHOTO_M_123000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "rare green patches in shadows (green clay/stain)",
+   "confidence": "low",
+   "notes": "Claystone cuttings hide the fine fraction; two small green patches not resolvable as pellets",
+   "S": 0.742,
+   "GI": 0.001
+  },
+  {
+   "item": "p10",
+   "well": "34_8-3_A",
+   "depth_m": 1130.0,
+   "window": "UTSIRA",
+   "G": 0.518,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_8-3_A/DRILLING/34_8-3_A_CUTTINGS_PHOTO_M_113000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "abundant",
+   "other_green": "pale olive-green grains",
+   "confidence": "high",
+   "notes": "Greensand: dark-green cracked pellets form most of the fine fraction with quartz and scattered marl cuttings",
+   "S": 119.527,
+   "GI": 0.058
+  },
+  {
+   "item": "p11",
+   "well": "34_7-9",
+   "depth_m": 1310.0,
+   "window": "OLIG",
+   "G": -0.114,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-9/DRILLING/34_7-9_CUTTINGS_PHOTO_M_131000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "green claystone chip (olive-grey with orange stain) and bright yellow lump (additive?)",
+   "confidence": "high",
+   "notes": "Claystone cuttings; the green chip is a ~3 mm angular mudstone fragment not a pellet",
+   "S": 0.498,
+   "GI": 0.001
+  },
+  {
+   "item": "p12",
+   "well": "34_4-6",
+   "depth_m": 1230.0,
+   "window": "UTSIRA",
+   "G": 0.747,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_4-6/DRILLING/34_4-6_CUTTINGS_PHOTO_M_123000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "abundant",
+   "other_green": "green fluffy/fibrous patches (possible LCM or clay)",
+   "confidence": "high",
+   "notes": "Loose glauconitic sand: dense dark-green pellets ~0.1-0.2 mm between quartz grains; some olive-green rounded grains",
+   "S": 129.997,
+   "GI": 0.036
+  },
+  {
+   "item": "p13",
+   "well": "34_8-3_A",
+   "depth_m": 1140.0,
+   "window": "UTSIRA",
+   "G": 0.362,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_8-3_A/DRILLING/34_8-3_A_CUTTINGS_PHOTO_M_114000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "abundant",
+   "other_green": "orange-red chips (not green)",
+   "confidence": "high",
+   "notes": "Dark-green pellets abundant in fine fraction around marl/claystone cuttings",
+   "S": 25.371,
+   "GI": 0.014
+  },
+  {
+   "item": "p14",
+   "well": "34_4-6",
+   "depth_m": 1250.0,
+   "window": "OLIG",
+   "G": 0.62,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_4-6/DRILLING/34_4-6_CUTTINGS_PHOTO_M_125000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "abundant",
+   "other_green": "few olive-green grains",
+   "confidence": "high",
+   "notes": "Dark-green crackled pellets dominate the fine fraction; scattered pale marl and carbonate grains",
+   "S": 58.372,
+   "GI": 0.015
+  },
+  {
+   "item": "p15",
+   "well": "34_7-10",
+   "depth_m": 1130.0,
+   "window": "OLIG",
+   "G": 0.377,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-10/DRILLING/34_7-10_CUTTINGS_PHOTO_M_113000_W_1.JPG",
+   "glauconite_pellets": "UNCERTAIN",
+   "abundance": NaN,
+   "other_green": "yellow chips (additive or yellow clay)",
+   "confidence": "low",
+   "notes": "Strong yellow colour cast and fines coating; many dark/black specks and a few olive grains but colour not clearly green; cannot confirm pellets",
+   "S": 0.172,
+   "GI": 0.001
+  },
+  {
+   "item": "p16",
+   "well": "34_4-6",
+   "depth_m": 1240.0,
+   "window": "UTSIRA",
+   "G": 0.693,
+   "group": "high_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_4-6/DRILLING/34_4-6_CUTTINGS_PHOTO_M_124000_W_1.JPG",
+   "glauconite_pellets": "PRESENT",
+   "abundance": "abundant",
+   "other_green": "one blue-green speckled lithic grain",
+   "confidence": "high",
+   "notes": "Greensand: dark-green pellets dominate with quartz sand; few cuttings",
+   "S": 187.372,
+   "GI": 0.03
+  },
+  {
+   "item": "p17",
+   "well": "34_7-6",
+   "depth_m": 1150.0,
+   "window": "OLIG",
+   "G": -0.025,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_7-6/DRILLING/34_7-6_CUTTINGS_PHOTO_M_115000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "none",
+   "confidence": "high",
+   "notes": "Pale cream claystone/marl cuttings; no green grains",
+   "S": 0.0,
+   "GI": 0.0
+  },
+  {
+   "item": "p18",
+   "well": "34_4-6",
+   "depth_m": 1370.0,
+   "window": "OLIG",
+   "G": -0.234,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_4-6/DRILLING/34_4-6_CUTTINGS_PHOTO_M_137000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "grey-green mudstone chip (angular ~2 mm)",
+   "confidence": "high",
+   "notes": "Brown claystone plus clear quartz sand; no green pellets",
+   "S": 0.056,
+   "GI": 0.0
+  },
+  {
+   "item": "p19",
+   "well": "34_8-3_A",
+   "depth_m": 1270.0,
+   "window": "OLIG",
+   "G": -0.043,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_8-3_A/DRILLING/34_8-3_A_CUTTINGS_PHOTO_M_127000_W_1.JPG",
+   "glauconite_pellets": "UNCERTAIN",
+   "abundance": NaN,
+   "other_green": "none",
+   "confidence": "low",
+   "notes": "Sandy marl aggregates with small dark-greenish specks <0.1 mm embedded; no loose pellets visible",
+   "S": 0.454,
+   "GI": 0.0
+  },
+  {
+   "item": "p20",
+   "well": "34_8-3",
+   "depth_m": 1340.0,
+   "window": "OLIG",
+   "G": -0.003,
+   "group": "low_G",
+   "path": "/Volumes/T9/GasimMammadov_MasterProject2026/Wells/34_8-3/DRILLING/34_8-3_CUTTINGS_PHOTO_M_134000_W_1.JPG",
+   "glauconite_pellets": "ABSENT",
+   "abundance": NaN,
+   "other_green": "none",
+   "confidence": "high",
+   "notes": "Grey-beige claystone cuttings; no green grains",
+   "S": 0.056,
+   "GI": 0.0
+  }
+ ],
+ "SUCCESS": {
+  "a_primary": true,
+  "c_lista": false,
+  "criterion_pass": false,
+  "b_descriptive": 3
+ }
+}

@@ -1,0 +1,6 @@
+{"tile": "34_8-3_1960.png", "blocks": [{"top": 1960, "bottom": 1965, "clay": 100, "flag": ""}, {"top": 1965, "bottom": 1975, "clay": 90, "sand": 10, "flag": ""}, {"top": 1975, "bottom": 1985, "clay": 70, "sand": 30, "flag": ""}, {"top": 1985, "bottom": 1995, "clay": 90, "sand": 10, "flag": ""}, {"top": 1995, "bottom": 2000, "clay": 100, "flag": ""}], "notes": ""}
+{"tile": "34_8-3_1840.png", "blocks": [{"top": 1840, "bottom": 1880, "clay": 100, "flag": ""}], "notes": ""}
+{"tile": "34_8-3_1280.png", "blocks": [{"top": 1280, "bottom": 1318, "flag": "mask:no_returns"}, {"top": 1318, "bottom": 1320, "clay": 100, "flag": ""}], "notes": "NR cone ends about 1318 m"}
+{"tile": "34_8-3_1360.png", "blocks": [{"top": 1360, "bottom": 1400, "clay": 100, "flag": ""}], "notes": ""}
+{"tile": "34_8-3_1320.png", "blocks": [{"top": 1320, "bottom": 1360, "clay": 100, "flag": ""}], "notes": ""}
+{"tile": "34_8-3_1920.png", "blocks": [{"top": 1920, "bottom": 1960, "clay": 100, "flag": ""}], "notes": ""}

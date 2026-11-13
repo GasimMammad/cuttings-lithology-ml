@@ -1,3 +1,23 @@
+"""
+Fig. A7 -- tier-2 balanced accuracy per model with 95% confidence intervals.
+
+Reads the leave-one-well-out (tier 2) fold results written by
+08_compare_models.py to final_comparison/results.json and plots, for each of
+the four models (cnn_colour, cnn_gray, eng_full, eng_nocolour), the mean
+balanced accuracy across held-out wells with a t-interval error bar.
+Folds with a missing or non-finite balanced accuracy are skipped.
+
+Reference lines: chance (0.50) and the majority-class (always-clay) baseline
+(0.81, hard-coded), so no accuracy is read as success on its own.
+
+NB the t critical value (4.303) is fixed for df = 2, i.e. three folds. If the
+fold count changes, the interval width is wrong.
+
+Outputs (in C.FIG_DIR): FigA7_balanced_accuracy.pdf (vector, Type 42 fonts)
+and FigA7_balanced_accuracy.png (400 dpi).
+
+Run:  python 12_glauconite_test.py
+"""
 import json
 import math
 import numpy as np

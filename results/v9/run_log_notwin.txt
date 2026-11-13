@@ -1,0 +1,8 @@
+bags 2021, patches 32336
+held-out 34_8-3 without 34_8-3_A, seed 0: 101 bags, 1233s
+held-out 34_8-3 without 34_8-3_A, seed 1000: 101 bags, 1291s
+held-out 34_8-3 without 34_8-3_A, seed 2000: 101 bags, 1920s
+held-out 34_8-3_A without 34_8-3, seed 0: 146 bags, 1868s
+held-out 34_8-3_A without 34_8-3, seed 1000: 146 bags, 2111s
+held-out 34_8-3_A without 34_8-3, seed 2000: 146 bags, 1998s
+done

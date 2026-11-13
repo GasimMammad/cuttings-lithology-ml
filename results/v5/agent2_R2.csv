@@ -1,0 +1,41 @@
+item,lithology,confidence,bin_resolution_evidence,bag_context,notes
+i24,UNRESOLVED-SILT,0.60,Operator: Siltstone 2522-2531 (no boundary within 0.25 m); plugs 2523.5-2524.25 = calc sst grey VF very-well-cemented w/ mica+siderite; kh 0.16-0.23 mD; phi 0.18-0.21,Bag 2525 Si/Al 3.9 with clean Ba (fine-grained),R1 MUD retracted; operator siltstone vs lab VF sandstone = classic silt/VF-sand ambiguity
+i34,UNRESOLVED-SILT,0.60,Operator: Siltstone 2522-2531 (sand-size grains from 2527); plugs 2527.5-2528.0 VF calc sst kh 0.09 mD phi 0.12-0.14,Bag 2528 Si/Al 3.5 (Ba 58k contaminated),R1 MUD retracted
+i36,UNRESOLVED-SILT,0.55,Operator: Siltstone 2522-2531; plugs 2528.0-2528.5 VF calc sst 0.07-0.09 mD; 2528.25 sideritic (grain density 2.92),Bag 2531 Si/Al 7.1,Thin siderite-rich band at 2528.25
+i09,UNRESOLVED-SILT,0.45,Operator: Siltstone 2522-2531 (pebbly qtz grains from 2529); plug 2528.75 VF calc sst 0.11 mD; plugs 2529.0-2529.25 siderite-cemented (gd 2.96; phi 0.04; perm unmeasurable),Bag 2531 Si/Al 7.1,OTHER risk if protocol treats siderite-cemented bands as OTHER (band at bin base)
+i08,UNRESOLVED-SILT,0.45,Operator: Siltstone 2522-2531; plug 2529.5 VF calc sst (gd 2.71); plug 2529.75 Sid-Sst very well cemented (gd 3.13),Bag 2531 Si/Al 7.1,OTHER risk (strongly siderite-cemented layer at 2529.75)
+i40,UNRESOLVED-SILT,0.50,Operator: Siltstone 2522-2531; plugs 2530.0-2530.5 VF calc sst; clay-laminated; 0.07-0.21 mD,Bag 2531 Si/Al 7.1,Siderite band 0.25 m above at 2529.75
+i19,SAND,0.80,Operator: Sandstone 2531-2536 (vf on top; boundary 2531 is 0.75 m above); plugs 2531.75 M-gr 515 mD phi 0.30; 2532.0 crs-gr 1397 mD,Bag 2534 Si/Al 9.2 (context only),Plug 2531.5 is VF tight so the textural step is just above the bin
+i06,SAND,0.85,Operator: Sandstone 2531-2536; plugs 2533.25-2534.0 M-crs sst 60-1723 mD phi 0.26-0.32,Bag 2534 Si/Al 9.2,
+i25,SAND,0.85,Operator: Sandstone 2531-2536; plugs 2533.5-2534.25 M-crs sst 60-1723 mD,Bag 2534/2537 boundary,
+i21,UNRESOLVED,0.40,Operator boundary Sandstone 2531-2536 / Shale 2536-2538 at the bin base; plug at 2535.5 failed (no data); none other within 0.25 m,Bag 2537 Si/Al 5.2 (Ba 39k),Lean SAND (bin lies above the described boundary) but boundary depths are rounded to 0.5 m
+i23,UNRESOLVED,0.40,Operator: Shale 2536-2538 / Sandstone 2538-2538.5 / Shale 2538.5-2539.1 (boundary at bin top); no plugs,Bag 2540 Si/Al 11.1,Lean SAND/HET; thin described sand bed within 0.25 m of two boundaries
+i35,UNRESOLVED,0.35,Operator: Siltstone 2542.5-2544.5 / Shale 2544.4-2546.5 boundary inside bin; nearest plug 2543.75 (0.5 m away),Bag 2546 Si/Al 5.2 (Ba 46k),Lean silt/MUD; boundary in bin
+i28,UNRESOLVED-SILT,0.65,Operator: Siltstone 2546.5-2548.5 (boundaries 0.75 m away); plug 2548.0 (0.25 m below) VF sst VW-cmt 0.05 mD phi 0.13,Bag 2549 Si/Al 7.8; Ca 2.2%,
+i01,UNRESOLVED-SILT,0.60,Operator: Siltstone 2546.5-2548.5 (base 0.25 m below bin); plugs 2548.0 VF sst 0.05 mD; 2548.25 clay-laminated 0.18 mD,Bag 2549,
+i18,SAND,0.75,Operator: Sandstone 2548.5-2550.7 (silty on top; top 0.25 m above bin); plugs 2548.6 F-gr 14.6 mD phi 0.19; 2549.0 117 mD phi 0.26,Bag 2549/2552 boundary,
+i20,SAND,0.80,Operator: Sandstone 2548.5-2550.7; plugs 2549.0 117 mD; 2549.25 30 mD phi 0.23,Bag 2552 Si/Al 3.7 (Ba 63k contaminated) - contradicted by core,Example of bag chemistry misleading at bin scale
+i26,SAND,0.60,Operator boundary Sandstone/Siltstone at 2550.7 (bin top); BUT plug 2550.8 inside bin = sst 318 mD phi 0.28; plug 2550.5 797 mD,Bag 2552,Plug inside bin outweighs a rounded boundary; lower part of bin may be siltstone
+i13,MUD,0.65,Operator: Shale 2552.5-2553.5 (2552.5 is core top not a lithology boundary); no plugs within 0.25 m,Bag 2555 Si/Al 5.7,
+i16,SAND,0.75,Operator: Sandstone 2553.5-2554.5 (boundary at bin top); plugs 2553.5 VF sst 16 mD phi 0.21; 2553.75 24 mD,Bag 2555,Plugs at both bin edges
+i04,SAND,0.75,Operator: Sandstone 2553.5-2554.5 (base 0.25 m below); plugs 2553.75 24 mD; 2554.0 3.9 mD phi 0.18,Bag 2555,
+i29,UNRESOLVED,0.40,Operator: Shale from 2554.5 (0.25 m above bin); plug 2554.75 at bin top = sst w/ coal 141 mD phi 0.26; no plug below until 2557.75 (siltstone),Bag 2555/2558,Sand/shale contact probably inside the bin; lean MUD for the lower part
+i15,SAND,0.65,Operator: Sandstone 2560.5-2561.5 sub-unit vf-f calc-cemented tr por (no boundary within 0.25 m); plugs 2560.75-2561.25 VF sst W-cmt 0.07-0.2 mD phi 0.14,Bag 2564 Si/Al 10.4,OTHER risk if calcite-cemented sandstone is classed OTHER; small silt risk
+i27,SAND,0.55,Operator: Sandstone 2564.5-2570 dom m-vc (no boundary within 0.25 m); NO plugs 2565.25-2566.5 (gap of 1.25 m in an otherwise 0.25 m plug series),Bag 2567 Si/Al 7.0 (context only),Answer to Agent 3: bag Si/Al cannot exclude a 25 cm mudstone; support now rests only on the operator interval; the plug gap could mean unpluggable rubble or a mud bed so confidence is lowered
+i10,SAND,0.90,Operator: Sandstone 2564.5-2570; plugs 2567.5 11219 mD; 2567.75 3909 mD phi 0.32,Bag 2570 Si/Al 11.0,
+i31,UNRESOLVED-SILT,0.60,Operator: Siltstone 2575.5-2577.7 (shaly; dk gn gy; pred hard; no boundary within 0.25 m); no plugs,Bag 2579 Si/Al 3.4,R1 MUD changed: operator calls it shaly siltstone; core 5 position uncertain (21% recovery)
+i14,UNRESOLVED-SILT,0.45,Operator: Siltstone (arenaceous) 2592.0-2592.5 with Sandstone from 2592.5 (boundary at bin base); plug 2592.5 M-gr sst w/ clay 0.74 mD phi 0.10,Bag 2594 Si/Al 9.1,Lean silt; boundary at bin base
+i12,SAND,0.80,Operator: Sandstone 2592.5-2596.5; plugs 2593.0 187 mD; 2593.25 0.8 mD phi 0.12; 2592.75 310 mD,Bag 2594,
+i30,SAND,0.80,Operator: Sandstone 2592.5-2596.5; plugs 2595.0 34 mD; 2595.25 11.6 mD; 2595.5 calc-sst 9 mD,Bag 2597 Si/Al 7.3,
+i32,SAND,0.70,Operator: Sandstone 2602-2604.5 (vf-m at base; calc-cemented patches); plugs 2603.5 VF sst 1.9 mD phi 0.18; 2603.75 3.6 mD phi 0.20,Bag 2606 Si/Al 4.6 (Ba 88k) - contradicted by core,Small silt risk (VF and low perm)
+i22,SAND,0.90,Operator: Sandstone 2610-2615; plugs 2612.75 32 mD; 2613.0 22 mD,Bag 2615 Si/Al 16.5,
+i05,SAND,0.90,Operator: Sandstone 2610-2615; plugs 2614.0 37 mD; 2614.2 100 mD,Bag 2615,
+i33,SAND,0.90,Operator: Sandstone 2610-2615 (base 0.25 m below); plugs 2614.5 128 mD; 2614.75 124 mD; 2615.0 88 mD,Bag 2615,
+i39,UNRESOLVED-SILT,0.60,Operator: Siltstone 2615-2616.5 (v arenaceous on top; boundary 0.5 m above); no plug within 0.25 m (last 2615.2 sst 58 mD),Bag 2618 Si/Al 4.9,
+i03,MUD,0.75,Operator: Shale 2617.5-2624 (sl silty; boundaries >3 m away); no plugs,Bag 2624 Si/Al 3.7; but bag 2621 Si/Al 10.2 contradicts the 6.5 m shale,Bag 2621 mismatch shows bag chemistry can be displaced or contaminated
+i07,SAND,0.80,Operator: Sandstone 2635.5-2637 (v calc cmt on top); plugs 2636.0 63 mD phi 0.25; 2636.25 34 mD; plug 2635.75 calc-sst 0.13 mD phi 0.06,Bag 2639 Si/Al 6.6,Calcite-cemented layer just above the bin
+i02,MUD,0.70,Operator: Shale 2641.5-2643.5 (base 0.5 m below bin); no plugs,Bag 2645 Si/Al 4.4,
+i37,SAND,0.65,Operator: Sandstone 2643.5-2646 (silty+argillaceous on top; v calc cmt on top; boundary at bin top); plugs inside bin 2643.6 F-gr sst 1.2 mD phi 0.13; 2643.75 1.5 mD phi 0.18,Bag 2645 Si/Al 4.4; Ca 2.2%,Silt and OTHER (calc-cemented) risks
+i17,MUD,0.70,Operator: Siltstone 2646-2647 then Shale 2647-2653.5 (silty; occ sl aren); bin 0.5 m below the boundary; no plugs (last 2645.5),Bag 2648 Si/Al 10.1 - contradicted by core,R1 SAND retracted per Agent 3
+i38,MUD,0.70,Operator: Shale 2647-2653.5; no plugs,Bag 2648 Si/Al 10.1,R1 lean SAND retracted
+i11,MUD,0.75,Operator: Shale 2647-2653.5; no plugs,Bag 2651 Si/Al 6.2,

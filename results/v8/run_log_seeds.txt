@@ -1,0 +1,26 @@
+bags 2021, patches 32336, missing 0
+held-out 24_9-3: 538 bags, 981s
+held-out 24_9-4: 353 bags, 1206s
+held-out 34_4-6: 120 bags, 1408s
+held-out 34_4-7: 133 bags, 1365s
+held-out 34_7-1: 130 bags, 1231s
+held-out 34_7-10: 143 bags, 1146s
+held-out 34_7-4: 144 bags, 24688s
+held-out 34_7-6: 82 bags, 1612s
+held-out 34_7-9: 131 bags, 1160s
+held-out 34_8-3: 101 bags, 1109s
+held-out 34_8-3_A: 146 bags, 1085s
+done
+bags 2021, patches 32336, missing 0
+held-out 24_9-3: 538 bags, 867s
+held-out 24_9-4: 353 bags, 970s
+held-out 34_4-6: 120 bags, 1099s
+held-out 34_4-7: 133 bags, 1103s
+held-out 34_7-1: 130 bags, 2266s
+held-out 34_7-10: 143 bags, 1626s
+held-out 34_7-4: 144 bags, 1188s
+held-out 34_7-6: 82 bags, 1212s
+held-out 34_7-9: 131 bags, 1159s
+held-out 34_8-3: 101 bags, 1269s
+held-out 34_8-3_A: 146 bags, 1580s
+done

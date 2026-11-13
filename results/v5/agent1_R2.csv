@@ -1,0 +1,41 @@
+item,lithology,confidence,call_without_photo,call_with_photo,valid_support_lines,notes
+i01,UNRESOLVED-SILT,low,UNRESOLVED-SILT,UNRESOLVED-SILT,plugs 2548.00/2548.25 VF sst clay-lam phi 0.12-0.13 k<0.2 GD 2.60-2.63; logs MUD stable (sep +0.19 GR 79-84); operator excluded (boundary 2548.5),Photo q0 ~75% rock: grey cross-laminated silt/VF sand with dark mud-mica laminae; R1 HET -> silt class dispute
+i02,MUD,high,MUD,MUD,operator shale 2641.5-2643.5 (no boundary within 0.25),Photo q3 solid red-brown mudstone blocks; logs unstable (AMB/MUD) so not used
+i03,MUD,high,MUD,MUD,operator shale 2617.5-2624; logs MUD stable over +/-0.5 m,Photo q0 ~90% large fitted grey mudstone pieces (broken core not rubble)
+i04,SAND,high,SAND,SAND,plug 2553.75/2554.00 sst phi 0.18-0.22,Operator excluded (boundary 2554.5); logs AMB (micaceous GR 72-74)
+i05,SAND,high,SAND,SAND,plugs sst phi 0.19-0.24 k 37-128 mD; operator SS 2610-2615; logs SAND stable,Photo buff-grey sandstone
+i06,SAND,high,SAND,SAND,plugs sst k 60-1723 mD; operator SS 2531-2536; logs SAND stable,Photo brown oil-stained sandstone
+i07,SAND,high,SAND,SAND,plugs 2636.00/2636.25 phi 0.25; operator SS; logs SAND stable,Photo brownish-grey sandstone; cemented plug at 2635.75 just above
+i08,OTHER,low,UNRESOLVED,OTHER,plugs 2529.50 GD 2.71 phi 0.13 and 2529.75 siderite-cemented sst GD 3.13 (2529.25 GD 2.95); operator siltstone; logs excluded (GD>2.75),Photo q2 (5.0-7.5 dm): ~0.10 m speckled grey silty rock then smooth pale sideritic cemented rock from ~6.2 dm (~52% of quarter); top 0.02 m empty; borderline vs silt
+i09,UNRESOLVED-SILT,low,UNRESOLVED-SILT,UNRESOLVED-SILT,plugs 2528.75 calc VF sst GD 2.68 phi 0.13 k 0.11 and 2529.00 GD 2.96; operator siltstone; logs without D-N: GR 76-78 RD ~4 DT ~89 (not diagnostic),No grain-size data exists; photo dark grey speckled solid core cannot resolve silt vs VF sand
+i10,SAND,high,SAND,SAND,plugs k 4-14 D; operator SS; logs SAND stable,Photo brown oil-stained sandstone
+i11,MUD,high,MUD,MUD,operator shale 2647-2653.5; logs MUD stable (GR 85-99),Photo q2 ~70% large broken mottled mudstone pieces
+i12,SAND,high,SAND,SAND,plugs 2592.75-2593.50 sst; operator SS 2592.5-2596.5,Photo q0 brown and grey granular sandstone ~75% rock
+i13,MUD,medium,MUD,MUD,operator shale 2552.5-2553.5; logs MUD stable,Physical quarter 2 of the box (5.0-7.5 dm) is ~95% blue-grey mudstone; NGI gap label sits at 7.9-8.9 dm (quarter 3). If quarter is mapped by true depth (7.5-8.75 dm) ~70% is gap -> NO-CORE
+i14,MUD,high,UNRESOLVED,MUD,plugs 2592.50 sst phi 0.10 k 0.7 and 2592.75 sst; operator excluded (boundary 2592.5); logs unstable,Photo q1 100% green-grey rooted mudstone (no seal-peel gap)
+i15,SAND,medium,SAND,SAND,plugs 2560.75-2561.25 VF sst phi 0.13-0.14 GD 2.67-2.68,Operator excluded (boundary 2561.5); photo grey-brown laminated VF sandstone ~95% rock; porosity 14% so not a discrete cemented bed
+i16,SAND,high,SAND,SAND,plugs 2553.50-2554.00 sst phi 0.18-0.22,Operator excluded (boundary 2553.5); photo grey-brown sandstone
+i17,UNRESOLVED-SILT,low,MUD,UNRESOLVED-SILT,operator shale 2647-2653.5 (boundary 2647 is 0.5 m away),Photo q2 ~95% grey granular-looking rock (VF sst or coarse silt); logs over -0.875..+0.125 window GR 64-76 sep +0.08-0.14 DT 87-97 = tight silty unit; operator siltstone 2646-2647 probably mis-depthed
+i18,SAND,medium,SAND,SAND,plugs 2548.60 F-gr sst k 15 and 2549.00 k 117,Operator excluded (boundary 2548.5); photo q3 ~72% grey-brown laminated sand and 28% NGI gap
+i19,SAND,high,SAND,SAND,plugs 2531.75-2532.25 sst k 131-1397 mD; operator SS 2531-2536,Photo q3 100% brown oil-stained sandstone
+i20,SAND,high,SAND,SAND,plugs 2549.00/2549.25 sst; operator SS,Photo brown sandstone
+i21,NO-CORE,low,UNRESOLVED,NO-CORE,none (plugs attempted 2534.75-2535.5 gave no data; operator excluded boundary 2536; logs AMB),Photo q3: rubble of mudstone chips 7.5-8.85 dm (~54%) over solid grey fine granular rock 8.85-10 dm (~46%); no visible pebbles so conglomerate ~0%; alt MUD if chips counted as rock
+i22,SAND,high,SAND,SAND,plugs sst k 22-32 mD; operator SS; logs SAND stable,Photo q3 ~70% sandstone fragments
+i23,SAND,medium,UNRESOLVED,SAND,none valid (no plug; operator boundaries 2538/2538.5; logs unstable),Photo q0 ~90% solid light grey sandstone
+i24,UNRESOLVED-SILT,low,UNRESOLVED-SILT,UNRESOLVED-SILT,plugs 2523.75 calc VF sst GD 2.71 phi 0.20 k 0.2 and 2524.00 GD 2.93; operator siltstone; logs without D-N: GR 78-80 RD 3.5 DT 101 (not diagnostic),Photo dark greenish-grey homogeneous solid core; grain size not resolvable
+i25,SAND,high,SAND,SAND,plugs k 60-1723 mD; operator SS; logs SAND stable,Photo brown sandstone
+i26,SAND,medium,SAND,SAND,plugs 2550.50/2550.80 sst k 318-797 mD,Operator excluded (boundaries 2550.7/2551.1); photo q3 ~66% sand ~34% rubble
+i27,MUD,medium,SAND,MUD,operator SS 2564.5-2570 (no boundary within 0.25); no plug within 0.25; logs AMB (GR 87-89 over whole window but sep ~0),Photo q3 100% blue-grey laminated fissile mudstone; unit 2565.65-2566.27 (~0.6 m); plug gap 2565.5-2566.25 is solid mudstone not rubble or preservation
+i28,MUD,high,MUD,MUD,operator siltstone 2546.5-2548.5; logs MUD stable; plug 2548.00 VF sst k 0.05 at window edge,Photo green-grey mottled mudstone
+i29,SAND,medium,SAND,SAND,plugs 2554.50/2554.75 sst k 22-141 mD,Operator excluded (boundary 2554.5); logs excluded (GD 2.76); photo q3 ~76% sand then coaly rubble
+i30,SAND,high,SAND,SAND,plugs sst k 9-703 mD; operator SS; logs SAND stable,Photo brown sandstone ~70% rock
+i31,MUD,high,MUD,MUD,operator siltstone shy 2575.5-2577.7,Photo green-grey mottled mudstone; logs AMB (low GR) so not used
+i32,SAND,high,SAND,SAND,plugs 2603.50-2604.00 VF sst k 2-7 mD; operator SS,Photo q2 ~95% light grey VF sandstone
+i33,SAND,high,SAND,SAND,plugs sst k 88-128 mD; logs SAND stable,Operator excluded (boundary 2615); photo sandstone
+i34,UNRESOLVED-SILT,low,UNRESOLVED-SILT,UNRESOLVED-SILT,plugs 2527.75/2528.00 calc VF sst GD 2.69-2.70 phi 0.12-0.14 k 0.09; 2528.25 GD 2.92; operator siltstone; logs excluded (GD>2.75 within 0.25); GR 78-81 RD 3.3 DT 93,Photo dark grey homogeneous solid
+i35,MUD,high,MUD,MUD,logs MUD stable (sep +0.20 GR 76-80; no plug GD issue),Operator excluded (boundaries 2544.4/2544.5); photo dark grey fractured mudstone
+i36,UNRESOLVED-SILT,low,UNRESOLVED-SILT,UNRESOLVED-SILT,plugs 2528.00 calc VF sst GD 2.69 and 2528.25 GD 2.92; operator siltstone; logs without D-N: GR 79-81 RD 3.4 DT 92,Photo q0 ~70% dark grey speckled rock
+i37,SAND,medium,SAND,SAND,plugs 2643.60/2643.75 F-gr sst phi 0.13-0.18,Operator excluded (boundary 2643.5); photo q2 ~68% grey sandstone 32% red mud rubble
+i38,UNRESOLVED-SILT,low,MUD,UNRESOLVED-SILT,operator shale 2647-2653.5,Photo q3 100% grey granular-looking VF sst/coarse silt; same unit as i17
+i39,MUD,medium,MUD,MUD,operator siltstone 2615-2616.5 (boundary 2615 is 0.5 m away),Photo q2 ~95% smooth blue-grey siltstone with no visible grains; logs unstable; plug 2615.20 is 0.3 m away
+i40,UNRESOLVED-SILT,low,UNRESOLVED-SILT,UNRESOLVED-SILT,plugs 2530.00 calc VF sst GD 2.73 and 2530.25 GD 2.67 (2529.75 GD 3.13 within 0.25); operator siltstone; logs without D-N: GR 83-87 RD 4.0 DT 88,Photo q0 ~70% rock dark grey with granules

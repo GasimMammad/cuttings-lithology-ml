@@ -1,0 +1,172 @@
+{
+ "X2 Saga vs Exlog (34/7-9)": {
+  "n_bags_both": 145,
+  "n_bags_S": 127,
+  "spearman_exlog_vs_saga": 0.4194222692349193,
+  "ci": [
+   0.11165992150198413,
+   0.6861538343884058
+  ],
+  "mean_abs_diff_points": 7.689655172413793,
+  "mean_sand_exlog": 5.558620689655172,
+  "mean_sand_saga": 9.068965517241379,
+  "hp_spearman_exlog_vs_saga_S": 0.5313764280606965,
+  "P2_vs_saga_hp_S": 0.15591270422645076,
+  "P2_vs_exlog_hp_S": 0.18981010533037868,
+  "SiAl_vs_saga_hp_S": 0.07132659336898717,
+  "SiAl_vs_exlog_hp_S": 0.22515727310270273
+ },
+ "X3 34/7-1 reader agreement": {
+  "n": 467,
+  "spearman": 1.0,
+  "mean_abs_diff": 0.0,
+  "share_diff_gt0.2": 0.0,
+  "bias": 0.0
+ },
+ "X3 24/9-4 reader agreement": {
+  "n": 79,
+  "spearman": 0.9631995716454017,
+  "mean_abs_diff": 0.0071729957805907185,
+  "share_diff_gt0.2": 0.012658227848101266,
+  "bias": 0.00548523206751055
+ },
+ "X3 24/9-4 tiles failing the depth-label check": {
+  "A": [],
+  "B": []
+ },
+ "X3 eligibility (all wells, labels A)": [
+  {
+   "well": "24_9-3",
+   "n_bags": 479,
+   "n_informative": 212,
+   "n_clusters": 7,
+   "mean_sand": 0.266,
+   "share_nonzero": 0.537,
+   "eligible": true
+  },
+  {
+   "well": "24_9-4",
+   "n_bags": 197,
+   "n_informative": 62,
+   "n_clusters": 4,
+   "mean_sand": 0.148,
+   "share_nonzero": 0.355,
+   "eligible": true
+  },
+  {
+   "well": "34_4-6",
+   "n_bags": 120,
+   "n_informative": 35,
+   "n_clusters": 7,
+   "mean_sand": 0.123,
+   "share_nonzero": 0.617,
+   "eligible": true
+  },
+  {
+   "well": "34_4-7",
+   "n_bags": 113,
+   "n_informative": 26,
+   "n_clusters": 7,
+   "mean_sand": 0.046,
+   "share_nonzero": 0.274,
+   "eligible": true
+  },
+  {
+   "well": "34_7-1",
+   "n_bags": 130,
+   "n_informative": 7,
+   "n_clusters": 2,
+   "mean_sand": 0.087,
+   "share_nonzero": 0.338,
+   "eligible": false
+  },
+  {
+   "well": "34_7-10",
+   "n_bags": 142,
+   "n_informative": 30,
+   "n_clusters": 5,
+   "mean_sand": 0.044,
+   "share_nonzero": 0.31,
+   "eligible": true
+  },
+  {
+   "well": "34_7-4",
+   "n_bags": 144,
+   "n_informative": 29,
+   "n_clusters": 6,
+   "mean_sand": 0.073,
+   "share_nonzero": 0.417,
+   "eligible": true
+  },
+  {
+   "well": "34_7-9",
+   "n_bags": 129,
+   "n_informative": 19,
+   "n_clusters": 7,
+   "mean_sand": 0.062,
+   "share_nonzero": 0.372,
+   "eligible": true
+  },
+  {
+   "well": "34_8-3",
+   "n_bags": 100,
+   "n_informative": 6,
+   "n_clusters": 1,
+   "mean_sand": 0.013,
+   "share_nonzero": 0.08,
+   "eligible": false
+  },
+  {
+   "well": "34_8-3_A",
+   "n_bags": 146,
+   "n_informative": 12,
+   "n_clusters": 3,
+   "mean_sand": 0.043,
+   "share_nonzero": 0.24,
+   "eligible": false
+  }
+ ],
+ "X3 new wells eligible": [
+  "24_9-4"
+ ],
+ "P2, closed six wells (for reference)": {
+  "n_wells": 6,
+  "per_well": {
+   "24_9-3": 0.3496,
+   "34_4-6": -0.0632,
+   "34_4-7": 0.0027,
+   "34_7-10": 0.0787,
+   "34_7-4": 0.1722,
+   "34_7-9": 0.188
+  },
+  "median": 0.12541891747791217,
+  "n_above": 5,
+  "wilcoxon_p": 0.046875,
+  "boot95_median": [
+   -0.030254319850926588,
+   0.2687761524480221
+  ]
+ },
+ "P2 with eligible new wells added": {
+  "n_wells": 7,
+  "per_well": {
+   "24_9-3": 0.3496,
+   "34_4-6": -0.0632,
+   "34_4-7": 0.0027,
+   "34_7-10": 0.0787,
+   "34_7-4": 0.1722,
+   "34_7-9": 0.188,
+   "24_9-4": 0.2693
+  },
+  "median": 0.17218734977359432,
+  "n_above": 6,
+  "wilcoxon_p": 0.0234375,
+  "boot95_median": [
+   0.002698440437887392,
+   0.26933551172910525
+  ]
+ },
+ "reference Si/Al, new wells": {
+  "24_9-4": 0.3463
+ }
+}

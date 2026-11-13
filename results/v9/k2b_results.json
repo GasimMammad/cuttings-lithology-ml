@@ -1,0 +1,116 @@
+{
+ "training wells of the pre-Tertiary model": [
+  "24_9-3",
+  "34_4-6",
+  "34_4-7",
+  "34_7-1",
+  "34_7-10",
+  "34_7-4",
+  "34_7-6",
+  "34_7-9",
+  "34_8-3",
+  "34_8-3_A"
+ ],
+ "eligible wells (amended test of v8 D)": [
+  "34_4-6",
+  "34_7-10",
+  "34_7-4",
+  "34_7-9",
+  "34_8-3",
+  "34_8-3_A"
+ ],
+ "leave-one-well-out (as v8 D)": {
+  "n_wells": 6,
+  "per_well": {
+   "34_4-6": 0.1612,
+   "34_7-10": 0.308,
+   "34_7-4": 0.5141,
+   "34_7-9": 0.5249,
+   "34_8-3": 0.6279,
+   "34_8-3_A": 0.5284
+  },
+  "median": 0.5194924639516205,
+  "n_above": 6,
+  "wilcoxon_p": 0.015625,
+  "boot95_median": [
+   0.2346018854108557,
+   0.5781364671883661
+  ]
+ },
+ "location-out (34/8-3 and 34/8-3 A held out together), six wells": {
+  "n_wells": 6,
+  "per_well": {
+   "34_4-6": 0.1612,
+   "34_7-10": 0.308,
+   "34_7-4": 0.5141,
+   "34_7-9": 0.5249,
+   "34_8-3": 0.5053,
+   "34_8-3_A": 0.4883
+  },
+  "median": 0.49680415550750123,
+  "n_above": 6,
+  "wilcoxon_p": 0.015625,
+  "boot95_median": [
+   0.2346018854108557,
+   0.5194924639516205
+  ]
+ },
+ "location-out, twins merged as one unit": {
+  "n_wells": 5,
+  "per_well": {
+   "34_4-6": 0.1612,
+   "34_7-10": 0.308,
+   "34_7-4": 0.5141,
+   "34_7-9": 0.5249,
+   "34_8-3 pair": 0.4968
+  },
+  "median": 0.49680415550750123,
+  "n_above": 5,
+  "wilcoxon_p": 0.03125,
+  "boot95_median": [
+   0.16119366894391604,
+   0.5248548149369325
+  ]
+ },
+ "per twin": {
+  "34_8-3": {
+   "lowo": 0.62785267926214,
+   "twin dropped": 0.5053482801134043,
+   "fall when the twin is dropped": 0.12250439914873568,
+   "rho with one other well dropped": {
+    "24_9-3": 0.6271,
+    "34_4-6": 0.6255,
+    "34_4-7": 0.6123,
+    "34_7-1": 0.6313,
+    "34_7-10": 0.6353,
+    "34_7-4": 0.6124,
+    "34_7-6": 0.6457,
+    "34_7-9": 0.6403
+   },
+   "largest fall from dropping one other well": 0.015532377771872885,
+   "which": "34_4-7"
+  },
+  "34_8-3_A": {
+   "lowo": 0.5284202551145922,
+   "twin dropped": 0.48826003090159814,
+   "fall when the twin is dropped": 0.04016022421299409,
+   "rho with one other well dropped": {
+    "24_9-3": 0.5338,
+    "34_4-6": 0.529,
+    "34_4-7": 0.5244,
+    "34_7-1": 0.5096,
+    "34_7-10": 0.5476,
+    "34_7-4": 0.5355,
+    "34_7-6": 0.5313,
+    "34_7-9": 0.5312
+   },
+   "largest fall from dropping one other well": 0.018869608894403256,
+   "which": "34_7-1"
+  }
+ },
+ "rule: both twins >= +0.30 and fall no larger than the largest drop-one-other fall": {
+  "34_8-3": false,
+  "34_8-3_A": false
+ },
+ "wording": "depends in part on the twin being in training"
+}

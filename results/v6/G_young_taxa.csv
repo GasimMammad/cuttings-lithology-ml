@@ -1,0 +1,59 @@
+well,depth_m,zone,productive_forams,young_markers_with_abundance,n_young_taxa,oligocene_markers,notes,source
+34_7-6,1040,ooze_above,Y,Cassidulina teretis A; Cibicides grossa C; Cibicides lobatulus C; Elphidium groenlandicum P; Buccella frigida P; Melonis affine P; Trifarina fluens P,7,N,sample straddles THGU (1036.5 log); RRI Upper Oligocene top 1040,34_7-6_BIOSTRAT_REPORT_1.PDF p76 Fig.5
+34_7-6,1050,ooze_above,Y,Cassidulina teretis C; Cibicides grossa C; Buccella frigida P; Cibicides lobatulus P; Elphidium spp. P,5,Y,litheliid sp. A C; sponge spicules B P,p76 Fig.5
+34_7-6,1060,ooze_above,Y,Cassidulina teretis C; Cibicides grossa P; Buccella frigida P; Cibicides lobatulus P; Melonis affine P; Trifarina fluens P,6,Y,Uvigerina hosiusi; sponge spicules B C,p76 Fig.5
+34_7-6,1070,ooze_above,Y,Cibicides grossa P; Melonis affine P,2,N,only Haplophragmoides + fish teeth otherwise,p76 Fig.5
+34_7-6,1080,ooze_above,Y,Cassidulina teretis P; Buccella frigida P,2,Y,sponge spicules B A,p76 Fig.5
+34_7-6,1090,ooze_above,Y,Cassidulina teretis P; Melonis affine P,2,Y,Gyroidina soldanii; U. hosiusi; sponge spicules B A,p76 Fig.5
+34_7-6,1100,ooze_above,Y,Cassidulina teretis P,1,Y,Rotaliatina bulimoides; Alabamina tangentialis,p76 Fig.5
+34_7-6,1110,ooze_above,Y,Ammonia beccarii gr. P; Melonis affine P,2,Y,Rotaliatina bulimoides; Gyroidina soldanii,p76 Fig.5
+34_7-6,1120,ooze_above,N,none,0,Y,barren of foraminifera; siliceous fossils only,p76 Fig.5
+34_7-6,1130,ooze_above,Y,Haynesina orbiculare gr. P,1,Y,Nonion? granosum,p76 Fig.5
+34_7-6,1140,ooze_above,Y,none,0,Y,Turrilina alsatica; Gyroidina; Alabamina,p76 Fig.5
+34_7-6,1150,ooze_above,Y,none,0,Y,Turrilina alsatica; Nonion? granosum,p76 Fig.5
+34_7-6,1160,ooze_above,Y,none,0,Y,Cibicides/Heterolepa; Trifarina spp.,p76 Fig.5
+34_7-6,1170,ooze_above,Y,Cassidulina teretis P; Cibicides grossa P; Elphidium groenlandicum P; Elphidiella hannai P; Melonis affine P,5,Y,Gyroidina soldanii; sponge spicules B C,p76 Fig.5
+34_7-6,1180,ooze_above,N,none,0,Y,barren of foraminifera,p76 Fig.5
+34_7-6,1190,ooze_above,Y,Cassidulina teretis P,1,Y,sponge spicules B C,p76 Fig.5
+34_7-6,1200,ooze_above,Y,Elphidium excavatum gr. P,1,Y,sponge spicules B P,p76 Fig.5
+34_7-6,1210,ooze_above,N,none,0,Y,barren of foraminifera,p76 Fig.5
+34_7-6,1220,sand,N,none,0,Y,barren of foraminifera; litheliid + sponge spicules B only,p76 Fig.5
+34_7-6,1230,sand,N,none,0,Y,barren of foraminifera; radiolaria + sponge spicules,p76 Fig.5
+34_7-6,1240,sand,NA,not analysed/not plotted,0,NA,no column on chart,p76 Fig.5
+34_7-6,1250,sand,NA,not analysed/not plotted,0,NA,no column on chart,p76 Fig.5
+34_7-6,1260,sand,Y,Ammonia beccarii gr. P; Cibicides grossa P; Melonis affine P; Elphidium spp. P,4,Y,Turrilina alsatica; Rhizammina,p76 Fig.5
+34_7-6,1270,sand,N,none,0,N,barren of microfossils,p76 Fig.5
+34_7-6,1280,sand,Y,Melonis affine P; Elphidium spp. P,2,Y,Turrilina alsatica; Rhizammina; Globorotalia spp.; litheliid C,p76 Fig.5
+34_7-6,1290,mud_below,Y,Cibicides grossa P,1,Y,Eggerella; litheliid; sponge spicules B,p76 Fig.5
+34_7-6,1300,mud_below,Y,Elphidium spp. P,1,Y,Haplophragmoides; Gyroidina; Rhizammina; Recurvoides walteri,p76 Fig.5
+34_7-6,1310,mud_below,Y,none,0,Y,agglutinated (Rhizammina C; Cyclammina spp.; Recurvoides; Glomospira); radiolaria C,p78 Fig.7 (1300-1600 m; this chart lists no young taxa at all)
+34_7-6,1320,mud_below,Y,none,0,Y,agglutinated + radiolaria,p78 Fig.7
+34_7-6,1330,mud_below,Y,none,0,Y,agglutinated (Cyclammina placenta; Haplophragmoides walteri) + radiolaria,p78 Fig.7
+34_7-10,1100,ooze_above,Y,Cibicides grossa R,1,Y,Miliolidae; Trifarina angulosa; Pullenia bulloides; sponge spicules A abundant (RRI top Upper Oligocene),34_7-10_BIOSTRAT_REPORT_1.PDF p71 Fig.4
+34_7-10,1110,ooze_above,Y,Elphidium excavatum gr. P; Cibicides grossa R,2,Y,also Globorotalia obesa P; Cassidulina sp.1 RRI; Cibicides/Heterolepa; Saccamminidae,p71 Fig.4
+34_7-10,1120,ooze_above,Y,Cibicides grossa R,1,Y,sponge spicules,p71 Fig.4
+34_7-10,1130,ooze_above,Y,Cassidulina teretis R; Cibicides grossa R,2,Y,sponge spicules,p71 Fig.4
+34_7-10,1140,ooze_above,N,none,0,Y,RRI 'barren of in situ foraminifera'; sponge spicules A+B abundant,p71 Fig.4
+34_7-10,1150,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1160,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1170,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1180,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1190,ooze_above,Y,Elphidium spp. P,1,Y,only foram in sample; row NOT marked barren-in-situ,p71 Fig.4
+34_7-10,1200,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1210,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1220,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1230,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1240,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1250,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1260,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1270,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1280,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1290,ooze_above,N,none,0,Y,barren of in situ forams,p71 Fig.4
+34_7-10,1300,ooze_above,Y,none,0,Y,Rhizammina; Cyclammina placenta; Haplophragmoides walteri; Recurvoides walteri C,p71 Fig.4
+34_7-10,1310,ooze_above,Y,none,0,Y,Rhizammina C; Glomospira charoides C; Cyclammina spp.; Recurvoides; sponge spicules A+B C; actinommid A,p72 Fig.5
+34_7-10,1320,sand,Y,Cibicides grossa R,1,Y,Spirosigmoilinella compressa; Trochammina quadriloba; actinommid A; flat radiolaria A; diatoms,p72 Fig.5
+34_7-10,1330,mud_below,Y,Melonis affine P; Cassidulina teretis P; Buccella tenerrima P,3,Y,Rhizammina C; Haplophragmoides; sponge spicules A abundant,p72 Fig.5
+34_7-10,1340,mud_below,Y,Cibicides grossa R,1,Y,Rhizammina C; Glomospira; actinommid A,p72 Fig.5
+34_7-10,1350,mud_below,Y,Cassidulina teretis P,1,Y,Rhizammina A; Glomospira C,p72 Fig.5
+34_7-10,1360,mud_below,Y,none,0,Y,Rhizammina A; Glomospira,p72 Fig.5
+34_7-10,1370,mud_below,Y,none,0,Y,Rhizammina A; Glomospira C; also Cassidulina laevigata C + Lenticulina (not counted as young - not named Pliocene by RRI),p72 Fig.5

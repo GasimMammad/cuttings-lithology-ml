@@ -1,0 +1,303 @@
+{
+ "n_evaluated_tops": {
+  "10 primary wells": 34,
+  "34_8-3_A (descriptive)": 4
+ },
+ "photo": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 64.5,
+  "median_of_location_medians_m": 71.5,
+  "share_within_30m": 0.29411764705882354,
+  "per_location_median_m": {
+   "24_9-3": 430.0,
+   "24_9-4": 935.0,
+   "34_4-6": 41.2,
+   "34_4-7": 47.8,
+   "34_7-1": 52.2,
+   "34_7-10": 90.8,
+   "34_7-4": 51.8,
+   "34_7-6": 249.5,
+   "34_7-9": 38.8,
+   "34_8-3": 140.5
+  }
+ },
+ "S2 PRIMARY photo vs offset well": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 64.5,
+  "median_of_location_medians_m": 71.5,
+  "share_within_30m": 0.29411764705882354,
+  "per_location_median_m": {
+   "24_9-3": 430.0,
+   "24_9-4": 935.0,
+   "34_4-6": 41.2,
+   "34_4-7": 47.8,
+   "34_7-1": 52.2,
+   "34_7-10": 90.8,
+   "34_7-4": 51.8,
+   "34_7-6": 249.5,
+   "34_7-9": 38.8,
+   "34_8-3": 140.5
+  },
+  "wins (location median smaller)": 2,
+  "p_better": 0.986328125,
+  "p_worse": 0.0185546875,
+  "median_paired_difference_m": 28.5
+ },
+ "S1 secondary photo vs regional prognosis": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 64.5,
+  "median_of_location_medians_m": 71.5,
+  "share_within_30m": 0.29411764705882354,
+  "per_location_median_m": {
+   "24_9-3": 430.0,
+   "24_9-4": 935.0,
+   "34_4-6": 41.2,
+   "34_4-7": 47.8,
+   "34_7-1": 52.2,
+   "34_7-10": 90.8,
+   "34_7-4": 51.8,
+   "34_7-6": 249.5,
+   "34_7-9": 38.8,
+   "34_8-3": 140.5
+  },
+  "wins (location median smaller)": 3,
+  "p_better": 0.9677734375,
+  "p_worse": 0.0419921875,
+  "median_paired_difference_m": 14.125
+ },
+ "baseline offset well": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 42.5,
+  "median_of_location_medians_m": 35.0,
+  "share_within_30m": 0.4411764705882353,
+  "per_location_median_m": {
+   "24_9-3": 101.5,
+   "24_9-4": 57.5,
+   "34_4-6": 49.5,
+   "34_4-7": 35.5,
+   "34_7-1": 17.0,
+   "34_7-10": 19.0,
+   "34_7-4": 34.5,
+   "34_7-6": 9.0,
+   "34_7-9": 17.0,
+   "34_8-3": 191.0
+  }
+ },
+ "baseline regional": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 50.25,
+  "median_of_location_medians_m": 46.25,
+  "share_within_30m": 0.2647058823529412,
+  "per_location_median_m": {
+   "24_9-3": 432.0,
+   "24_9-4": 490.5,
+   "34_4-6": 82.5,
+   "34_4-7": 36.5,
+   "34_7-1": 42.5,
+   "34_7-10": 48.5,
+   "34_7-4": 34.8,
+   "34_7-6": 8.0,
+   "34_7-9": 44.0,
+   "34_8-3": 120.5
+  }
+ },
+ "reference: measured XRF chemistry, same method": {
+  "n_tops": 34,
+  "n_locations": 10,
+  "median_error_m": 52.25,
+  "median_of_location_medians_m": 74.25,
+  "share_within_30m": 0.4117647058823529,
+  "per_location_median_m": {
+   "24_9-3": 515.0,
+   "24_9-4": 755.0,
+   "34_4-6": 46.2,
+   "34_4-7": 16.8,
+   "34_7-1": 54.2,
+   "34_7-10": 40.8,
+   "34_7-4": 30.2,
+   "34_7-6": 111.0,
+   "34_7-9": 94.2,
+   "34_8-3": 598.0
+  }
+ },
+ "photo error in bags (median)": 9.0,
+ "tops with no bag assigned to the deeper unit": 0,
+ "tops with all bags assigned deeper": 1,
+ "per boundary": {
+  "top Hordaland": {
+   "n": 7,
+   "median_error_m": 55.0,
+   "signed_median_m": -15.0,
+   "offset_median_m": 21.0,
+   "regional_median_m": 50.0,
+   "xrf_median_m": 23.0,
+   "within_30m": 2
+  },
+  "top Rogaland": {
+   "n": 10,
+   "median_error_m": 127.5,
+   "signed_median_m": 51.0,
+   "offset_median_m": 35.0,
+   "regional_median_m": 32.5,
+   "xrf_median_m": 137.75,
+   "within_30m": 2
+  },
+  "top Cretaceous": {
+   "n": 9,
+   "median_error_m": 80.0,
+   "signed_median_m": 75.5,
+   "offset_median_m": 17.0,
+   "regional_median_m": 57.0,
+   "xrf_median_m": 42.5,
+   "within_30m": 1
+  },
+  "base Cretaceous": {
+   "n": 8,
+   "median_error_m": 24.5,
+   "signed_median_m": -10.75,
+   "offset_median_m": 64.5,
+   "regional_median_m": 53.0,
+   "xrf_median_m": 20.5,
+   "within_30m": 5
+  }
+ },
+ "casing and mud diagnostic": {
+  "near tops (shoe or mud change within 70 m)": 8,
+  "far tops": 26,
+  "near by boundary": {
+   "top Cretaceous": 7,
+   "base Cretaceous": 1
+  },
+  "near: median photo error m": 77.75,
+  "near: median error of the shoe baseline m": 37.0,
+  "far: median photo error m": 56.0,
+  "near: pick closer to the shoe or change than to the true top": 7,
+  "near: pick no closer to the true top than the shoe baseline": 7,
+  "near: either": 7,
+  "wording": "at these tops the picks cannot be separated from casing or mud changes",
+  "FAR tops only: S2 photo vs offset": {
+   "n_tops": 26,
+   "n_locations": 10,
+   "median_error_m": 56.0,
+   "median_of_location_medians_m": 52.75,
+   "share_within_30m": 0.34615384615384615,
+   "per_location_median_m": {
+    "24_9-3": 430.0,
+    "24_9-4": 935.0,
+    "34_4-6": 25.5,
+    "34_4-7": 50.5,
+    "34_7-1": 55.0,
+    "34_7-10": 39.5,
+    "34_7-4": 28.0,
+    "34_7-6": 129.2,
+    "34_7-9": 47.0,
+    "34_8-3": 140.5
+   },
+   "wins (location median smaller)": 2,
+   "p_better": 0.962890625,
+   "p_worse": 0.048828125,
+   "median_paired_difference_m": 28.0
+  },
+  "FAR tops only: S1 photo vs regional": {
+   "n_tops": 26,
+   "n_locations": 10,
+   "median_error_m": 56.0,
+   "median_of_location_medians_m": 52.75,
+   "share_within_30m": 0.34615384615384615,
+   "per_location_median_m": {
+    "24_9-3": 430.0,
+    "24_9-4": 935.0,
+    "34_4-6": 25.5,
+    "34_4-7": 50.5,
+    "34_7-1": 55.0,
+    "34_7-10": 39.5,
+    "34_7-4": 28.0,
+    "34_7-6": 129.2,
+    "34_7-9": 47.0,
+    "34_8-3": 140.5
+   },
+   "wins (location median smaller)": 3,
+   "p_better": 0.8837890625,
+   "p_worse": 0.1376953125,
+   "median_paired_difference_m": 7.5
+  }
+ },
+ "bag level (primary wells)": {
+  "balanced accuracy, segmented": 0.676396754957584,
+  "balanced accuracy, per-bag argmax (no order constraint)": 0.6047462760377773,
+  "confusion (rows true, columns segmented)": [
+   [
+    405,
+    66,
+    0,
+    0,
+    0
+   ],
+   [
+    39,
+    579,
+    281,
+    6,
+    0
+   ],
+   [
+    0,
+    118,
+    64,
+    348,
+    0
+   ],
+   [
+    0,
+    34,
+    116,
+    1057,
+    81
+   ],
+   [
+    0,
+    0,
+    0,
+    83,
+    1322
+   ]
+  ]
+ },
+ "34_8-3_A (descriptive, depths in MD)": [
+  {
+   "boundary": "top Hordaland",
+   "true_m": 1180.0,
+   "photo_m": 1250.0,
+   "err_photo": 70.0,
+   "xrf_m": 1365.0
+  },
+  {
+   "boundary": "top Rogaland",
+   "true_m": 1873.0,
+   "photo_m": 2127.5,
+   "err_photo": 254.5,
+   "xrf_m": 1877.5
+  },
+  {
+   "boundary": "top Cretaceous",
+   "true_m": 2088.0,
+   "photo_m": 3073.5,
+   "err_photo": 985.5,
+   "xrf_m": 2092.5
+  },
+  {
+   "boundary": "base Cretaceous",
+   "true_m": 3003.0,
+   "photo_m": 3096.0,
+   "err_photo": 93.0,
+   "xrf_m": 2762.5
+  }
+ ],
+ "wording S2": "worse than an offset well",
+ "wording S1": "not shown to be better than a regional depth prognosis (n = 10 locations, two areas, all used before)"
+}

@@ -1,0 +1,14 @@
+frozen ResNet-18 features written
+bags 2021, patches 32336, missing 0
+held-out 24_9-3: 538 bags, 1005s
+held-out 24_9-4: 353 bags, 1361s
+held-out 34_4-6: 120 bags, 1668s
+held-out 34_4-7: 133 bags, 1263s
+held-out 34_7-1: 130 bags, 1287s
+held-out 34_7-10: 143 bags, 1335s
+held-out 34_7-4: 144 bags, 1327s
+held-out 34_7-6: 82 bags, 1369s
+held-out 34_7-9: 131 bags, 1402s
+held-out 34_8-3: 101 bags, 1506s
+held-out 34_8-3_A: 146 bags, 1319s
+done

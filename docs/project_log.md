@@ -767,3 +767,13 @@ eaa36f4 v2 results
 - NOT added: a GitHub Actions compile check (the gh login lacks the
   `workflow` scope; `gh auth refresh -s workflow` would allow it), and a
   LICENSE (the author's choice).
+
+## 2026-11-14: automatic check added (PR #3, merged)
+
+- The user granted the `workflow` scope (`gh auth refresh -s workflow`).
+- .github/workflows/check.yml runs on pushes to main and on pull
+  requests: every script compiles, and every relative Markdown link
+  resolves (42 links). It cannot rerun the analyses (no data in the
+  repository). Tested locally, including against a deliberately broken
+  link; passed on the pull request and on main after the merge.
+- README status badge restored. The branch was deleted after the merge.

@@ -98,7 +98,7 @@ def train():
     out = [pd.read_csv(f)] if f.exists() else []
     done = set(out[0].well) if out else set()
     import hashlib
-    (OUT / "config_sha256.txt").write_text(hashlib.sha256(open("config.py", "rb").read()).hexdigest() + "\n")
+    (OUT / "config_sha256.txt").write_text(hashlib.sha256(open(C.__file__, "rb").read()).hexdigest() + "\n")
     for k, w in enumerate(sorted(b.well.unique())):
         if w in done:
             continue

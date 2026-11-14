@@ -3,7 +3,7 @@ v9 K1 (V9_PLAN.md): text of the drilling, mud and completion reports of the 11 w
 the mud weighting material. Read-only on /Volumes/T9.
 
 Pages with a text layer use it; pages without one are rendered (long side 1700 px) and read by the macOS
-Vision OCR (tools/ocr.swift, compiled to ~/sinkite_ml_work_v2/v9/k1/ocr). OCR text is used ONLY to find
+Vision OCR (scripts/ocr.swift, compiled to ~/sinkite_ml_work_v2/v9/k1/ocr). OCR text is used ONLY to find
 candidate pages: every page that is counted is opened and read as an image (see results/v9/k1_*.md).
 
 Needs PyMuPDF, which is not in the project environment: run with a throwaway venv that has it.

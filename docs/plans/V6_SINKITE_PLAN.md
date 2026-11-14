@@ -1,4 +1,4 @@
-# v6 plan: sinkite / glauconite tests with existing data. DRAFT for review check; nothing computed.
+# v6 plan: sinkite / glauconite tests with existing data. DRAFT for review; nothing computed.
 
 ## Hypothesis under test (as reconstructed by the review, round 11)
 

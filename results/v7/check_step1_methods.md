@@ -1,6 +1,6 @@
 # Methods check of v7 steps 1 and 2 (machine learning and computer vision)
 
-Date: 2026-11-09. A check of the plan (see Use of AI in the README).
+Date: 2026-11-09. AI check (see Use of AI in the README); "I" in this file is that check.
 Read-only work. The scripts and outputs of these checks were working files and are not kept.
 **I did not compute any photo -> target skill**, so the step-1 primary stays uncontaminated
 before it is pre-registered. Every number below comes from chemistry, EXIF or the existing v6 G table.

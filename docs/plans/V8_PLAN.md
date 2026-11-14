@@ -278,7 +278,7 @@ and on F.
   last step-3 tile; one tile per sheet family was looked at to confirm the
   right column.
 - **G1 passed:** all 43 printed 100 m labels in the new range sit on their
-  calibrated line (contact sheets calib/jt_*_labels.png, checked by eye). The 10 m line spacing equals the nominal spacing in every
+  calibrated line (contact sheets calib/jt_*_labels.png, checked visually (see Use of AI in the README)). The 10 m line spacing equals the nominal spacing in every
   sheet, so no sheet changes scale in this range.
 - **Reader rules:** rules v3 unchanged plus
   results/v7/step3/reader_rules_jt_addendum.md. One decision in it matters

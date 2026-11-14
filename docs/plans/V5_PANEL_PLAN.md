@@ -25,7 +25,7 @@ human expert panel.
   core reports, photos, literature.
 - **Member 2:** geochemistry. Cuttings XRF, chemostratigraphy,
   representativeness of coring cuttings, literature.
-- **Member 3:** the review (general geoscience and ML). Challenges
+- **Member 3:** the plan reviewer (general geoscience and ML). Challenges
   everything.
 
 ## Blinding

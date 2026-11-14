@@ -166,7 +166,7 @@ it resolves.
   numbered conclusions do not use it (THESIS_CHECK.md).
 - **"How was AI used?"** More than in the thesis. The code was written with
   an AI coding assistant; the mud-log tiles, core photographs and well-report
-  pages were analysed by AI models; AI checked the plans and numbers. Say so
+  pages were analysed by AI models; AI checked the plans and numbers and helped draft the text. Say so
   before being asked; the statement is in THESIS_NOTES.md section 5.
 
 ## 7. Do not claim

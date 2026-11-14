@@ -1,6 +1,6 @@
 # v7 step 1: target design check (geochemistry), 2026-11-09
 
-A check of the plan (see Use of AI in the README).
+AI check (see Use of AI in the README); "I" in this file is that check.
 
 ## Recommendations (decision list)
 1. **Primary target T = within-well z of log10(Si/Al), UNCORRECTED for Ba.**

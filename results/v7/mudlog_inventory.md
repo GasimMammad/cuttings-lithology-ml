@@ -1,6 +1,6 @@
 # Mud-log inventory and digitisation route (v7 step 3)
 
-Scouting only (see Use of AI in the README). I made no full digitisation. I looked at no cuttings photos and no model outputs, only bag depths taken from photo filenames. Every judgement below comes from 2–3 full-resolution crops per well, mostly at 1000 and 1500 m. Legibility ratings are my own visual calls.
+Scouting only. AI check (see Use of AI in the README); "I" in this file is that check. I made no full digitisation. I looked at no cuttings photos and no model outputs, only bag depths taken from photo filenames. Every judgement below comes from 2–3 full-resolution crops per well, mostly at 1000 and 1500 m. Legibility ratings are my own visual calls.
 Files: `mudlog_inventory.csv` (one row per document) and `mudlog_thumbs/` (headers and Tertiary crops, mud logs only).
 
 ## 1. Recommendations

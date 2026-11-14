@@ -1,5 +1,5 @@
 # v7 step 2: mineralogical check of the pellet-detector spec, 2026-11-10
-A check of the plan (see Use of AI in the README). No photograph was viewed. No gate was changed on the basis of labelled data.
+AI check (see Use of AI in the README); "I" in this file is that check. No photograph was viewed. No gate was changed on the basis of labelled data.
 
 ## Verdict
 The gates in A3–A5 are mineralogically reasonable for fresh, evolved Utsira/Hordaland glaucony in washed, dried cuttings. Freeze them as written. There are three required changes, all to wording or diagnostics, none to gates.

@@ -1,6 +1,7 @@
 # v3 results (2026-11-05)
 
-Review: 3 rounds; its objections and the changes they caused are in
+Review (by AI, not an independent human review; see Use of AI in the README):
+3 rounds; its objections and the changes they caused are in
 V3_PLAN.md section 1 and below. Features file used: `28_features.csv`, sha256
 prefix d546d8befbccd4b7, 80,608 tiles.
 

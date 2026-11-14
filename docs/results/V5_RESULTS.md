@@ -3,7 +3,7 @@
 - **Plan:** V5_PANEL_PLAN.md (18a22a9), amended after review round 1
   (ec56735).
 - **Consensus locked before unsealing:** 7c2575b. Unsealed: a063025.
-- **Panel (models of the same family as rater A; not human experts):**
+- **Panel (models, the same model as rater A; not human experts):**
   - Member 1, petrophysics and core analysis: operator core description,
     plugs, logs, photos, literature.
   - Member 2, geochemistry: cuttings XRF, literature.

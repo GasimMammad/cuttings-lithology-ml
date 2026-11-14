@@ -1,6 +1,6 @@
 # Protocol check of step 3 DRAFT v1 (C1–C4, C7)
 
-A check of the plan (see Use of AI in the README).
+AI check (see Use of AI in the README); "I" in this file is that check.
 
 Source: the local scans in `~/sinkite_ml_work_v2/v7/step3/mudlogs/`. I read each sheet's legend at full resolution, made column montages from 400 to 2300 m for all 8 wells (and 2300 m to TD for 3), and made about 30 full-resolution detail crops. I opened no photographs and no model output. Pixel positions are full-resolution TIFF coordinates; they are approximate and drift from sheet to sheet, so **detect edges per sheet and never hard-code them**.
 

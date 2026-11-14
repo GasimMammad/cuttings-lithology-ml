@@ -32,14 +32,16 @@ cuttings moves along the hole, weakly but in all eleven wells.*
 **Limits that apply throughout.** Eleven wells from two areas, used in every
 round, so no result is a fresh hold-out. A bag mixes 3 to 10 m of hole and
 includes cavings. The photographs also see drilling mud (they predict
-barium). The mud-log labels have no human key.
+barium). The mud-log labels were read by AI models (see
+[Use of AI](#use-of-ai)), with no human key.
 
 ## How the tests were run
 
 Each test followed the same order, and every step is a commit:
 
 1. A plan fixed the test, the statistic and the pass rule.
-2. The plan was reviewed, and the amendments were committed.
+2. The plan was reviewed (by AI, not by an independent human reviewer; see
+   [Use of AI](#use-of-ai)), and the amendments were committed.
 3. The code was committed before the run.
 4. The test was run once; any deviation is written into the results file.
 5. Every reported number was checked against the saved result files.
@@ -116,7 +118,9 @@ in `scripts/ocr.swift`.
 The code was written with an AI coding assistant (Claude Code). The mud-log
 tiles, the core photographs and pages of the well reports were analysed by AI
 models, and AI was used to check the plans and every reported number against
-the saved result files. The questions, decisions and interpretation are mine.
+the saved result files. AI also helped draft the plans and the documentation,
+which I directed and edited. The questions, decisions and interpretation are
+mine.
 
 ## Citation
 

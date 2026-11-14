@@ -109,7 +109,9 @@ stated otherwise.
 > The code was written with an AI coding assistant (Claude Code). The mud-log
 > tiles, the core photographs and pages of the well reports were analysed by AI
 > models, and AI was used to check the plans and every reported number against
-> the saved result files. The questions, decisions and interpretation are mine.
+> the saved result files. AI also helped draft the plans and the documentation,
+> which I directed and edited. The questions, decisions and interpretation are
+> mine.
 
 ## 6. Methods text for the core-photo test (agreed with the review)
 

@@ -62,7 +62,7 @@
 |---|---|
 | Colour only: L* mean (1 feature), same LOWO and high-pass | 0.14 (9/11), p 0.009 |
 | Colour only: mean L*a*b* (3 features) | **0.24 (11/11)**, p 0.0005. R-D beats it, paired p 0.016 |
-| R-D partial on high-passed mean L*a*b* (my addition) | 0.26 (10/11), p 0.0015: the embedding carries information beyond mean colour |
+| R-D partial on high-passed mean L*a*b* (added, not required) | 0.26 (10/11), p 0.0015: the embedding carries information beyond mean colour |
 | Primary above 950 m (7 wells, 359 bags) | 0.53 (7/7) |
 | Primary below 950 m (11 wells, 1,662 bags) | 0.32 (11/11): not confined to the glacial top-hole section |
 | Primary on S minus the v3 shallow-test bags (1,152 bags, 8 wells with >= 30) | 0.46 (8/8), p 0.004: not recycled v3 evidence |
@@ -509,7 +509,7 @@ not accuracy. No human key exists.
   1700-1710 m) that both new readings took as a fill and both earlier
   readers (record and checker) as traces. The carbonate difference is a narrow limestone stripe on
   34/4-6 that the checking reader did not report.
-- The same picture holds on the 14 tiles the audit reader 1 had not seen.
+- The same picture holds on the 14 tiles audit reader 1 had not seen.
 - The two new readings are not copies: they split blocks differently in 10
   of 17 tiles and share no notes.
 - What this adds: on the tiles chosen for their unusual patterns, four

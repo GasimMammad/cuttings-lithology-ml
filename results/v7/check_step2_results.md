@@ -1,5 +1,5 @@
 # v7 step 2: geochemical reading of the detector failure, 2026-11-10
-A check of the result (see Use of AI in the README). EXPLORATORY, post hoc. Nothing was re-fitted or changed. The data are results/v7/g_scores_joined.csv joined to results/v6/D_xrf_glauconite_bags.csv. Thresholds tau_w are taken from step2_results.json.
+AI check (see Use of AI in the README); "I" in this file is that check. EXPLORATORY, post hoc. Nothing was re-fitted or changed. The data are results/v7/g_scores_joined.csv joined to results/v6/D_xrf_glauconite_bags.csv. Thresholds tau_w are taken from step2_results.json.
 
 ## Main points
 1. **The flagged Lista bags are green clay, not glaucony.** Their chemistry equals the unflagged Lista bags and the well's own Hordaland baseline (G ≈ 0). The mixing model puts an upper bound of about 2–3% glaucony on them.

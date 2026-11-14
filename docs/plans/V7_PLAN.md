@@ -588,17 +588,17 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
 - Never "sand detector", never "bed scale".
 
 ### C7. Known weaknesses and disclosures, named before the run
-- **Both digitisers are model readers (see Use of AI).** They are different models and read
+- **Both digitisers are model readers (see Use of AI in the README).** They are different models and read
   independently, but they are not a human and a script. G2 measures their
   agreement, not their accuracy; the symbol audit and G3 are the checks on
   accuracy.
 - **Earlier pilot.** A file `mudlog_sand.csv` (34/7-10, 2510-2670 m, 0.25 m
   rows) was made on 2026-11-05. The inventory quotes rho of
   about 0.56 against Si/Al for it. That interval is Jurassic, outside set S.
-  I have no record that it was compared with photographs, and it is not used
+  There is no record that it was compared with photographs, and it is not used
   here.
 - **One rule came from the description text.** That the dash-dot pattern and
-  the numbered cells on 24/9-3 are claystone was established from the adjacent descriptions ("1.CLST ... sl slt"). C1
+  the numbered cells on 24/9-3 are claystone was established by the protocol check from the adjacent descriptions ("1.CLST ... sl slt"). C1
   says the text is never used for the label; this is the one exception, and
   it is used to decode a symbol, not to label a bag.
 - **Pilot.** Four tiles (34/8-3 A 1080, 34/4-6 1040, 24/9-3 1080, 34/7-10
@@ -682,7 +682,7 @@ here may be used to change a closed result or its wording.
 ### Review (extras plan): approved with changes, applied before any extra is run
 - **X0 wording:** "two further readings (same model family; audit reader 1
   also wrote the reader rules and had seen 3 of the 17 tiles). They measure
-  reader consistency, not accuracy. No human key exists." The audit reader 2 has
+  reader consistency, not accuracy. No human key exists." Audit reader 2 has
   no access to reader outputs; its readings are committed before scoring.
 - **X1 control:** frozen ResNet-18 features (same patches, same per-well
   colour standardisation, mean over the 16 patches) through R-D's exact

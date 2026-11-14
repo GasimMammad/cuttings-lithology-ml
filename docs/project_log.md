@@ -12,8 +12,8 @@ then code, then a single run, then the write-up.
   The primary test passed: median held-out AUC 0.73, Wilcoxon p 0.039
   (b11c7fb).
 - **v3, baselines and the first XRF test.** Plan revised after review
-  (92ebf1f); results with both XRF runs (e7435e5, 740e8b0). Depth within
-  the well does as well as the photographs.
+  (92ebf1f); results with both XRF runs (e7435e5, 740e8b0). The photographs
+  do not significantly beat relative depth within the well (paired p 0.15).
 - **v3b, bag-interval labels.** Plan (3819cad) and amendment (edd7b4a)
   before computation; the criterion was not met (89b13d3).
 - **v4, core photographs.** Plan (937ceab); pilot rater agreement
@@ -28,7 +28,8 @@ then code, then a single run, then the write-up.
 - Plan fixed before any test (98440f5, final 8c58848). The pre-registered
   XRF glauconite test was uninformative (74bcb4e). Young-taxa check added
   (f5c9070); round closed (b493104). The cuttings cannot test the origin of
-  the sands; the decisive test is age, and no sidewall cores exist.
+  the sands; the decisive test is age, and no sidewall cores or
+  cores were taken in the Oligocene sands.
 
 ## 2026-11-06 to 11-11: v7, photographs to chemistry
 

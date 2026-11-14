@@ -1,6 +1,6 @@
 # v7 step 2: photo glauconite-pellet detector. Proposed FROZEN specification
 
-Date: 2026-11-10. Drafted in the methods check (see Use of AI in the README).
+Date: 2026-11-10. Drafted in the methods check. AI check (see Use of AI in the README); "I" in this file is that check.
 
 **Blindness statement.**
 - I looked at NO photograph of any G-labelled bag. The Tertiary bags of 34/4-6, 34/7-4, 34/7-6, 34/7-9,

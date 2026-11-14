@@ -31,7 +31,8 @@ Sodir mud table already saved (results/v8/sodir_mud_table.csv).
    mud system, weighting material and the quoted phrase. The reader is told
    to write "not stated" when a page does not name the material, and never
    to infer it from the mud weight or the year.
-3. I open every page the reader cites and confirm the quoted phrase before
+3. Every page the reader cites is reopened, and the quoted phrase confirmed,
+   before
    it is counted.
 
 **Outcome per well:** "barite stated", "iron-titanium weighting material
@@ -143,7 +144,7 @@ plan and review.
 - Reading: the list of pages to render is fixed from the contents pages
   before any page is read. Trade names in materials tables are recorded
   word for word, and a trade name is mapped to a mineral only with a cited
-  source. I also read a seeded 10 % of the scanned pages the reader marked
+  source. A seeded 10 % of the scanned pages the reader marked
   "not stated", at least one per well, to catch misses.
 - Hole sections drilled with unweighted mud carry no weighting agent; they
   are listed from the Sodir mud-weight table.

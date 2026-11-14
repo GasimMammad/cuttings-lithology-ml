@@ -1,7 +1,7 @@
 # v6 results: sinkite / glauconite tests with existing data (2026-11-06)
 
-- **Plan:** V6_SINKITE_PLAN.md (FINAL 6cf30fb; check G added later,
-  d89a285).
+- **Plan:** V6_SINKITE_PLAN.md (FINAL 8c58848; check G added later,
+  f5c9070).
 - **Review:** rounds 11-13; no human expert review.
 
 ## The question and its framing

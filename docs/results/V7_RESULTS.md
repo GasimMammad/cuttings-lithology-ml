@@ -1,7 +1,7 @@
 # v7 results: step 1, photos -> cuttings XRF chemistry (2026-11-10). Review round 16/16b: accepted, step 1 CLOSED
 
-- **Plan:** V7_PLAN.md FINAL (b1eeb05).
-- **Scripts:** 52_v7_photo_to_xrf.py (bdf7850, committed before the run) and
+- **Plan:** V7_PLAN.md FINAL (68502f3).
+- **Scripts:** 52_v7_photo_to_xrf.py (c7ecf6c, committed before the run) and
   52a_v7_capture_sessions.py.
 - **Outputs:** results/v7/.
 - **Status:** exploratory (the same wells were used in earlier rounds), but
@@ -108,10 +108,10 @@ Scripts 53 (detector) and 53b (evaluation) were committed before any run on
 G-labelled bags. Score files were committed with their hashes before the join
 to G. The evaluation was run once, as frozen.
 
-- Lunde calibration: 1,022 photos, sha256 c9f9f9a9...afdfe6 (commit 1c9de5d).
-- G set: 873 photos, 0 errors, sha256 85b7f327...9b9a69 (commit 28e022c).
+- Lunde calibration: 1,022 photos, sha256 c9f9f9a9...afdfe6 (commit 93c6c34).
+- G set: 873 photos, 0 errors, sha256 85b7f327...9b9a69 (commit da4fcd2).
 - Evaluation outputs: results/v7/step2_results.json, step2_eval_log.txt,
-  g_scores_joined.csv (commit 96a697e).
+  g_scores_joined.csv (commit a2f9f05).
 
 ## Outcome: the pre-registered criterion is NOT met
 Criterion = (a) AND (c). (a) passes; (c) fails.

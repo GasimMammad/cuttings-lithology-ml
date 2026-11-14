@@ -6,7 +6,7 @@ step 1; steps 2 and 3 get their own sections before they run.
 Status: exploratory; the same wells were used before.
 
 **Step 1 status:** FINAL (review round 15: approved with changes, applied), merging:
-- the draft (e0588e9);
+- the draft (fdaf336);
 - review round 14;
 - the target-design check (`v7/check_step1_targets.md`);
 - the methods check (`v7/check_step1_methods.md`).
@@ -640,7 +640,7 @@ here may be used to change a closed result or its wording.
 - The check was done by two further readers (audit readers 1 and 2), not by
   a person, so this is a third
   and fourth independent reading, not a human key; it is reported as such.
-- Audit reader 1: read blind and committed before comparison (commit 92755d2);
+- Audit reader 1: read blind and committed before comparison (commit 774552b);
   3 of the 17 tiles had been seen before (flagged; results shown with and
   without them).
 - Audit reader 2: a fresh reader with rules v3, the 17 tiles in a seeded order.

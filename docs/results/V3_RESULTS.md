@@ -53,7 +53,7 @@ the cuttings are, not yet a sinkite (bed-scale sand) detector.
   stopped early.
 - **How run 2 was done:** the review specified the remedy (compute the
   missing tiles, rerun the committed script unchanged) before run 2 existed.
-  Run 1 was committed first (3a32a61), and the script is unchanged since then.
+  Run 1 was committed first (c7b7fc2), and the script is unchanged since then.
 - **Audit bias:** the flaw was found during review of a null result. Only
   34/8-3 and 34/8-3 A changed between runs, and both have no GR sand in the
   Tertiary.

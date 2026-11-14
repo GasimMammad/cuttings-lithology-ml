@@ -1,6 +1,6 @@
 """
 v5 -- unseal the rater key and score raters A and B against the
-LOCKED panel consensus (results/v5/panel_consensus_LOCKED.csv, commit f595585),
+LOCKED panel consensus (results/v5/panel_consensus_LOCKED.csv, commit 7c2575b),
 exactly as fixed by the panel's final adjudication. Primary: SAND vs NOT-SAND
 (MUD, OTHER); UNRESOLVED, UNRESOLVED-SILT, NO-CORE out. Sensitivities S1 (U-SILT
 = NOT-SAND), S2 (U-SILT = SAND), S3 (drop i29, i35), S4 (i27 = MUD).

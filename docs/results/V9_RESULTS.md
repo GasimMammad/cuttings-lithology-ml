@@ -1,7 +1,7 @@
 # v9 results: checks that close open caveats (plan: V9_PLAN.md with the review amendments)
 
 v8 is closed and unchanged. Everything here is EXPLORATORY. Each stage was
-run once, with code committed first (68_v9_checks.py, b8d1187).
+run once, with code committed first (68_v9_checks.py, 9b623e6).
 Result files: results/v9/.
 
 ## K2b. Does the deep mud-log result depend on the twin being in training? (68_v9_checks.py k2b)
@@ -106,7 +106,7 @@ out; no bag drops out below base Cretaceous.
 
 The 34/8-3 fold was retrained with 34/8-3 A removed from training, and the
 reverse, with the three seeds and fold seeds of v8 C. Six folds, trained
-2026-11-12 (code 14789de), scored once. The script first reproduced the
+2026-11-12 (code cdfef1e), scored once. The script first reproduced the
 step-1 R-D predictions of both wells to 1e-6.
 
 | held-out well | model | seed 0 | seed 1000 | seed 2000 | mean of 3 |

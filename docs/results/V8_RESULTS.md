@@ -113,8 +113,8 @@ declared Ba result reported; B4 and the B2-B3 dependence stated.
 
 X1 (V7_RESULTS.md) repeated twice with only the seed changed (seed offsets
 1000 and 2000). Same 2,021 bags, 32,336 patches and 11 held-out wells; same
-statistic. Seed offsets were fixed in V8_PLAN (4152f8b) before the runs;
-scoring code dad2dd7 / b7c54b3, committed before the runs ended. Training
+statistic. Seed offsets were fixed in V8_PLAN (18fba28) before the runs;
+scoring code 42414a9 / a074e3d, committed before the runs ended. Training
 ran 2026-11-11 to 2026-11-12 and paused about six and a half hours while
 the Mac slept, inside the 34/7-4 fold of seed 1000 (24,688 s against about
 1,000 to 2,300 s for the other folds); the process was suspended, not
@@ -207,7 +207,7 @@ in THESIS_NOTES.md and CONFERENCE_NOTES.md.
 **Status: amended, exploratory test. By the letter of the pre-registered
 eligibility rule only three wells qualified, so no test of record exists.**
 Under an eligibility rule amended after the labels were read but before any
-photograph was joined (commit 49d1d0a), six wells (five independent units)
+photograph was joined (commit b599c41), six wells (five independent units)
 qualify.
 
 ### Labels
@@ -239,7 +239,7 @@ qualify.
 
 ### Photograph test (run once)
 Predictor: the step-1 pre-Tertiary Si/Al model, trained without the test
-well, frozen and committed before any tile was read (40b5c49).
+well, frozen and committed before any tile was read (d9543df).
 
 | | wells or units | median rho | positive | p | 95 % CI |
 |---|---|---|---|---|---|

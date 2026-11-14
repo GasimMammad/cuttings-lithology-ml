@@ -1,5 +1,5 @@
 """
-v7 step 1 (V7_PLAN.md FINAL, b1eeb05): can cuttings photographs predict the
+v7 step 1 (V7_PLAN.md FINAL, 68502f3): can cuttings photographs predict the
 XRF chemistry of the SAME bag?
 
 Primary: R-D (ResNet-50 RGB, per-well z over the Tertiary shoe-masked set,

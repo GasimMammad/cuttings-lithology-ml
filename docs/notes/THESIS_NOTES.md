@@ -93,16 +93,16 @@ stated otherwise.
 
 | result | commit |
 |---|---|
-| v2 labels and V2_PLAN (pre-registration) | acc57e0 |
-| v2 results | eaa36f4 |
-| v3 plan after review; baselines | 6997552 |
-| shallow XRF test run 1 / run 2 | 3a32a61 / 826d31c |
-| V3_RESULTS headline | 730edb6 |
-| v3b plan / amendment / results | 032d5cf / 1b3baa9 / 083813c |
-| V4_PLAN / cement mask | 26499b5 / 129c639 |
-| digitiser protocol v2 / hard pilot fails gate | 4778dcb / 1ffc019 |
-| amendment E / plug check | 3d65d27 / 644e41c |
-| V4_RESULTS (corrected) | baf2951 |
+| v2 labels and V2_PLAN (pre-registration) | fae9a09 |
+| v2 results | b11c7fb |
+| v3 plan after review; baselines | 92ebf1f |
+| shallow XRF test run 1 / run 2 | c7b7fc2 / e7435e5 |
+| V3_RESULTS headline | 740e8b0 |
+| v3b plan / amendment / results | 3819cad / edd7b4a / 89b13d3 |
+| V4_PLAN / cement mask | 937ceab / 0bba8fa |
+| digitiser protocol v2 / hard pilot fails gate | 828fe20 / b103010 |
+| amendment E / plug check | 7669684 / a4655dc |
+| V4_RESULTS (corrected) | 75e08e4 |
 
 ## 5. Use of AI
 
@@ -252,22 +252,22 @@ itself.
 
 | result | commit |
 |---|---|
-| V7_PLAN final / step-1 script | b1eeb05 / bdf7850 |
-| step 2 closed | 632f9e6 |
-| step 3 closed (and block-boundary addition) | e9d3896 (676af22) |
-| extras X0-X3 and review changes | b2d3c02, 95b5cde, 0b41978, 3d2b4f4 |
-| V8_PLAN with review amendments | c675477 |
-| v8 D photograph predictions frozen before tiles | 40b5c49 |
-| v8 A and B results | ad06c38 (write-up f51869e) |
-| v8 figures | 120dec2 |
-| v8 D raw readings / eligibility amendment / results | 4c047ec, 633470a / 49d1d0a / 60818cd |
-| v8 C three seeds / review changes | a073a8d / 7e903e5 |
-| V9_PLAN with review amendments | de7b78b |
-| v9 code before the runs (K2c training / scoring, sheet check / OCR search) | 14789de / b8d1187 / 97e32d4 |
-| v9 results (K2b, K3 / K1 / K2c) and review changes | 4ac036a / 9d528a5, db8f000 / 84cb605; 61dc194, 54099fb |
-| V10_PLAN with review amendments | 0925a5d |
-| v10 code before the runs (S, with one label fix / R) | de44ec2, 74fe170 / 2a1b808 |
-| v10 results and review changes | 65d2340 / 54099fb |
+| V7_PLAN final / step-1 script | 68502f3 / c7ecf6c |
+| step 2 closed | 71cfa4c |
+| step 3 closed (and block-boundary addition) | 49b33f7 (1f5b032) |
+| extras X0-X3 and review changes | 0683b62, b8ceb09, eafaa33, 2364282 |
+| V8_PLAN with review amendments | d28ac7a |
+| v8 D photograph predictions frozen before tiles | d9543df |
+| v8 A and B results | 27add00 (write-up 6e27c66) |
+| v8 figures | b74b446 |
+| v8 D raw readings / eligibility amendment / results | cd9f710, 224b9f9 / b599c41 / ec0a3f8 |
+| v8 C three seeds / review changes | faa5492 / dd32131 |
+| V9_PLAN with review amendments | 2b5b65d |
+| v9 code before the runs (K2c training / scoring, sheet check / OCR search) | cdfef1e / 9b623e6 / f25668a |
+| v9 results (K2b, K3 / K1 / K2c) and review changes | 13dca6e / 4e72bd2, 6c18b97 / 8ea69d9; 1d4ecb9, 0cc1e26 |
+| V10_PLAN with review amendments | f77ab23 |
+| v10 code before the runs (S, with one label fix / R) | 605c9b0, e65b486 / 4fe0b99 |
+| v10 results and review changes | 9da0a58 / 0cc1e26 |
 
 ### 7e. Use of AI
 

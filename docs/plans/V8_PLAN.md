@@ -308,7 +308,7 @@ and on F.
 - **What was known when amending:** the labels, reader agreement, and the
   label-against-Si/Al futility values of the first three wells read
   (34/4-6 +0.25, 34/7-4 +0.53, 34/7-9 +0.50). No photograph had been joined.
-  The photograph predictions were frozen in commit 40b5c49. A positive
+  The photograph predictions were frozen in commit d9543df. A positive
   result is expected from step 1.
 - **Amended rule (review's wording):** at least 30 bags with Y; at least
   15 informative bags (|high-passed Y| >= 0.05); informative bags in at

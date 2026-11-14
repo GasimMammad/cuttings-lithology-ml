@@ -1,9 +1,9 @@
 # v10 results: photo stratigraphy (S) and the step response of cuttings (R)
 
-Plan: V10_PLAN.md with the review amendments (0925a5d). Each part was
-run once, with code committed first (70_v10_strat.py de44ec2 plus one label
+Plan: V10_PLAN.md with the review amendments (f77ab23). Each part was
+run once, with code committed first (70_v10_strat.py 605c9b0 plus one label
 fix found in a label-only smoke test before the run; 71_v10_step.py
-2a1b808). Result files: results/v10/. Both parts are new tests on wells
+4fe0b99). Result files: results/v10/. Both parts are new tests on wells
 that were all used before.
 
 **In one line: S is a negative result and R is inconclusive.**

@@ -1,8 +1,8 @@
 # v5 results: panel adjudication of the 40 spot-check bins (34/7-10)
 
-- **Plan:** V5_PANEL_PLAN.md (2963df1), amended after review round 1
-  (e9e58cb).
-- **Consensus locked before unsealing:** f595585. Unsealed: d37141b.
+- **Plan:** V5_PANEL_PLAN.md (18a22a9), amended after review round 1
+  (ec56735).
+- **Consensus locked before unsealing:** 7c2575b. Unsealed: a063025.
 - **Panel (models of the same family as rater A; not human experts):**
   - Member 1, petrophysics and core analysis: operator core description,
     plugs, logs, photos, literature.

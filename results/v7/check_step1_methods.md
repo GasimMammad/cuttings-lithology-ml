@@ -1,7 +1,7 @@
-# Agent 4 (ML / computer vision) notes on v7 steps 1 and 2
+# Methods check of v7 steps 1 and 2 (machine learning and computer vision)
 
-Date: 2026-11-09. Author: AI agent (Claude), acting as an ML/CV specialist, not a human expert.
-Read-only work. Scripts and outputs from the checks are in the session scratchpad (`a4/`).
+Date: 2026-11-09. A check of the plan (see Use of AI in the README).
+Read-only work. The scripts and outputs of these checks were working files and are not kept.
 **I did not compute any photo -> target skill**, so the step-1 primary stays uncontaminated
 before it is pre-registered. Every number below comes from chemistry, EXIF or the existing v6 G table.
 
@@ -56,7 +56,7 @@ before it is pre-registered. Every number below comes from chemistry, EXIF or th
 4. **Statistics.**
    - Wells are the unit of replication. A one-sided Wilcoxon over 11 wells has a minimum
      p of 1/2048 (about 0.0005), so it is adequate.
-   - Add a well-bootstrap 95% CI on the median rho. Keep the reviewer's effect-size floor
+   - Add a well-bootstrap 95% CI on the median rho. Keep the review's effect-size floor
      (median rho >= 0.10).
    - Per-well significance comes from the circular-shift null, not from a naive Spearman p.
      Effective n after high-pass is about 60-400 per well (sum about 2,500 of 5,037 bags).
@@ -211,7 +211,7 @@ What this shows:
 | More tiles or multi-scale | see section 4 (medium value) |
 
 Training domain: train and test on the same domain. Tertiary, with 0-15 m below shoes masked (as
-the reviewer says). Training on all depths imports pre-Tertiary red beds and Brent sands, where the
+the review says). Training on all depths imports pre-Tertiary red beds and Brent sands, where the
 Si/Al-appearance mapping differs.
 
 ### 2.2 Validation
@@ -228,7 +228,7 @@ Si/Al-appearance mapping differs.
     same-bag skill.
   - (ii) Report the partial rho with Ba, Ca/Al and Cl.
   - (iii) Use the circular-shift null per well.
-  - (iv) Report ±25 m and ±5-bag windows as sensitivities, as the reviewer asked; ±25 m keeps
+  - (iv) Report ±25 m and ±5-bag windows as sensitivities, as the review asked; ±25 m keeps
     less trend.
   - (v) Report the relative-depth baseline after the same high-pass. It should be about 0. If not,
     the high-pass leaks trend and the machinery is suspect.

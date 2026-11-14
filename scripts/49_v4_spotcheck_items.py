@@ -24,8 +24,8 @@ W = "34_7-10"
 
 def main(out):
     out = Path(out)
-    a = pd.read_csv(C.WORK_DIR / "core_digitised_v2/A_opus" / f"{W}.csv")
-    b = pd.read_csv(C.WORK_DIR / "core_digitised_v2/B_sonnet" / f"{W}.csv")
+    a = pd.read_csv(C.WORK_DIR / "core_digitised_v2/A" / f"{W}.csv")
+    b = pd.read_csv(C.WORK_DIR / "core_digitised_v2/B" / f"{W}.csv")
     for t in (a, b):
         t["key"] = (t.bin_top_m * 100).round().astype(int)
     m = a.merge(b[["key", "class"]], on="key", suffixes=("_a", "_b"))

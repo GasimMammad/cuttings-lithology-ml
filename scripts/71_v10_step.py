@@ -1,5 +1,5 @@
 """
-v10 part R (V10_PLAN.md with the reviewer's amendments): step response of cuttings.
+v10 part R (V10_PLAN.md with the review amendments): step response of cuttings.
 How many metres does a bag need to register a sharp gamma-ray step? Run once.
 
   python 71_v10_step.py     writes ~/sinkite_ml_work_v2/v10/R_results.json, R_steps.csv, R_stack.csv

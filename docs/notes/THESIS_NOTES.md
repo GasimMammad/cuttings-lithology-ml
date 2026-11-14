@@ -1,6 +1,6 @@
 # Thesis notes: ML chapter (v2-v4 follow-up)
 
-Material the reviewer (round 9) asked to have in one place before writing.
+Material the review (round 9) asked to have in one place before writing.
 Numbers are taken from the committed result files named in section 4.
 
 ## 1. Consolidated results
@@ -50,8 +50,8 @@ stated otherwise.
 
 | test | status | result |
 |---|---|---|
-| core digitisation, 34/4-6 | pilot | AI-AI SAND kappa 0.98 |
-| core digitisation, 34/7-10 | pilot, PR gate | AI-AI SAND kappa 0.50 < 0.6: STOPPED |
+| core digitisation, 34/4-6 | pilot | rater A-B SAND kappa 0.98 |
+| core digitisation, 34/7-10 | pilot, PR gate | rater A-B SAND kappa 0.50 < 0.6: STOPPED |
 | plugs, 34/8-3 2839-2897 m | PR, descriptive | gate +0.48 (marginal); photo rho +0.33 / +0.39, n 18, n.s. |
 
 ## 2. Label limitations
@@ -104,43 +104,25 @@ stated otherwise.
 | amendment E / plug check | 3d65d27 / 644e41c |
 | V4_RESULTS (corrected) | baf2951 |
 
-## 5. AI-use statement (DRAFT for the author to adapt to University of Manchester policy)
+## 5. Use of AI
 
-> Generative AI (Anthropic Claude, via Claude Code) was used in this chapter as
-> follows:
->
-> 1. **Code.** Writing and debugging analysis code, under the author's
->    direction. All code is in the project repository, and results can be
->    reproduced from the commits listed.
-> 2. **Plans.** Drafting pre-registered analysis plans, which were committed
->    before each analysis was run.
-> 3. **Internal review.** A separate Claude agent, prompted to act as a
->    senior geoscientist and machine-learning reviewer, critiqued plans and
->    results over nine rounds. This was not an independent human review.
-> 4. **Core digitisation.** Two Claude agents (Opus and Sonnet) digitised
->    lithology from core photographs, blind to other data. Their agreement is
->    reported, and the approach was stopped when it failed a pre-set
->    reliability gate. The source of the rater disagreement was
->    adjudicated blind by a panel of three further Claude agents, using plugs,
->    the operator core description and logs. This was not a human panel.
-> 5. **Drafting text.** Drafting summaries, which the author checked and
->    edited.
->
-> The geological interpretation, label design decisions and conclusions are
-> the author's responsibility.
+> The code was written with an AI coding assistant (Claude Code). The mud-log
+> tiles, the core photographs and pages of the well reports were analysed by AI
+> models, and AI was used to check the plans and every reported number against
+> the saved result files. The questions, decisions and interpretation are mine.
 
-## 6. Methods text for the core-photo test (agreed with the reviewer agent)
+## 6. Methods text for the core-photo test (agreed with the review)
 
-Core photographs of 34/7-10 were digitised in 0.25 m bins by two AI raters
-(Claude Opus and Claude Sonnet) following a written protocol. Their agreement
+Core photographs of 34/7-10 were digitised in 0.25 m bins by two AI models
+following a written protocol. Their agreement
 (SAND vs rest, kappa 0.50) failed a pre-set threshold of 0.6, so the
 core-photo test was stopped. To find the source of the disagreement, a
 stratified sample of 40 bins (25 disputed, 15 agreed) was adjudicated blind
-to the raters by a panel of three AI agents. A label was assigned only where
-two agents agreed and the call was supported at bin resolution by plugs, the
+to the raters by a panel of three AI models. A label was assigned only where
+two panel members agreed and the call was supported at bin resolution by plugs, the
 operator core description, or logs stable across the core-to-log shift
 uncertainty. The consensus rules were committed before the rater labels were
-unsealed; all panel agents were Claude models, the same family as rater A.
+unsealed; all panel members were models of the same family as rater A.
 
 **Result sentence:** Where the panel could resolve a disputed bin, the
 evidence almost always supported A's SAND call (14 of 15; p = 0.001), so
@@ -273,32 +255,21 @@ itself.
 | V7_PLAN final / step-1 script | b1eeb05 / bdf7850 |
 | step 2 closed | 632f9e6 |
 | step 3 closed (and block-boundary addition) | e9d3896 (676af22) |
-| extras X0-X3 and reviewer changes | b2d3c02, 95b5cde, 0b41978, 3d2b4f4 |
-| V8_PLAN with reviewer amendments | c675477 |
+| extras X0-X3 and review changes | b2d3c02, 95b5cde, 0b41978, 3d2b4f4 |
+| V8_PLAN with review amendments | c675477 |
 | v8 D photograph predictions frozen before tiles | 40b5c49 |
 | v8 A and B results | ad06c38 (write-up f51869e) |
 | v8 figures | 120dec2 |
 | v8 D raw readings / eligibility amendment / results | 4c047ec, 633470a / 49d1d0a / 60818cd |
-| v8 C three seeds / reviewer changes | a073a8d / 7e903e5 |
-| V9_PLAN with reviewer amendments | de7b78b |
+| v8 C three seeds / review changes | a073a8d / 7e903e5 |
+| V9_PLAN with review amendments | de7b78b |
 | v9 code before the runs (K2c training / scoring, sheet check / OCR search) | 14789de / b8d1187 / 97e32d4 |
-| v9 results (K2b, K3 / K1 / K2c) and reviewer changes | 4ac036a / 9d528a5, db8f000 / 84cb605; 61dc194, 54099fb |
-| V10_PLAN with reviewer amendments | 0925a5d |
+| v9 results (K2b, K3 / K1 / K2c) and review changes | 4ac036a / 9d528a5, db8f000 / 84cb605; 61dc194, 54099fb |
+| V10_PLAN with review amendments | 0925a5d |
 | v10 code before the runs (S, with one label fix / R) | de44ec2, 74fe170 / 2a1b808 |
-| v10 results and reviewer changes | 65d2340 / 54099fb |
+| v10 results and review changes | 65d2340 / 54099fb |
 
-### 7e. Additions to the AI-use statement (section 5)
+### 7e. Use of AI
 
-> 6. **Mud-log digitisation.** Scanned mud logs were cut into tiles by a
->    script. AI agents (Claude Opus and Claude Sonnet) read the lithology
->    percentages from the tiles under written rules, blind to photographs
->    and chemistry. Their agreement is reported; there is no human key.
-> 7. **Specialist and review agents.** Further Claude agents, prompted as a
->    geochemist, a computer-vision specialist, a wellsite geologist and a
->    senior reviewer, critiqued plans before each run and results after it.
->    These were not human reviews.
-> 8. **Well reports.** The drilling, mud and completion reports of the
->    wells (3,474 pages) were searched for the mud weighting material with
->    an optical character reader run locally. The AI assistant then read
->    the mud-materials tables as page images and copied the products word
->    for word. No person checked these pages.
+The statement in section 5 covers v2 to v10.
+

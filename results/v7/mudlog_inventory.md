@@ -1,7 +1,7 @@
-# Agent 5: mud-log inventory and digitisation route (v7 step 3)
+# Mud-log inventory and digitisation route (v7 step 3)
 
-Role: AI acting as a senior wellsite geologist and mud-log specialist. This is scouting only. I made no full digitisation. I looked at no cuttings photos and no model outputs, only bag depths taken from photo filenames. Every judgement below comes from 2–3 full-resolution crops per well, mostly at 1000 and 1500 m. Legibility ratings are my own visual calls.
-Files: `agent5_inventory.csv` (one row per document) and `agent5_thumbs/` (headers and Tertiary crops, mud logs only).
+Scouting only (see Use of AI in the README). I made no full digitisation. I looked at no cuttings photos and no model outputs, only bag depths taken from photo filenames. Every judgement below comes from 2–3 full-resolution crops per well, mostly at 1000 and 1500 m. Legibility ratings are my own visual calls.
+Files: `mudlog_inventory.csv` (one row per document) and `mudlog_thumbs/` (headers and Tertiary crops, mud logs only).
 
 ## 1. Recommendations
 
@@ -45,7 +45,7 @@ All logs are 1:500 measured depth below RKB. All have a text column, and all exc
 4. **Text read (route B).** Transcribe each description block with its top and bottom depth, verbatim. Then map it to a class with a fixed, pre-registered rule table: first-named lithology = dominant; "tr" = <5%; "occ/rr" = minor; "a/a" carries the previous entry forward; "/" = interbedded. Assign each bag the description block whose depth range covers the bag interval.
 5. **Blinding.** Digitisers receive only mud-log crops and depth tiles. They get no photos, no GR or wireline curves, no model predictions, and no bag list. The join to bags is a separate script run afterwards. Tiles are served in random order with well and depth printed, so continuity cannot be "smoothed" by eye.
 6. **Reliability.**
-   - **Two independent digitisers** (separate agent runs, different tile order) on about 20% of intervals: 2 wells × about 500 m, one 300 dpi grey and one 200 dpi 1-bit. Report ICC/Spearman on sand %, weighted kappa on class, and the share of bags with a difference over 20% sand.
+   - **Two independent digitisers** (separate runs, different tile order) on about 20% of intervals: 2 wells × about 500 m, one 300 dpi grey and one 200 dpi 1-bit. Report ICC/Spearman on sand %, weighted kappa on class, and the share of bags with a difference over 20% sand.
    - **Human spot-check:** Gasim reviews 50 random intervals (crop next to digitised value), about 1–2 h.
    - **Independent physics check:** XRF Si/Al from `DRILLING/*CUTTINGS_ANALYSIS*ENCL_1.CSV` exists for all 11 wells (including 34/7-6), so the 34/7-10 rho ≈ 0.56 comparison can be repeated in every well.
    - **34/7-9:** compare the Exlog and Saga logs against each other.
@@ -55,11 +55,11 @@ All logs are 1:500 measured depth below RKB. All have a text column, and all exc
 - **Route A:**
   - About 3 h per contractor family to build the symbol library and classifier (3 families).
   - About 1.5 h per well for calibration, extraction and overlay QC (8 wells).
-  - Total ≈ 20 agent-hours. Whole-well extraction costs little extra once calibration is done.
+  - Total ≈ 20 reader-hours. Whole-well extraction costs little extra once calibration is done.
 - **Route B:**
   - About 1.5–2.5 h per well per digitiser for 500–2000 m: about 15 sheets, read as 30–40 crops of 40–50 m.
   - About 4–6 h for the whole well.
-  - All 10 wells, plus a 20% second digitiser, plus the 34/7-9 Saga log ≈ 25–35 agent-hours.
+  - All 10 wells, plus a 20% second digitiser, plus the 34/7-9 Saga log ≈ 25–35 reader-hours.
 - **Coverage** (bags in the mud-log range; ≤2000 m first, whole well in brackets): 24/9-3 268 (616), 24/9-4 ≈300 (≈330: main bore to 2083 m; FEL fragment to ~2200 m), 34/4-6 155 (503), 34/4-7 171 (423), 34/7-1 186 (468, text only), 34/7-4 194 (552), 34/7-9 173 (527), 34/7-10 172 (453), 34/8-3 99 (451), 34/8-3_A 129 (439), 34/7-6 0 (0).
   - **≈1850 bags ≤2000 m, ≈4.8k for the whole well.**
   - Effective per-bag resolution is lower where one text block spans several bags.

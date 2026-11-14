@@ -1,6 +1,6 @@
-# v6 plan: sinkite / glauconite tests with existing data. DRAFT for reviewer check; nothing computed.
+# v6 plan: sinkite / glauconite tests with existing data. DRAFT for review check; nothing computed.
 
-## Hypothesis under test (as reconstructed by the reviewer, round 11)
+## Hypothesis under test (as reconstructed by the review, round 11)
 
 On the Snorre-Visund mound, the Oligocene (Hordaland Gp) sand bodies just
 below the Top Hordaland Unconformity (THGU) are **sinkites**: younger sand
@@ -31,7 +31,7 @@ The alternative is that they were deposited in place in the Oligocene
 
 ## B. Biostratigraphy of the Oligocene sands (the decisive test)
 
-- **Agent:** Agent 1 (basin geologist / core analyst persona), reading the
+- **Reader:** one reader of the
   operator biostratigraphy and well report PDFs on T9:
   - 34/7-6, 34/7-10, 34/7-4, 34/7-9 (`GEOLOGY/*BIOSTRAT_REPORT*.PDF`);
   - 34/4-6, 34/4-7, 34/7-1 (Bulletin 10 compilation already in
@@ -66,7 +66,7 @@ The alternative is that they were deposited in place in the Oligocene
 - Report per interval: median Th/K, K and the fraction of samples meeting the
   rule.
 
-## D. XRF glauconite proxy, pre-registered (from the geochemist's design)
+## D. XRF glauconite proxy, pre-registered (from the geochemistry check)
 
 - **Index:** G = min(log10(K/Al / base), log10(Fe*/Al / base)), where Fe* =
   Fe - 0.87 S and base = the well's Oligocene-mudstone median more than 30 m
@@ -87,8 +87,8 @@ The alternative is that they were deposited in place in the Oligocene
 ## E. Blind pellet check on photographs (optional, after D)
 
 The 10 highest-G bags and 10 random Oligocene mudstone bags, at full
-resolution, rated blind for rounded green pellets vs green clay chips by an
-agent. Descriptive only.
+resolution, rated blind for rounded green pellets vs green clay chips by one
+reader. Descriptive only.
 
 ## F. GR/AI test (re-done with fixes; lowest priority)
 
@@ -102,10 +102,10 @@ Descriptive.
 
 - Every test reports its pre-set outcome category.
 - No "proof".
-- Overall verdict reviewed by Agent 3.
+- Overall verdict reviewed.
 
 ---
-## FINAL AMENDMENTS after reviewer round 12 (binding; committed before any test runs)
+## FINAL AMENDMENTS after review round 12 (binding; committed before any test runs)
 
 - **A.** Add one correction: "firing concentrated 0-30 m below THGU" does NOT
   separate caving from sinking; both predict it.
@@ -113,7 +113,7 @@ Descriptive.
   1831-2913 m, 34/8-3 2572-3331 m. None covers the Utsira or Oligocene.
   Reported as "considered, not possible".
 - **B, rule replaced.**
-  - Agent 1 first extracts a RAW sample table (well, depth, sample type
+  - The reader first extracts a RAW sample table (well, depth, sample type
     DC/SWC/core, inside which sand interval, taxa with abundance, age markers,
     operator remark), then applies the rule.
   - **SUPPORT:** >= 2 SWC/core samples inside the sand with a coherent
@@ -149,7 +149,7 @@ Descriptive.
 - **E, F:** descriptive. F cites measured Utsira glauconite contents if
   found.
 
-## G. Young-taxa distribution check (added after reviewer round 13; exploratory; rule fixed before tabulating)
+## G. Young-taxa distribution check (added after review round 13; exploratory; rule fixed before tabulating)
 
 - **Wells:** 34/7-6 and 34/7-10.
 - **Taxa:** every DC sample from THGU down to 50 m below the target sand.

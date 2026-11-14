@@ -1,6 +1,6 @@
-# v7 step 2: photo glauconite-pellet detector. Proposed FROZEN specification (Agent 4)
+# v7 step 2: photo glauconite-pellet detector. Proposed FROZEN specification
 
-Date: 2026-11-10. Author: AI agent (Claude) in the ML/CV role, not a human expert.
+Date: 2026-11-10. Drafted in the methods check (see Use of AI in the README).
 
 **Blindness statement.**
 - I looked at NO photograph of any G-labelled bag. The Tertiary bags of 34/4-6, 34/7-4, 34/7-6, 34/7-9,
@@ -14,8 +14,8 @@ Date: 2026-11-10. Author: AI agent (Claude) in the ML/CV role, not a human exper
   and is wider than those notes. The hole-filling step was partly motivated by the
   "crack networks" remark.
 - Prototype code (the parameters exactly as below):
-  `/private/tmp/claude-501/-Users-gasimmammadov-Projects-cuttings-lithology-ml/6549f91e-15d0-4896-b785-21197e925e4a/scratchpad/a4/blob_proto.py`.
-  Lunde check outputs: `.../scratchpad/a4/lunde_proto.csv`.
+  a working file (not kept).
+  Lunde check outputs: a working file (not kept).
 
 ---------------------------------------------------------------------------
 ## PART A. Specification (to copy into V7_PLAN.md step 2 and freeze)

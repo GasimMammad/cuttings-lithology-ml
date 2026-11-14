@@ -1,5 +1,5 @@
 """
-v9 checks (V9_PLAN.md with the reviewer's amendments). All EXPLORATORY; each stage is run once.
+v9 checks (V9_PLAN.md with the review amendments). All EXPLORATORY; each stage is run once.
 
   python 68_v9_checks.py k2b    deep mud-log test (v8 D) with the twin held out together, and drop-one-other reference
   python 68_v9_checks.py k2c    fine-tuned network at 34/8-3 without the sidetrack in training (after `59 trainx`)

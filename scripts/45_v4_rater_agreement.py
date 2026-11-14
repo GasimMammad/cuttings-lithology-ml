@@ -47,7 +47,7 @@ def sand_frac(t, rubble=False):
 
 def main(wells):
     for w in wells:
-        a, b = load("A_opus", w), load("B_sonnet", w)
+        a, b = load("A", w), load("B", w)
         k = a.index.intersection(b.index)
         ka, po, n = kappa(a.loc[k, "cls5"].tolist(), b.loc[k, "cls5"].tolist())
         both = k[(a.loc[k, "cls5"] != "NOCORE").values & (b.loc[k, "cls5"] != "NOCORE").values]

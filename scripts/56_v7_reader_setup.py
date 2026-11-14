@@ -22,7 +22,7 @@ XS = import_module("35_v3_xrf_shallow")
 OUT = C.WORK_DIR / "v7" / "step3"
 RULES = C.REPO_DIR / "results" / "v7" / "step3" / "reader_rules.md" if hasattr(C, "REPO_DIR") else None
 SEED_A, SEED_B, FRAC_B, CHUNK = 5601, 5602, 0.30, 36
-# tiles (top depth) holding the non-clay patterns named in agent5_step3_protocol_check.md
+# tiles (top depth) holding the non-clay patterns named in check_step3_protocol.md
 AUDIT = {"34_4-6": [1200, 1240, 1640, 1800], "34_4-7": [1160, 1720], "34_7-4": [1160, 1680],
          "34_8-3_A": [1080, 1200], "34_7-9": [1600, 1640], "34_7-10": [1080], "24_9-3": [520, 1080, 1760, 1880],
          "34_8-3": []}

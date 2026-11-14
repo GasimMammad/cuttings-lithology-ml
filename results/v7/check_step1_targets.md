@@ -1,11 +1,13 @@
-# v7 step 1: target design (Agent 2, geochemist), 2026-11-09
+# v7 step 1: target design check (geochemistry), 2026-11-09
+
+A check of the plan (see Use of AI in the README).
 
 ## Recommendations (decision list)
 1. **Primary target T = within-well z of log10(Si/Al), UNCORRECTED for Ba.**
    - A ratio already cancels barite dilution, since BaSO4 dilutes Si and Al equally.
    - The Ba-Si/Al correlation that remains comes from handheld-XRF matrix absorption and from mud clay. Ba also carries real lithology signal: shale cuttings retain more mud and barite (local rho(Ba, Vsh) +0.085).
    - Empirically, Ba correction *lowers* local agreement with GR (median high-passed rho -0.19 uncorrected vs -0.15 Theil-Sen).
-   - If the reviewer keeps the Ba-corrected version as primary, OLS and Theil-Sen are immaterial: the slopes differ by 0.06 or less in every well. Then use Theil-Sen with b clipped to b <= 0.
+   - If the review keeps the Ba-corrected version as primary, OLS and Theil-Sen are immaterial: the slopes differ by 0.06 or less in every well. Then use Theil-Sen with b clipped to b <= 0.
 2. **Report as sensitivities** (all within-well z):
    - (i) T_TS = log10(Si/Al) - min(b_TS, 0) * (log10 Ba - median log10 Ba), where b_TS is the Theil-Sen slope of log10(Si/Al) on log10(Ba) over that well's Tertiary bags.
    - (ii) T_part = the same correction with b unclipped (full Ba partialling).
@@ -22,7 +24,7 @@
    - Report rho(Ca, S) per well as a gypsum diagnostic. It is high in 34/8-3_A (+0.59) and 34/8-3 (+0.36), so read C there with caution.
    - C is nearly independent of GR (high-passed rho -0.08), so it adds a genuinely different visual question (white/calcareous chips).
 5. **Exclusions (fix before running):**
-   - Tertiary only (the reviewer's rule), and bags 0-15 m below casing shoes (cement, Ca spikes).
+   - Tertiary only (the review's rule), and bags 0-15 m below casing shoes (cement, Ca spikes).
    - Bags with Al below the well's Tertiary 5th percentile, where the ratio is unstable. Flag them; drop them only from the target fit.
    - Never use Ti or Ti/Al: the Ba Lα and Ti Kα peaks overlap.
    - Never use Mg (often below detection) or K/Al as a sandiness proxy (KCl, illite and K-feldspar all confound it).
@@ -57,4 +59,4 @@ Each cell is the within-well Spearman rho of the target against Vsh. "Local" mea
 - Unfiltered rho is often *positive*. Depth trends dominate here: Nordland and Utsira at high Si/Al, biosiliceous Hordaland above Lista. This is why the high-passed primary endpoint is essential.
 - Zr/Al (local rho about 0) and a CLR-PCA PC1 (about -0.13) were checked earlier and are not better than Si/Al.
 - GR is itself an imperfect sand label here: glauconitic and K-feldspar-rich sands read high GR. Expect agreement of |rho| about 0.2, not about 0.6.
-- Script and table: `/private/tmp/claude-501/-Users-gasimmammadov-Projects-cuttings-lithology-ml/6549f91e-15d0-4896-b785-21197e925e4a/scratchpad/v7b.py` and `v7_target_check.csv` (scratch, not repo).
+- Script and table: a working file (not kept) and `v7_target_check.csv` (scratch, not repo).

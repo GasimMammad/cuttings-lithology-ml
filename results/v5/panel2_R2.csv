@@ -21,7 +21,7 @@ i16,SAND,0.75,Operator: Sandstone 2553.5-2554.5 (boundary at bin top); plugs 255
 i04,SAND,0.75,Operator: Sandstone 2553.5-2554.5 (base 0.25 m below); plugs 2553.75 24 mD; 2554.0 3.9 mD phi 0.18,Bag 2555,
 i29,UNRESOLVED,0.40,Operator: Shale from 2554.5 (0.25 m above bin); plug 2554.75 at bin top = sst w/ coal 141 mD phi 0.26; no plug below until 2557.75 (siltstone),Bag 2555/2558,Sand/shale contact probably inside the bin; lean MUD for the lower part
 i15,SAND,0.65,Operator: Sandstone 2560.5-2561.5 sub-unit vf-f calc-cemented tr por (no boundary within 0.25 m); plugs 2560.75-2561.25 VF sst W-cmt 0.07-0.2 mD phi 0.14,Bag 2564 Si/Al 10.4,OTHER risk if calcite-cemented sandstone is classed OTHER; small silt risk
-i27,SAND,0.55,Operator: Sandstone 2564.5-2570 dom m-vc (no boundary within 0.25 m); NO plugs 2565.25-2566.5 (gap of 1.25 m in an otherwise 0.25 m plug series),Bag 2567 Si/Al 7.0 (context only),Answer to Agent 3: bag Si/Al cannot exclude a 25 cm mudstone; support now rests only on the operator interval; the plug gap could mean unpluggable rubble or a mud bed so confidence is lowered
+i27,SAND,0.55,Operator: Sandstone 2564.5-2570 dom m-vc (no boundary within 0.25 m); NO plugs 2565.25-2566.5 (gap of 1.25 m in an otherwise 0.25 m plug series),Bag 2567 Si/Al 7.0 (context only),Answer to member 3: bag Si/Al cannot exclude a 25 cm mudstone; support now rests only on the operator interval; the plug gap could mean unpluggable rubble or a mud bed so confidence is lowered
 i10,SAND,0.90,Operator: Sandstone 2564.5-2570; plugs 2567.5 11219 mD; 2567.75 3909 mD phi 0.32,Bag 2570 Si/Al 11.0,
 i31,UNRESOLVED-SILT,0.60,Operator: Siltstone 2575.5-2577.7 (shaly; dk gn gy; pred hard; no boundary within 0.25 m); no plugs,Bag 2579 Si/Al 3.4,R1 MUD changed: operator calls it shaly siltstone; core 5 position uncertain (21% recovery)
 i14,UNRESOLVED-SILT,0.45,Operator: Siltstone (arenaceous) 2592.0-2592.5 with Sandstone from 2592.5 (boundary at bin base); plug 2592.5 M-gr sst w/ clay 0.74 mD phi 0.10,Bag 2594 Si/Al 9.1,Lean silt; boundary at bin base
@@ -36,6 +36,6 @@ i03,MUD,0.75,Operator: Shale 2617.5-2624 (sl silty; boundaries >3 m away); no pl
 i07,SAND,0.80,Operator: Sandstone 2635.5-2637 (v calc cmt on top); plugs 2636.0 63 mD phi 0.25; 2636.25 34 mD; plug 2635.75 calc-sst 0.13 mD phi 0.06,Bag 2639 Si/Al 6.6,Calcite-cemented layer just above the bin
 i02,MUD,0.70,Operator: Shale 2641.5-2643.5 (base 0.5 m below bin); no plugs,Bag 2645 Si/Al 4.4,
 i37,SAND,0.65,Operator: Sandstone 2643.5-2646 (silty+argillaceous on top; v calc cmt on top; boundary at bin top); plugs inside bin 2643.6 F-gr sst 1.2 mD phi 0.13; 2643.75 1.5 mD phi 0.18,Bag 2645 Si/Al 4.4; Ca 2.2%,Silt and OTHER (calc-cemented) risks
-i17,MUD,0.70,Operator: Siltstone 2646-2647 then Shale 2647-2653.5 (silty; occ sl aren); bin 0.5 m below the boundary; no plugs (last 2645.5),Bag 2648 Si/Al 10.1 - contradicted by core,R1 SAND retracted per Agent 3
+i17,MUD,0.70,Operator: Siltstone 2646-2647 then Shale 2647-2653.5 (silty; occ sl aren); bin 0.5 m below the boundary; no plugs (last 2645.5),Bag 2648 Si/Al 10.1 - contradicted by core,R1 SAND retracted per member 3
 i38,MUD,0.70,Operator: Shale 2647-2653.5; no plugs,Bag 2648 Si/Al 10.1,R1 lean SAND retracted
 i11,MUD,0.75,Operator: Shale 2647-2653.5; no plugs,Bag 2651 Si/Al 6.2,

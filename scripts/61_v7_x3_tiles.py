@@ -4,7 +4,7 @@ v7 extra X3 (V7_PLAN.md "Extras"): reader tiles for 34/7-1 (text route) and
 
   34/7-1  80 m tiles: calibrated depth ruler + the cuttings column + the
           description column (the column holds only single-row minor symbols,
-          so the description text is read; route B of agent5_inventory.md).
+          so the description text is read; route B of mudlog_inventory.md).
   24/9-4  main-bore sheets down to 1753 m (sidetrack below): each sheet body in
           three overlapping pieces showing the sheet's own handwritten depth
           labels, the cuttings column and a 0-100 % ruler. No script depth.

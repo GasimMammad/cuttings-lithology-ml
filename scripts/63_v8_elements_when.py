@@ -1,5 +1,5 @@
 """
-v8 parts A and B (V8_PLAN.md with the reviewer amendments), and the frozen
+v8 parts A and B (V8_PLAN.md with the review amendments), and the frozen
 photograph predictions for part D.
 
   A  more elements from the same photographs (K, Fe, Ca, Ti, Zr over Al)

@@ -44,7 +44,7 @@ Consequences:
   where the GR level changes. The Lunde zones are dropped, because neither
   run segment holds both a clean sand and a mudstone anchor.
 
-Verification: `verify_runs` (scratch check, results in the session log)
+Verification: `verify_runs` (scratch check, results in the working log)
 matched the composite curve against each individual run file inside every
 zone and anchor. All Tertiary zones match one run at 88-100%. 34/4-6 and 34/7-6
 have composites only. The Jurassic zones match run 2 at 32-86%, which looks like depth-matching shifts, and run 2 is the only run covering those depths.

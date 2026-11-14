@@ -1,6 +1,6 @@
 """
-v7 extra X0: score the 17 symbol-audit tiles. Two further AI readings (the
-main session, and a fresh audit agent) against the reader of record (A; C for
+v7 extra X0: score the 17 symbol-audit tiles. Two further readings (audit
+readers 1 and 2) against the reader of record (A; C for
 24/9-3) and the checking reader (B; D for 24/9-3), at bag-interval level:
 class presence (>= 10 %) and sand %.
 
@@ -38,9 +38,9 @@ def read_file(path, well_of):
 
 def main():
     well_of = lambda t: t.rsplit("_", 1)[0]
-    tiles = [t for t in (OUT / "audit" / "agent" / "list.txt").read_text().split() if t]
-    R = {"main session": read_file(OUT / "audit" / "self" / "out.jsonl", well_of),
-         "audit agent": read_file(OUT / "audit" / "agent" / "out.jsonl", well_of)}
+    tiles = [t for t in (OUT / "audit" / "reader2" / "list.txt").read_text().split() if t]
+    R = {"audit reader 1": read_file(OUT / "audit" / "reader1" / "out.jsonl", well_of),
+         "audit reader 2": read_file(OUT / "audit" / "reader2" / "out.jsonl", well_of)}
     A, B = L.readers(fix=True)
     R["record (A, C)"] = A[A.tile.isin(tiles)]
     R["checker (B, D)"] = B[B.tile.isin(tiles)]
@@ -52,7 +52,7 @@ def main():
         tag = "blind tiles only (14)" if blind else "all 17 tiles"
         out = {}
         for ref in ("record (A, C)", "checker (B, D)"):
-            for new in ("main session", "audit agent"):
+            for new in ("audit reader 1", "audit reader 2"):
                 m = sub[new].merge(sub[ref], on=keys, suffixes=("_n", "_r"))
                 d = m.sand_n - m.sand_r
                 pres = {}
@@ -62,8 +62,8 @@ def main():
                 out[f"{new} vs {ref}"] = {"n_intervals": int(len(m)), "sand_mad": float(d.abs().mean()),
                                           "sand_share_diff_gt20": float((d.abs() > 20).mean()),
                                           "sand_bias": float(d.mean()), "class_presence": pres}
-        m = sub["main session"].merge(sub["audit agent"], on=keys, suffixes=("_n", "_r"))
-        out["main session vs audit agent"] = {"n_intervals": int(len(m)), "sand_mad": float((m.sand_n - m.sand_r).abs().mean())}
+        m = sub["audit reader 1"].merge(sub["audit reader 2"], on=keys, suffixes=("_n", "_r"))
+        out["audit reader 1 vs audit reader 2"] = {"n_intervals": int(len(m)), "sand_mad": float((m.sand_n - m.sand_r).abs().mean())}
         res[tag] = out
     with open(OUT / "audit" / "X0_results.json", "w") as f:
         json.dump(res, f, indent=1)

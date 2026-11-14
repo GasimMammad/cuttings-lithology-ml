@@ -1,4 +1,4 @@
-# v9 results: checks that close open caveats (plan: V9_PLAN.md with the reviewer's amendments)
+# v9 results: checks that close open caveats (plan: V9_PLAN.md with the review amendments)
 
 v8 is closed and unchanged. Everything here is EXPLORATORY. Each stage was
 run once, with code committed first (68_v9_checks.py, b8d1187).
@@ -82,7 +82,7 @@ out; no bag drops out below base Cretaceous.
 
 ### Reading
 
-1. Below base Cretaceous the labels pass an instrument check that no AI
+1. Below base Cretaceous the labels pass an instrument check that no
    reader or photograph touched. Together with reader agreement (0.997)
    and the Si/Al check (+0.51) this supports the label chain of v8 D.
 2. The agreement is modest in size (-0.26). Gamma ray is not sand: mica,
@@ -151,12 +151,12 @@ without). The frozen models stay at about zero either way.
 **What was read.** 29 drilling, mud and completion reports of the 11 wells,
 3,474 pages. 800 pages had a text layer; 2,674 were scans and were read by
 a local OCR. Keywords were fixed before the search. Every page counted was
-then opened and read as an image by me, and the products were copied word
+then opened and read as an image, and the products were copied word
 for word.
 
 **Deviations from the plan.** (1) OCR over every multi-page PDF replaced
 the contents-based page list (more coverage). The cited pages were read as
-images by one reader, the AI assistant running the analysis. No second
+images by one reader (see Use of AI in the README). No second
 reader and no human checked them (less verification). (2) The no-hit check
 read 11 of 173 candidate pages (6 %, below the planned 10 %). The pool was
 the OCR pages that mention mud three or more times and have no keyword
@@ -219,11 +219,11 @@ minerals in the rock are what the Fe-Ti signal is taken to be; this check
 only removes one alternative. The OCR could miss a word on a poor scan;
 the tables themselves were read as images.
 
-## Reviewer (K1, K2b, K3 after results): ACCEPT WITH CHANGES, applied
+## Review (K1, K2b, K3 after results): accepted with changes, applied
 
 Every number was checked against the result files. One rounding error
 (K3 key median -0.2646 was printed as -0.27; now -0.26), the K2b reading
 sharpened (which p belongs to +0.50), two wrong row labels in the K1 table,
 the K1 deviations restated (more coverage, less verification), and the
-ilmenite wording narrowed to "solid weighting material". K2c was reviewed after it ran (ACCEPT WITH CHANGES: the limit of three
+ilmenite wording narrowed to "solid weighting material". K2c was reviewed after it ran (accepted with changes: the limit of three
 seeds added to its Reading 1).

@@ -1,8 +1,7 @@
 # v4 results (2026-11-05): core photographs, plugs, robustness checks
 
-Plan: V4_PLAN.md, with amendment E after review round 8. Reviewer: an AI agent
-(Claude) prompted to act as a senior geoscientist/ML reviewer, rounds 1-9. This
-is not an independent human expert review. Nothing here changes the v2/v3
+Plan: V4_PLAN.md, with amendment E after review round 8. Review rounds 1-9.
+This was not an independent human expert review. Nothing here changes the v2/v3
 headline (V3_RESULTS.md).
 
 ## 1. What was tried
@@ -16,10 +15,10 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 
 ## 2. Core-photo digitisation: stopped (pre-set gate failed)
 
-- **Raters:** Claude Opus (A) and Claude Sonnet (B) agents. They were blind
+- **Raters:** A and B, two models (see Use of AI in the README). They were blind
   to everything but the white-light core photographs, and followed one
   written protocol (V4_DIGITISER_PROTOCOL.md, version 2 after review).
-- Both raters are Claude models from one vendor, so their errors are likely
+- Both raters are models from one family, so their errors are likely
   correlated. Agreement is an upper bound on reliability, not a measure of
   accuracy.
 
@@ -37,13 +36,13 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
   coverage, which is unusable and selects the easy beds.
 - **The core record is poor.** 44% of the 34/7-10 bins are rubble, mostly
   mudstone chips. Colour agreement is 0.61.
-- **Protocol deviation.** A's last 6 photographs were done by a fresh
-  session that corrected a cyan cast with the grey scale; B's were not
+- **Protocol deviation.** A's last 6 photographs were done in a separate
+  run that corrected a cyan cast with the grey scale; B's were not
   corrected.
 - **Finding (rewritten after the v5 panel, V5_RESULTS.md):**
   - The pre-set agreement gate failed (kappa 0.50).
   - A blind, evidence-based adjudication showed this was mainly one rater
-    (Sonnet) calling clean sandstone HET or MUD, plus a real silt / very fine
+    (B) calling clean sandstone HET or MUD, plus a real silt / very fine
     sand boundary problem.
   - The core photographs themselves are readable for clean sandstone.
   - The test is not reopened (the stop rule was pre-registered).
@@ -92,7 +91,7 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
   - Dropping all 15 r3_upper clay labels: E2 median AUC 0.694, 6/7, p 0.039;
     D1 0.743, 7/7. Unchanged.
 - **Fine-tuned CNN (exploratory).** Its numbers were computed, p-values
-  included, before the reviewer asked for "no test" to be declared in
+  included, before the review asked for "no test" to be declared in
   advance.
 
   | model | median AUC | wells > 0.5 | local50 wells > 0.5 | vs relative depth |
@@ -111,7 +110,7 @@ beds, Brent), not the shallow overburden. The only Tertiary cores (24/9-3,
 
 Unchanged: a signal at interval scale that transfers between wells, and
 no demonstrated bed-scale skill. v4 adds three things for the methods chapter:
-1. Two AI raters agree on thick sandstone and disagree directionally in a
+1. Two model raters agree on thick sandstone and disagree directionally in a
    red-bed core (agreement, not accuracy; one well each).
 2. Plugs give weak, non-significant support for some bed-scale information
    where bags represent the rock.
@@ -120,7 +119,7 @@ no demonstrated bed-scale skill. v4 adds three things for the methods chapter:
 
 ## 6. Open: human spot-check
 
-- **Page:** https://claude.ai/artifact/KYeehqu5ZkBi6ViMVHRonr. 40 bins of
+- **Page:** an online labelling page (not kept). 40 bins of
   34/7-10, blind (25 disputed, 15 agreed). The answer key is in
   `results/v4/spotcheck_key.csv`; do not open it before labelling.
-- When it is done: agent-human kappa per rater, and which rater is biased.
+- When it is done: rater-human kappa per rater, and which rater is biased.

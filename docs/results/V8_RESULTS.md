@@ -1,4 +1,4 @@
-# v8 results (plan: V8_PLAN.md with the reviewer's amendments; each part run once)
+# v8 results (plan: V8_PLAN.md with the review amendments; each part run once)
 
 v7 is closed and unchanged. Scripts were committed before each run.
 Result files: results/v8/.
@@ -101,7 +101,7 @@ varies more.
   also make it move, so this ranks intervals within a well and certifies
   none.
 
-## Reviewer (A and B, after results): ACCEPT WITH CHANGES, applied
+## Review (A and B, after results): accepted with changes, applied
 Every number matched the result files; Holm and the counting rule were
 applied as written. Changes applied above: one factual error about the twin
 wells corrected; Ti added to the colour-baseline caveat; the "beyond"
@@ -186,7 +186,7 @@ Per well:
    34/8-3 A, drilled from the same location, is in the training fold when
    34/8-3 is held out, with bags at 100 of the same 101 depths; whether a
    fine-tuned network exploits this more than a 32-component ridge was not
-   tested. The reviewer's post hoc check: the sidetrack's high-passed Si/Al
+   tested. The review's post hoc check: the sidetrack's high-passed Si/Al
    at matched depths does not track 34/8-3's (rho about -0.25), so a simple
    depth lookup does not explain it. The sidetrack itself shows no gain
    (+0.20 against +0.16 and +0.18). No test of 34/8-3 alone was declared.
@@ -195,7 +195,7 @@ Per well:
    the flat chemistry may not be all noise (one well, post hoc). Part B's
    results are for R-D and are unchanged.
 
-### Reviewer (C, after results): ACCEPT WITH CHANGES, applied
+### Review (C, after results): accepted with changes, applied
 
 Every number was checked against the result files and matched; the scoring
 code follows the plan; no leak beyond the colour-standardisation point
@@ -212,7 +212,7 @@ qualify.
 
 ### Labels
 - Seven wells, base Cretaceous to the deepest bag, 101 tiles of 40 m.
-  Reader A (Opus) read all, reader B (Sonnet) a seeded 20 % (23 tiles).
+  Reader A read all, reader B a seeded 20 % (23 tiles).
   Rules v3 plus an addendum for these sheets, both written from the legends.
 - **G1 (depth):** all 43 printed 100 m labels sit on their calibrated line.
 - **G2 (reader agreement): passes every gate.** 283 bag intervals:
@@ -270,7 +270,7 @@ positive, negligible in size. With Cl partialled out, +0.03 (5 of 6, p
 0.078); this line includes 34/8-3, which the other two drop because its
 label has no carbonate.
 
-### Reading (reviewer: ACCEPT WITH CHANGES, applied)
+### Reading (review: accepted with changes, applied)
 1. Where sandstone is common, the photograph model follows the wellsite
    sand fraction about as well as the measured chemistry does (+0.52
    against +0.51), in every well tested. In the Tertiary (step 3: a
@@ -289,7 +289,7 @@ label has no carbonate.
    high-pass already removes trends longer than about 100 m, so this only
    rules out short residual trends.
 5. Limits: an amended test, not a test of record; six wells from one area
-   (Tampen), two of them twins; AI readers with no human key (very high
+   (Tampen), two of them twins; readers of one model family with no human key (very high
    agreement between readers says the sheets are clear, not that the
    wellsite geologist was right); 34/4-6, the one Anadrill sheet and the
    most strongly skewed scan, is the weakest (+0.16); cavings, cored

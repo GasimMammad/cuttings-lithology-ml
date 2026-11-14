@@ -10,7 +10,7 @@ validation (section C) is fixed here before it is computed.
 |---|---|---|
 | A. 12-way nested selection (E2/D2/ensemble x smoothing x soft labels) | **dropped** | 9 inner wells; the choice flips on one 8 m Etive bed in 34/8-3 A; nesting cannot undo that the candidates were designed after seeing the wells |
 | B. median smoothing over +/-1 photo | **dropped** | erases single-photo sands (34/7-4 1040 m, 34/7-9 1040 m, both 34/7-10 sands), i.e. exactly the thin bodies the thesis is about |
-| C. soft labels | not run in v3 | code already excluded "unstable" depths and balanced by label mass, but the reviewer's point stands that the target should be averaged over the cuttings bag interval, not taken at the centre depth; that is a label redesign for later |
+| C. soft labels | not run in v3 | code already excluded "unstable" depths and balanced by label mass, but the review's point stands that the target should be averaged over the cuttings bag interval, not taken at the centre depth; that is a label redesign for later |
 | D. 34/7-1 mud-log test as confirmatory | **demoted, not run** | not blind (34/7-1 was a v1 hold-out fold and the v1 mud-log probe used the same PDF); the open hole is almost all claystone (low power); the scanned 1984 column is sparse symbols plus text, and a fair test needs two independent digitisers |
 | new | relative-depth baseline with a fair sign rule | v2's depth-only baseline learned its sign by pooling wells, which let deep 24/9-3 and Jurassic sands pick the wrong direction; with the sign from the mean of per-well training AUCs, relative depth alone reaches median AUC 0.57, 6/7 wells, p = 0.039 |
 | new | local AUC (sand-clay pairs < 50 m apart) | asks whether a signal separates beds or only intervals |

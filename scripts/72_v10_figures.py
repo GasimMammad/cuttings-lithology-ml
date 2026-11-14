@@ -3,7 +3,7 @@ Figures for the closed v9 and v10 results. No new statistic: everything drawn is
 
   fig_v10_tops          photo stratigraphy (v10 S): units assigned from photographs against Sodir units,
                         and the error of every evaluated top against the nearest offset well
-  fig_v9_mudlog_tile    one mud-log tile with both AI readings and the bag labels made from them (v8 D)
+  fig_v9_mudlog_tile    one mud-log tile with both readings and the bag labels made from them (v8 D)
 
 Run:  python 72_v10_figures.py
 """
@@ -166,7 +166,7 @@ def tile():
     fig.suptitle("From a 1986 mud log to a label for every bag: well 34/7-9, 2800 to 2840 m", x=0.06, y=1.06, ha="left",
                  fontsize=10, color=INK, weight="bold")
     fig.text(0.06, 1.012, "In the tile, dots are sand and dashes are clay; the script added the red depth ruler and the blue 0-100 % ruler.\n"
-                          "Two AI readers (Claude Opus and Sonnet, one model family; no human key) read the same tile without seeing each other,\n"
+                          "Two readers (one model family; no human key) read the same tile without seeing each other,\n"
                           "the photographs or the chemistry.",
              fontsize=8, color=INK2, ha="left", va="top")
     save(fig, "fig_v9_mudlog_tile")

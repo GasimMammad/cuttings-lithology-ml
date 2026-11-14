@@ -1,14 +1,14 @@
 """
-v7 step 1, checks required by reviewer round 16 (run after the primary):
+v7 step 1, checks required by review round 16 (run after the primary):
   1. Colour-only baselines: lab_L_mean alone, and mean L*a*b* (3 features),
      through the same LOWO / high-pass / Wilcoxon as the primary.
   2. Per-well rho of the primary above and below 950 m.
   3. The primary on S minus the v3 shallow-test bags (labels excluded_zone or
      no_log, above top Shetland), so v7 evidence does not recycle v3's.
-  4. (Added by me, not required) R-D prediction partial on the high-passed
+  4. (Added, not required) R-D prediction partial on the high-passed
      mean L*a*b*: does the embedding carry information beyond mean colour?
 
-Run:  python 52b_v7_reviewer_checks.py
+Run:  python 52b_v7_extra_checks.py
 """
 import json
 from importlib import import_module
@@ -88,8 +88,8 @@ def main():
                                                 "n_bags": int(S3.sum()), "n_removed": int((S & v3).sum())}
     pw["S minus v3"] = s
 
-    pd.DataFrame(pw).round(4).to_csv(OUT / "step1_reviewer_checks_per_well.csv")
-    with open(OUT / "step1_reviewer_checks.json", "w") as f:
+    pd.DataFrame(pw).round(4).to_csv(OUT / "step1_extra_checks_per_well.csv")
+    with open(OUT / "step1_extra_checks.json", "w") as f:
         json.dump(res, f, indent=1, default=float)
     for k, v in res.items():
         print(f"{k:42s} med {v.get('median_rho', np.nan):+.3f}  pos {v.get('n_pos')}/{v.get('n_wells')}  "

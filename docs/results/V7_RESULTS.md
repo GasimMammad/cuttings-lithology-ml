@@ -1,4 +1,4 @@
-# v7 results: step 1, photos -> cuttings XRF chemistry (2026-11-10). Reviewer round 16/16b: ACCEPTED, step 1 CLOSED
+# v7 results: step 1, photos -> cuttings XRF chemistry (2026-11-10). Review round 16/16b: accepted, step 1 CLOSED
 
 - **Plan:** V7_PLAN.md FINAL (b1eeb05).
 - **Scripts:** 52_v7_photo_to_xrf.py (bdf7850, committed before the run) and
@@ -57,7 +57,7 @@
 | Pre-Tertiary (descriptive, own normalisation) | 0.51 (9/10) |
 | Downstream GR labels (exploratory, 5 wells inside S) | predicted-T1 AUC 0.48-0.77; v2 E2 is better in 4/5. Local AUC 0.40-0.87 |
 
-## Reviewer round-16 checks (52b_v7_reviewer_checks.py, committed before running)
+## Review round-16 checks (52b_v7_extra_checks.py, committed before running)
 | check | result |
 |---|---|
 | Colour only: L* mean (1 feature), same LOWO and high-pass | 0.14 (9/11), p 0.009 |
@@ -67,7 +67,7 @@
 | Primary below 950 m (11 wells, 1,662 bags) | 0.32 (11/11): not confined to the glacial top-hole section |
 | Primary on S minus the v3 shallow-test bags (1,152 bags, 8 wells with >= 30) | 0.46 (8/8), p 0.004: not recycled v3 evidence |
 
-## Reading (agreed wording, reviewer round 16)
+## Reading (agreed wording, review round 16)
 In wells not used for training, ResNet-50 embeddings of cuttings photographs
 predict the local (within +/-50 m) variation of the Si/Al ratio measured on
 the same bag.
@@ -124,7 +124,7 @@ Criterion = (a) AND (c). (a) passes; (c) fails.
 
 No wording was pre-declared for "(a) passes, (c) fails". A12 said "all of
 these, else 'photos add nothing to position for glauconite'", but (a) passed,
-so that sentence would be wrong too. Wording agreed with the reviewer
+so that sentence would be wrong too. Wording agreed with the review
 (round 18):
 
 > Within 80 m of the top Hordaland unconformity, a native-resolution
@@ -167,7 +167,7 @@ The A13 learned model (ResNet crops) was NOT run, as fixed in A15.
   but each well has only 12-13 possible shifts. Shifts scoring at or above
   the observed AUC: 34/4-6 0 of 13, 34/7-10 4 of 13, 34/7-4 1 of 12, 34/7-9
   5 of 12, 34/8-3 A 0 of 13. A rank-only (Fisher) combination of those
-  per-well p-values gives about 0.06 (reviewer's arithmetic). Report as:
+  per-well p-values gives about 0.06 (review's arithmetic). Report as:
   "p < 0.001 by the pre-registered statistic; carried by three wells; a
   rank-only combination gives about 0.06."
 - **What the null tests.** S and G both peak at the THGU greensand, so the
@@ -200,7 +200,7 @@ The A13 learned model (ResNet crops) was NOT run, as fixed in A15.
 ## Out-of-window positives (descriptive)
 Five bags with G > 0.2 lie 147-692 m above THGU. Their within-well S
 percentiles are 34, 68, 31, 28 (34/7-4 at 840, 900, 920, 1040 m) and 43
-(34/7-9 at 480 m). The detector does not flag them. The geochemist's reading
+(34/7-9 at 480 m). The detector does not flag them. The geochemistry check
 (exploratory, below) is that these are artefacts of the index, which is
 consistent with the detector not flagging them.
 
@@ -215,7 +215,7 @@ consistent with the detector not flagging them.
   estimated 3.6 s): the detector is far slower than specified.
 
 ## Exploratory, post hoc (after unsealing; none of this changes the outcome)
-Checked by the reviewer and reproduced by me on g_scores_joined.csv.
+Checked in review and reproduced on g_scores_joined.csv.
 - **S is the colour-gate pixel fraction, not a pellet count.** Spearman of S
   against gate_frac is 0.99 pooled and 0.95-1.00 within Lista in every well.
   gate_frac alone gives Q 0.737. The shape gates add nothing.
@@ -232,8 +232,8 @@ Checked by the reviewer and reproduced by me on g_scores_joined.csv.
   0.44, 0.92, 0.36, 0.71. Only 2 of 6 intervals stand out. So the 95 deg
   lower hue bound is what let Lista in; true-green blobs are specific but too
   rare to detect most glauconitic bags. Not a rescue; no further tuning.
-- **Geochemistry of the Lista false positives** (geochemist,
-  results/v7/agent2_step2_results_notes.md): flagged and unflagged Lista bags
+- **Geochemistry of the Lista false positives** (geochemistry check,
+  results/v7/check_step2_results.md): flagged and unflagged Lista bags
   in the 34/8 wells do not differ chemically (K/Al, Fe/Al, G, Si/Al;
   Mann-Whitney p 0.09-0.89), and Lista G is about 0 (maximum 0.12). Within
   the 34/8 Lista, S against the photo's median a* is -0.96 and -0.92. The
@@ -247,7 +247,7 @@ Checked by the reviewer and reproduced by me on g_scores_joined.csv.
   either genuinely greener clay or rendered greener by that well's photo
   processing (XRF cannot separate the two).
 
-## Reading (reviewer round 18: ACCEPT WITH CHANGES, applied; step 2 CLOSED)
+## Reading (review round 18: accepted with changes, applied; step 2 CLOSED)
 1. Within the window, a dark-olive-green pixel score co-locates with the
    G > 0.2 bags after a piecewise-linear trend in distance is removed
    (p < 0.001 by the pre-registered statistic, carried by three wells; about
@@ -267,15 +267,15 @@ Checked by the reviewer and reproduced by me on g_scores_joined.csv.
 
 # v7 step 3: the mud-log "cuttings lithology %" column as a wellsite label
 
-Run 2026-11-10/11. Plan: V7_PLAN.md step 3 (v3; reviewer rounds 19 and 19b
-and the wellsite geologist's protocol check applied). Order of commits:
+Run 2026-11-10/11. Plan: V7_PLAN.md step 3 (v3; review rounds 19 and 19b
+and the protocol check applied). Order of commits:
 plan, reader rules, reader folders and seeded selections, raw readings,
 agreement script, first agreement result, second-pass rule, second
 agreement result, eligibility and set of record, chemistry check, test
 script, photograph tests. Nothing was joined to XRF or photographs before
 the labels and the set of record were committed.
 
-## Outcome (headline agreed with the reviewer, round 20)
+## Outcome (headline agreed with the review, round 20)
 In six held-out wells a photograph model trained only on Si/Al agreed weakly
 with the wellsite sand fraction (median per-well Spearman +0.13; one-sided
 p = 3/64 = 0.047; bootstrap 95 % CI -0.03 to +0.27), narrowly meeting the
@@ -362,7 +362,7 @@ combined with the weak link between chemistry and the mud log.
   wells still agree to within 0.35 points, so they do not affect the label.
   (results/v7/step3/G2_block_boundary_offset.json)
 - **G1 caveat:** the depth check was by eye on contact sheets; no numerical
-  residual per label was measured, although the reviewer asked for one.
+  residual per label was measured, although the review asked for one.
 - **Reader A's seams:** in 23 % of tile seams the sand % changes by 10
   points or more. Real sample steps often fall on 10 m multiples, so this is
   an upper bound on reader inconsistency, not a measure of it.
@@ -461,9 +461,9 @@ chemistry agree only weakly at bag scale.
   reading has no human key. Exploratory, not a validation. It does nothing
   for the step-2 photo score.
 
-## Reading (reviewer round 20: ACCEPT WITH CHANGES, applied; step 3 CLOSED)
+## Reading (review round 20: accepted with changes, applied; step 3 CLOSED)
 1. Wellsite sand fractions can be read from old mud logs with high
-   agreement between two AI readers on seven sheets, and on the eighth
+   agreement between two readers on seven sheets, and on the eighth
    after one clarified rule. Agreement is not accuracy: there is no human
    key.
 2. The pre-registered wording applies, with its limits: "a model taught only
@@ -492,16 +492,16 @@ readings were committed before scoring. None of this changes a closed
 result. Steps 1-3 stand as written above.
 
 ## X0. The 17 symbol-audit tiles, read twice more
-Two further AI readings (same model family; one by the session that wrote
-the rules and had seen 3 of the 17 tiles). They measure reader consistency,
+Two further readings (same model family; audit reader 1 also wrote the
+reader rules and had seen 3 of the 17 tiles). They measure reader consistency,
 not accuracy. No human key exists.
 
 | new reading against | bag intervals | sand %, mean abs. difference | class presence that differs |
 |---|---|---|---|
-| main session vs reader of record | 73 | 0.01 points | 1 (tuff) |
-| audit agent vs reader of record | 73 | 0.01 points | 1 (tuff) |
+| audit reader 1 vs reader of record | 73 | 0.01 points | 1 (tuff) |
+| audit reader 2 vs reader of record | 73 | 0.01 points | 1 (tuff) |
 | either vs the checking reader | 52 | 0.00 points | 1 (tuff), 3 (carbonate) |
-| main session vs audit agent | 73 | 0.00 points | 0 |
+| audit reader 1 vs audit reader 2 | 73 | 0.00 points | 0 |
 
 - All four readings agree on sand, silt, glauconite, marl and coal in every
   interval (24 sand, 12 silt, 16 glauconite, 4 marl, 2 coal intervals).
@@ -509,10 +509,10 @@ not accuracy. No human key exists.
   1700-1710 m) that both new readings took as a fill and both earlier
   readers (record and checker) as traces. The carbonate difference is a narrow limestone stripe on
   34/4-6 that the checking reader did not report.
-- The same picture holds on the 14 tiles the main session had not seen.
+- The same picture holds on the 14 tiles the audit reader 1 had not seen.
 - The two new readings are not copies: they split blocks differently in 10
   of 17 tiles and share no notes.
-- What this adds: on the tiles chosen for their unusual patterns, four AI
+- What this adds: on the tiles chosen for their unusual patterns, four
   readings give the same sand fraction. What it does not add: a human check.
 
 ## X2. A second wellsite source for 34/7-9: the Saga "Well Site Lithology Log"
@@ -533,13 +533,13 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
 - **Two wellsite descriptions of the same cuttings agree only moderately**
   (+0.4 to +0.5). That is one well and one reader. Agreement between two
   noisy labels is a rough guide to what any predictor can show against one
-  of them. It is not a strict ceiling, and the +0.42 also contains AI-reader
+  of them. It is not a strict ceiling, and the +0.42 also contains reader
   error and the 10 m resolution of the Saga log.
 - The photo model agrees with the two logs about equally (+0.19 and +0.16).
   Si/Al gives +0.23 against Exlog and +0.07 against Saga. With 127 bags in
   one well this difference was not tested.
 - This supports reading step 3's small numbers as limited by the reference,
-  with the caveat the reviewer set: it does not show that photographs would
+  with the caveat the review set: it does not show that photographs would
   do better against a better label.
 
 ## X3. The two wells left out of step 3
@@ -558,7 +558,7 @@ one reader). On this sheet each 10 m sample is one band, so its resolution is
   - The label is coarse: of the 130 bags in S, 15 fall under a "sand"
     entry, 29 under a trace, and 86 are claystone. Only 7 bags are informative, in 2 depth
     clusters, so the well is **not eligible** (the rule needs 15 in 3). As
-    the wellsite geologist agent warned, this is a zone label, not a bag
+    the protocol check warned, this is a zone label, not a bag
     label.
 - **24/9-4 (hand-drawn wellsite geologist log).** Main-bore sheets down to
   the sidetrack at 1753 m, 36 tiles, depths read from the sheet's own
@@ -670,7 +670,7 @@ Reading:
   wells positive). Fine-tuning on 2021 bags gave no detectable gain over
   frozen features (n = 11 wells, one seed).
 
-## Reviewer (extras, after results): ACCEPT WITH CHANGES, applied
+## Review (extras, after results): accepted with changes, applied
 All X1 and X2 numbers matched the results files. Changes applied above: a
 wrong bag count for 34/7-1 corrected; the two depth controls that were not
 applied in X3 stated as deviations; the "about 0" well made explicit in the

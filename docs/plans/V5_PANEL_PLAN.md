@@ -1,11 +1,11 @@
-# v5: expert-panel adjudication of the 40 spot-check bins (34/7-10). Plan written before any panel output.
+# v5: panel adjudication of the 40 spot-check bins (34/7-10). Plan written before any panel output.
 
 ## Why
 
-- Two AI core raters (A Opus, B Sonnet) disagreed directionally in 34/7-10:
+- Core raters A and B disagreed directionally in 34/7-10:
   51 bins where A said SAND and B said HET/MUD.
-- The author could not adjudicate from photographs alone. Instead of more AI
-  opinions, the panel weighs INDEPENDENT EVIDENCE:
+- The author could not adjudicate from photographs alone. Instead of more readings of
+  the photographs, the panel weighs INDEPENDENT EVIDENCE:
   1. the operator's own core description (well and core reports on T9,
      written by a human sedimentologist with the core in hand);
   2. wireline logs at the core depths (density, neutron, sonic, resistivity,
@@ -19,29 +19,30 @@
 
 ## Who
 
-All are AI agents (Claude). This is NOT a human expert panel.
-- **Agent 1:** senior petrophysicist / core analyst persona. Logs, plugs,
+The panel members are models (see Use of AI in the README); this is not a
+human expert panel.
+- **Member 1:** petrophysics and core analysis. Logs, plugs,
   core reports, photos, literature.
-- **Agent 2:** senior geochemist persona. Cuttings XRF, chemostratigraphy,
+- **Member 2:** geochemistry. Cuttings XRF, chemostratigraphy,
   representativeness of coring cuttings, literature.
-- **Agent 3:** the existing reviewer (general geoscientist + ML). Challenges
+- **Member 3:** the review (general geoscience and ML). Challenges
   everything.
 
 ## Blinding
 
-- Agents 1 and 2 get the 40 bins WITHOUT the raters' labels
+- Members 1 and 2 get the 40 bins WITHOUT the raters' labels
   (`v5_panel/items_blind.csv`).
 - The answer key (`results/v4/spotcheck_key.csv`) is revealed only after the
   panel has fixed its per-bin consensus.
 
 ## Procedure
 
-- **R1:** agents 1 and 2 work independently. Per bin: lithology (SAND / HET /
+- **R1:** members 1 and 2 work independently. Per bin: lithology (SAND / HET /
   MUD / OTHER / NO-CORE / UNRESOLVED), confidence, and the evidence used.
-- **R2:** agent 3 critiques both. Agents 1 and 2 answer and revise. Repeat
+- **R2:** member 3 critiques both. Members 1 and 2 answer and revise. Repeat
   until positions stop changing, at most 3 rounds.
 - **Consensus label per bin:**
-  - agreed by agents 1 and 2 with at least one non-photographic evidence
+  - agreed by members 1 and 2 with at least one non-photographic evidence
     line (operator core description, logs, plugs) supporting it;
   - otherwise UNRESOLVED.
   - "100% correct" is not claimed. Unresolved bins are reported as such.
@@ -49,7 +50,7 @@ All are AI agents (Claude). This is NOT a human expert panel.
   consensus, with Wilson CIs, and a statement of which rater is biased, if
   the evidence supports one.
 
-## Amendment after Agent 3 round 1 (before any consensus was formed; key still sealed)
+## Amendment after Member 3 round 1 (before any consensus was formed; key still sealed)
 
 - **Target:** the protocol class (incl. OTHER, NO-CORE) of the rock covering
   more than half of the PHOTOGRAPHED quarter. This is what raters A and B
@@ -67,5 +68,5 @@ All are AI agents (Claude). This is NOT a human expert panel.
 - **Reporting:** unresolved bins by stratum (disputed vs agreed). Bias
   estimates come with Wilson CIs and the caveat that they rest on the
   resolved subset.
-- **Disclosure:** Agents 1 and 2 are Opus, the same model as rater A, so the
+- **Disclosure:** members 1 and 2 are the same model as rater A, so the
   panel is not independent of A.

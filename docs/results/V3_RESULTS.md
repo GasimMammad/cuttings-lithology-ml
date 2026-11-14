@@ -1,11 +1,10 @@
 # v3 results (2026-11-05)
 
-Independent review: a reviewer agent playing a senior geoscientist and ML
-practitioner, 3 rounds; its objections and the changes they caused are in
+Review: 3 rounds; its objections and the changes they caused are in
 V3_PLAN.md section 1 and below. Features file used: `28_features.csv`, sha256
 prefix d546d8befbccd4b7, 80,608 tiles.
 
-## Headline (agreed with the reviewer)
+## Headline (agreed with the review)
 
 Photographs of archived cuttings from ten Norwegian North Sea wells carry a
 sand-clay signal that transfers to wells the model never saw (pre-registered
@@ -52,7 +51,7 @@ the cuttings are, not yet a sinkite (bed-scale sand) detector.
 - **Run 1 flaw:** in run 1 the 247 test depths of 34/8-3 and 34/8-3 A had
   engineered features from one tile, not 16, because feature extraction was
   stopped early.
-- **How run 2 was done:** the reviewer specified the remedy (compute the
+- **How run 2 was done:** the review specified the remedy (compute the
   missing tiles, rerun the committed script unchanged) before run 2 existed.
   Run 1 was committed first (3a32a61), and the script is unchanged since then.
 - **Audit bias:** the flaw was found during review of a null result. Only

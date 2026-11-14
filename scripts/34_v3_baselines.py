@@ -1,5 +1,5 @@
 """
-v3 -- independent re-check of the reviewer's objections to v2 (O1, O6).
+v3 -- independent re-check of the review's objections to v2 (O1, O6).
 
 For every v2 held-out prediction (and two reference signals) report, per
 eligible well:

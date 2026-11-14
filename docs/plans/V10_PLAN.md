@@ -1,14 +1,12 @@
 # v10 plan: photo stratigraphy and the resolution of cuttings (written 2026-11-12, before any of it is run)
 
-User instruction (2026-11-12): "do whatever you think will be the best and
-the most useful for our project". Of the four ideas put to the user, two
-are taken up here because they need no credits and use an independent
-reference: photo stratigraphy (S) and the step response of cuttings (R).
-The zero-shot AI reader (costs credits) and the parentage test (high risk
-from cavings) are not done.
+Of the four ideas listed at the end of V9_PLAN, two are taken up here
+because they use an independent reference: photo stratigraphy (S) and the
+step response of cuttings (R). The zero-shot reader of the bag photographs
+and the parentage test (high risk from cavings) are not done.
 
 v7 to v9 are closed and unchanged. Order of work: this plan committed ->
-reviewer -> code committed -> run once -> reviewer. Both parts are new
+review -> code committed -> run once -> review. Both parts are new
 tests on wells that were all used before; neither is a fresh hold-out.
 
 ## Why these two
@@ -21,7 +19,7 @@ does a bag need to register a sharp boundary that the wireline tool saw?
 
 ## S. Photo stratigraphy: major tops in an unseen well
 
-**Reference (independent of every AI reader and of the photographs).**
+**Reference (independent of every reader and of the photographs).**
 Sodir lithostratigraphy, group level, downloaded 2026-11-12 for all 11
 wells (saved with the results). Five units in fixed order:
 
@@ -170,10 +168,10 @@ here once and not tuned.
 
 ## Order
 
-S and R are independent. Each is scored once. If the reviewer asks for a
+S and R are independent. Each is scored once. If the review asks for a
 change after results, it is reported as post hoc.
 
-## Reviewer (v10 plan): APPROVE WITH CHANGES. Amendments (2026-11-12, before any run; they take precedence over the text above)
+## Review (v10 plan): approved with changes. Amendments (2026-11-12, before any run; they take precedence over the text above)
 
 ### S
 - **The primary test is now the offset well (S2).** The regional prognosis

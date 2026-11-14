@@ -29,7 +29,7 @@ EV = import_module("29_v2_evaluate")
 BL = import_module("34_v3_baselines")
 M = import_module("52_v7_photo_to_xrf")
 OUT = C.WORK_DIR / "v7" / "step3"
-CORES = {"24_9-3": [(1777.0, 1798.0)]}  # cored intervals inside the Tertiary (wellsite geologist's check)
+CORES = {"24_9-3": [(1777.0, 1798.0)]}  # cored intervals inside the Tertiary (protocol check)
 INF_THR, MIN_INF, MIN_CLUST, CLUST_GAP, MIN_BAGS, MIN_WELLS = 0.05, 15, 3, 30.0, 30, 6
 PAIR_M, PAIR_DY, MIN_PAIRS = 50.0, 0.2, 20
 

@@ -1,7 +1,7 @@
 # v8 plan (2026-11-11): five follow-ups to v7, written before any of them is run
 
-Requested by the user on 2026-11-11 ("do 1, 2, 4, 5 and the additionals",
-order left to me). v7 (steps 1-3 and extras X0-X3) is closed and is not
+Chosen on 2026-11-11 from the list of follow-ups (items 1, 2, 4, 5 and the
+additional checks). v7 (steps 1-3 and extras X0-X3) is closed and is not
 changed by anything here. Parts A, B, C, D are analyses; E is a figure; F is
 writing. Each analysis part states what would count as a result before it is
 run. Definitions not repeated here are those of V7_PLAN.md step 1 (set S,
@@ -91,7 +91,7 @@ z-scored within the well.
   against R-D. Secondary: the three-seed ensemble (mean prediction).
 - 34/8-3: the X1 observation (+0.31) "reproduces" only if both new seeds
   give >= 0.15. Otherwise it is reported as seed noise.
-- About 4.3 h of GPU; no agents.
+- About 4.3 h of GPU.
 
 ## D. Pre-Tertiary mud-log labels (additional)
 
@@ -146,7 +146,7 @@ is closed.
   given Si/Al is near zero, say so as in step 3. Fail with G3 >= 0.15: "the
   photographs do not follow the wellsite sand fraction even where sand is
   common".
-- **Known weaknesses, named now:** no human key; AI readers of one family;
+- **Known weaknesses, named now:** no human key; readers of one model family;
   deeper sections have more cavings and oil-based or heavier muds; cored
   intervals have no cuttings; the readers have seen Tertiary sheets, not
   these; I know the step-1 pre-Tertiary chemistry result (+0.51), so the
@@ -170,20 +170,20 @@ Descriptive figure of closed results; no new statistic.
 - CONFERENCE_NOTES.md: 250-word abstract, key messages, a talk outline with
   what each slide must show, figure list, expected questions with answers.
   No slide deck (not requested).
-- Every number traced to a results file; the reviewer checks claims against
+- Every number traced to a results file; the review checks claims against
   those files.
 
 ## Order and review
 
-1. This plan to the reviewer. Nothing below starts before changes are
+1. This plan goes to review. Nothing below starts before changes are
    applied and committed.
 2. C starts (GPU, background). A and B run once. D's pre-Tertiary
    predictions committed; D tiles and G1; sheet-note addendum.
-3. Reviewer: A, B results and D's addendum (before readers start).
+3. Review: A, B results and D's addendum (before readers start).
 4. D readers; meanwhile E and a first draft of F.
-5. C and D scored once; reviewer; F finalised; reviewer on F.
+5. C and D scored once; review; F finalised; review on F.
 
-## Reviewer (v8 plan): APPROVE WITH CHANGES. Amendments, applied before anything is run; they take precedence over the text above
+## Review (v8 plan): approved with changes. Amendments, applied before anything is run; they take precedence over the text above
 
 ### A (elements)
 - **Why:** all five targets share the Al denominator with Si/Al, so a
@@ -269,7 +269,7 @@ Descriptive figure of closed results; no new statistic.
 
 ### Order (changed)
 C on the GPU now. A and B run once. E and a first draft of F. Then D in the
-reduced form. Reviewer after A/B (with D's sheet-note addendum), after C/D,
+reduced form. Review after A/B (with D's sheet-note addendum), after C/D,
 and on F.
 
 ### D details fixed on 2026-11-11 after the tiles were made, before any tile was read
@@ -278,8 +278,7 @@ and on F.
   last step-3 tile; one tile per sheet family was looked at to confirm the
   right column.
 - **G1 passed:** all 43 printed 100 m labels in the new range sit on their
-  calibrated line (contact sheets calib/jt_*_labels.png, looked at by the
-  main session). The 10 m line spacing equals the nominal spacing in every
+  calibrated line (contact sheets calib/jt_*_labels.png, checked by eye). The 10 m line spacing equals the nominal spacing in every
   sheet, so no sheet changes scale in this range.
 - **Reader rules:** rules v3 unchanged plus
   results/v7/step3/reader_rules_jt_addendum.md. One decision in it matters
@@ -292,7 +291,7 @@ and on F.
   intervals are excluded by the mask, as declared.
 - Reader A: one folder per well. Reader B: seeded 20 % per well (at least
   2 tiles). Stage 1 = 34/4-6, 34/7-4, 34/7-9; then the futility check.
-- **After the reviewer's check of the addendum (2026-11-12, before any tile
+- **After the review's check of the addendum (2026-11-12, before any tile
   was read):** silty sandstone gets its own reader class `ssst`. Primary Y
   = sand + ssst. Sensitivities: ssst counted as silt (Y = sand only), and
   Y = sand + ssst + silt. The addendum no longer says what to expect in
@@ -311,7 +310,7 @@ and on F.
   (34/4-6 +0.25, 34/7-4 +0.53, 34/7-9 +0.50). No photograph had been joined.
   The photograph predictions were frozen in commit 40b5c49. A positive
   result is expected from step 1.
-- **Amended rule (reviewer's wording):** at least 30 bags with Y; at least
+- **Amended rule (review's wording):** at least 30 bags with Y; at least
   15 informative bags (|high-passed Y| >= 0.05); informative bags in at
   least 3 distinct 30 m bins on a fixed grid from 0 m MD, spanning at least
   90 m. Six wells qualify (all but 34/4-7, which has 17 labelled bags

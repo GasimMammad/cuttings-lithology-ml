@@ -1,6 +1,6 @@
 # v10 results: photo stratigraphy (S) and the step response of cuttings (R)
 
-Plan: V10_PLAN.md with the reviewer's amendments (0925a5d). Each part was
+Plan: V10_PLAN.md with the review amendments (0925a5d). Each part was
 run once, with code committed first (70_v10_strat.py de44ec2 plus one label
 fix found in a label-only smoke test before the run; 71_v10_step.py
 2a1b808). Result files: results/v10/. Both parts are new tests on wells
@@ -151,7 +151,7 @@ set by the fit bounds.
    no direction.
 3. Why it fell short: 40 of the 80 steps failed the sharpness rule. The
    rule also rejects about a quarter of perfectly sharp steps, because the
-   step statistic locates a step only to about +/-15 m (reviewer's
+   step statistic locates a step only to about +/-15 m (review's
    synthetic check), so "not sharp" does not mean gradual. Of the 24 kept
    steps, 10 to 13 failed the bag-count or contrast rules. Loosening the
    rules now would be tuning after the result, so it was not done.
@@ -172,7 +172,7 @@ set by the fit bounds.
 - No resolution number. R should be repeated only with more wells, with
   the rules of V10_PLAN unchanged.
 
-## Reviewer (v10 results): ACCEPT WITH CHANGES for S and R, applied
+## Review (v10 results): accepted with changes for S and R, applied
 
 Every number was recomputed from the result files; no code bug that changes
 a verdict (labels without gaps, twins kept together in the folds, dynamic

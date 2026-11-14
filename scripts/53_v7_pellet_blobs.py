@@ -85,7 +85,7 @@ def blobs(L, a, b, chip_n, l_hi=L_HI, a_shift=0.0, b_shift=0.0, fill=True, brown
     b = b - b_shift
     Cc = np.hypot(a, b)
     h = np.degrees(np.arctan2(b, a)) % 360
-    if brown:  # diagnostic only (geochemist): oxidised pellets, hue 40-95 deg, a* > 0
+    if brown:  # diagnostic only (geochemistry check): oxidised pellets, hue 40-95 deg, a* > 0
         g = (h >= 40.0) & (h < H_LO) & (Cc >= C_LO) & (Cc <= C_HI) & (L >= L_LO) & (L <= l_hi) & (a > 0)
     else:
         g = (h >= H_LO) & (h <= H_HI) & (Cc >= C_LO) & (Cc <= C_HI) & (L >= L_LO) & (L <= l_hi) & (a <= A_MAX)
@@ -137,9 +137,9 @@ def score(path, ab_shift=None):
     for tag, lh in (("L45", 45.0), ("L55", 55.0)):
         s = blobs(L, a, b, n, l_hi=lh)
         out[f"S_{tag}"], out[f"S_area_{tag}"] = s["S"], s["S_area"]
-    s = blobs(L, a, b, n, fill=False)  # reviewer round 17: hole filling off
+    s = blobs(L, a, b, n, fill=False)  # review round 17: hole filling off
     out["S_nofill"], out["S_area_nofill"] = s["S"], s["S_area"]
-    s = blobs(L, a, b, n, brown=True)  # geochemist: brown rounded blobs (descriptive)
+    s = blobs(L, a, b, n, brown=True)  # geochemistry check: brown rounded blobs (descriptive)
     out["S_brown"] = s["S"]
     if ab_shift is not None:  # A6 per-well normalisation (second pass only)
         s = blobs(L, a, b, n, a_shift=ab_shift[0], b_shift=ab_shift[1])

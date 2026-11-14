@@ -2,8 +2,7 @@
 
 - **Plan:** V6_SINKITE_PLAN.md (FINAL 6cf30fb; check G added later,
   d89a285).
-- **Reviewer:** the AI reviewer agent, rounds 11-13. All other agents were
-  also Claude models; no human expert review.
+- **Review:** rounds 11-13; no human expert review.
 
 ## The question and its framing
 
@@ -27,14 +26,14 @@ from the source the thesis title rests on (ask the supervisor).
 |---|---|---|---|
 | A. Corrections (GLAUCONITE_CORRECTIONS.md) | 7 corrections | the photo index is a "green index"; the Utsira control was over-counted; near-THGU firing does not discriminate | - |
 | C. Spectral GR | not possible | - | no NGT coverage of the Utsira or Oligocene in any well |
-| D. XRF glauconite index G (pre-registered) | UNINFORMATIVE | Lista 0% (negative control passes) | the positive control failed because the reviewer-proposed Al floor removed the low-Al Utsira sand bags |
+| D. XRF glauconite index G (pre-registered) | UNINFORMATIVE | Lista 0% (negative control passes) | the positive control failed because the review-proposed Al floor removed the low-Al Utsira sand bags |
 | D, exploratory (no Al floor) | separates Utsira (4/5 wells) from Lista (0/147) | the named target sands (34/7-6 1218-1283 m, 34/7-10 1314-1328 m, 34/4-6 1359-1387 m) show no glauconite enrichment (G <= 0.03) | what the glauconite just below THGU means (caving, basal greensand or sunken Utsira) |
 | E. Blind pellet check | the high-G bags have pellets 8/10; the low-G Oligocene bags lack them 8/10 | XRF G detects real glauconite pellets | - |
 | B. Biostratigraphy | INCONCLUSIVE for every in-scope sand | 34/4-6 leans in-situ (no Neogene taxa in 3 DC datasets); 34/4-7 "late Oligocene sand" is basal Utsira above THGU (SWC Sr 4.7-5.1 Ma) | the sand age: no SWC or core exists in any Oligocene sand (Rundberg & Eidvin 2016); young taxa in DC (e.g. Cibicides grossa at 34/7-6 1260 m) cannot be told from cavings |
 | Logs, 34/7-6 (STAGE3lite) | clean sand, GR 17.6 API | against a glauconitic Utsira source in this one well | the operator notes "glauconite at base" of the same sand; a thin glauconitic base fits several origins |
 | G. Young-taxa distribution (exploratory) | 34/7-6 SCATTERED (young taxa in 13/18 samples above, 2/7 in, 2/5 below the sand); 34/7-10 INCONCLUSIVE (1 sand sample; 5/22 above, 3/5 below) | the young taxa in 34/7-6 behave like cavings, not like a fauna confined to the sand | anything about sand age |
 
-## Verdict (agreed with the reviewer agent)
+## Verdict (agreed with the review)
 
 The released well data cannot test the age of the Oligocene sands, which is
 the decisive criterion between an in-situ, injected or sinkite origin: no

@@ -1,5 +1,5 @@
 """
-v10 part S (V10_PLAN.md with the reviewer's amendments): photo stratigraphy.
+v10 part S (V10_PLAN.md with the review amendments): photo stratigraphy.
 Major tops in a held-out location from bag photographs, against Sodir group tops. Run once.
 
   python 70_v10_strat.py          writes ~/sinkite_ml_work_v2/v10/S_results.json and S_tops.csv

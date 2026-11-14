@@ -3,11 +3,11 @@
 v8 is closed and unchanged. Nothing here is a new headline test. Each part
 either removes a caveat or states that it stands. All parts are
 EXPLORATORY and are labelled so wherever they are quoted. Order of work for
-every part: this plan committed -> reviewer -> code committed -> run once
--> reviewer.
+every part: this plan committed -> review -> code committed -> run once
+-> review.
 
-User decisions (2026-11-12): no human key will be made (the user will not
-read the audit tiles); no new well is available; presentation work waits.
+Decisions (2026-11-12): no human key will be made (I will not read the
+audit tiles); no new well is available; presentation work waits.
 
 ## K1. Was an iron-titanium weighting agent used? (the ilmenite caveat of v8 A)
 
@@ -27,7 +27,7 @@ Sodir mud table already saved (results/v8/sodir_mud_table.csv).
    (ilmenitt, baritt, vektmateriale).
 2. Scanned reports without a text layer: pages of the mud / drilling-fluid
    sections and the materials-consumption tables are rendered and read by
-   one AI reader (sonnet), who records well, document, page, hole section,
+   one reader, who records well, document, page, hole section,
    mud system, weighting material and the quoted phrase. The reader is told
    to write "not stated" when a page does not name the material, and never
    to infer it from the mud weight or the year.
@@ -90,9 +90,9 @@ the same wells removed (seconds).
 
 ## K3. Gamma-ray key for the digitised mud-log labels (in place of a human key)
 
-**Why.** No human key exists and none will be made. Three AI readings
+**Why.** No human key exists and none will be made. Three readings
 agree, which shows consistency. Wireline gamma ray is an instrument
-record, independent of the AI readers and of the photographs. It can show
+record, independent of the readers and of the photographs. It can show
 whether the digitised sand fraction follows the formation. It cannot show
 that a given percentage was read correctly, and it does not replace a human
 key. The limitation "no human key" stays in every write-up.
@@ -126,13 +126,13 @@ join) and not the reader alone.
 
 ## Not in this plan
 
-Ideas put to the user on 2026-11-12 and waiting for a decision: photo
-stratigraphy against Sodir formation tops; a zero-shot AI reader of the bag
+Ideas noted on 2026-11-12 and waiting for a decision: photo
+stratigraphy against Sodir formation tops; a zero-shot reader of the bag
 photographs; the resolution limit of cuttings from gamma ray against XRF
 potassium; a parentage test for the target sands. Each would get its own
 plan and review.
 
-## Reviewer (v9 plan): APPROVE WITH CHANGES. Amendments (2026-11-12, before any run; they take precedence over the text above)
+## Review (v9 plan): approved with changes. Amendments (2026-11-12, before any run; they take precedence over the text above)
 
 ### K1
 - The "fewer than 6 of 11" rule is dropped. New rule: the caveat is

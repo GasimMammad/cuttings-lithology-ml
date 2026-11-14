@@ -37,9 +37,10 @@ reported for XRF, weight, colour and images side by side.
   loss = NONE at the bottom of a run (standard convention), checked against
   tray depths.
 - **Raters:**
-  - A: Claude Opus agent, all photos.
-  - B: Claude Sonnet agent, all photos.
-  - C: Claude Fable agent, a random 20% of photos.
+  - A: all photos.
+  - B: all photos.
+  - C: a random 20% of photos.
+  - A, B and C are different models (see Use of AI in the README).
   - All are blind to GR, cuttings photographs, XRF and every prediction.
   - They are not human raters. A human spot-check by the author is
     recommended before publication.
@@ -96,7 +97,7 @@ stays the reported result. This is only a robustness check.
 
 ## C. 34/7-1 mud log: dropped
 
-It is not blind and has low power. Two agents reading a 1984 scan add little
+It is not blind and has low power. Two readers of a 1984 scan add little
 (review round 6).
 
 ## D. Fine-tuned CNN (running, exploratory)
@@ -115,7 +116,7 @@ C1/C2 leave-one-well-out. Selects nothing. Reported alongside the others.
   with >= 50% coverage.
 - Reported as a finding. The 34/4-6 pilot (kappa 0.98 on thick sandstone) is
   the contrast.
-- Disclosed: A's last 6 photos were colour-corrected by a fresh session; B's
+- Disclosed: A's last 6 photos were colour-corrected in a separate run; B's
   were not.
 
 **B2. Plug-referenced bed-scale check, 34/8-3 only. Descriptive; no p-value is
@@ -139,5 +140,5 @@ claimed.**
 **Human spot-check (for the methods chapter only).**
 - About 40 bins of 34/7-10: 25 sampled at random from the 51 disputed bins
   (A SAND vs B HET/MUD), plus 15 sampled from bins where both agree.
-- Shown to the user blind to both raters.
-- Purpose: which LLM rater is biased.
+- Shown to me blind to both raters.
+- Purpose: which rater is biased.

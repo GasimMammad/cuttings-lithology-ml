@@ -127,8 +127,8 @@ it resolves.
 - **"Only 11 wells?"** Yes, and all were used in earlier rounds. Each test
   was fixed beforehand, but none is a fresh hold-out. With 11 wells the
   smallest possible p is 0.0005; with six, 0.016.
-- **"Who read the mud logs?"** Two AI readers of different models, on
-  tiles made by a script, blind to photographs and chemistry. They agree
+- **"Who read the mud logs?"** Two AI models, on tiles made by a
+  script, blind to photographs and chemistry. They agree
   with each other; there is no human key. Say this before being asked.
   An instrument check exists: below the Cretaceous the digitised sand
   fraction follows wireline gamma ray (-0.26, 6 of 6 wells), as well as measured Si/Al does; the Tertiary labels do not meet
@@ -164,10 +164,10 @@ it resolves.
   mudstones. The thesis used it in 4.7 and 5.4 to
   explain a glauconitic Utsira; that sentence no longer stands. Its
   numbered conclusions do not use it (THESIS_CHECK.md).
-- **"How was AI used?"** More than in the thesis. In this follow-up an AI
-  assistant drafted the plans, ran the analyses, read the mud logs and
-  well reports, and acted as reviewer. Say so before being asked; the
-  statement is in THESIS_NOTES.md sections 5 and 7e.
+- **"How was AI used?"** More than in the thesis. The code was written with
+  an AI coding assistant; the mud-log tiles, core photographs and well-report
+  pages were analysed by AI models; AI checked the plans and numbers. Say so
+  before being asked; the statement is in THESIS_NOTES.md section 5.
 
 ## 7. Do not claim
 

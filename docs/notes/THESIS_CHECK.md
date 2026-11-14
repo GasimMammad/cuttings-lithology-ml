@@ -58,11 +58,11 @@ The follow-up changes four statements in the cuttings part.
    CONFERENCE_NOTES.md now says this in those words.
 2. **The AI declaration in the thesis does not cover the follow-up.** The
    thesis states that generative AI was used only for writing and debugging
-   Python code and for correcting grammar (p. iii). It covers the dissertation. In the follow-up an AI assistant also drafted the
-   analysis plans, ran the analyses, read the mud logs and the well
-   reports, and acted as reviewer. Anything presented from the follow-up
-   needs the fuller statement drafted in THESIS_NOTES.md (sections 5 and
-   7e), adapted to the rules of the venue.
+   Python code and for correcting grammar (p. iii). It covers the dissertation. In the follow-up AI was also used to analyse the
+   mud-log tiles, core photographs and well-report pages, and to check the
+   plans and numbers. Anything presented from the follow-up needs the
+   statement in THESIS_NOTES.md (section 5), adapted to the rules of the
+   venue.
 
 ## Not checked
 

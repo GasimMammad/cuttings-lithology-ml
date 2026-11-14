@@ -1,6 +1,6 @@
 {
  "all 17 tiles": {
-  "main session vs record (A, C)": {
+  "audit reader 1 vs record (A, C)": {
    "n_intervals": 73,
    "sand_mad": 0.0136986301369863,
    "sand_share_diff_gt20": 0.0,
@@ -48,7 +48,7 @@
     }
    }
   },
-  "audit agent vs record (A, C)": {
+  "audit reader 2 vs record (A, C)": {
    "n_intervals": 73,
    "sand_mad": 0.0136986301369863,
    "sand_share_diff_gt20": 0.0,
@@ -96,7 +96,7 @@
     }
    }
   },
-  "main session vs checker (B, D)": {
+  "audit reader 1 vs checker (B, D)": {
    "n_intervals": 52,
    "sand_mad": 0.0,
    "sand_share_diff_gt20": 0.0,
@@ -144,7 +144,7 @@
     }
    }
   },
-  "audit agent vs checker (B, D)": {
+  "audit reader 2 vs checker (B, D)": {
    "n_intervals": 52,
    "sand_mad": 0.0,
    "sand_share_diff_gt20": 0.0,
@@ -192,13 +192,13 @@
     }
    }
   },
-  "main session vs audit agent": {
+  "audit reader 1 vs audit reader 2": {
    "n_intervals": 73,
    "sand_mad": 0.0
   }
  },
  "blind tiles only (14)": {
-  "main session vs record (A, C)": {
+  "audit reader 1 vs record (A, C)": {
    "n_intervals": 61,
    "sand_mad": 0.0,
    "sand_share_diff_gt20": 0.0,
@@ -246,7 +246,7 @@
     }
    }
   },
-  "audit agent vs record (A, C)": {
+  "audit reader 2 vs record (A, C)": {
    "n_intervals": 61,
    "sand_mad": 0.0,
    "sand_share_diff_gt20": 0.0,
@@ -294,7 +294,7 @@
     }
    }
   },
-  "main session vs checker (B, D)": {
+  "audit reader 1 vs checker (B, D)": {
    "n_intervals": 44,
    "sand_mad": 0.0,
    "sand_share_diff_gt20": 0.0,
@@ -342,7 +342,7 @@
     }
    }
   },
-  "audit agent vs checker (B, D)": {
+  "audit reader 2 vs checker (B, D)": {
    "n_intervals": 44,
    "sand_mad": 0.0,
    "sand_share_diff_gt20": 0.0,
@@ -390,11 +390,11 @@
     }
    }
   },
-  "main session vs audit agent": {
+  "audit reader 1 vs audit reader 2": {
    "n_intervals": 61,
    "sand_mad": 0.0
   }
  },
- "main session vs audit agent: tiles with different block boundaries (of 17)": 10,
- "main session vs audit agent: tiles with identical notes": 0
+ "audit reader 1 vs audit reader 2: tiles with different block boundaries (of 17)": 10,
+ "audit reader 1 vs audit reader 2: tiles with identical notes": 0
 }

@@ -1,5 +1,5 @@
-# v7 step 2: mineralogical review of the pellet-detector spec (Agent 2, geochemist), 2026-11-10
-AI agent in the geochemist role. I viewed no photographs. I made no gate change based on labelled data.
+# v7 step 2: mineralogical check of the pellet-detector spec, 2026-11-10
+A check of the plan (see Use of AI in the README). No photograph was viewed. No gate was changed on the basis of labelled data.
 
 ## Verdict
 The gates in A3–A5 are mineralogically reasonable for fresh, evolved Utsira/Hordaland glaucony in washed, dried cuttings. Freeze them as written. There are three required changes, all to wording or diagnostics, none to gates.
@@ -64,4 +64,4 @@ The gates in A3–A5 are mineralogically reasonable for fresh, evolved Utsira/Ho
   - It exists for only 10 bags.
   - It is visual, so it would partly make the test circular.
   - Use it as a validation layer, reporting concordance.
-- **Add as descriptive:** the within-window Spearman of S against continuous G (the reviewer's exploratory no-Al-floor G). This uses the graded information that the binary label throws away.
+- **Add as descriptive:** the within-window Spearman of S against continuous G (the review's exploratory no-Al-floor G). This uses the graded information that the binary label throws away.

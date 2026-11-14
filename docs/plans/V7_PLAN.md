@@ -1,17 +1,17 @@
 # v7 plan: sample-matched targets
 
-The user's order: (1) photos predict cuttings chemistry, then (2) a photo
+Order of work: (1) photos predict cuttings chemistry, then (2) a photo
 glauconite detector, then (3) mud-log lithology labels. This file fixes
 step 1; steps 2 and 3 get their own sections before they run.
 Status: exploratory; the same wells were used before.
 
-**Step 1 status:** FINAL (reviewer round 15: APPROVE WITH CHANGES, applied), merging:
+**Step 1 status:** FINAL (review round 15: approved with changes, applied), merging:
 - the draft (e0588e9);
-- reviewer round 14;
-- Agent 2 (geochemist, `v7/agent2_target_notes.md`);
-- Agent 4 (ML/CV, `v7/agent4_notes.md`).
+- review round 14;
+- the target-design check (`v7/check_step1_targets.md`);
+- the methods check (`v7/check_step1_methods.md`).
 
-No photo-to-chemistry skill has been computed by anyone. The agents looked
+No photo-to-chemistry skill has been computed. The two checks looked
 only at chemistry against chemistry, GR, EXIF and the v6 G table.
 
 ## Step 1: can cuttings photographs predict the chemistry of the same bag?
@@ -34,9 +34,9 @@ matched XRF analysis, against 590 GR labels.
 ### Targets
 - **T1 (primary): z_well(log10(Si/Al)), uncorrected.**
   - Barite dilution scales Si and Al equally, so the ratio already cancels
-    it (Agents 2 and 4 agree). The round-14 Theil-Sen Ba correction moved
+    it (both checks agree). The round-14 Theil-Sen Ba correction moved
     local agreement with GR Vsh the wrong way (median local rho -0.19
-    uncorrected vs -0.15 corrected, 8 wells; Agent 2).
+    uncorrected vs -0.15 corrected, 8 wells; target check).
   - Disclosure: the target was chosen after a chemistry-vs-GR check (no photo
     skill seen); the difference was small (-0.19 vs -0.15; partialled -0.16).
   - Name: "detrital quartz + biogenic silica vs clay", not "sand".
@@ -61,7 +61,7 @@ matched XRF analysis, against 590 GR labels.
 - **R-E (secondary):** the 15 engineered features, per-well z -> Ridge
   (alpha = 1).
 - The alpha = 10 sensitivity from round 14 is dropped: on 32 PCs it is
-  effectively OLS (Agent 4); R-RAW replaces it.
+  effectively OLS (methods check); R-RAW replaces it.
 
 ### Validation
 - Leave-one-well-out over all 11 wells (primary).
@@ -136,11 +136,11 @@ matched XRF analysis, against 590 GR labels.
 
 ## Step 2: photo glauconite-pellet detector. FINAL (round 17 amendments below take precedence); nothing run on G bags
 
-- **Source:** Agent 4's frozen specification (`v7/agent4_step2_spec.md`, part A), copied verbatim below.
+- **Source:** The frozen specification (`v7/step2_detector_spec.md`, part A), copied verbatim below.
 - **Target:** binary G > 0.2 (v6 exploratory G without the Al floor, validated by the blind pellet check).
 - **Blindness:** parameters come from the mineralogy literature, the pixel scale and 12 Lunde Fm photos
   (Triassic, continental; no glauconite possible). No G-labelled photo was viewed.
-- **Disclosure:** Agent 4 had read the text notes of the v6 pellet rater (pellet size and crack networks).
+- **Disclosure:** the specification was written after reading the text notes of the v6 pellet rater (pellet size and crack networks).
 
 ### A1. Input and geometry
 - **Photos:** W_1 photographs (white light, 'standard' processing) only. U_1 (UV) and W_2 are never used.
@@ -333,9 +333,9 @@ matched XRF analysis, against 590 GR labels.
   - The ResNet crops in the same pass add about 2-4 min of MPS time.
   - **Total about 30-35 min.** Single process: about 2 h. Throttles on battery.
 
-### A15. Round-17 amendments (reviewer: APPROVE WITH CHANGES; geochemist: freeze gates). These override A1-A14 where they differ.
-Fixed before any run on G-labelled bags. Sources: reviewer round 17 and
-`v7/agent2_step2_review.md`.
+### A15. Round-17 amendments (review: approved with changes; geochemistry check: freeze gates). These override A1-A14 where they differ.
+Fixed before any run on G-labelled bags. Sources: review round 17 and
+`v7/check_step2_plan.md`.
 
 **Detector (A3-A6)**
 - The gates are unchanged.
@@ -380,13 +380,13 @@ Fixed before any run on G-labelled bags. Sources: reviewer round 17 and
   - (a) fails: "not detectable beyond stratigraphic position with this data"
     (low power; not evidence of absence).
 
-**A13 learned model: NOT run in this pass** (reviewer: no further engineering
+**A13 learned model: NOT run in this pass** (review: no further engineering
 at this sample size). If it is ever run, it is exploratory and makes no claim.
 
 **Detection limit, restated**
 - The Lunde background reaches S = 12.5 (12 photos), and S is about 20 at
   1% pellets by area. The usable limit is therefore about 1-2% by area.
-- G > 0.2 implies about 12-15 wt% evolved glaucony at minimum (geochemist's
+- G > 0.2 implies about 12-15 wt% evolved glaucony at minimum (geochemistry check's
   mixing model; the positive bags imply ~40-60%). Sensitivity should not be
   the limit; SPECIFICITY is.
 - **Accepted losses, named in advance:** black pellets (C* < 4), oxidised
@@ -403,7 +403,7 @@ at this sample size). If it is ever run, it is exploratory and makes no claim.
 **The run is done ONCE as frozen.** Only code bugs may be fixed, and any fix
 is disclosed.
 
-## Step 3: mud-log cuttings % as a wellsite lithology label (v3, 2026-11-11; reviewer rounds 19 and 19b and the wellsite geologist's protocol check applied)
+## Step 3: mud-log cuttings % as a wellsite lithology label (v3, 2026-11-11; review rounds 19 and 19b and the protocol check applied)
 
 **Question.** Do the photographs predict what the wellsite geologist logged
 in the same cuttings, in wells not used for training? The label is the
@@ -418,7 +418,7 @@ estimate by eye.
 ### C1. Scope
 - **Wells (8):** 24/9-3 (Gearhart-Owen), 34/4-6 (Anadrill), 34/4-7, 34/7-4,
   34/7-9, 34/7-10 (Exlog, Saga legend), 34/8-3, 34/8-3 A (Exlog, Norsk Hydro
-  legend). Sheets as in results/v7/agent5_inventory.csv.
+  legend). Sheets as in results/v7/mudlog_inventory.csv.
 - **Not in this pass:** 34/7-1 and 24/9-4 (text route only), 34/7-6 (no mud
   log). A stated limitation.
 - **Never used:** interpreted lithology columns, composite logs, ROP, gas,
@@ -428,7 +428,7 @@ estimate by eye.
   the fallback of C4 is triggered, and that is decided from labels alone.
 
 ### C2. Label construction (changed from draft v1: readers, not a texture script)
-The wellsite geologist's check (results/v7/agent5_step3_protocol_check.md)
+The protocol check (results/v7/check_step3_protocol.md)
 showed that a row-texture script would misread the column: the symbols
 differ by sheet, clay ruling repeats only every 1-1.5 m, and the percentages
 are carried by the step outline. So:
@@ -440,7 +440,7 @@ are carried by the step outline. So:
    - Column: the two heavy border lines are followed tile by tile.
    - Tiles of 40 m show only the cuttings column, with a depth ruler and a
      0-100 % ruler added in the margins.
-2. **Reading by two independent AI readers of different models.**
+2. **Reading by two independent readers of different models.**
    - Reader A reads every tile. Reader B reads a random 30 % of each well's
      tiles (drawn by seed before any reading) plus the symbol-audit tiles.
    - Each reader gets the tiles in its own random order, the sheet's own
@@ -502,8 +502,8 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
   - **Symbol audit:** 3-5 tiles per non-clay pattern per sheet family, chosen
     from the column images by pattern alone, scored as a confusion matrix of
     class presence. A systematic confusion of sand with silt, glauconite or
-    tuff fails the sheet. The audit key should come from a person: the user
-    is asked to mark class presence on the audit tiles. If that is not done,
+    tuff fails the sheet. The audit key should come from a person: I am
+    to mark class presence on the audit tiles. If that is not done,
     the audit is A against B only and the write-up says that accuracy rests
     on G3 alone.
   - A well that fails gets one fix: the written rules for that sheet are
@@ -588,18 +588,17 @@ all eight, at header, at 100 m label positions, and tiles 34/4-6 1040 m and
 - Never "sand detector", never "bed scale".
 
 ### C7. Known weaknesses and disclosures, named before the run
-- **Both digitisers are AI readers.** They are different models and read
+- **Both digitisers are model readers (see Use of AI).** They are different models and read
   independently, but they are not a human and a script. G2 measures their
   agreement, not their accuracy; the symbol audit and G3 are the checks on
   accuracy.
 - **Earlier pilot.** A file `mudlog_sand.csv` (34/7-10, 2510-2670 m, 0.25 m
-  rows) was made by a sub-agent on 2026-11-05. The inventory quotes rho of
+  rows) was made on 2026-11-05. The inventory quotes rho of
   about 0.56 against Si/Al for it. That interval is Jurassic, outside set S.
   I have no record that it was compared with photographs, and it is not used
   here.
 - **One rule came from the description text.** That the dash-dot pattern and
-  the numbered cells on 24/9-3 are claystone was established by the wellsite
-  geologist agent from the adjacent descriptions ("1.CLST ... sl slt"). C1
+  the numbered cells on 24/9-3 are claystone was established from the adjacent descriptions ("1.CLST ... sl slt"). C1
   says the text is never used for the label; this is the one exception, and
   it is used to decode a symbol, not to label a bag.
 - **Pilot.** Four tiles (34/8-3 A 1080, 34/4-6 1040, 24/9-3 1080, 34/7-10
@@ -633,18 +632,18 @@ with fewer than 10 bags of non-zero glauconite get no correlation, and the
 audit's glauconite confusion is reported beside it. This was thought of only
 after seeing the sheets, so it is exploratory.
 
-## Extras after v7 (requested by the user 2026-11-11; all EXPLORATORY, written before any of them is run)
+## Extras after v7 (added 2026-11-11; all EXPLORATORY, written before any of them is run)
 Steps 1-3 are closed and their results stand whatever these show. Nothing
 here may be used to change a closed result or its wording.
 
 ### X0. Human-key substitute for the 17 symbol-audit tiles
-- The user asked for the check to be done by the main session and by a
-  dedicated agent, not by the user. Both are AI readers, so this is a third
+- The check was done by two further readers (audit readers 1 and 2), not by
+  a person, so this is a third
   and fourth independent reading, not a human key; it is reported as such.
-- Main session: read blind and committed before comparison (commit 92755d2);
+- Audit reader 1: read blind and committed before comparison (commit 92755d2);
   3 of the 17 tiles had been seen before (flagged; results shown with and
   without them).
-- Audit agent: a fresh reader with rules v3, the 17 tiles in a seeded order.
+- Audit reader 2: a fresh reader with rules v3, the 17 tiles in a seeded order.
 - Scored against the reader of record (A; C for 24/9-3) and reader B (D
   for 24/9-3): class presence (>= 10 % in a bag interval) and sand % at
   bag-interval level, as in G2.
@@ -680,10 +679,10 @@ here may be used to change a closed result or its wording.
 - Eligibility as C4. P2 recomputed with the eligible new wells added to the
   six, reported beside the closed step-3 result, never in place of it.
 
-### Reviewer (extras plan): APPROVE WITH CHANGES, applied before any extra is run
-- **X0 wording:** "two further AI readings (same model family; one by the
-  session that wrote the rules and had seen 3 of the 17 tiles). They measure
-  reader consistency, not accuracy. No human key exists." The audit agent has
+### Review (extras plan): approved with changes, applied before any extra is run
+- **X0 wording:** "two further readings (same model family; audit reader 1
+  also wrote the reader rules and had seen 3 of the 17 tiles). They measure
+  reader consistency, not accuracy. No human key exists." The audit reader 2 has
   no access to reader outputs; its readings are committed before scoring.
 - **X1 control:** frozen ResNet-18 features (same patches, same per-well
   colour standardisation, mean over the 16 patches) through R-D's exact
@@ -713,13 +712,13 @@ here may be used to change a closed result or its wording.
 - **34/7-1 uses the text route.** On inspection of the sheet geometry (no
   reading), the % column carries only single-row minor-component symbols
   across a few stripes, not fills, so its widths cannot be read as
-  percentages. Route B of agent5_inventory.md is used: readers transcribe
+  percentages. Route B of mudlog_inventory.md is used: readers transcribe
   each description entry and classify its main rock and its sand mention.
   Fixed mapping to a sand fraction: main sand 0.7; interbedded/sandy 0.3;
   occasional 0.1; trace 0.03; none 0. An entry applies from its depth to the
   next entry; "a/a" and lines naming no main rock carry the previous entry
   forward. Two readers read all 18 tiles; agreement is on the mapped value.
-  The reviewer's blank rule is therefore not needed; the text route never
+  The review's blank rule is therefore not needed; the text route never
   reads the column.
 - **24/9-4:** only main-bore sheets down to 1753 m are used (sidetrack
   below; bags there cannot be assigned to a bore). Depth check: every

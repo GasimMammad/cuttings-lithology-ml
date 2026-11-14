@@ -1,4 +1,4 @@
-# Corrections to the green-index (glauconite) part (v6 A; reviewer rounds 11-12)
+# Corrections to the green-index (glauconite) part (v6 A; review rounds 11-12)
 
 The original repository is left untouched. These corrections apply to the
 thesis text and README wording.

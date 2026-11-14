@@ -53,6 +53,7 @@ Plans, results and notes are indexed in [docs/](docs/README.md).
 ```
 ├── README.md
 ├── CITATION.cff
+├── LICENSE                    MIT, for the code
 ├── requirements.txt           unpinned dependencies
 ├── requirements-lock.txt      exact versions used for the results
 ├── scripts/                   numbered in the order they run
@@ -121,6 +122,20 @@ models, and AI was used to check the plans and every reported number against
 the saved result files. AI also helped draft the plans and the documentation,
 which I directed and edited. The questions, decisions and interpretation are
 mine.
+
+## Licence
+
+- **Code** (`scripts/`, `.github/`): [MIT](LICENSE).
+- **Text, figures and result tables** that I made (`docs/`, `results/`, this
+  README): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Reuse them
+  freely, with a citation.
+- **Third-party material is not covered by either licence** and stays with its
+  owners. The `sodir_*.csv` tables contain data under the Norwegian licence for
+  Open Government data (NLOD) distributed by the Norwegian Offshore Directorate.
+  The cuttings photographs, mud logs and well reports behind the derived results
+  are released well data from the Norwegian Offshore Directorate; the crops of
+  them in `results/v3/`, `results/v7/step3/` and `results/v9/` are reproduced
+  for research, with acknowledgement.
 
 ## Citation
 

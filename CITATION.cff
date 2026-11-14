@@ -8,6 +8,7 @@ authors:
     affiliation: "The University of Manchester"
 date-released: 2026-11-14
 repository-code: "https://github.com/GasimMammad/cuttings-lithology-ml"
+license: MIT
 keywords:
   - drill cuttings
   - computer vision

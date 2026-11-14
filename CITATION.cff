@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite them as below."
+title: "What can a model learn from photographs of drill cuttings? Code and results for the cuttings part of 'Looking for Sinkites'"
+type: software
+authors:
+  - family-names: Mammadov
+    given-names: Gasim
+    affiliation: "The University of Manchester"
+date-released: 2026-11-14
+repository-code: "https://github.com/GasimMammad/cuttings-lithology-ml"
+keywords:
+  - drill cuttings
+  - computer vision
+  - XRF
+  - mud logs
+  - North Sea
+references:
+  - type: thesis
+    title: "Looking for Sinkites: Testing sinkite, injection and compaction models for Oligo-Miocene mounds at the Visund and Snorre fields, northern North Sea"
+    authors:
+      - family-names: Mammadov
+        given-names: Gasim
+    thesis-type: "MSc dissertation"
+    institution:
+      name: "The University of Manchester"
+    year: 2026

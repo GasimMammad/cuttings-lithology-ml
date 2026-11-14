@@ -218,7 +218,7 @@ def main():
     f = f.dropna(subset=FEATURE_NAMES)
 
     # ---- A2 / A3 tags ----
-    bodies = json.load(open("sand_bodies.json"))
+    bodies = json.load(open(__import__("pathlib").Path(__file__).with_name("sand_bodies.json")))
     def in_body(row):
         return any(a <= row.depth_m <= b for a, b in bodies.get(row.well, []))
     f["in_body"] = f.apply(in_body, axis=1)

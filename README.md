@@ -1,6 +1,5 @@
 # What can a model learn from photographs of drill cuttings?
 
-
 Code and results for the drill-cuttings part of the MSc dissertation
 *Looking for Sinkites* (Gasim Mammadov, The University of Manchester,
 2026), and for the tests run after it was submitted.

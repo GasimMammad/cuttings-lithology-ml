@@ -744,3 +744,26 @@ eaa36f4 v2 results
 - The original local folder ~/Projects/cuttings-lithology-ml was NOT
   pulled or changed: it has two uncommitted edits (12_glauconite_test.py,
   config.py) and now sits behind origin/main.
+
+## 2026-11-14: repository tidied (PR #2, merged)
+
+- User: the GitHub repo "is not tidy at all, hard to follow"; asked to
+  study well-kept research repos and refine ours.
+- Models used: the Papers with Code guide for releasing research code
+  (README sections: overview, results, requirements, how to reproduce,
+  citation) and the Cookiecutter Data Science layout (code, docs, results
+  in separate folders; a short root).
+- New layout: scripts/ (all scripts, config.py, features.py, shell
+  drivers, sand_bodies.json, ocr.swift), docs/plans, docs/results,
+  docs/notes, docs/project_log.md, docs/README.md (index), results/v2/.
+  Root: README.md, CITATION.cff, requirements*.txt, .gitignore. All moves
+  with git mv, so history is kept.
+- Code changes: 08 and 10 read sand_bodies.json next to the script; 59
+  hashes C.__file__; run_final*.sh call ../.venv. Scripts must be run
+  from the repository root (relative results/ paths).
+- Verified: compileall passes; v9 K2b and v10 S reruns identical to the
+  committed JSON; figure scripts give identical PNGs; all relative doc
+  links resolve.
+- NOT added: a GitHub Actions compile check (the gh login lacks the
+  `workflow` scope; `gh auth refresh -s workflow` would allow it), and a
+  LICENSE (the author's choice).

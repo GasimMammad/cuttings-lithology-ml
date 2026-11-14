@@ -1,24 +1,23 @@
+# Python and editor files
 __pycache__/
 *.pyc
+.venv
 .venv/
 .DS_Store
 .ipynb_checkpoints/
 
-# local notes and working folders
-*.md
-!README.md
-graphify-out/
-audit/
-.*/
-!.gitignore
+# local tools
+/graphify-out/
+/audit/
 
-# data and outputs never go in git
+# data and model files never go in git (the data are not public)
 *.las
 *.LAS
 *.jpg
 *.JPG
 *.tif
+*.TIF
 *.CR2
 *.pt
 *.pth
-.venv
+!results/v3/v3_montage_D1_above_20in_shoe.jpg

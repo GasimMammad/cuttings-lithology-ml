@@ -32,7 +32,7 @@ def main():
     device = cmp.get_device()
     f = pd.read_csv(C.WORK_DIR / "07_features.csv")
     f = f[(~f.probe_only) & f.label.isin(C.CLASSES)].dropna(subset=FEATURE_NAMES)
-    bodies = json.load(open("sand_bodies.json"))
+    bodies = json.load(open(__import__("pathlib").Path(__file__).with_name("sand_bodies.json")))
     f["in_body"] = f.apply(
         lambda r: any(a <= r.depth_m <= b for a, b in bodies.get(r.well, [])), axis=1)
     f["depth_class"] = np.where(f.depth_m < cmp.SHALLOW_MAX_M, "shallow", "deep")

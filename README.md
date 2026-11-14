@@ -1,5 +1,7 @@
 # What can a model learn from photographs of drill cuttings?
 
+[![check](https://github.com/GasimMammad/cuttings-lithology-ml/actions/workflows/check.yml/badge.svg)](https://github.com/GasimMammad/cuttings-lithology-ml/actions/workflows/check.yml)
+
 Code and results for the drill-cuttings part of the MSc dissertation
 *Looking for Sinkites* (Gasim Mammadov, The University of Manchester,
 2026), and for the tests run after it was submitted.
